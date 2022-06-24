@@ -1,13 +1,13 @@
 version: '3.3'
 
 services:
-  postgres:
+  db:
     image: postgres:13
     environment:
-      - POSTGRES_DB=SPA_EPN_DB
+      - POSTGRES_DB=spadbepn
       - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=KMJF*SDF$546_sdcDi044d1
+      - POSTGRES_PASSWORD=123456
     ports:
       - '5432:5432'
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - ./databaseData:/var/lib/postgresql/data
