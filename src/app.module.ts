@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { EspaciosFisicosModule } from './espacios_fisicos/espacios_fisicos.module';
+import { HorasNoDisponiblesModule } from './horas_no_disponibles/horas_no_disponibles.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -31,6 +32,7 @@ import { UsersModule } from './users/users.module';
       }
     ),
     EspaciosFisicosModule,
+    HorasNoDisponiblesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

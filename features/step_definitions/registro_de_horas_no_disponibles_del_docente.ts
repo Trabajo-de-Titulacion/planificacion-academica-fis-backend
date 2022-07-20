@@ -1,3 +1,8 @@
+import { HorasNoDisponiblesDTO } from "../../src/horas_no_disponibles/dto";
+import { HorasNoDisponiblesController } from "../../src/horas_no_disponibles/horas_no_disponibles.controller";
+import { HoraNoDisponible } from "../../src/horas_no_disponibles/entities/hora_no_disponible.entity";
+import { getRepository } from "typeorm";
+
 import { Given, When, Then, After } from '@cucumber/cucumber';
 const assert = require('assert');
 
