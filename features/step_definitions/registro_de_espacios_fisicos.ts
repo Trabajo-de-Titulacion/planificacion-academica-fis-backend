@@ -1,3 +1,8 @@
+import { EspacioFisicoDTO } from "../../src/espacios_fisicos/dto"
+import { EspacioFisico } from "../../src/espacios_fisicos/entities/espacio_fisico.entity"
+import { EspaciosFisicosController } from "../../src/espacios_fisicos/espacios_fisicos.controller";
+import * as fs from 'fs';
+
 import { Given, When, Then, After } from "@cucumber/cucumber"
 import { getRepository } from "typeorm";
 const assert = require('assert');
