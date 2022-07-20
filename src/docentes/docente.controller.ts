@@ -6,6 +6,7 @@ const crypto = require('crypto');
 
 @Controller('docente')
 export class DocenteController {
+
     constructor(private docenteService: DocenteService) { }
 
     @Post('crearUno')

@@ -3,7 +3,6 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { MailService } from "../mail/mail.service";
 import { Repository } from 'typeorm';
 import { Docente } from './entities/docente.entity'
-import { DocenteDto } from "./dto/docente.dto";
 
 @Injectable()
 export class DocenteService {
@@ -23,7 +22,7 @@ export class DocenteService {
             where: {
                 correoElectronico: docenteDto.correoElectronico,
             }
-        })
+        });
 
         // Si no existe, crea en la base de datos al docente
         // caso contrario, solo muestra un mensaje con 0 ingresos

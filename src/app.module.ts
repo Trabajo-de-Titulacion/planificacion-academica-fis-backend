@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DocenteModule } from './docentes/docentes.module';
 import { MailModule } from './mail/mail.module';
+import { CarreraModule } from './carrera/carrera.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { MailModule } from './mail/mail.module';
       }
     ),
     MailModule,
+    CarreraModule,
   ],
   controllers: [AppController],
   providers: [AppService],

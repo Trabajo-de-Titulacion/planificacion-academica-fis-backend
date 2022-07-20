@@ -9,9 +9,9 @@ Característica: Registro de carreras
     Esquema del escenario: Ingreso individual de un carrera
 	Dado que se tiene una carrera con código "<código_carrera_existente>", nombre "<nombre_carrera_existente>", duración "<duracion_carrera_existente>" y modalidad "<modalidad_carrera_existente>"
 	Cuando se ingrese una carrera con código "<código_carrera_nueva>", nombre "<nombre_carrera_nueva>", duración "<duracion_carrera_nueva>" y modalidad "<modalidad_carrera_nueva>"
-	Entonces se insertará "<número_carrera_añadidos>" al sistema
+	Entonces se obtendrá la respuesta "<respuesta_ingreso_carrera>" del sistema
 
     Ejemplos:
-	| código_carrera_existente | nombre_carrera_existente | duracion_carrera_existente | modalidad_carrera_existente | código_carrera_nueva | nombre_carrera_nueva     | duracion_carrera_nueva | modalidad_carrera_nueva | número_carrera_añadidos |
-	| ICC                      | INGENIERIA EN COMPUTACION| 9                          | PRESENCIAL                  | ISW                  | INGENIERIA EN SOFTWARE   | 9                      | PRESENCIAL              | 1                       |
-	| ICC                      | INGENIERIA EN COMPUTACION| 9                          | PRESENCIAL	                 | ICC                  | INGENIERIA EN COMPUTACION| 9                      | PRESENCIAL              | 0                       |	 
+	| código_carrera_existente | nombre_carrera_existente | duracion_carrera_existente | modalidad_carrera_existente | código_carrera_nueva | nombre_carrera_nueva     | duracion_carrera_nueva | modalidad_carrera_nueva | respuesta_ingreso_carrera                                        |
+	| Icc                      | Ingenieria en computacion| 9                          | Presencial                  | Isw                  | Ingenieria en software   | 9                      | Presencial                  | Se ha creado existosamente la carrera de INGENIERIA EN SOFTWARE. |
+	| Isw                      | Ingenieria en software   | 9                          | Presencial                  | Isw                  | Ingenieria en software   | 9                      | Presencial                  | La carrera INGENIERIA EN SOFTWARE ya se encuentra registrada.    | 	 
