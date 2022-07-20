@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
+import { EspaciosFisicosModule } from './espacios_fisicos/espacios_fisicos.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -25,8 +26,11 @@ import { UsersModule } from './users/users.module';
         database: process.env.POSTGRES_DATABASE,
         autoLoadEntities: true,
         synchronize: true,
+        ssl: true,
+        keepConnectionAlive: true,
       }
-    )
+    ),
+    EspaciosFisicosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
