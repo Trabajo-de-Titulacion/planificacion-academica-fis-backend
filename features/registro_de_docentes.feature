@@ -8,21 +8,22 @@ Característica: Registro de docentes
     Esquema del escenario: Ingreso individual de un docente
 	Dado que se tiene un docente llamado "<nombre_docente_existente>" con el correo electrónico "<correo_electrónico_docente_existente>"
 	Cuando se ingrese el docente llamado "<nombre_docente_nuevo>" con el correo electrónico "<correo_electrónico_docente_nuevo>",
-	Entonces se insertará "<número_docentes_añadidos>"
-	Y se generará un código aleatorio "<código_generado>"
+	Entonces se registrará el código del docente "<se_registro_codigo>"
+	Y se obtendrá una respuesta del envió de correo electrónico "<respuesta_correo>"
 
     Ejemplos:
-	| nombre_docente_existente | correo_electrónico_docente_existente | nombre_docente_nuevo | correo_electrónico_docente_nuevo | número_docentes_añadidos | código_generado |
-	| Juan José Gómez Tusa     | mahatma.quijano@epn.edu.ec           | María Ana Gómez      | diana.lopez03@epn.edu.ec         | 1                        | true            |
-	| Juan José Gómez Tusa     | mahatma.quijano@epn.edu.ec           | Juan José Gómez Tusa | mahatma.quijano@epn.edu.ec       | 0                        | false           |
+	| nombre_docente_existente | correo_electrónico_docente_existente | nombre_docente_nuevo | correo_electrónico_docente_nuevo | se_registro_codigo | respuesta_correo             |
+	| Juan José Gómez Tusa     | diana.lopez03@epn.edu.ec             | Juan José Gómez Tusa | diana.lopez03@epn.edu.ec         | false              | Correo electrónico no enviado|
+	| Juan José Gómez Tusa     | diana.lopez03@epn.edu.ec             | María Ana Gómez      | mahatma.quijano@epn.edu.ec       | true               | Correo electrónico enviado   |
 
     Esquema del escenario: Ingreso por archivo de docentes
 	Dado que se tiene un docente llamado "<nombre_docente_existente>" con el correo electrónico "<correo_electrónico_docente_existente>"
 	Cuando se ingrese varios docentes por medio de un archivo "<dirección_archivo>"
-	Entonces se insertará "<número_docentes_por_añadir>" 
-	Y se generarán códigos aleatorios "<cantidad_de_códigos_generados>"
+	Entonces se registrara "<cantidad_de_códigos_ generados>" de códigos de los docentes
+	Y se obtendrá una respuesta del envió de correos electrónicos "<respuesta_de_multiples_ingresos>"
 
     Ejemplos:
-	| nombre_docente_existente | correo_electrónico_docente_existente | dirección_archivo    														       									                | número_docentes_por_añadir | código_generado |
-	| Juan José Gómez Tusa     | mahatma.quijano@epn.edu.ec           |D:\Proyectos Codigo\TrabajoDeTitulacion\planificacion-academica-fis-backend\features\documents_test\registro_de_docentes_0_fallo.xlsx| 2                          | 2               |
-	| Juan José Gómez Tusa     | mahatma.quijano@epn.edu.ec           |D:\Proyectos Codigo\TrabajoDeTitulacion\planificacion-academica-fis-backend\features\documents_test\registro_de_docentes_1_fallo.xlsx| 3                          | 2               |
+	| nombre_docente_existente | correo_electrónico_docente_existente | dirección_archivo 														       									                   | cantidad_de_códigos_generados | respuesta_de_multiples_ingresos          	 |
+	| Juan José Gómez Tusa     | diana.lopez03@epn.edu.ec             |D:\Proyectos Codigo\TrabajoDeTitulacion\planificacion-academica-fis-backend\features\documents_test\registro_de_docentes_0_fallo.csv| 2                             | Correos electrónicos enviados               |
+	| Juan José Gómez Tusa     | diana.lopez03@epn.edu.ec             |D:\Proyectos Codigo\TrabajoDeTitulacion\planificacion-academica-fis-backend\features\documents_test\registro_de_docentes_3_fallo.csv| 0                             | Existen correos electrónicos no enviados    |
+  
