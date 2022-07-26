@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UsuarioEntity } from 'src/usuarios/entities/usuario.entity';
 import { Repository } from 'typeorm';
-import { UserDto } from '../usuarios/dtos/user.dto';
+import { UsuarioDto } from '../../usuarios/dtos/usuario.dto';
 
 @Injectable()
 export class AuthService {
@@ -10,11 +10,11 @@ export class AuthService {
         @InjectRepository(UsuarioEntity) private userRepository : Repository<UsuarioEntity>
     ){}
 
-    signInLocal(user  : UserDto){
+    signInLocal(user  : UsuarioDto){
 
     }
 
-    signUpLocal(user  : UserDto){
+    signUpLocal(user  : UsuarioDto){
 
     }
 }
