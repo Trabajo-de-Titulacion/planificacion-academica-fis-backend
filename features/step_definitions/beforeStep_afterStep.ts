@@ -4,6 +4,8 @@ import { AppModule } from '../../src/app.module';
 
 import { AfterStep, BeforeStep } from '@cucumber/cucumber';
 
+
+
 BeforeStep(async function () {
   // Levantar aplicacion
   const app = await NestFactory.create(AppModule, {
@@ -15,10 +17,11 @@ BeforeStep(async function () {
     }),
   );
   await app.listen(3000);
-  this.app = await app;
 });
 
 AfterStep(async function () {
   // Cerrar aplicacion
   this.app.close();
 });
+
+

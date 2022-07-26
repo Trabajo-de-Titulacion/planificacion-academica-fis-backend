@@ -1,3 +1,6 @@
+var {setDefaultTimeout} = require('@cucumber/cucumber');
+setDefaultTimeout(60 * 1000);
+
 var common = [
   "--require features/step_definitions/*.ts",
   "--require-module ts-node/register",
@@ -5,9 +8,10 @@ var common = [
   "--format cucumber-console-formatter",
   "--publish-quiet"
 ].join(' ');
+
   
 
 module.exports = {
     default: common,
-    foAsync: `--format-options '{"snippetInterface": "async-await"}'`
+   foAsync: `--format-options '{"snippetInterface": "async-await"}'`
 }
