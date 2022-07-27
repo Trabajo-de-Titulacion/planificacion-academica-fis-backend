@@ -7,11 +7,13 @@ import { RolService } from './services/rol.service';
 import { RolEntity } from './entities/rol.entity';
 import { RolController } from './controllers/rol.controller';
 import { AccionEntity } from './entities/accion.entity';
+import { AccionController } from './controllers/accion.controller';
+import { AccionService } from './services/accion.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UsuarioEntity, RolEntity, AccionEntity])],
-  providers: [AuthService, RolService],
-  controllers: [AuthController, RolController]
+  providers: [AuthService, RolService, AccionService],
+  controllers: [AuthController, RolController, AccionController]
 })
 export class AuthModule {}
 

@@ -28,6 +28,10 @@ export class RolService {
         }
     }
 
+    async obtenerRolPorSuID(idRol : string){
+        return this.repositorioRol.findOne(idRol);
+    }
+
     async eliminarRol(idRol: string): (Promise<DeleteResult | NotFoundException>) {
         const rol = await this.repositorioRol.findOne(idRol);
         if (rol) {

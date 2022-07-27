@@ -9,9 +9,10 @@ export class AccionEntity {
     id : string;
 
     @Column()
-    name : string;
+    nombre : string;
+
 
     @ManyToOne( () => RolEntity, rol => rol.acciones)
-    @JoinColumn({ name: 'id_rol' })
+    @JoinColumn({ name: 'id_rol'})
     rol : RolEntity;
 }
