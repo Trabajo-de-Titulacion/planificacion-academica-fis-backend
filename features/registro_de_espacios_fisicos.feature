@@ -8,12 +8,12 @@ Característica: Registro de espacios físicos
     Esquema del escenario: Se agrega un espacio físico
         Dado que existe un espacio fisico llamado "<nombre>"
         Cuando se agrega un espacio fisico llamado "<nuevo_espacio_fisico>"
-        Entonces se inserta "<filas_alteradas>" en la base de datos
+        Entonces al consultar la base de datos se observan "<numero_registros>" registros.
 
     Ejemplos:
-        | nombre            | nuevo_espacio_fisico          | filas_alteradas   |
-        | BetaPrueba        | AlfaPrueba                    | 1                 |
-        | BetaPrueba        | BetaPrueba                    | 0                 |
+        | nombre            | nuevo_espacio_fisico          | numero_registros  |
+        | BetaPrueba        | AlfaPrueba                    | 2                 |
+        | BetaPrueba        | BetaPrueba                    | 1                 |
 
 
     @espacios_fisicos_prueba2
@@ -22,12 +22,12 @@ Característica: Registro de espacios físicos
         Y existe un espacio físico llamado AlfaPrueba
         Y existe un espacio físico llamado GammaPrueba
         Y existe un espacio físico llamado SIS502Prueba
-        Cuando se importe el archivo "<dirección_archivo>"
-        Entonces se insertan "<filas_alteradas>" en la base de datos
+        Cuando se importe el archivo "<nombre_archivo>"
+        Entonces al consultar la base de datos se observan "<numero_registros>" espacios físicos.
     
     Ejemplos:
-        | dirección_archivo                                         | filas_alteradas   |
+        | nombre_archivo                        | numero_registros  |
         # Archivo con 5 espacios fisicos y 0 duplicados
-        | C:\Users\mahis\Desktop\espacios_fisicos_prueba1.csv       | 5                 |
+        | espacios_fisicos_prueba1.csv          |  9                |
         # Archivo con 5 espacios fisicos y 2 duplicados
-        | C:\Users\mahis\Desktop\espacios_fisicos_prueba2.csv       | 3                 |
+        | espacios_fisicos_prueba2.csv          | 7                 |

@@ -2,6 +2,7 @@ import { EspacioFisicoDTO } from "../../src/espacios_fisicos/dto"
 import { EspacioFisico } from "../../src/espacios_fisicos/entities/espacio_fisico.entity"
 import { EspaciosFisicosController } from "../../src/espacios_fisicos/espacios_fisicos.controller";
 import * as fs from 'fs';
+const path = require('path')
 
 import { Given, When, Then, After } from "@cucumber/cucumber"
 import { getRepository } from "typeorm";
@@ -20,12 +21,15 @@ When('se agrega un espacio fisico llamado {string}', async function (nombre_espa
 
     this.nuevo_espacio_fisico = new EspacioFisicoDTO(nombre_espacio_fisico, "laboratorio", 25);
     
-    this.respuesta = await this.espaciosFisicosController.crearEspacioFisico(this.nuevo_espacio_fisico);
+    await this.espaciosFisicosController.crearEspacioFisico(this.nuevo_espacio_fisico);
 });
 
-Then('se inserta {string} en la base de datos', async function (filas_alteradas: number) {
-    // Numero de filas ingresadas
-    assert.equal(this.respuesta.filas_alteradas, filas_alteradas);
+Then('al consultar la base de datos se observan {string} registros.', async function (numero_registros: number) {
+    // Se consulta a la base de datos y se obtiene lo almacenado
+    this.registros_almacenados = await this.espaciosFisicosController.obtenerEspaciosFisicos();
+
+    // Se compara si la consulta devuelve los mismos registros que se deseó guardar
+    assert.equal(this.registros_almacenados.length, numero_registros);
 });
 
 // Borrar datos de la primera prueba
@@ -58,19 +62,24 @@ Given('existe un espacio físico llamado SIS502Prueba', async function () {
     await this.repository.save(this.espacio_fisico_existente4);
 });
 
-When('se importe el archivo {string}', async function (dirección_archivo: string) {
+When('se importe el archivo {string}', async function (nombre_archivo: string) {
     // Se obtiene el archivo
-    this.archivoBuffer = fs.readFileSync(dirección_archivo);
+    const direccion = path.join(__dirname, '..', 'documents_test', nombre_archivo);
+    this.archivoBuffer = fs.readFileSync(direccion);
     this.archivo = {buffer: this.archivoBuffer};
+    
     // Se obtiene una instancia del controlador   
     this.espaciosFisicosController = await this.app.get(EspaciosFisicosController);
     
     this.respuesta = await this.espaciosFisicosController.crearMultiplesEspaciosFisicos(this.archivo);
 });
 
-Then('se insertan {string} en la base de datos', async function (filas_alteradas: number) {
+Then('al consultar la base de datos se observan {string} espacios físicos.', async function (numero_registros: number) {
+    // Se consulta a la base de datos y se obtiene lo almacenado
+    this.registros_almacenados = await this.espaciosFisicosController.obtenerEspaciosFisicos();
+
     // Numero de filas ingresadas
-    assert.equal(this.respuesta.filas_alteradas, filas_alteradas);
+    assert.equal(this.registros_almacenados.length, numero_registros);
 });
 
 // Borrar datos de la segunda prueba
