@@ -4,35 +4,35 @@ import { IsEmail, IsNotEmpty, IsString } from "class-validator";
 export class UsuarioDto {
     @ApiProperty()
     @IsString()
-    id: string
+    public readonly id: string;
 
     @ApiProperty()
     @IsEmail()
-    correo: string;
+    public readonly correo: string;
 
     @ApiProperty()
     @IsString()
-    clave: string;
+    public readonly clave: string;
 }
 
 export class CrearUsuarioDTO {
     @IsEmail()
     @IsNotEmpty()
     @ApiProperty()
-    correo: string;
+    public readonly correo: string;
 
     @IsString()
     @IsNotEmpty()
     @ApiProperty()
-    clave: string;
+    public readonly clave: string;
 }
 
 export class ObtenerUsuarioDto {
     @ApiProperty()
     @IsString()
-    id: string
+    public readonly id: string
 
     @ApiProperty()
     @IsEmail()
-    correo: string
+    public readonly correo: string
 }

@@ -1,3 +1,4 @@
+import ROLES from "src/utils/types/rol.type";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { AccionEntity } from "./accion.entity";
 import { RolUsuarioEntity } from "./rol-usuario.entity";
@@ -8,12 +9,9 @@ export class RolEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column()
-    nombre : string;
+    @Column({ unique: true, nullable: false, })
+    nombre: ROLES;
 
-    @OneToMany( () => RolUsuarioEntity, rolUsuario => rolUsuario.rol)
-    rolesUsuarios : RolUsuarioEntity[];
-
-    @OneToMany( () => AccionEntity, accion => accion.rol )
+    @OneToMany(() => AccionEntity, accion => accion.rol)
     acciones: AccionEntity[];
 }
