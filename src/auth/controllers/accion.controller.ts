@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { AccionDto } from "../dtos/accion.dto";
 import { AccionService } from "../services/accion.service";
@@ -23,5 +23,15 @@ export class AccionController {
     @Post("crearAccion")
     async crearAccion(@Body() accion : AccionDto){
         return this.servicioAccion.crearAccion(accion);
+    }
+
+    @Put('actualizarAccion/:id')
+    async actualizarAccion(@Param('id') idAccion : string, @Body() accion : AccionDto){
+        return this.servicioAccion.actualizarAccion(idAccion, accion);
+    }
+
+    @Delete('eliminarAccion/:id')
+    async eliminarAccion(@Param('id') idAccion : string){
+        return this.servicioAccion.eliminarAccion(idAccion);
     }
 }
