@@ -1,37 +1,40 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiProperty, ApiTags } from "@nestjs/swagger";
+import { configuraciones } from "src/utils/configuraciones-globales";
 import { AccionDto } from "../dtos/accion.dto";
 import { AccionService } from "../services/accion.service";
 
-@ApiTags("Acciones")
-@Controller("api/accion")
+@ApiTags(configuraciones.controladores.accciones.tag)
+@Controller(configuraciones.controladores.accciones.ruta)
 export class AccionController {
     constructor(
-        private servicioAccion : AccionService
-    ){}
+        private servicioAccion: AccionService
+    ) { }
 
-    @Get("obtenerAcciones")
-    async obtenerAcciones(){
+    @ApiProperty({description: configuraciones.controladores.accciones.operaciones.obtenerAcciones.description})
+    @Get(configuraciones.controladores.accciones.operaciones.obtenerAcciones.ruta)
+    async obtenerAcciones() {
         return this.servicioAccion.obtenerAcciones();
     }
 
-    @Get("obtenerAccionesPorRol/:id")
-    async obtenerAccionesPorRol(@Param("id") id: string){
+    @ApiProperty({description: configuraciones.controladores.accciones.operaciones.obtenerAccionesPorRol.description})
+    @Get(configuraciones.controladores.accciones.operaciones.obtenerAccionesPorRol.ruta)
+    async obtenerAccionesPorRol(@Param("id") id: string) {
         return this.servicioAccion.obtenerAccionesPorRol(id);
     }
-    
+
     @Post("crearAccion")
-    async crearAccion(@Body() accion : AccionDto){
+    async crearAccion(@Body() accion: AccionDto) {
         return this.servicioAccion.crearAccion(accion);
     }
 
     @Put('actualizarAccion/:id')
-    async actualizarAccion(@Param('id') idAccion : string, @Body() accion : AccionDto){
+    async actualizarAccion(@Param('id') idAccion: string, @Body() accion: AccionDto) {
         return this.servicioAccion.actualizarAccion(idAccion, accion);
     }
 
     @Delete('eliminarAccion/:id')
-    async eliminarAccion(@Param('id') idAccion : string){
+    async eliminarAccion(@Param('id') idAccion: string) {
         return this.servicioAccion.eliminarAccion(idAccion);
     }
 }

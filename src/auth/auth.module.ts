@@ -9,10 +9,13 @@ import { RolController } from './controllers/rol.controller';
 import { AccionEntity } from './entities/accion.entity';
 import { AccionController } from './controllers/accion.controller';
 import { AccionService } from './services/accion.service';
+import RolUsuarioService from './services/rol-usuario.service';
+import { RolUsuarioEntity } from './entities/rol-usuario.entity';
+import { UsuariosModule } from 'src/usuarios/users.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([UsuarioEntity, RolEntity, AccionEntity])],
-  providers: [AuthService, RolService, AccionService],
+  imports: [UsuariosModule, TypeOrmModule.forFeature([UsuarioEntity, RolEntity, AccionEntity, RolUsuarioEntity])],
+  providers: [AuthService, RolService, AccionService, RolUsuarioService ],
   controllers: [AuthController, RolController, AccionController]
 })
 export class AuthModule {}

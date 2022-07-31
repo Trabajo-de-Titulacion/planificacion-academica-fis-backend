@@ -1,4 +1,4 @@
-const swagger = {
+const configuracionesAPI = {
     controladores: {
         usuario: {
             ruta: 'api/usuarios',
@@ -13,6 +13,20 @@ const swagger = {
                     descripcion: 'Método que permite crear un usuario pasando como parámetros su correo institucional y una clave.'
                 }
             }
+        },
+        accciones: {
+            ruta: 'api/acciones',
+            tag: 'Acciones',
+            operaciones: {
+                obtenerAcciones: {
+                   ruta: '/obtenerAcciones',
+                   description: 'Método para obtener todas las acciones de todos los roles.' 
+                },
+                obtenerAccionesPorRol: {
+                    ruta: '/obtenerAccionesPorRol/:id',
+                    description: 'Método de las acciones de un rol.'
+                }
+            }
         }
     }
 }
@@ -25,4 +39,4 @@ const configuracionesGlobales = {
     puerto: 3000
 }
 
-export { swagger, configuracionesGlobales };
+export { configuracionesAPI as configuraciones , configuracionesGlobales };

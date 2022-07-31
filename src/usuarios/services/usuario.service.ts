@@ -18,7 +18,7 @@ export class UsuarioService {
             usuario => {
                 return {
                     id: usuario.id,
-                    correo: usuario.correo
+                    correo: usuario.correo,
                 }
             }
         )
@@ -28,6 +28,10 @@ export class UsuarioService {
     async obtenerUsuarioPorSuID(id: string) : Promise<ObtenerUsuarioDto>{
         const {clave, ...usuario} = await this.repositorioUsuario.findOne(id);
         return usuario;
+    }
+
+    async obtenerUsuarioCompletoPorSuID(id: string) : Promise<UsuarioEntity>{
+        return await this.repositorioUsuario.findOne(id);
     }
 
     async obtenerUsuarioPorSuCorreo(correo: string) : Promise<UsuarioEntity>{

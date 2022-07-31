@@ -8,10 +8,16 @@ export class RolUsuarioEntity {
     @Column({
         name: "id_user_rol",
         unique: true,
-        nullable: true,
+        nullable: false,
     })
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
+    @ManyToOne( () => RolEntity, rol => rol.acciones )
+    @JoinColumn({ name: 'id_rol'})
+    rol: RolEntity;
 
+    @ManyToOne( () => UsuarioEntity, usuario => usuario.rolesUsuario)
+    @JoinColumn({ name: 'id_usuario'})
+    usuario: UsuarioEntity;
 }

@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { RolUsuarioEntity } from "src/auth/entities/rol-usuario.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('Usuario')
 export class UsuarioEntity {
@@ -10,4 +11,7 @@ export class UsuarioEntity {
 
     @Column()
     clave: string
+
+    @OneToMany( () => RolUsuarioEntity, rolUsuario => rolUsuario.usuario)
+    rolesUsuario : RolUsuarioEntity[]
 }
