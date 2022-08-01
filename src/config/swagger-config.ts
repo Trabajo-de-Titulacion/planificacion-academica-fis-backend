@@ -11,16 +11,16 @@ const configuracionesAPI = {
                 crearUsuario: {
                     ruta: '/crearUsuario',
                     descripcion: 'Método que permite crear un usuario pasando como parámetros su correo institucional y una clave.'
-                }
-            }
+                },
+            },
         },
         accciones: {
             ruta: 'api/acciones',
             tag: 'Acciones',
             operaciones: {
                 obtenerAcciones: {
-                   ruta: '/obtenerAcciones',
-                   description: 'Método para obtener todas las acciones de todos los roles.' 
+                    ruta: '/obtenerAcciones',
+                    description: 'Método para obtener todas las acciones de todos los roles.'
                 },
                 obtenerAccionesPorRol: {
                     ruta: '/obtenerAccionesPorRol/:id',
@@ -31,12 +31,11 @@ const configuracionesAPI = {
     }
 }
 
-const configuracionesGlobales = {
+const configuracionesSwagger = {
     titulo: 'SISTEMA DE PLANIFICACIÓN ACADÉMICA DE LA FACULTAD DE INGENIERÍA DE SISTEMAS',
     descripcion: 'API del proyecto creada con Nest.js y TypeORM.',
     version: '1.0.0',
-    swaggerTag: 'api',
-    puerto: 3000
+    tag: 'api',
 }
 
-export { configuracionesAPI as configuraciones , configuracionesGlobales };
+export { configuracionesAPI as configuraciones, configuracionesSwagger };

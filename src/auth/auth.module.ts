@@ -12,10 +12,25 @@ import { AccionService } from './services/accion.service';
 import RolUsuarioService from './services/rol-usuario.service';
 import { RolUsuarioEntity } from './entities/rol-usuario.entity';
 import { UsuariosModule } from 'src/usuarios/users.module';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
-  imports: [UsuariosModule, TypeOrmModule.forFeature([UsuarioEntity, RolEntity, AccionEntity, RolUsuarioEntity])],
-  providers: [AuthService, RolService, AccionService, RolUsuarioService ],
+  imports: [
+    UsuariosModule,
+    TypeOrmModule.forFeature([UsuarioEntity, RolEntity, AccionEntity, RolUsuarioEntity]),
+    PassportModule, // para la estrategia local
+    JwtModule.register({
+      secret: 'asdasd',
+      signOptions: {expiresIn: '3h'}
+    })
+  ],
+  providers: [
+    AuthService,
+    RolService,
+    AccionService,
+    RolUsuarioService,  
+  ],
   controllers: [AuthController, RolController, AccionController]
 })
 export class AuthModule {}
