@@ -1,6 +1,7 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Controller, Post, Request, UseGuards, } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
-import { UsuarioDto } from '../../usuarios/dtos/usuario.dto';
+import { UsuarioEntity } from 'src/usuarios/entities/usuario.entity';
+import { LocalAuthGuard } from '../guards/local-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -9,17 +10,13 @@ export class AuthController {
         private readonly authService : AuthService
     ){}
 
+    @UseGuards(LocalAuthGuard)
     @Post()
     signInLocal(
-        @Body() user  : UsuarioDto
+        @Request() request
     ){
-        return this.authService.signInLocal(user);
+        const usuario = request.usuario as UsuarioEntity
+        return this.authService.generarJWT(usuario);
     }
 
-    @Post()
-    signUpLocal(
-        @Body() user  : UsuarioDto
-    ){
-        return this.authService.signUpLocal(user);
-    }
 }

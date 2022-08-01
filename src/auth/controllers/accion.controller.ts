@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { ApiProperty, ApiTags } from "@nestjs/swagger";
-import { configuraciones } from "src/config/configuraciones-globales";
+import { configuraciones } from "src/config/swagger-config";
 import { AccionDto } from "../dtos/accion.dto";
 import { AccionService } from "../services/accion.service";
 

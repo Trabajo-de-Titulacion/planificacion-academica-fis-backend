@@ -14,25 +14,36 @@ import { RolUsuarioEntity } from './entities/rol-usuario.entity';
 import { UsuariosModule } from 'src/usuarios/users.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
+import configuracion from 'src/config/configuracion';
+import { ConfigType } from '@nestjs/config';
+import { LocalStrategy } from './strategies/local.strategy';
 
 @Module({
   imports: [
     UsuariosModule,
     TypeOrmModule.forFeature([UsuarioEntity, RolEntity, AccionEntity, RolUsuarioEntity]),
     PassportModule, // para la estrategia local
-    JwtModule.register({
-      secret: 'asdasd',
-      signOptions: {expiresIn: '3h'}
+    JwtModule.registerAsync({
+      inject: [configuracion.KEY],
+      useFactory: (configService: ConfigType<typeof configuracion>) => {
+        return {
+          secret: configService.jwtSecret,
+          signOptions: {
+            expiresIn: '5h',
+          }
+        }
+      }
     })
   ],
   providers: [
     AuthService,
     RolService,
     AccionService,
-    RolUsuarioService,  
+    RolUsuarioService,
+    LocalStrategy
   ],
   controllers: [AuthController, RolController, AccionController]
 })
-export class AuthModule {}
+export class AuthModule { }
 
 
