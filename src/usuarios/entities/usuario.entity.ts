@@ -6,7 +6,7 @@ export class UsuarioEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column()
+    @Column({unique: true})
     correo: string
 
     @Column()

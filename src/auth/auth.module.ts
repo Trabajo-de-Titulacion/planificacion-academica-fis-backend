@@ -17,6 +17,8 @@ import { JwtModule } from '@nestjs/jwt';
 import configuracion from 'src/config/configuracion';
 import { ConfigType } from '@nestjs/config';
 import { LocalStrategy } from './strategies/local.strategy';
+import { JwtStrategy } from './strategies/jwt-strategy';
+import { RolUsuarioController } from './controllers/rol-usuario.controller';
 
 @Module({
   imports: [
@@ -36,13 +38,15 @@ import { LocalStrategy } from './strategies/local.strategy';
     })
   ],
   providers: [
+    LocalStrategy,
+    JwtStrategy,
     AuthService,
     RolService,
     AccionService,
     RolUsuarioService,
-    LocalStrategy
+
   ],
-  controllers: [AuthController, RolController, AccionController]
+  controllers: [AuthController, RolController, AccionController, RolUsuarioController]
 })
 export class AuthModule { }
 
