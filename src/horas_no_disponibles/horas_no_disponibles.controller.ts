@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { HorasNoDisponiblesService } from './horas_no_disponibles.service';
 import { HorasNoDisponiblesDTO } from './dto';
 
@@ -19,6 +19,11 @@ export class HorasNoDisponiblesController {
   @Post('crearHoras')
   crearHorasNoDisponibles(@Body() horas_no_disponibles: HorasNoDisponiblesDTO[]) {
     return this.horasNoDisponiblesService.crearHorasNoDisponibles(horas_no_disponibles);
+  }
+
+  @Delete(':id')
+  eliminarHorasNoDisponiblesPorDocenteId(@Param('id') id: string) {
+    return this.horasNoDisponiblesService.eliminarHorasNoDisponiblesPorDocenteId(id);
   }
 
 }
