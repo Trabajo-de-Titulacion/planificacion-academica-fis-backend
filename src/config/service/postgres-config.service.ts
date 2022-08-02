@@ -20,6 +20,7 @@ export class PostgresConfigService implements TypeOrmOptionsFactory {
             autoLoadEntities: true,
             synchronize: true,
             ssl: true,
+            keepConnectionAlive: true,
         }
     }
 }
