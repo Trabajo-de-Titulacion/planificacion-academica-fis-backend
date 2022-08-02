@@ -1,4 +1,4 @@
-import { RolUsuarioEntity } from "src/auth/entities/rol-usuario.entity";
+import { RolUsuarioEntity } from "../../../src/auth/entities/rol-usuario.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('Usuario')

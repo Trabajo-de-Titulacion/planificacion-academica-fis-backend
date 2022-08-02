@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { configuraciones } from 'src/config/swagger-config';
+import { configuraciones } from '../../../src/config/swagger-config';
 import { CrearUsuarioDTO, ObtenerUsuarioDto, UsuarioDto } from '../dtos/usuario.dto';
-import { UsuarioService } from '../services/usuario.service';
+import { UsuarioService } from '../../../src/usuarios/services/usuario.service';
 
 @ApiTags(configuraciones.controladores.usuario.tag)
 @Controller(configuraciones.controladores.usuario.ruta)
