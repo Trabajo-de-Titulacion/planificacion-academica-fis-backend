@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { UsuarioEntity } from 'src/usuarios/entities/usuario.entity';
-import { UsuarioService } from 'src/usuarios/services/usuario.service';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UsuarioEntity } from '../../../src/usuarios/entities/usuario.entity';
+import { UsuarioService } from '../../../src/usuarios/services/usuario.service';
+import { Repository } from 'typeorm';
+import { UsuarioDto } from '../../usuarios/dtos/usuario.dto';
 import { CredencialesDto } from '../dtos/credenciales.dto';
 import * as bcrypt from 'bcrypt';
 import { PayloadToken } from '../models/token.model';

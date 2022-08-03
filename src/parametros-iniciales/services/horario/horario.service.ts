@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { HorarioDTO } from 'src/parametros-iniciales/dtos/horario.dto';
-import { HorarioEntity } from 'src/parametros-iniciales/entities/horario.entity';
+import { HorarioEntity } from '../../../../src/parametros-iniciales/entities/horario.entity';
+import DIAS from 'src/parametros-iniciales/types/dia.type';
 import { Repository } from 'typeorm';
 
 @Injectable()

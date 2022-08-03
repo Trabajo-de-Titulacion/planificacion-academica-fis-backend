@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import DIAS from "../types/dia.type";
 
 @Entity('Horario')
 export class HorarioEntity {

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { RolUsuarioEntity } from 'src/auth/entities/rol-usuario.entity';
+import { RolUsuarioEntity } from '../../src/auth/entities/rol-usuario.entity';
 import { UsuariosController } from './controllers/usuario.controller';
-import { UsuarioEntity } from './entities/usuario.entity';
-import { UsuarioService } from './services/usuario.service';
+import { UsuarioEntity } from '../../src/usuarios/entities/usuario.entity';
+import { UsuarioService } from '../../src/usuarios/services/usuario.service';
 
 @Module({
   imports:[

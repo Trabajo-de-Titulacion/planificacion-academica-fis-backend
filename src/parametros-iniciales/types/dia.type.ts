@@ -7,3 +7,5 @@ enum DIAS {
     SABADO='SÁBADO',
     DOMINGO='DOMINGO'
 }
+
+export default DIAS

@@ -5,6 +5,6 @@ export class SemestreEntity {
     @PrimaryGeneratedColumn('uuid')
     id : string
 
-    @Column({ type: 'varchar'})
+    @Column({ type: 'varchar', unique: true})
     abreviatura : string
 }

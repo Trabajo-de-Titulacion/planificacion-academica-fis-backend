@@ -19,6 +19,7 @@ export class PostgresConfigService implements TypeOrmOptionsFactory {
             password: this.configService.database.password,
             autoLoadEntities: true,
             synchronize: true,
+            keepConnectionAlive: true,
         }
     }
 }

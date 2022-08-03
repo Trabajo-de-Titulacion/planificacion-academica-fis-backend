@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { UsuarioService } from "src/usuarios/services/usuario.service";
+import { UsuarioService } from "../../../src/usuarios/services/usuario.service";
 import { Repository } from "typeorm";
 import { RolUsuarioDto } from "../dtos/rol-usuario";
-import { RolUsuarioEntity } from "../entities/rol-usuario.entity";
+import { RolUsuarioEntity } from "../../../src/auth/entities/rol-usuario.entity";
 import { RolService } from "./rol.service";
 
 @Injectable()

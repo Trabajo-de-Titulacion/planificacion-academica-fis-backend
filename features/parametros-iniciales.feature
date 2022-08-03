@@ -8,14 +8,12 @@ Característica: Parámetros iniciales
     con las restricciones iniciales y se evite obtener horarios no aplicables en la modalidad
     de trabajo de la institución.  
 
-    Esquema del escenario: Aquel en el que se establece el horario laboral de la institución
-        Dado el semestre en curso "<semestre>",
-        Cuando se registre el horario laboral del día "<dia_laboral>" de "<hora_inicio>" a "<hora_fin>",
-        Entonces se obtienen un número de 15 horas en dicho día laboral
-    
-    Ejemplos:
-        | semestre  | dia_laboral | hora_inicio | hora_fin | numero_horas_laborales |
-        | 2022-A    | LUNES  | 07:00 | 22:00 | 15 |
+    Escenario: Aquel en el que se establece el horario laboral de la institución
+        Dado el semestre en curso 2022-A,
+        Y que existe los días laborales de lunes a sábado,
+        Cuando se registre el horario laboral con hora de inicio 07:00 a hora de fin 10:00,
+        Y la hora de inicio de almuerzo 13:00,
+        Entonces se obtienen un número de 14 horas en cada día laboral y 14 intervalos.
 
     Esquema del escenario: Aquel en el que se registra un laboratorio de una facultad con el formato institucional
         Dado el edificio número 12 correspondiente a la Facultad de Ingeniería de Sistemas,

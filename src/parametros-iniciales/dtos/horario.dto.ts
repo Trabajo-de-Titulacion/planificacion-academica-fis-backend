@@ -1,4 +1,5 @@
 import { IsNotEmpty, IsString } from "class-validator";
+import DIAS from "../types/dia.type";
 
 export class HorarioDTO {
 

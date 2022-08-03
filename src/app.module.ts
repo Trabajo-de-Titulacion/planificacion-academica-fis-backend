@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import configuracion from './config/configuracion';
 import { PostgresConfigService } from './config/service/postgres-config.service';
+import { ParametrosInicialesModule } from './parametros-iniciales/parametros-iniciales.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 
 @Module({
@@ -23,6 +24,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     }),
     AuthModule,
     UsuariosModule,
+    ParametrosInicialesModule
   ],
   controllers: [AppController],
   providers: [AppService],
