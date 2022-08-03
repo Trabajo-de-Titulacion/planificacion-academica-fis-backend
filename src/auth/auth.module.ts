@@ -11,7 +11,7 @@ import { AccionController } from './controllers/accion.controller';
 import { AccionService } from './services/accion.service';
 import RolUsuarioService from './services/rol-usuario.service';
 import { RolUsuarioEntity } from './entities/rol-usuario.entity';
-import { UsuariosModule } from 'src/usuarios/users.module';
+import { UsuariosModule } from 'src/usuarios/usuarios.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import configuracion from 'src/config/configuracion';

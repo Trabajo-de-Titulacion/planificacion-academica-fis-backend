@@ -1,8 +1,8 @@
 import { Given, Then, When } from "@cucumber/cucumber";
-import { HorarioController } from "src/parametros-iniciales/controllers/horario/horario.controller";
-import { HorarioDTO } from "src/parametros-iniciales/dtos/horario.dto";
-import { SemestreDTO } from "src/parametros-iniciales/dtos/semestre.dto";
-import { SemestreEntity } from "src/parametros-iniciales/entities/semestre.entity";
+import { HorarioController } from "../../src/parametros-iniciales/controllers/horario/horario.controller";
+import { HorarioDTO } from "../../src/parametros-iniciales/dtos/horario.dto";
+import { SemestreDTO } from "../../src/parametros-iniciales/dtos/semestre.dto";
+import { SemestreEntity } from "../../src/parametros-iniciales/entities/semestre.entity";
 import { getRepository } from "typeorm";
 
 var {setDefaultTimeout} = require('@cucumber/cucumber');

@@ -6,7 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import configuracion from './config/configuracion';
 import { PostgresConfigService } from './config/service/postgres-config.service';
-import { UsuariosModule } from './usuarios/users.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @Module({
   imports: [

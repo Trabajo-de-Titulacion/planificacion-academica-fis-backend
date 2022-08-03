@@ -1,9 +1,9 @@
 enum DIAS {
-    'LUNES',
-    'MARTES',
-    'MIÉRCOLES',
-    'JUEVES',
-    'VIERNES',
-    'SÁBADO',
-    'DOMINGO'
+    LUNES='LUNES',
+    MARTES='MARTES',
+    MIERCOLES='MIÉRCOLES',
+    JUEVES='JUEVES',
+    VIERNES='VIERNES',
+    SABADO='SÁBADO',
+    DOMINGO='DOMINGO'
 }

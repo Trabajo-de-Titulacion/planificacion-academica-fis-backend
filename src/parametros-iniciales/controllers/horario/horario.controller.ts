@@ -17,7 +17,7 @@ export class HorarioController {
     }
 
     @Get('calcularHorasLaborablesDeUnDia/:dia')
-    async calcularHorasLaborablesDeUnDiaLaboral(@Param('dia') dia: DIAS){
+    async calcularHorasLaborablesDeUnDiaLaboral(@Param('dia') dia: string){
         return await this._horarioService.calcularHorasLaborablesDeUnDia(dia);
     }
 }

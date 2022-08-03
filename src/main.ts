@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Configuraciones para Swagger
-  const configuracionSwagger = new DocumentBuilder()
+  const config = new DocumentBuilder()
     .setTitle(configuracionesSwagger.titulo)
     .setDescription(configuracionesSwagger.descripcion)
     .setVersion(configuracionesSwagger.version)
@@ -17,7 +17,7 @@ async function bootstrap() {
     .build();
 
   // Levantamiento de Swagger
-  const document = SwaggerModule.createDocument(app, configuracionSwagger);
+  const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup(`${configuracionesSwagger.tag}/docs`, app, document);
 
   // Para que se apliquen los DTOs
