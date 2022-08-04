@@ -8,6 +8,8 @@ import { configuracionesSwagger } from './config/swagger-config';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.enableCors();
+  
   // Configuraciones para Swagger
   const configuracionSwagger = new DocumentBuilder()
     .setTitle(configuracionesSwagger.titulo)
