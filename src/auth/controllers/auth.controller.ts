@@ -1,9 +1,9 @@
 import { Body, Controller, Post, Request, UseGuards, } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
-import { UsuarioEntity } from '../../../src/usuarios/entities/usuario.entity';
 import { LocalAuthGuard } from '../guards/local-auth.guard';
 import { ApiProperty, ApiTags } from '@nestjs/swagger';
 import { CredencialesDto } from '../dtos/credenciales.dto';
+import { Public } from '../decorators/public.decorator';
 
 @ApiTags("Autenticación")
 @Controller('api/auth')
@@ -15,12 +15,12 @@ export class AuthController {
 
     @ApiProperty({})
     @UseGuards(LocalAuthGuard)
+    @Public()
     @Post("/login")
-    login(
+    async login(
         @Body() credenciales : CredencialesDto
     ){
-        const usuario = credenciales as UsuarioEntity
-        return this.authService.generarJWT(usuario);
+        return await this.authService.generarJWT(credenciales);
     }
 
 }

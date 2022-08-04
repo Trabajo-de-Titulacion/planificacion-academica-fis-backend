@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 import { RolDto } from '../dtos/rol.dto';
 import { RolService } from '../services/rol.service';
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags('Roles')
 @Controller('api/rol')
 export class RolController {
@@ -33,6 +34,6 @@ export class RolController {
     @ApiOperation({ summary: 'Método para eliminar un rol a través de su ID.'})
     @Delete("/eliminarRol/:id")
     async eliminarRol(@Param("id") id: string){
-        return this.servicioRol.eliminarRol(id);
+        return await this.servicioRol.eliminarRol(id);
     }
 }

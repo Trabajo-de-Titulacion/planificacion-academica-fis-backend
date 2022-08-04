@@ -26,10 +26,24 @@ export class AuthService {
         }
     }
 
-    generarJWT(usuario: UsuarioEntity){
-        const payload : PayloadToken = { sub: usuario.id }
-        return {
-            access_token: this.jwtServicio.sign(payload),
+    async generarJWT(credencialesUsuario: CredencialesDto) {
+        const usuario = await this.servicioUsuario.obtenerUsuarioPorSuCorreo(credencialesUsuario.correo);
+        if (usuario) {
+            if (await bcrypt.compare(credencialesUsuario.clave, usuario.clave)) {
+                const payload : PayloadToken = { sub: usuario.id }
+                return {
+                    access_token: this.jwtServicio.sign(payload),
+                }
+            }
         }
+        return {
+            "statusCode": 401,
+            "message": "not allow",
+            "error": "Unauthorized"
+        }
+    }
+
+    verificarToken(token: string): PayloadToken {
+        return this.jwtServicio.verify(token) as PayloadToken;
     }
 }

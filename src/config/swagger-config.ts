@@ -14,22 +14,26 @@ const configuracionesAPI = {
                 },
             },
         },
-        accciones: {
-            ruta: 'api/acciones',
-            tag: 'Acciones',
-            operaciones: {
-                obtenerAcciones: {
-                    ruta: '/obtenerAcciones',
-                    description: 'Método para obtener todas las acciones de todos los roles.'
-                },
-                obtenerAccionesPorRol: {
-                    ruta: '/obtenerAccionesPorRol/:id',
-                    description: 'Método de las acciones de un rol.'
-                }
-            }
-        }
     }
 }
+
+const opciones = {
+    swaggerOptions: {
+        authAction: {
+            defaultBearerAuth: {
+                name: 'defaultBearerAuth',
+                schema: {
+                    description: 'Default',
+                    type: 'http',
+                    in: 'header',
+                    scheme: 'bearer',
+                    bearerFormat: 'JWT',
+                },
+                value: 'EjemploDeBearerAuthToken123',
+            },
+        },
+    },
+};
 
 const configuracionesSwagger = {
     titulo: 'SISTEMA DE PLANIFICACIÓN ACADÉMICA DE LA FACULTAD DE INGENIERÍA DE SISTEMAS',
@@ -38,4 +42,4 @@ const configuracionesSwagger = {
     tag: 'api',
 }
 
-export { configuracionesAPI as configuraciones, configuracionesSwagger };
+export { configuracionesAPI as configuraciones, configuracionesSwagger, opciones };
