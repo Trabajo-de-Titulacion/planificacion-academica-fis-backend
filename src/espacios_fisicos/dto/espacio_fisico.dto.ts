@@ -1,3 +1,4 @@
+import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsNumber, IsNotEmpty } from "class-validator";
 
 export class EspacioFisicoDTO {
@@ -8,14 +9,17 @@ export class EspacioFisicoDTO {
         this.aforo = aforo;
     }
 
+    @ApiProperty()
     @IsString()
     @IsNotEmpty()
     nombre: string;
 
+    @ApiProperty()
     @IsString()
     @IsNotEmpty()
     tipo: string;
 
+    @ApiProperty()
     @IsNumber()
     @IsNotEmpty()
     aforo: number;

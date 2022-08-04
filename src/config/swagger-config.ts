@@ -27,7 +27,59 @@ const configuracionesAPI = {
                     description: 'Método de las acciones de un rol.'
                 }
             }
-        }
+        },
+        espacios_fisicos: {
+            ruta: 'api/espacios_fisicos',
+            tag: 'Espacios físicos',
+            operaciones: {
+                obtenerEspaciosFisicos: {
+                    ruta: '/obtenerEspaciosFisicos',
+                    descripcion: 'Método para obtener todos los espacios físicos.'
+                },
+                obtenerEspacioFisicoPorId: {
+                    ruta: '/obtenerEspaciosFisicos/:id',
+                    descripcion: 'Método para obtener un espacio físico mediante su ID.'
+                },
+                crearEspacioFisico: {
+                    ruta: '/crearUno',
+                    descripcion: 'Método para crear un espacio físico.'
+                },
+                crearMultiplesEspaciosFisicos: {
+                    ruta: '/crearMultiples',
+                    descripcion: 'Método para crear múltiples espacios físicos mediante un archivo CSV.'
+                },
+                actualizarEspacioFisicoPorId: {
+                    ruta: '/actualizarEspacioFisico/:id',
+                    descripcion: 'Método para actualizar un espacio físico mediante su ID.'
+                },
+                eliminarEspacioFisicoPorId: {
+                    ruta: '/eliminarEspacioFisico/:id',
+                    descripcion: 'Método para eliminar un espacio físico mediante su ID.'
+                },
+            }
+        },
+        horas_no_disponibles: {
+            ruta: 'api/horas_no_disponibles',
+            tag: 'Horas no disponibles',
+            operaciones: {
+                obtenerHorasNoDisponiblesPorDocenteId: {
+                    ruta: '/obtenerHorasNoDisponiblesPorDocente/:id',
+                    descripcion: 'Método para obtener todas las horas no disponibles de un docente mediante su ID.'
+                },
+                crearHoraNoDisponible: {
+                    ruta: '/crearHoraNoDisponible',
+                    descripcion: 'Método para crear una hora no disponible para un docente.'
+                },
+                crearHorasNoDisponibles: {
+                    ruta: '/crearHorasNoDisponibles',
+                    descripcion: 'Método para crear múltiples horas no disponibles para un docente.'
+                },
+                eliminarHorasNoDisponiblesPorDocenteId: {
+                    ruta: '/eliminarHoras/:id',
+                    descripcion: 'Método para eliminar horas no disponibles de un docente.'
+                },
+            }
+        },
     }
 }
 

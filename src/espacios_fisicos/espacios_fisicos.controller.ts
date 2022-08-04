@@ -2,31 +2,38 @@ import { Body, Controller, Delete, Get, Param, Post, Put, UploadedFile, UseInter
 import { EspaciosFisicosService } from './espacios_fisicos.service';
 import { EspacioFisicoDTO } from './dto';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { configuraciones } from '../../src/config/swagger-config';
 
-@Controller('espacios_fisicos')
+@ApiTags(configuraciones.controladores.espacios_fisicos.tag)
+@Controller(configuraciones.controladores.espacios_fisicos.ruta)
 export class EspaciosFisicosController {
   constructor(private espaciosFisicosService: EspaciosFisicosService) {}
 
 
   /* Read */
-  @Get()
+  @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspaciosFisicos.descripcion})
+  @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspaciosFisicos.ruta)
   obtenerEspaciosFisicos() {
     return this.espaciosFisicosService.obtenerEspaciosFisicos();
   }
 
-  @Get(':id')
+  @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.descripcion})
+  @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.ruta)
   obtenerEspacioFisicoPorId(@Param('id') id: string) {
     return this.espaciosFisicosService.obteneEspacioFisicoPorId(id);
   }
 
 
   /* Create */
-  @Post('crearUno')
+  @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.crearEspacioFisico.descripcion})
+  @Post(configuraciones.controladores.espacios_fisicos.operaciones.crearEspacioFisico.ruta)
   crearEspacioFisico(@Body() espacio_fisico: EspacioFisicoDTO) {
     return this.espaciosFisicosService.crearEspacioFisico(espacio_fisico);
   }
 
-  @Post('crearMultiples')
+  @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.crearMultiplesEspaciosFisicos.descripcion})
+  @Post(configuraciones.controladores.espacios_fisicos.operaciones.crearMultiplesEspaciosFisicos.ruta)
   @UseInterceptors(FileInterceptor('archivoEspaciosFisicos'))
   crearMultiplesEspaciosFisicos(
     @UploadedFile() archivo: Express.Multer.File
@@ -38,14 +45,16 @@ export class EspaciosFisicosController {
 
 
   /* Update */
-  @Put(':id')
+  @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.actualizarEspacioFisicoPorId.descripcion})
+  @Put(configuraciones.controladores.espacios_fisicos.operaciones.actualizarEspacioFisicoPorId.ruta)
   actualizarEspacioFisicoPorId(@Param('id') id: string, @Body() espacio_fisico: EspacioFisicoDTO) {
     return this.espaciosFisicosService.actualizarEspacioFisicoPorId(id, espacio_fisico);
   }
 
 
   /* Delete */
-  @Delete(':id')
+  @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.eliminarEspacioFisicoPorId.descripcion})
+  @Delete(configuraciones.controladores.espacios_fisicos.operaciones.eliminarEspacioFisicoPorId.ruta)
   eliminarEspacioFisicoPorId(@Param('id') id: string) {
     return this.espaciosFisicosService.eliminarEspacioFisicoPorId(id);
   }
