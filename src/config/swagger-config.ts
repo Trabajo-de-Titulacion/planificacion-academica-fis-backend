@@ -83,6 +83,24 @@ const configuracionesAPI = {
     }
 }
 
+const opciones = {
+    swaggerOptions: {
+        authAction: {
+            defaultBearerAuth: {
+                name: 'defaultBearerAuth',
+                schema: {
+                    description: 'Default',
+                    type: 'http',
+                    in: 'header',
+                    scheme: 'bearer',
+                    bearerFormat: 'JWT',
+                },
+                value: 'EjemploDeBearerAuthToken123',
+            },
+        },
+    },
+};
+
 const configuracionesSwagger = {
     titulo: 'SISTEMA DE PLANIFICACIÓN ACADÉMICA DE LA FACULTAD DE INGENIERÍA DE SISTEMAS',
     descripcion: 'API del proyecto creada con Nest.js y TypeORM.',
@@ -90,4 +108,4 @@ const configuracionesSwagger = {
     tag: 'api',
 }
 
-export { configuracionesAPI as configuraciones, configuracionesSwagger };
+export { configuracionesAPI as configuraciones, configuracionesSwagger, opciones };
