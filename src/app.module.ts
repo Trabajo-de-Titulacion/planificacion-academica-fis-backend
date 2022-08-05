@@ -3,30 +3,29 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DocenteModule } from './docentes/docentes.module';
+import { DocenteModule } from './docente/docentes.module';
 import { MailModule } from './mail/mail.module';
 import { CarreraModule } from './carrera/carrera.module';
+import { AuthModule } from './auth/auth.module';
+import configuracion from './config/configuracion';
+import { PostgresConfigService } from './config/service/postgres-config.service';
+import { UsuariosModule } from './usuarios/users.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
-    DocenteModule,
-    TypeOrmModule.forRoot(
+    ConfigModule.forRoot(
       {
-        type: 'postgres',
-        host: process.env.POSTGRES_HOST,
-        port: parseInt(process.env.POSTGRES_PORT),
-        username: process.env.POSTGRES_USER,
-        password: process.env.POSTGRES_PASSWORD,
-        database: process.env.POSTGRES_DATABASE,
-        autoLoadEntities: true,
-        synchronize: true,
-        ssl: true,
-        keepConnectionAlive: true,
+        envFilePath: '.env',
+        isGlobal: true,
+        load: [configuracion]
       }
     ),
+    TypeOrmModule.forRootAsync({
+      useClass: PostgresConfigService,
+      inject: [PostgresConfigService],
+    }),
+    AuthModule,
+    UsuariosModule,
     MailModule,
     CarreraModule,
   ],

@@ -1,0 +1,2 @@
+- cada una de las placas tiene un sistema base, versisones light de linux.
+- 
