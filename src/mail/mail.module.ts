@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MailService } from './mail.service';
+import { MailService } from './services/mail.service';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 
@@ -17,7 +17,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
           },
         },
         defaults: {
-          from: '"Planificacion Academica" <diana_flyff@hotmail.com>'
+          from: '"Planificacion Academica" <trabajodetitulacion2022@outlook.com>'
         },
         template: {
           dir: 'D:/Proyectos Codigo/TrabajoDeTitulacion/planificacion-academica-fis-backend/src/templates/',
