@@ -8,14 +8,14 @@ Característica: Parámetros iniciales
     con las restricciones iniciales y se evite obtener horarios no aplicables en la modalidad
     de trabajo de la institución.  
 
+    @parametros_iniciales_escenario1
     Escenario: Aquel en el que se establece el horario laboral de la institución
-        Dado el semestre en curso 2022-A,
-        Y que existe los días laborales de lunes a sábado,
-        Cuando se registre el horario laboral con hora de inicio 07:00 a hora de fin 10:00,
-        Y la hora de inicio de almuerzo 13:00,
-        Entonces se obtienen un número de 14 horas en cada día laboral y 14 intervalos.
+        Dado el semestre en curso '2022-A',
+        Cuando se registre el día laboral "LUNES" en el horario de "07:00" a "21:00" horas con hora de almuerzo a las "13:00",
+        Entonces se obtienen 13 horas laborales e intervalos de una hora.
 
-    Esquema del escenario: Aquel en el que se registra un laboratorio de una facultad con el formato institucional
-        Dado el edificio número 12 correspondiente a la Facultad de Ingeniería de Sistemas,
-        Cuando se desea registrar el laboratorio GAMMA en dicho edificio,
-        Entonces está deberá registrarse con el formato 12-Af.
+    Esquema del escenario: Aquel en el que se registra los tipos de aula de la FIS
+        Dado que existe la facultad con nombre "FACULTAD DE INGENIERÍA DE SISTEMAS",
+        Cuando se registre el tipo de aula "AULA REGULAR",
+        Y el tipo de aula "LABORATORIO"
+        Entonces al consultar la base de datos se observan 2 registros.

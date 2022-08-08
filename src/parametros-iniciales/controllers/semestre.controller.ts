@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { SemestreDTO } from "../dtos/semestre.dto";
 import { SemestreService } from "../services/semestre.service";
@@ -14,5 +14,10 @@ export class SemestreController {
     @Post("/crearSemestre")
     async crearSemestre(@Body() semestre: SemestreDTO) {
         return this.servicioSemestre.crearSemestre(semestre);
+    }
+
+    @Get('/obtenerSemestres')
+    async obtenerSemestres(){
+        return this.servicioSemestre.obtenerSemestres();
     }
 }

@@ -8,10 +8,18 @@ import { SemestreEntity } from "../entities/semestre.entity";
 export class SemestreService {
     
     constructor(
-        @InjectRepository(SemestreEntity) private semestreRepository : Repository<SemestreEntity>
+        @InjectRepository(SemestreEntity) private semestreRepository : Repository<SemestreEntity>,
     ){}
 
     async crearSemestre(semestre : SemestreDTO){
         return this.semestreRepository.save(semestre);
+    }
+
+    async obtenerSemestrePorSuID(id : string){
+        return this.semestreRepository.findOne(id);
+    }
+
+    async obtenerSemestres(){
+        return this.semestreRepository.find();
     }
 }
