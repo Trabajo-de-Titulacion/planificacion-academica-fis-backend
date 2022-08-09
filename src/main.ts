@@ -11,7 +11,7 @@ async function bootstrap() {
   app.enableCors();
   
   // Configuraciones para Swagger
-  const config = new DocumentBuilder()
+  const configuracionSwagger = new DocumentBuilder()
     .setTitle(configuracionesSwagger.titulo)
     .setDescription(configuracionesSwagger.descripcion)
     .setVersion(configuracionesSwagger.version)
