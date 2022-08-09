@@ -1,6 +1,6 @@
 import { EspacioFisicoDTO } from "../../src/espacios_fisicos/dto"
 import { EspacioFisico } from "../../src/espacios_fisicos/entities/espacio_fisico.entity"
-import { EspaciosFisicosController } from "../../src/espacios_fisicos/espacios_fisicos.controller";
+import { EspaciosFisicosController } from "../../src/espacios_fisicos/controllers/espacios_fisicos.controller";
 import * as fs from 'fs';
 const path = require('path')
 

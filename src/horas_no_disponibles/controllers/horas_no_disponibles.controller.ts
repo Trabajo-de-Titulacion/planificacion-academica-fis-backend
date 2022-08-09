@@ -1,8 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { HorasNoDisponiblesService } from './horas_no_disponibles.service';
-import { HorasNoDisponiblesDTO } from './dto';
+import { HorasNoDisponiblesService } from '../services/horas_no_disponibles.service';
+import { HorasNoDisponiblesDTO } from '../dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { configuraciones } from '../../src/config/swagger-config';
+import { configuraciones } from '../../config/swagger-config';
 
 @ApiTags(configuraciones.controladores.horas_no_disponibles.tag)
 @Controller(configuraciones.controladores.horas_no_disponibles.ruta)

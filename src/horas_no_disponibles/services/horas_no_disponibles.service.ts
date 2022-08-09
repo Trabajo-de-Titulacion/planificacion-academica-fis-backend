@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { HorasNoDisponiblesDTO } from './dto';
-import { HoraNoDisponible } from './entities/hora_no_disponible.entity';
+import { HorasNoDisponiblesDTO } from '../dto';
+import { HoraNoDisponible } from '../entities/hora_no_disponible.entity';
 
 @Injectable()
 export class HorasNoDisponiblesService {

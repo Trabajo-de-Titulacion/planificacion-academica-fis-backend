@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { EspacioFisicoDTO } from './dto';
-import { EspacioFisico } from './entities/espacio_fisico.entity';
+import { EspacioFisicoDTO } from '../dto';
+import { EspacioFisico } from '../entities/espacio_fisico.entity';
 import * as fs from 'fs';
 
 @Injectable()
@@ -78,11 +78,11 @@ export class EspaciosFisicosService {
       registros_creados = await this.espaciosFisicosRepository.save(registros_nuevos);
     
     const mensaje_repetidos = (registros_repetidos.length > 0)?
-      ': ' + registros_repetidos.map(registro => registro.nombre) : '.';
+      ': ' + registros_repetidos.map(registro => registro.nombre).join(', ') : '';
 
     const respuesta = {
       filas_alteradas: registros_creados.length,
-      mensaje: `Se han creado ${registros_creados.length} registros. Hay ${registros_repetidos.length} repetidos` + mensaje_repetidos,
+      mensaje: `Se han creado ${registros_creados.length} registros. Hay ${registros_repetidos.length} repetidos` + mensaje_repetidos + '.',
       registros_creados: registros_creados,
     }
 
@@ -123,17 +123,19 @@ export class EspaciosFisicosService {
 
     const espacios_fisicos: EspacioFisicoDTO[] = [];
 
-    filas.forEach( fila => {
-      if (fila.search(/nombre|tipo|aforo/gi) == -1) {
-        const info = fila.split(';');
-        const nombre = info[0];
-        const tipo = info[1];
-        const aforo = Number(info[2]);
-
-        const espacio_fisico = new EspacioFisicoDTO(nombre, tipo, aforo);
-        espacios_fisicos.push(espacio_fisico);
-      }
-    });
+    if (filas) {
+      filas.forEach( fila => {
+        if (fila.search(/nombre|tipo|aforo/gi) == -1) {
+          const info = fila.split(';');
+          const nombre = info[0];
+          const tipo = info[1];
+          const aforo = Number(info[2]);
+  
+          const espacio_fisico = new EspacioFisicoDTO(nombre, tipo, aforo);
+          espacios_fisicos.push(espacio_fisico);
+        }
+      });
+    }
 
     return espacios_fisicos;
   }

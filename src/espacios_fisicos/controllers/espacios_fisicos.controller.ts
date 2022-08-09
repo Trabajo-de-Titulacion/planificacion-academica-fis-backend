@@ -1,10 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { EspaciosFisicosService } from './espacios_fisicos.service';
-import { EspacioFisicoDTO } from './dto';
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { EspaciosFisicosService } from '../services/espacios_fisicos.service';
+import { EspacioFisicoDTO } from '../dto';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { configuraciones } from '../../src/config/swagger-config';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { configuraciones } from '../../config/swagger-config';
+import { Roles } from '../../auth/decorators/roles.decorator';
+import { RolesEnum } from 'src/utils/enum/rol.enum';
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.espacios_fisicos.tag)
 @Controller(configuraciones.controladores.espacios_fisicos.ruta)
 export class EspaciosFisicosController {
@@ -14,12 +17,14 @@ export class EspaciosFisicosController {
   /* Read */
   @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspaciosFisicos.descripcion})
   @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspaciosFisicos.ruta)
+  @Roles(RolesEnum.COORDINADOR)
   obtenerEspaciosFisicos() {
     return this.espaciosFisicosService.obtenerEspaciosFisicos();
   }
 
   @ApiOperation({summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.descripcion})
   @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.ruta)
+  @Roles(RolesEnum.COORDINADOR)
   obtenerEspacioFisicoPorId(@Param('id') id: string) {
     return this.espaciosFisicosService.obteneEspacioFisicoPorId(id);
   }
@@ -39,6 +44,10 @@ export class EspaciosFisicosController {
     @UploadedFile() archivo: Express.Multer.File
   ) {
     const espacios_fisicos = this.espaciosFisicosService.leerArchivoEspaciosFisicos(archivo);
+
+    if (espacios_fisicos.length == 0) {
+      throw new HttpException('El archivo no contiene registros válidos.', HttpStatus.BAD_REQUEST);
+    }
 
     return this.espaciosFisicosService.crearMultiplesEspaciosFisicos(espacios_fisicos);
   }
