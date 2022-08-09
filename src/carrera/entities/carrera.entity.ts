@@ -1,12 +1,12 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
-export class Carrera {
+@Entity('Carrera')
+export class CarreraEntity {
 
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ length: 50 })
+    @Column({ length: 50, unique: true })
     codigo: string;
 
     @Column({ length: 50 })

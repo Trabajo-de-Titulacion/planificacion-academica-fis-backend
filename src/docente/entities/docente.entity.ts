@@ -1,7 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { UsuarioEntity } from "../../../src/usuarios/entities/usuario.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
-export class Docente {
+@Entity('Docente')
+export class DocenteEntity {
 
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -9,9 +10,9 @@ export class Docente {
     @Column({ length: 50 })
     nombreCompleto: string;
 
-    @Column({ length: 60 })
+    @Column({ length: 60, unique: true })
     correoElectronico: string;
 
-    @Column({ length: 25 })
-    codigoIngreso: string;
+    @OneToOne(() => UsuarioEntity) @JoinColumn()
+    usuario: UsuarioEntity;
 }
