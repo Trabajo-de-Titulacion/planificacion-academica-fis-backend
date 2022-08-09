@@ -20,10 +20,11 @@ export default class RolUsuarioService{
     }
 
     async obtenerRolUsuarioSegunIdUsuario(idUsuario : string){
-        return this.repositorioRolUsuario.find({
+        return await this.repositorioRolUsuario.find({
             where: {
-                usuario: this.servicioUsuario.obtenerUsuarioPorSuID(idUsuario),
-            }
+                usuario: await this.servicioUsuario.obtenerUsuarioPorSuID(idUsuario),
+            },
+            relations: ['rol']
         })
     }
 
@@ -40,7 +41,7 @@ export default class RolUsuarioService{
         }
     }
 
-    async  eliminarRolUsuario(idRol : string){
-        return this.repositorioRolUsuario.delete(idRol);
+    async eliminarRolUsuario(idRol : string){
+        return await this.repositorioRolUsuario.delete(idRol);
     }
 }

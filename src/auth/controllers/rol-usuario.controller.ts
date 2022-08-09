@@ -1,8 +1,9 @@
-import { Body, Controller, Delete, Get, Post } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { RolUsuarioDto } from "../dtos/rol-usuario";
 import RolUsuarioService from "../services/rol-usuario.service";
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags("Roles de los usuarios")
 @Controller("api/rolesusuarios")
 export class RolUsuarioController{
@@ -15,9 +16,9 @@ export class RolUsuarioController{
         return this.servicioRolUsuaio.obtenerRolesUsuarios()
     }
 
-    @Get("obtenerRolesUsuarios")
-    async obtenerRolUsuarioSegunIdUsuario(idUsuario :  string){
-        return this.servicioRolUsuaio.obtenerRolUsuarioSegunIdUsuario(idUsuario);
+    @Get("obtenerRolUsuarioSegunIdUsuario/:id")
+    async obtenerRolUsuarioSegunIdUsuario(@Param("id") idUsuario :  string){
+        return await this.servicioRolUsuaio.obtenerRolUsuarioSegunIdUsuario(idUsuario);
     }
 
     @Post("crearRolUsuario")
@@ -27,6 +28,6 @@ export class RolUsuarioController{
 
     @Delete("eliminarRolUsuario")
     async eliminarRolUsuario(idRolUsuario : string){
-        return this.servicioRolUsuaio.eliminarRolUsuario(idRolUsuario);
+        return await this.servicioRolUsuaio.eliminarRolUsuario(idRolUsuario);
     }
 }

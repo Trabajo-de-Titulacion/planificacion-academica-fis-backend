@@ -8,11 +8,13 @@ import { CredencialesDto } from '../dtos/credenciales.dto';
 import * as bcrypt from 'bcrypt';
 import { PayloadToken } from '../models/token.model';
 import { JwtService } from '@nestjs/jwt';
+import RolUsuarioService from './rol-usuario.service';
 
 @Injectable()
 export class AuthService {
     constructor(
         private servicioUsuario : UsuarioService,
+        private rolUsuarioService: RolUsuarioService,
         private jwtServicio : JwtService
     ){}
 
@@ -25,10 +27,36 @@ export class AuthService {
         }
     }
 
-    generarJWT(usuario: UsuarioEntity){
-        const payload : PayloadToken = { sub: usuario.id }
-        return {
-            access_token: this.jwtServicio.sign(payload),
+    async generarJWT(credencialesUsuario: CredencialesDto) {
+        const usuario = await this.servicioUsuario.obtenerUsuarioPorSuCorreo(credencialesUsuario.correo);
+        if (usuario) {
+            if (await bcrypt.compare(credencialesUsuario.clave, usuario.clave)) {
+                // Obtener roles del usuario
+                const rolesUsuario = await this.rolUsuarioService.obtenerRolUsuarioSegunIdUsuario(usuario.id);
+                const roles = [];
+                rolesUsuario.forEach( rolUsuario => {
+                    roles.push(rolUsuario.rol.nombre);
+                });
+                
+                // Generar token
+                const payload : PayloadToken = { sub: usuario.id }
+                return {
+                    access_token: this.jwtServicio.sign(payload),
+                    usuario: {
+                        correo: usuario.correo,
+                        roles: roles,
+                    }
+                }
+            }
         }
+        return {
+            "statusCode": 401,
+            "message": "not allow",
+            "error": "Unauthorized"
+        }
+    }
+
+    verificarToken(token: string): PayloadToken {
+        return this.jwtServicio.verify(token) as PayloadToken;
     }
 }
