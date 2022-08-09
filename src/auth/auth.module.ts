@@ -8,7 +8,7 @@ import { RolEntity } from '../../src/auth/entities/rol.entity';
 import { RolController } from './controllers/rol.controller';
 import RolUsuarioService from './services/rol-usuario.service';
 import { RolUsuarioEntity } from '../../src/auth/entities/rol-usuario.entity';
-import { UsuariosModule } from '../../src/usuarios/users.module';
+import { UsuariosModule } from '../../src/usuarios/usuarios.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import configuracion from '../../src/config/configuracion';

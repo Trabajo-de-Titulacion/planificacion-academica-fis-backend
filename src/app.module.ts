@@ -6,9 +6,10 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import configuracion from './config/configuracion';
 import { PostgresConfigService } from './config/service/postgres-config.service';
-import { UsuariosModule } from './usuarios/users.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 import { EspaciosFisicosModule } from './espacios_fisicos/espacios_fisicos.module';
 import { HorasNoDisponiblesModule } from './horas_no_disponibles/horas_no_disponibles.module';
+import { ParametrosInicialesModule } from './parametros-iniciales/parametros-iniciales.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { HorasNoDisponiblesModule } from './horas_no_disponibles/horas_no_dispon
     UsuariosModule,
     EspaciosFisicosModule,
     HorasNoDisponiblesModule,
+    ParametrosInicialesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
