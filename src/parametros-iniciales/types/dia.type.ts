@@ -1,0 +1,11 @@
+enum DIAS {
+    LUNES='LUNES',
+    MARTES='MARTES',
+    MIERCOLES='MIÉRCOLES',
+    JUEVES='JUEVES',
+    VIERNES='VIERNES',
+    SABADO='SÁBADO',
+    DOMINGO='DOMINGO'
+}
+
+export default DIAS
