@@ -13,7 +13,6 @@ import RolUsuarioService from './rol-usuario.service';
 @Injectable()
 export class AuthService {
     constructor(
-        @InjectRepository(UsuarioEntity) private userRepository : Repository<UsuarioEntity>,
         private servicioUsuario : UsuarioService,
         private rolUsuarioService: RolUsuarioService,
         private jwtServicio : JwtService

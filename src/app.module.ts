@@ -9,7 +9,10 @@ import { CarreraModule } from './carrera/carrera.module';
 import { AuthModule } from './auth/auth.module';
 import configuracion from './config/configuracion';
 import { PostgresConfigService } from './config/service/postgres-config.service';
-import { UsuariosModule } from './usuarios/users.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
+import { EspaciosFisicosModule } from './espacios_fisicos/espacios_fisicos.module';
+import { HorasNoDisponiblesModule } from './horas_no_disponibles/horas_no_disponibles.module';
+import { ParametrosInicialesModule } from './parametros-iniciales/parametros-iniciales.module';
 
 @Module({
   imports: [
@@ -28,6 +31,9 @@ import { UsuariosModule } from './usuarios/users.module';
     UsuariosModule,
     MailModule,
     CarreraModule,
+    EspaciosFisicosModule,
+    HorasNoDisponiblesModule,
+    ParametrosInicialesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
