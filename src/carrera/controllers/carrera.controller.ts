@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { CarreraService } from './carrera.service';
-import { CarreraDto } from './dto/carrera.dto';
+import { CarreraService } from '../services/carrera.service';
+import { CarreraDto } from '../dto/carrera.dto';
 
 @Controller('carrera')
 export class CarreraController {

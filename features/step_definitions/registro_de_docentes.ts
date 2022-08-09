@@ -1,13 +1,16 @@
 const assert = require('assert');
-import { Given, When, Then } from '@cucumber/cucumber';
-import { DocenteController } from '../../src/docentes/docente.controller';
-import { Docente } from '../../src/docentes/entities/docente.entity';
+import { Given, When, Then, After } from '@cucumber/cucumber';
+
+import { DocenteController } from '../../src/docente/controllers/docente.controller';
+import { DocenteEntity } from '../../src/docente/entities/docente.entity';
+import { UsuariosController } from '../../src/usuarios/controllers/usuario.controller';
+import { UsuarioEntity } from '../../src/usuarios/entities/usuario.entity';
 import { getRepository } from 'typeorm';
 import * as fs from 'fs';
 
 /* ESCENARIO 1 - Ingreso individual de un docente */
 
-Given('que se tiene un docente llamado {string} con el correo electrónico {string}', async function (nombre_docente, correo_electronico) {
+Given('que se tiene un docente llamado {string} con el correo electrónico {string}', { timeout: 5 * 5000 }, async function (nombre_docente, correo_electronico) {
     /*
     Los datos recibidos son:
     |          Significado        | Nombre variable    | Tipo de dato necesario |
@@ -17,15 +20,16 @@ Given('que se tiene un docente llamado {string} con el correo electrónico {stri
 
     // Declarar e ingresar docente previo para comprobación
 
-    await getRepository(Docente).save({
+    this.docenteExistente = {
         nombreCompleto: nombre_docente,
-        correoElectronico: correo_electronico,
-        codigoIngreso: "XPMagNhxU8SDYsGIY0Es"
-    });
+        correoElectronico: correo_electronico
+    }
+
+    await getRepository(DocenteEntity).save(this.docenteExistente);
 
 });
 
-When('se ingrese el docente llamado {string} con el correo electrónico {string},', async function (nombre_docente_nuevo, correo_electronico_nuevo) {
+When('se ingrese el docente llamado {string} con el correo electrónico {string},', { timeout: 5 * 5000 }, async function (nombre_docente_nuevo, correo_electronico_nuevo) {
     /*
     Los datos recibidos son:
     |          Significado         | Nombre variable          | Tipo de dato necesario |
@@ -37,35 +41,30 @@ When('se ingrese el docente llamado {string} con el correo electrónico {string}
 
     this.docenteController = await this.app.get(DocenteController);
 
-    this.resultado_ingresar_docente = await this.docenteController.createDocente({
+    this.docenteNuevo = {
         nombreCompleto: nombre_docente_nuevo,
-        correoElectronico: correo_electronico_nuevo,
-        codigoIngreso: " "
-    });
+        correoElectronico: correo_electronico_nuevo
+    };
+
+    this.resultado_ingresar_docente = await this.docenteController.crearDocente(this.docenteNuevo);
 
 });
 
-Then('se registrará el código del docente {string}', async function (se_registro_codigo) {
-    /*
-    Los datos recibidos son: 
-    |          Significado             | Nombre variable    | Tipo de dato necesario |
-    | ¿Se generó y registró el código? | se_registro_codigo | boolean                 |
-     */
+Then('al leer la base de datos se podrá observar que el código del docente se generó existosamente', { timeout: 5 * 5000 }, async function () {
 
-    // Convertir a tipos de datos correspondientes
+    // Llamar al método de lectura de la base de datos de un docente (y su usuario espectivo)
 
-    this.se_registro_codigo = se_registro_codigo == "true";
+    this.usuarioController = await this.app.get(UsuariosController);
+    this.usuarioDeTipoDocenteCreado = await getRepository(UsuarioEntity).findOne({ correo: this.docenteNuevo.correoElectronico });
 
-    // Realizar comprobación
-
-    assert.equal(this.resultado_ingresar_docente.se_registro_codigo, this.se_registro_codigo);
+    assert.equal(typeof this.usuarioDeTipoDocenteCreado.codigo, typeof "string");
 });
 
 Then('se obtendrá una respuesta del envió de correo electrónico {string}', async function (respuesta_correo) {
     /*
     Los datos recibidos son: 
     |      Significado             | Nombre variable  | Tipo de dato necesario |
-    | Mensaje del envió del correo | respuesta_correo | string                |
+    | Mensaje del envió del correo | respuesta_correo | string                 |
      */
 
     //Realizar comprobación
@@ -73,9 +72,17 @@ Then('se obtendrá una respuesta del envió de correo electrónico {string}', as
     assert.equal(this.resultado_ingresar_docente.respuesta_correo, respuesta_correo);
 });
 
+After("@Registro_de_docente", async function () {
+
+    // Eliminar docentes usados
+    await getRepository(DocenteEntity).delete(this.docenteExistente);
+    await getRepository(DocenteEntity).delete(this.docenteNuevo)
+
+});
+
 /* ESCENARIO 2 - Ingreso por archivo de docentes */
 
-When('se ingrese varios docentes por medio de un archivo {string}', async function (path_archivo) {
+When('se ingrese varios docentes por medio de un archivo {string}', { timeout: 5 * 5000 }, async function (path_archivo) {
     /*
     Los datos recibidos son:
     |       Significado       | Nombre variable  | Tipo de dato necesario |
@@ -88,10 +95,10 @@ When('se ingrese varios docentes por medio de un archivo {string}', async functi
 
     this.lecturaArchivo = fs.readFileSync(path_archivo);
 
-    this.resultado_ingresar_varios_docentes = await this.docenteController.createVariosDocentes({ buffer: this.lecturaArchivo });
+    this.resultado_ingresar_varios_docentes = await this.docenteController.crearVariosDocentes({ buffer: this.lecturaArchivo });
 });
 
-Then('se registrara {string} de códigos de los docentes', function (cantidad_de_codigos_generados) {
+Then('se registrara {string} de códigos de los docentes', { timeout: 5 * 5000 }, function (cantidad_de_codigos_generados) {
     /*
    Los datos recibidos son: 
    |          Significado          | Nombre variable               | Tipo de dato necesario |
@@ -107,7 +114,7 @@ Then('se registrara {string} de códigos de los docentes', function (cantidad_de
     assert.equal(this.resultado_ingresar_varios_docentes.cantidad_ingresos, cantidad_de_codigos_generados);
 });
 
-Then('se obtendrá una respuesta del envió de correos electrónicos {string}', function (respuesta_de_multiples_ingresos) {
+Then('se obtendrá una respuesta del envió de correos electrónicos {string}', { timeout: 5 * 5000 }, function (respuesta_de_multiples_ingresos) {
     /*
    Los datos recibidos son: 
    |          Significado          | Nombre variable                 | Tipo de dato necesario |
@@ -117,4 +124,24 @@ Then('se obtendrá una respuesta del envió de correos electrónicos {string}', 
     //Realizar comprobación
 
     assert.equal(this.resultado_ingresar_varios_docentes.respuesta_correo, respuesta_de_multiples_ingresos);
+});
+
+After("@Registro_de_varios_docentes", async function () {
+
+    // Eliminar docentes usados
+    await getRepository(DocenteEntity).delete(this.docenteExistente);
+
+    for (let i = 0; i < this.resultado_ingresar_varios_docentes.docentes_ingresados; i++) {
+        await getRepository(UsuarioEntity).delete({
+            correo: this.resultado_ingresar_varios_docentes.docentes_ingresados[i].correoElectronico,
+            clave: this.resultado_ingresar_varios_docentes.docentes_ingresados[i].codigo
+        })
+    }
+
+    for (let i = 0; i < this.resultado_ingresar_varios_docentes.docentes_ingresados; i++) {
+        await getRepository(DocenteEntity).delete({
+            correoElectronico: this.resultado_ingresar_varios_docentes.docentes_ingresados[i].correoElectronico,
+            nombreCompleto: this.resultado_ingresar_varios_docentes.docentes_ingresados[i].nombreCompleto
+        })
+    }
 });

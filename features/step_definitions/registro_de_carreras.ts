@@ -1,7 +1,7 @@
 const assert = require('assert');
 import { Given, When, Then } from '@cucumber/cucumber';
-import { CarreraController } from '../../src/carrera/carrera.controller';
-import { Carrera } from '../../src/carrera/entities/carrera.entity';
+import { CarreraController } from '../../src/carrera/controllers/carrera.controller';
+import { CarreraEntity } from '../../src/carrera/entities/carrera.entity';
 import { getRepository } from 'typeorm';
 
 
@@ -23,7 +23,7 @@ Given('que se tiene una carrera con código {string}, nombre {string}, duración
 
     // Declarar e ingresar la carrera previa para comprobación
 
-    await getRepository(Carrera).save({
+    await getRepository(CarreraEntity).save({
         codigo: codigo_carrera_existente,
         nombre: nombre_carrera_existente,
         duracion: duracion_carrera_existente,

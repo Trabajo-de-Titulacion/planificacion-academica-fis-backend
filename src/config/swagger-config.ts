@@ -80,6 +80,29 @@ const configuracionesAPI = {
                 },
             }
         },
+        docente: {
+            ruta: 'api/docente',
+            tag: 'Docente',
+            operaciones: {
+                crearUnDocente: {
+                    ruta: '/crearUnDocente',
+                    descripcion: 'Método que permite crear y enviar un correo eletrónico con el código de acceso a un docente.'
+                },
+                crearVariosDocentes: {
+                    ruta: '/crearVariosDocentes',
+                    descripcion: 'Método que permite crear y enviar un correo eletrónico con el código de acceso a cada docente no duplicado dentro del archivo csv.'
+                },
+                obtenerDocentePorID: {
+                    ruta: '/obtenerDocentePorID',
+                    descripcion: 'Método que permite obtener el nombre y correo electrónico de un docente por medio de su identificador (ID).'
+                },
+                obtenerDocentePorCorreoElectronico: {
+                    ruta: '/obtenerDocentePorCorreoElectronico',
+                    descripcion: 'Método que permite obtener el nombre e identificador (ID) de un docente por medio de su correo electrónico.'
+                }
+                //TODO: COLOCAR EL RESTO DEL CRUD.
+            }
+        }
     }
 }
 

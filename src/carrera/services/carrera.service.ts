@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Carrera } from './entities/carrera.entity';
+import { CarreraEntity } from '../entities/carrera.entity';
 
 @Injectable()
 export class CarreraService {
 
     constructor(
-        @InjectRepository(Carrera)
-        private carreraRepository: Repository<Carrera>
+        @InjectRepository(CarreraEntity)
+        private carreraRepository: Repository<CarreraEntity>
     ) { }
 
     // Crear una carrera en la base de datos

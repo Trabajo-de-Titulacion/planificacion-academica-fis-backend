@@ -1,20 +1,21 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
+import { UsuarioEntity } from '../../usuarios/entities/usuario.entity';
 import { DocenteEntity } from '../../docente/entities/docente.entity';
 
 @Injectable()
 export class MailService {
     constructor(private mailerService: MailerService) { }
 
-    async envioClaveDocente(docente: DocenteEntity) {
+    async envioClaveDocente(usuarioDocente: UsuarioEntity, docente: DocenteEntity) {
 
         const valor = await this.mailerService.sendMail({
-            to: docente.correoElectronico,
+            to: usuarioDocente.correo,
             subject: 'Bienvenido al sistema de Planificación Académica',
             template: 'codigoDocente',
             context: {
                 nombre: docente.nombreCompleto,
-                codigo: docente.codigoIngreso,
+                codigo: usuarioDocente.clave,
             },
         });
         return valor;
