@@ -10,6 +10,7 @@ import { RolesEnum } from '../../utils/enum/rol.enum';
 @ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.espacios_fisicos.tag)
 @Controller(configuraciones.controladores.espacios_fisicos.ruta)
+@Roles(RolesEnum.GESTOR_ESPACIOS_FISICOS)
 export class EspaciosFisicosController {
   constructor(private espaciosFisicosService: EspaciosFisicosService) { }
 
@@ -17,14 +18,12 @@ export class EspaciosFisicosController {
   /* Read */
   @ApiOperation({ summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspaciosFisicos.descripcion })
   @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspaciosFisicos.ruta)
-  @Roles(RolesEnum.COORDINADOR)
   obtenerEspaciosFisicos() {
     return this.espaciosFisicosService.obtenerEspaciosFisicos();
   }
 
   @ApiOperation({ summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.descripcion })
   @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.ruta)
-  @Roles(RolesEnum.COORDINADOR)
   obtenerEspacioFisicoPorId(@Param('id') id: string) {
     return this.espaciosFisicosService.obteneEspacioFisicoPorId(id);
   }
