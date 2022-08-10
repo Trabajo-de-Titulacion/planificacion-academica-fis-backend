@@ -9,6 +9,8 @@ export class TipoAulaEntity {
     @Column()
     public tipo : string;
 
-    @ManyToOne( () => FacultadEntity, facultad => facultad.tiposAulas)
+    @ManyToOne( () => FacultadEntity, facultad => facultad.tiposAulas, {
+        onDelete: "CASCADE"
+    })
     facultad : FacultadEntity;
 }
