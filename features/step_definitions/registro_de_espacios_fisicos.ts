@@ -57,12 +57,7 @@ After("@espacios_fisicos_prueba1", async function () {
     await getRepository(EspacioFisicoEntity).delete({ nombre: this.nuevo_espacio_fisico.nombre });
 
     // Borrar registros creados en el Before
-    getRepository(TipoAulaEntity).delete(this.aula);
-    getRepository(TipoAulaEntity).delete(this.laboratorio);
-    getRepository(FacultadEntity).delete(this.facultad);
-    this.aula = undefined;
-    this.laboratorio = undefined;
-    this.facultad = undefined;
+    await getRepository(FacultadEntity).delete(this.facultad);
 });
 
 
@@ -71,6 +66,21 @@ After("@espacios_fisicos_prueba1", async function () {
 /* Se agrega un archivo con múltiples espacios físicos */
 
 Given('que existe un espacio físico llamado BetaPrueba', async function () {
+    this.facultad = getRepository(FacultadEntity).create();
+    this.facultad.nombre = 'Facultad Prueba Espacios Fisicos';
+    await getRepository(FacultadEntity).save(this.facultad);
+
+    this.aula = getRepository(TipoAulaEntity).create();
+    this.aula.tipo = 'AULA';
+    this.aula.facultad = this.facultad;
+    await getRepository(TipoAulaEntity).save(this.aula);
+
+    this.laboratorio = getRepository(TipoAulaEntity).create();
+    this.laboratorio.tipo = 'LABORATORIO';
+    this.laboratorio.facultad = this.facultad;
+    await getRepository(TipoAulaEntity).save(this.laboratorio);
+
+
     this.repository = await getRepository(EspacioFisicoEntity);
     this.espacio_fisico_existente1 = new EspacioFisicoDTO("BetaPrueba", this.laboratorio.id, 25);
     await this.repository.save(this.espacio_fisico_existente1);
@@ -111,23 +121,18 @@ Then('al consultar la base de datos se observan {string} espacios físicos.', as
 // Borrar datos de la segunda prueba
 After("@espacios_fisicos_prueba2", async function () {
     // Borrar registros creados en cada Dado
-    this.repository.delete({ nombre: this.espacio_fisico_existente1.nombre });
-    this.repository.delete({ nombre: this.espacio_fisico_existente2.nombre });
-    this.repository.delete({ nombre: this.espacio_fisico_existente3.nombre });
-    this.repository.delete({ nombre: this.espacio_fisico_existente4.nombre });
+    await this.repository.delete({ nombre: this.espacio_fisico_existente1.nombre });
+    await this.repository.delete({ nombre: this.espacio_fisico_existente2.nombre });
+    await this.repository.delete({ nombre: this.espacio_fisico_existente3.nombre });
+    await this.repository.delete({ nombre: this.espacio_fisico_existente4.nombre });
 
     // Borrar registros creados en el Cuando
-    this.respuesta.registros_creados.forEach(registro => {
-        this.repository.delete(registro);
-    });
+    for (const registro of this.respuesta.registros_creados) {
+        await this.repository.delete(registro);
+    }
 
     // Borrar registros creados en el Before
-    getRepository(TipoAulaEntity).delete(this.aula);
-    getRepository(TipoAulaEntity).delete(this.laboratorio);
-    getRepository(FacultadEntity).delete(this.facultad);
-    this.aula = undefined;
-    this.laboratorio = undefined;
-    this.facultad = undefined;
+    await getRepository(FacultadEntity).delete(this.facultad);
 });
 
 
