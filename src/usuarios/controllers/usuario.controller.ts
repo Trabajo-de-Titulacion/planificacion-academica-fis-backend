@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { configuraciones } from '../../../src/config/swagger-config';
 import { CrearUsuarioDTO, ObtenerUsuarioDto } from '../dtos/usuario.dto';
 import { UsuarioService } from '../../../src/usuarios/services/usuario.service';
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.usuario.tag)
 @Controller(configuraciones.controladores.usuario.ruta)
 export class UsuariosController {
