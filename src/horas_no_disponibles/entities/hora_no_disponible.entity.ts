@@ -1,7 +1,8 @@
+import { DocenteEntity } from "src/docente/entities/docente.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
-export class HoraNoDisponible {
+@Entity('Hora_No_Disponible')
+export class HoraNoDisponibleEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -11,9 +12,7 @@ export class HoraNoDisponible {
     @Column()
     hora_inicio: number;
 
-    // @ManyToOne(type => Docente)
-    // @JoinColumn({ name: "docente_id" })
-    // docente: Docente
-    @Column()
-    docente_id: string;
+    @ManyToOne( () => DocenteEntity, docente => docente.id )
+    @JoinColumn({ name: "docente_id" })
+    docente_id: DocenteEntity;
 }
