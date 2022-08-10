@@ -4,7 +4,7 @@ import { FacultadDTO } from "../dtos/facultad.dto";
 import { FacultadService } from "../services/facultad.service";
 
 @ApiTags("Facultades")
-@Controller()
+@Controller("api/facultades")
 export class FacultadController {
 
     constructor(
