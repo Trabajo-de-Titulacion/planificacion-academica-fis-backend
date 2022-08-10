@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { EspacioFisicoDTO } from '../dto';
@@ -150,7 +150,13 @@ export class EspaciosFisicosService {
           
           espacios_fisicos.push(espacio_fisico);
         }
-      };
+      }
+      if (espacios_fisicos.length == 0) {
+        throw new HttpException(
+            'No se encontraron registros válidos. Verifique que los datos sean correctos.',
+            HttpStatus.BAD_REQUEST
+          );
+      }
     }
 
     return espacios_fisicos;
