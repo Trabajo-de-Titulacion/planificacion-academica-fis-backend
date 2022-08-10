@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { TipoAulaEntity } from "../../../src/parametros-iniciales/entities/tipo-aula.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('Espacio_Fisico')
 export class EspacioFisicoEntity {
@@ -8,8 +9,9 @@ export class EspacioFisicoEntity {
     @Column({length: 30})
     nombre: string;
 
-    @Column({length: 30})
-    tipo: string;
+    @ManyToOne( () => TipoAulaEntity, tipo => tipo.id )
+    @JoinColumn({ name: "tipo_id" })
+    tipo: TipoAulaEntity;
 
     @Column()
     aforo: number;

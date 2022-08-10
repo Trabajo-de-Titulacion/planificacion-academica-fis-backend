@@ -19,6 +19,12 @@ export class FacultadService {
         return this.facultadRepository.findOne(id);
     }
 
+    async obtenerFacultadPorSuNombre(nombre : string){
+        return this.facultadRepository.findOne({
+            where: { nombre: nombre }
+        });
+    }
+
     async obtenerFacultades(){
         return this.facultadRepository.find();
     }
