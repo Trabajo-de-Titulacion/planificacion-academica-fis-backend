@@ -1,6 +1,6 @@
 import { HorasNoDisponiblesDTO } from "../../src/horas_no_disponibles/dto";
 import { HorasNoDisponiblesController } from "../../src/horas_no_disponibles/controllers/horas_no_disponibles.controller";
-import { HoraNoDisponible } from "../../src/horas_no_disponibles/entities/hora_no_disponible.entity";
+import { HoraNoDisponibleEntity } from "../../src/horas_no_disponibles/entities/hora_no_disponible.entity";
 import { getRepository } from "typeorm";
 
 import { Given, When, Then, After } from '@cucumber/cucumber';
@@ -44,7 +44,7 @@ Then('se obtienen {int} filas alteradas en la base de datos', async function (fi
 
 // Borrar datos de la prueba
 After("@horas_no_disponibles_prueba1", async function () {
-    this.repository = await getRepository(HoraNoDisponible);
+    this.repository = await getRepository(HoraNoDisponibleEntity);
     // Borrar registros creados en cada Cuando
     this.repository.delete(this.horas_no_disponibles1);
     this.repository.delete(this.horas_no_disponibles2);

@@ -5,9 +5,9 @@ var common = [
   "--format cucumber-console-formatter",
   "--publish-quiet"
 ].join(' ');
-  
+
 
 module.exports = {
-    default: common,
-    foAsync: `--format-options '{"snippetInterface": "async-await"}'`
+  default: common,
+  foAsync: `--format-options '{"snippetInterface": "async-await"}'`
 }

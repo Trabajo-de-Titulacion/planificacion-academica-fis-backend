@@ -28,7 +28,7 @@ export class RolService {
         }
     }
 
-    async obtenerRolPorSuID(idRol : string){
+    async obtenerRolPorSuID(idRol: string) {
         return this.repositorioRol.findOne(idRol);
     }
 
@@ -41,4 +41,12 @@ export class RolService {
         }
     }
 
+    async obtenerRolPorNombre(nombreRol: string): Promise<RolEntity | NotFoundException> {
+        const rol = await this.repositorioRol.findOne({ where: { nombre: nombreRol } });
+        if (rol) {
+            return rol;
+        } else {
+            return new NotFoundException(`No existe el rol con el nombre ${nombreRol}`);
+        }
+    }
 }

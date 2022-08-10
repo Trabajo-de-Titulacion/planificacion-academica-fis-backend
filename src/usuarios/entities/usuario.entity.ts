@@ -6,12 +6,12 @@ export class UsuarioEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({unique: true})
+    @Column({ unique: true })
     correo: string
 
     @Column()
     clave: string
 
-    @OneToMany( () => RolUsuarioEntity, rolUsuario => rolUsuario.usuario)
-    rolesUsuario : RolUsuarioEntity[]
+    @OneToMany(() => RolUsuarioEntity, rolUsuario => rolUsuario.usuario)
+    rolesUsuario: RolUsuarioEntity[]
 }
