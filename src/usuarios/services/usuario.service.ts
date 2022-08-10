@@ -25,22 +25,26 @@ export class UsuarioService {
         return usuariosSinClave;
     }
 
-    async obtenerUsuarioPorSuID(id: string) : Promise<ObtenerUsuarioDto>{
-        const {clave, ...usuario} = await this.repositorioUsuario.findOne(id);
+    async obtenerUsuarioPorSuID(id: string): Promise<ObtenerUsuarioDto> {
+        const { clave, ...usuario } = await this.repositorioUsuario.findOne(id);
         return usuario;
     }
 
-    async obtenerUsuarioCompletoPorSuID(id: string) : Promise<UsuarioEntity>{
+    async obtenerUsuarioCompletoPorSuID(id: string): Promise<UsuarioEntity> {
         return await this.repositorioUsuario.findOne(id);
     }
 
-    async obtenerUsuarioPorSuCorreo(correo: string) : Promise<UsuarioEntity>{
-        return await this.repositorioUsuario.findOne({correo: correo});
+    async obtenerUsuarioPorSuCorreo(correo: string): Promise<UsuarioEntity> {
+        return await this.repositorioUsuario.findOne({ correo: correo });
     }
 
-    async crearUsuario(usuario : CrearUsuarioDTO) : Promise<any>{
+    async crearUsuario(usuario: CrearUsuarioDTO): Promise<any> {
         const nuevoUsuario = this.repositorioUsuario.create(usuario);
         nuevoUsuario.clave = await bcrypt.hash(usuario.clave, 10);
         return this.repositorioUsuario.save(nuevoUsuario);
+    }
+
+    async eliminarUsuarioPorID(id: string) {
+        return await this.repositorioUsuario.delete(id);
     }
 }

@@ -8,9 +8,9 @@ import { JornadaLaboralController } from "../../src/parametros-iniciales/control
 import { JornadaLaboralDto } from "../../src/parametros-iniciales/dtos/jornada-laboral.dto";
 import { JornadaLaboralEntity } from "../../src/parametros-iniciales/entities/jornada-laboral.entity";
 import { FacultadDTO } from "../../src/parametros-iniciales/dtos/facultad.dto";
-import { FacultadEntity } from "src/parametros-iniciales/entities/facultad.entity";
-import { TipoAulaController } from "src/parametros-iniciales/controllers/tipo-aula.controller";
-import { TipoAulaDto } from "src/parametros-iniciales/dtos/tipo-aula.dto";
+import { FacultadEntity } from "../../src/parametros-iniciales/entities/facultad.entity";
+import { TipoAulaController } from "../../src/parametros-iniciales/controllers/tipo-aula.controller";
+import { TipoAulaDto } from "../../src/parametros-iniciales/dtos/tipo-aula.dto";
 var { setDefaultTimeout } = require('@cucumber/cucumber');
 
 setDefaultTimeout(60 * 1000);
@@ -18,7 +18,7 @@ setDefaultTimeout(60 * 1000);
 /* Escenario: Aquel en el que se establece el horario laboral de la institución*/
 
 Given('el semestre en curso {string},', async function (abreviatura: string) {
-  const semestre: SemestreDTO = {abreviatura};
+  const semestre: SemestreDTO = { abreviatura };
   this.semestre = semestre;
   this.repository = getRepository(SemestreEntity);
   this.repository.save(this.semestre);
@@ -39,20 +39,20 @@ When('se registre el día laboral {string} en el horario de {string} a {string} 
   });
 
 Then('se obtienen {int} horas laborales e intervalos de una hora.', async function (horas) {
-  this.jornadaLunes = await getRepository(JornadaLaboralEntity).findOne({dia: this.jornada.dia});
+  this.jornadaLunes = await getRepository(JornadaLaboralEntity).findOne({ dia: this.jornada.dia });
   this.intervalos = await this.jornadaLaboralController.obtenerIntervalos(this.jornadaLunes.id);
   assert.equal(this.intervalos.length, horas);
 })
 
 After("@parametros_iniciales_escenario1", async function () {
- await getRepository(JornadaLaboralEntity).delete(this.jornadaLunes);
+  await getRepository(JornadaLaboralEntity).delete(this.jornadaLunes);
   await getRepository(SemestreEntity).delete(this.semestre);
 });
 
 /* Aquel en el que se registra los tipos de aula de la FIS */
 
 Given('que existe la facultad con nombre {string},', async function (nombre: string) {
-  const facultad: FacultadDTO = {nombre};
+  const facultad: FacultadDTO = { nombre };
   this.facultad = facultad;
   this.repository = getRepository(FacultadEntity);
   this.repository.save(this.facultad);
@@ -68,7 +68,7 @@ When('se registre el tipo de aula {string}', async function (tipo: string) {
   this.tipoAulaController.crearTipoAula(this.tipoAula);
 });
 
-Then('al consultar la base de datos se observan {int} registros.', async  function (registros: number) {
+Then('al consultar la base de datos se observan {int} registros.', async function (registros: number) {
   this.registrosAlmacenados = await this.tipoAulaController.obtenerTipoAulas();
   assert.equal(this.registrosAlmacenados.length, registros);
 });

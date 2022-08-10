@@ -9,9 +9,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors();
-  
+
   // Configuraciones para Swagger
-  const config = new DocumentBuilder()
+  const configuracionSwagger = new DocumentBuilder()
     .setTitle(configuracionesSwagger.titulo)
     .setDescription(configuracionesSwagger.descripcion)
     .setVersion(configuracionesSwagger.version)
@@ -20,13 +20,8 @@ async function bootstrap() {
     .build();
 
   // Levantamiento de Swagger
-<<<<<<< HEAD
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup(`${configuracionesSwagger.tag}/docs`, app, document);
-=======
   const document = SwaggerModule.createDocument(app, configuracionSwagger);
   SwaggerModule.setup(`${configuracionesSwagger.tag}/docs`, app, document, opciones);
->>>>>>> 9b7693e1ec1e1b768b9768551778191415b8cae7
 
   // Para que se apliquen los DTOs
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
