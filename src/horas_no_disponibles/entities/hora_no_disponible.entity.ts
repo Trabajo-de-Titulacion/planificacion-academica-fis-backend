@@ -1,4 +1,4 @@
-import { DocenteEntity } from "src/docente/entities/docente.entity";
+import { DocenteEntity } from "../../../src/docente/entities/docente.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('Hora_No_Disponible')

@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DocenteService } from 'src/docente/services/docente.service';
+import { DocenteService } from '../../../src/docente/services/docente.service';
 import { Repository } from 'typeorm';
 import { HorasNoDisponiblesDTO } from '../dto';
 import { HoraNoDisponibleEntity } from '../entities/hora_no_disponible.entity';

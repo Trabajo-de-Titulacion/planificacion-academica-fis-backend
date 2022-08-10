@@ -6,10 +6,10 @@ import { DocenteService } from "./services/docente.service";
 import { DocenteEntity } from "./entities/docente.entity";
 import { UsuariosModule } from "../usuarios/usuarios.module";
 import { RolEntity } from "../auth/entities/rol.entity";
-import { AuthModule } from "src/auth/auth.module";
-import { RolService } from "src/auth/services/rol.service";
-import RolUsuarioService from "src/auth/services/rol-usuario.service";
-import { UsuarioService } from "src/usuarios/services/usuario.service";
+import { AuthModule } from "../../src/auth/auth.module";
+import { RolService } from "../../src/auth/services/rol.service";
+import RolUsuarioService from "../../src/auth/services/rol-usuario.service";
+import { UsuarioService } from "../../src/usuarios/services/usuario.service";
 
 @Module({
     imports: [

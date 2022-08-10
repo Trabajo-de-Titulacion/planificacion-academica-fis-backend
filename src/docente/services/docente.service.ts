@@ -8,8 +8,8 @@ import { UsuarioService } from "../../usuarios/services/usuario.service";
 import { CrearUsuarioDTO } from "../../usuarios/dtos/usuario.dto";
 import { RolesEnum } from "../../utils/enum/rol.enum";
 import { RolService } from "../../auth/services/rol.service";
-import RolUsuarioService from "src/auth/services/rol-usuario.service";
-import { RolUsuarioDto } from "src/auth/dtos/rol-usuario";
+import RolUsuarioService from "../../../src/auth/services/rol-usuario.service";
+import { RolUsuarioDto } from "../../../src/auth/dtos/rol-usuario";
 
 @Injectable()
 export class DocenteService {
