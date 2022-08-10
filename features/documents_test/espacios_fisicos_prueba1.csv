@@ -1,6 +1,6 @@
-﻿nombre;tipo;aforo
-DeltaPrueba;laboratorio;25
-LambdaPrueba;laboratorio;25
-SIS401Prueba;aula;25
-SIS402Prueba;aula;30
-SIS403Prueba;aula;15
+﻿nombre;tipo;facultad;aforo
+DeltaPrueba;LABORATORIO;Facultad Prueba Espacios Fisicos;25
+LambdaPrueba;LABORATORIO;Facultad Prueba Espacios Fisicos;25
+SIS401Prueba;AULA;Facultad Prueba Espacios Fisicos;25
+SIS402Prueba;AULA;Facultad Prueba Espacios Fisicos;30
+SIS403Prueba;AULA;Facultad Prueba Espacios Fisicos;15

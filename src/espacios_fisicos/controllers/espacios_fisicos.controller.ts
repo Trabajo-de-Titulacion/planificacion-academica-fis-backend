@@ -39,10 +39,10 @@ export class EspaciosFisicosController {
   @ApiOperation({ summary: configuraciones.controladores.espacios_fisicos.operaciones.crearMultiplesEspaciosFisicos.descripcion })
   @Post(configuraciones.controladores.espacios_fisicos.operaciones.crearMultiplesEspaciosFisicos.ruta)
   @UseInterceptors(FileInterceptor('archivoEspaciosFisicos'))
-  crearMultiplesEspaciosFisicos(
+  async crearMultiplesEspaciosFisicos(
     @UploadedFile() archivo: Express.Multer.File
   ) {
-    const espacios_fisicos = this.espaciosFisicosService.leerArchivoEspaciosFisicos(archivo);
+    const espacios_fisicos = await this.espaciosFisicosService.leerArchivoEspaciosFisicos(archivo);
 
     if (espacios_fisicos.length == 0) {
       throw new HttpException('El archivo no contiene registros válidos.', HttpStatus.BAD_REQUEST);
