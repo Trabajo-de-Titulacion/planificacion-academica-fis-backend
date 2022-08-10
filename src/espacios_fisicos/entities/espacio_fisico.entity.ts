@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
-export class EspacioFisico {
+@Entity('Espacio_Fisico')
+export class EspacioFisicoEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 

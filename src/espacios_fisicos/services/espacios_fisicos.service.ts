@@ -2,15 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { EspacioFisicoDTO } from '../dto';
-import { EspacioFisico } from '../entities/espacio_fisico.entity';
+import { EspacioFisicoEntity } from '../entities/espacio_fisico.entity';
 import * as fs from 'fs';
 
 @Injectable()
 export class EspaciosFisicosService {
 
   constructor(
-    @InjectRepository(EspacioFisico)
-    private espaciosFisicosRepository: Repository<EspacioFisico>
+    @InjectRepository(EspacioFisicoEntity)
+    private espaciosFisicosRepository: Repository<EspacioFisicoEntity>
   ) {}
 
 
@@ -91,11 +91,11 @@ export class EspaciosFisicosService {
 
 
   /* Read */
-  async obtenerEspaciosFisicos(): Promise<EspacioFisico[]> {
+  async obtenerEspaciosFisicos(): Promise<EspacioFisicoEntity[]> {
     return await this.espaciosFisicosRepository.find();
   }
 
-  async obteneEspacioFisicoPorId(id: string): Promise<EspacioFisico> {
+  async obteneEspacioFisicoPorId(id: string): Promise<EspacioFisicoEntity> {
     return await this.espaciosFisicosRepository.findOne({
       where: {id: id},
     });

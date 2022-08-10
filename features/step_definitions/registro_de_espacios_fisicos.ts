@@ -1,5 +1,5 @@
 import { EspacioFisicoDTO } from "../../src/espacios_fisicos/dto"
-import { EspacioFisico } from "../../src/espacios_fisicos/entities/espacio_fisico.entity"
+import { EspacioFisicoEntity } from "../../src/espacios_fisicos/entities/espacio_fisico.entity"
 import { EspaciosFisicosController } from "../../src/espacios_fisicos/controllers/espacios_fisicos.controller";
 import * as fs from 'fs';
 const path = require('path')
@@ -13,7 +13,7 @@ const assert = require('assert');
 
 Given('que existe un espacio fisico llamado {string}', async function (nombre_espacio_fisico: string) {
     this.espacio_fisico_existente = new EspacioFisicoDTO(nombre_espacio_fisico, "laboratorio", 25);
-    await getRepository(EspacioFisico).save(this.espacio_fisico_existente);
+    await getRepository(EspacioFisicoEntity).save(this.espacio_fisico_existente);
 });
 
 When('se agrega un espacio fisico llamado {string}', async function (nombre_espacio_fisico: string) {
@@ -35,9 +35,9 @@ Then('al consultar la base de datos se observan {string} registros.', async func
 // Borrar datos de la primera prueba
 After("@espacios_fisicos_prueba1", async function () {
     // Borrar registro creado en el Dado
-    await getRepository(EspacioFisico).delete(this.espacio_fisico_existente);
+    await getRepository(EspacioFisicoEntity).delete(this.espacio_fisico_existente);
     // Borrar registro creado en el Cuando
-    await getRepository(EspacioFisico).delete(this.nuevo_espacio_fisico);
+    await getRepository(EspacioFisicoEntity).delete(this.nuevo_espacio_fisico);
 });
 
 
@@ -45,7 +45,7 @@ After("@espacios_fisicos_prueba1", async function () {
 /* Se agrega un archivo con múltiples espacios físicos */
 
 Given('que existe un espacio físico llamado BetaPrueba', async function () {
-    this.repository = await getRepository(EspacioFisico);
+    this.repository = await getRepository(EspacioFisicoEntity);
     this.espacio_fisico_existente1 = new EspacioFisicoDTO("BetaPrueba", "laboratorio", 25);
     await this.repository.save(this.espacio_fisico_existente1);
 });
