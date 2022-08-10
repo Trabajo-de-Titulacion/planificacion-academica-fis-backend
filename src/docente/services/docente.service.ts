@@ -1,15 +1,15 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { MailService } from "../../mail/services/mail.service";
 import { Repository } from 'typeorm';
 import { DocenteEntity } from '../entities/docente.entity';
 import { DocenteDto } from "../dto/docente.dto";
-import { UsuarioEntity } from "../../usuarios/entities/usuario.entity";
 import { UsuarioService } from "../../usuarios/services/usuario.service";
 import { CrearUsuarioDTO } from "../../usuarios/dtos/usuario.dto";
-import { RolEntity } from "../../auth/entities/rol.entity";
 import { RolesEnum } from "../../utils/enum/rol.enum";
-import { RolUsuarioEntity } from "../../auth/entities/rol-usuario.entity";
+import { RolService } from "../../auth/services/rol.service";
+import RolUsuarioService from "src/auth/services/rol-usuario.service";
+import { RolUsuarioDto } from "src/auth/dtos/rol-usuario";
 
 @Injectable()
 export class DocenteService {
@@ -18,52 +18,44 @@ export class DocenteService {
         @InjectRepository(DocenteEntity)
         private docenteRepository: Repository<DocenteEntity>,
         private mailService: MailService,
-        @InjectRepository(UsuarioEntity)
-        private usuarioRepository: Repository<UsuarioEntity>,
         private usuarioService: UsuarioService,
-        @InjectRepository(RolEntity)
-        private rolRepository: Repository<RolEntity>,
-        @InjectRepository(RolUsuarioEntity)
-        private rolUsuarioRepository: Repository<RolUsuarioEntity>
+        private rolService: RolService,
+        private rolUsuarioService: RolUsuarioService
     ) { }
 
     /* ====================================================================================================================== */
     /* ======================================== CREAR UN DOCENTE EN LA BASE DE DATOS ======================================== */
     /* ====================================================================================================================== */
 
-    async crearDocente(docenteDto, codigo) {
+    async crearDocente(docenteDto, clave) {
         // Busqueda en la base la existencia de un docente y/o usuario en base a su correo electrónico
-        const existenciaDocente = await this.docenteRepository.find({ where: { correoElectronico: docenteDto.correoElectronico, } });
-        const existenciaUsuario = await this.usuarioRepository.find({ where: { correo: docenteDto.correoElectronico, } });
+        const existenciaDocente = await this.obtenerDocentePorCorreoElectronico(docenteDto.correoElectronico);
+        let existenciaUsuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(docenteDto.correoElectronico);
+        const rolDocente = await this.rolService.obtenerRolPorNombre(RolesEnum.DOCENTE);
 
         // Si no existe, crea en la base de datos al docente caso contrario, solo muestra un mensaje con 0 ingresos
-        if (existenciaDocente.length == 0 && existenciaUsuario.length == 0) {
-            // Crear un usuario de tipo docente
-            const usuarioTipoDocente: CrearUsuarioDTO = {
-                correo: docenteDto.correoElectronico,
-                clave: codigo
-            };
-            await this.usuarioService.crearUsuario(usuarioTipoDocente);
-
+        if (existenciaDocente instanceof NotFoundException && !(rolDocente instanceof NotFoundException)) {
+            if (existenciaUsuario == undefined) {
+                // Crear un usuario de tipo docente
+                const nuevoUsuario: CrearUsuarioDTO = { correo: docenteDto.correoElectronico, clave: clave };
+                await this.usuarioService.crearUsuario(nuevoUsuario);
+                existenciaUsuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(nuevoUsuario.correo);
+            }
             // Vincular el rol
-            const usuarioNuevo = await this.usuarioRepository.findOne({ where: { correo: usuarioTipoDocente.correo, } });
-            const rolDocente = await this.rolRepository.findOne({ where: { nombre: RolesEnum.DOCENTE } });
-
-            await this.rolUsuarioRepository.save({
-                rol: rolDocente,
-                usuario: usuarioNuevo
-            });
+            const rolUsuarioNuevo: RolUsuarioDto = { idUsuario: existenciaUsuario.id, idRol: rolDocente?.id };
+            this.rolUsuarioService.crearRolUsuario(rolUsuarioNuevo)
 
             // Crear el docente en la base de datos
             const nuevoDocente = {
                 nombreCompleto: docenteDto.nombreCompleto,
                 correoElectronico: docenteDto.correoElectronico,
-                usuario: usuarioNuevo
+                usuario: existenciaUsuario
             };
             await this.docenteRepository.save(nuevoDocente);
 
+
             // Enviar el correo electrónico
-            await this.mailService.envioClaveDocente(usuarioNuevo, docenteDto);
+            await this.mailService.envioClaveDocente(clave, docenteDto);
 
             return "Se creó el docente " + docenteDto.nombreCompleto + " existosamente." +
                 " Se envió un correo electrónico a " + docenteDto.correoElectronico + " con el código de acceso.";
@@ -85,11 +77,11 @@ export class DocenteService {
 
         for (let i = 0; i < arregloDocentes.length; i++) {
             // Busqueda en la base la existencia de un docente en base a su correo electrónico
-            const existenciaDocente = await this.docenteRepository.find({ where: { correoElectronico: arregloDocentes[i].correoElectronico, } });
-            const existenciaUsuario = await this.usuarioRepository.find({ where: { correo: arregloUsuarios[i].correo, } });
-
+            const existenciaDocente = await this.obtenerDocentePorCorreoElectronico(arregloDocentes[i].correoElectronico);
+            let existenciaUsuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(arregloUsuarios[i].correo);
+            //TODO: ARREGLAR ESTE METODO
             // Si no existe, crea en la base de datos al docente caso contrario guarda los fallidos
-            if (existenciaDocente.length == 0 && existenciaUsuario.length == 0) {
+            if (existenciaDocente == undefined && existenciaUsuario == undefined) {
                 // Crear un usuario de tipo docente
                 const usuarioTipoDocente: CrearUsuarioDTO = {
                     correo: arregloUsuarios.correo,
@@ -98,25 +90,24 @@ export class DocenteService {
                 await this.usuarioService.crearUsuario(usuarioTipoDocente);
 
                 // Vincular el rol
-                const usuarioNuevo = await this.usuarioRepository.findOne({ where: { correo: usuarioTipoDocente.correo, } });
-                const rolDocente = await this.rolRepository.findOne({ where: { nombre: RolesEnum.DOCENTE } });
-                await this.rolUsuarioRepository.save({
-                    rol: rolDocente,
-                    usuario: usuarioNuevo
-                });
+                //   const rolDocente = await this.rolRepository.findOne({ where: { nombre: RolesEnum.DOCENTE } });
+                //    await this.rolUsuarioRepository.save({
+                //         rol: rolDocente,
+                //        usuario: existenciaUsuario
+                //    });
 
                 // Crear el docente en la base de datos
                 const nuevoDocente = {
                     nombreCompleto: arregloDocentes.nombreCompleto,
                     correoElectronico: arregloDocentes.correoElectronico,
-                    usuario: usuarioNuevo
+                    usuario: existenciaUsuario
                 };
 
                 await this.docenteRepository.save(nuevoDocente);
                 await this.docenteRepository.save(arregloDocentes[i]);
 
                 // Envío de correo electrónico
-                await this.mailService.envioClaveDocente(usuarioNuevo, arregloDocentes[i]);
+                await this.mailService.envioClaveDocente(arregloUsuarios.clave, arregloDocentes[i]);
 
             } else {
                 docentesNoGuardados[cantidadDocentesNoGuardados] = arregloDocentes[i];
@@ -149,16 +140,26 @@ export class DocenteService {
     /* =================================== OBTENER UN DOCENTE POR ID EN LA BASE DE DATOS ==================================== */
     /* ====================================================================================================================== */
 
-    async obtenerDocentePorID(idDocente: string): Promise<DocenteEntity> {
-        return await this.docenteRepository.findOne({ id: idDocente });
+    async obtenerDocentePorID(idDocente: string): Promise<DocenteEntity | NotFoundException> {
+        const docente = await this.docenteRepository.findOne({ where: { id: idDocente } });
+        if (docente) {
+            return docente;
+        } else {
+            return new NotFoundException(`No existe el docente con el id ${idDocente}`)
+        }
     }
 
     /* ====================================================================================================================== */
     /* =========================== OBTENER UN DOCENTE POR CORREO ELECTRÓNICO EN LA BASE DE DATOS ============================ */
     /* ====================================================================================================================== */
 
-    async obtenerDocentePorCorreoElectronico(correoElectronicoDocente: string): Promise<DocenteEntity> {
-        return await this.docenteRepository.findOne({ correoElectronico: correoElectronicoDocente });
+    async obtenerDocentePorCorreoElectronico(correoElectronicoDocente: string): Promise<DocenteEntity | NotFoundException> {
+        const docente = await this.docenteRepository.findOne({ where: { correoElectronico: correoElectronicoDocente } });
+        if (docente) {
+            return docente;
+        } else {
+            return new NotFoundException(`No existe el docente con el correo electrónico ${correoElectronicoDocente}`);
+        }
     }
 
     /* ====================================================================================================================== */

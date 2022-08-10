@@ -12,6 +12,10 @@ const configuracionesAPI = {
                     ruta: '/crearUsuario',
                     descripcion: 'Método que permite crear un usuario pasando como parámetros su correo institucional y una clave.'
                 },
+                obtenerUsuarioCompletoPorSuID: {
+                    ruta: '/obtenerUsuarioCompletoPorSuID/:id',
+                    descripcion: 'Método que permite obtener toda la información de un usuario por medio de su identificador (ID).'
+                }
             },
         },
         accciones: {
@@ -86,18 +90,18 @@ const configuracionesAPI = {
             operaciones: {
                 crearUnDocente: {
                     ruta: '/crearUnDocente',
-                    descripcion: 'Método que permite crear y enviar un correo eletrónico con el código de acceso a un docente.'
+                    descripcion: 'Método que permite crear y enviar un correo eletrónico con la clave de acceso a un docente.'
                 },
                 crearVariosDocentes: {
                     ruta: '/crearVariosDocentes',
-                    descripcion: 'Método que permite crear y enviar un correo eletrónico con el código de acceso a cada docente no duplicado dentro del archivo csv.'
+                    descripcion: 'Método que permite crear y enviar un correo eletrónico con la clave de acceso a cada docente no duplicado dentro del archivo csv.'
                 },
                 obtenerDocentePorID: {
-                    ruta: '/obtenerDocentePorID',
+                    ruta: '/obtenerDocentePorID/:id',
                     descripcion: 'Método que permite obtener el nombre y correo electrónico de un docente por medio de su identificador (ID).'
                 },
                 obtenerDocentePorCorreoElectronico: {
-                    ruta: '/obtenerDocentePorCorreoElectronico',
+                    ruta: '/obtenerDocentePorCorreoElectronico/:correo',
                     descripcion: 'Método que permite obtener el nombre e identificador (ID) de un docente por medio de su correo electrónico.'
                 }
                 //TODO: COLOCAR EL RESTO DEL CRUD.

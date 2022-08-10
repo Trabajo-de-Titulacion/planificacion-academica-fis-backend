@@ -7,15 +7,15 @@ import { DocenteEntity } from '../../docente/entities/docente.entity';
 export class MailService {
     constructor(private mailerService: MailerService) { }
 
-    async envioClaveDocente(usuarioDocente: UsuarioEntity, docente: DocenteEntity) {
+    async envioClaveDocente(clave: string, docente: DocenteEntity) {
 
         const valor = await this.mailerService.sendMail({
-            to: usuarioDocente.correo,
+            to: docente.correoElectronico,
             subject: 'Bienvenido al sistema de Planificación Académica',
-            template: 'codigoDocente',
+            template: 'claveDocente',
             context: {
                 nombre: docente.nombreCompleto,
-                codigo: usuarioDocente.clave,
+                clave: clave,
             },
         });
         return valor;

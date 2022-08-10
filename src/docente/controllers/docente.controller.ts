@@ -25,10 +25,8 @@ export class DocenteController {
     @Roles(RolesEnum.COORDINADOR)
     crearDocente(@Body() docenteDto: DocenteDto) {
         //Formaterar y generar los datos
-        const codigo = this.generarCodigoDocente();
         docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase();
-
-        return this.docenteService.crearDocente(docenteDto, codigo);
+        return this.docenteService.crearDocente(docenteDto, this.generarClaveDocente());
     }
 
     /* ====================================================================================================================== */
@@ -42,7 +40,6 @@ export class DocenteController {
     crearVariosDocentes(@UploadedFile() file: Express.Multer.File) {
         // Leer el archivo y generar los arreglos de datos
         let arregloDocente, arregloUsuario = this.leerArchivoDocentes(file);
-
         return this.docenteService.crearVariosDocentes(arregloDocente, arregloUsuario);
     }
 
@@ -54,8 +51,7 @@ export class DocenteController {
     @Get(configuraciones.controladores.docente.operaciones.obtenerDocentePorID.ruta)
     @Roles(RolesEnum.COORDINADOR)
     obtenerDocentePorID(@Param('id') id: string) {
-        // Envio del id 
-        return this.docenteService.obtenerDocentePorID(id);
+        return this.docenteService.obtenerDocentePorID(id); // Envio del id 
     }
 
     /* ====================================================================================================================== */
@@ -66,8 +62,7 @@ export class DocenteController {
     @Get(configuraciones.controladores.docente.operaciones.obtenerDocentePorCorreoElectronico.ruta)
     @Roles(RolesEnum.COORDINADOR)
     obtenerDocentePorCorreoElectronico(@Param('correo') correoElectronicoDocente: string) {
-        // Envio del correo electronico
-        return this.docenteService.obtenerDocentePorCorreoElectronico(correoElectronicoDocente);
+        return this.docenteService.obtenerDocentePorCorreoElectronico(correoElectronicoDocente); // Envio del correo electronico
     }
 
     /* ====================================================================================================================== */
@@ -89,7 +84,7 @@ export class DocenteController {
     /* ========================================== MÉTODO DE GENERACIÓN DEL CÓDIGO =========================================== */
     /* ====================================================================================================================== */
 
-    generarCodigoDocente() {
+    generarClaveDocente() {
         const generador = (
             length = 20, // Código de 20 digitos
             wishlist = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$'
@@ -97,7 +92,6 @@ export class DocenteController {
             Array.from(crypto.randomFillSync(new Uint32Array(length)))
                 .map((x) => wishlist[Number(x) % wishlist.length])
                 .join('')
-
         return generador();
     }
 
@@ -113,12 +107,10 @@ export class DocenteController {
         for (let i = 0; i < informacionDocentes.length; i = i + 2) {
             if (informacionDocentes[i].trim() != "") {
                 arregloDocente[i / 2] = {
-                    nombreCompleto: informacionDocentes[i].toUpperCase(),
-                    correoElectronico: informacionDocentes[i + 1]
+                    nombreCompleto: informacionDocentes[i].toUpperCase(), correoElectronico: informacionDocentes[i + 1]
                 }
                 arregloUsuario[i / 2] = {
-                    correo: informacionDocentes[i].toUpperCase(),
-                    clave: this.generarCodigoDocente()
+                    correo: informacionDocentes[i].toUpperCase(), clave: this.generarClaveDocente()
                 }
             }
         }
