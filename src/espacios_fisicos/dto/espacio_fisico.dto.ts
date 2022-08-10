@@ -3,9 +3,9 @@ import { IsString, IsNumber, IsNotEmpty } from "class-validator";
 
 export class EspacioFisicoDTO {
 
-    constructor(nombre: string, tipo: string, aforo: number) {
+    constructor(nombre: string, tipo_id: string, aforo: number) {
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.tipo_id = tipo_id;
         this.aforo = aforo;
     }
 
@@ -17,7 +17,7 @@ export class EspacioFisicoDTO {
     @ApiProperty()
     @IsString()
     @IsNotEmpty()
-    tipo: string;
+    tipo_id: string;
 
     @ApiProperty()
     @IsNumber()

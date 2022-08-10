@@ -27,4 +27,20 @@ export class TipoAulaService {
     async obtenerTipoAulas(){
         return this.tipoAulaRepository.find({relations: ['facultad']});
     }
+
+    async obtenerTipoAulaPorId(id: string){
+        return this.tipoAulaRepository.findOne({
+            where: {id: id}
+        });
+    }
+
+    async obtenerTipoAulaPorNombreYFacultad(nombreTipo: string, nombreFacultad: string){
+        const facultad = await this.servicioFacultad.obtenerFacultadPorSuNombre(nombreFacultad);
+        return this.tipoAulaRepository.findOne({
+            where: {
+                tipo: nombreTipo,
+                facultad: facultad,
+            }
+        });
+    }
 }
