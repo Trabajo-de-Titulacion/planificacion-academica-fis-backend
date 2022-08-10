@@ -11,6 +11,7 @@ import { RolService } from "../../src/auth/services/rol.service";
 import RolUsuarioService from "../../src/auth/services/rol-usuario.service";
 import { UsuarioService } from "../../src/usuarios/services/usuario.service";
 
+
 @Module({
     imports: [
         TypeOrmModule.forFeature([DocenteEntity, RolEntity]),
@@ -18,7 +19,7 @@ import { UsuarioService } from "../../src/usuarios/services/usuario.service";
         UsuariosModule,
         AuthModule
     ],
-    exports:[MailModule, UsuarioService, RolService, RolUsuarioService],
+    exports: [MailModule, UsuarioService, RolService, RolUsuarioService],
     controllers: [DocenteController],
     providers: [DocenteService, RolService, RolUsuarioService, UsuarioService]
 })

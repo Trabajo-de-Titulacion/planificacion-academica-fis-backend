@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, UploadedFile, UseInterceptors } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put, UploadedFile, UseInterceptors } from "@nestjs/common";
 import { DocenteService } from "../services/docente.service";
 import { DocenteDto } from "../dto/docente.dto";
 import { FileInterceptor } from "@nestjs/platform-express";
@@ -39,8 +39,8 @@ export class DocenteController {
     @Roles(RolesEnum.COORDINADOR)
     crearVariosDocentes(@UploadedFile() file: Express.Multer.File) {
         // Leer el archivo y generar los arreglos de datos
-        let arregloDocente, arregloUsuario = this.leerArchivoDocentes(file);
-        return this.docenteService.crearVariosDocentes(arregloDocente, arregloUsuario);
+        const arreglos = this.leerArchivoDocentes(file);
+        return this.docenteService.crearVariosDocentes(arreglos.arregloDocente, arreglos.arregloUsuario);
     }
 
     /* ====================================================================================================================== */
@@ -69,16 +69,35 @@ export class DocenteController {
     /* ===================================== ACTUALIZAR UN DOCENTE EN LA BASE DE DATOS ====================================== */
     /* ====================================================================================================================== */
 
+    @ApiOperation({ summary: configuraciones.controladores.docente.operaciones.actualizarDocentePorID.descripcion })
+    @Put(configuraciones.controladores.docente.operaciones.actualizarDocentePorID.ruta)
+    @Roles(RolesEnum.COORDINADOR)
+    actualizarDocentePorID(@Param('id') idDocente: string, @Body() docenteDto: DocenteDto) {
+        return this.docenteService.actualizarDocentePorID(idDocente, docenteDto);
+    }
+
+
     /* ====================================================================================================================== */
     /* ====================================== ELIMINAR UN DOCENTE EN LA BASE DE DATOS ======================================= */
     /* ====================================================================================================================== */
 
-
+    @ApiOperation({ summary: configuraciones.controladores.docente.operaciones.eliminarDocentePorID.descripcion })
+    @Delete(configuraciones.controladores.docente.operaciones.eliminarDocentePorID.ruta)
+    @Roles(RolesEnum.COORDINADOR)
+    eliminarDocentePorID(@Param('id') idDocente: string) {
+        return this.docenteService.eliminarDocentePorID(idDocente);
+    }
 
     /* ====================================================================================================================== */
     /* ================================== OBTENER TODOS LOS DOCENTES EN LA BASE DE DATOS ==================================== */
     /* ====================================================================================================================== */
 
+    @ApiOperation({ summary: configuraciones.controladores.docente.operaciones.obtenerDocentes.descripcion })
+    @Get(configuraciones.controladores.docente.operaciones.obtenerDocentes.ruta)
+    @Roles(RolesEnum.COORDINADOR)
+    obtenerDocentes() {
+        return this.docenteService.obtenerDocentes();
+    }
 
     /* ====================================================================================================================== */
     /* ========================================== MÉTODO DE GENERACIÓN DEL CÓDIGO =========================================== */
