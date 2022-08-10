@@ -3,14 +3,15 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { EspacioFisicoDTO } from '../dto';
 import { EspacioFisicoEntity } from '../entities/espacio_fisico.entity';
-import * as fs from 'fs';
+import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo-aula.service';
 
 @Injectable()
 export class EspaciosFisicosService {
 
   constructor(
     @InjectRepository(EspacioFisicoEntity)
-    private espaciosFisicosRepository: Repository<EspacioFisicoEntity>
+    private espaciosFisicosRepository: Repository<EspacioFisicoEntity>,
+    private readonly tipoAulaService: TipoAulaService,
   ) {}
 
 
@@ -32,8 +33,15 @@ export class EspaciosFisicosService {
     }
     // No existen registros con el mismo nombre
     else {
+      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(espacio_fisico.tipo_id);
+
+      const entidad_a_registrar = this.espaciosFisicosRepository.create();
+      entidad_a_registrar.nombre = espacio_fisico.nombre;
+      entidad_a_registrar.tipo = tipoAula;
+      entidad_a_registrar.aforo = espacio_fisico.aforo;
+
       // Crear registro
-      const registro_creado: EspacioFisicoDTO = await this.espaciosFisicosRepository.save(espacio_fisico);
+      const registro_creado = await this.espaciosFisicosRepository.save(entidad_a_registrar);
       filas_alteradas = 1;
       mensaje = `Se creó el espacio físico ${espacio_fisico.nombre} de manera exitosa!`;
     }
@@ -46,7 +54,7 @@ export class EspaciosFisicosService {
     return respuesta;
   }
 
-  async crearMultiplesEspaciosFisicos(espacios_fisicos: EspacioFisicoDTO[]) {
+  async crearMultiplesEspaciosFisicos(espacios_fisicos: EspacioFisicoEntity[]) {
 
     // Buscar registros ya existentes
     const nombres = espacios_fisicos.map(espacio => {return {nombre: espacio.nombre}});
@@ -58,8 +66,8 @@ export class EspaciosFisicosService {
     const nombres_coincidentes = coincidencias.map(espacio => espacio.nombre);
 
     // Arreglos para almacenar registros nuevos y repetidos
-    const registros_nuevos: EspacioFisicoDTO[] = [];
-    const registros_repetidos: EspacioFisicoDTO[] = [];
+    const registros_nuevos: EspacioFisicoEntity[] = [];
+    const registros_repetidos: EspacioFisicoEntity[] = [];
 
     espacios_fisicos.forEach( espacio_fisico => {
       // Si ya existe un registro con el mismo nombre
@@ -73,9 +81,10 @@ export class EspaciosFisicosService {
     });
 
     // Crear registros
-    let registros_creados: EspacioFisicoDTO[] = [];
-    if (registros_nuevos.length > 0)
+    let registros_creados: EspacioFisicoEntity[] = [];
+    if (registros_nuevos.length > 0) {
       registros_creados = await this.espaciosFisicosRepository.save(registros_nuevos);
+    }
     
     const mensaje_repetidos = (registros_repetidos.length > 0)?
       ': ' + registros_repetidos.map(registro => registro.nombre).join(', ') : '';
@@ -115,26 +124,33 @@ export class EspaciosFisicosService {
 
 
   /* Leer informacion de un archivo y devolver un arreglo de Espacios Fisicos */
-  leerArchivoEspaciosFisicos(archivo: Express.Multer.File): EspacioFisicoDTO[] {
+  async leerArchivoEspaciosFisicos(archivo: Express.Multer.File): Promise<EspacioFisicoEntity[]> {
     const datos = archivo.buffer.toString('utf-8');
 
-    const expresionRegular = /[A-Za-z0-9]*;[A-Za-z0-9]*;[A-Za-z0-9]*/g;
+    const expresionRegular = /[A-Za-z0-9 ]*;[A-Za-z0-9 ]*;[A-Za-z0-9 ]*;[0-9]+/g;
     const filas = datos.match(expresionRegular);
 
-    const espacios_fisicos: EspacioFisicoDTO[] = [];
+    const espacios_fisicos: EspacioFisicoEntity[] = [];
 
     if (filas) {
-      filas.forEach( fila => {
-        if (fila.search(/nombre|tipo|aforo/gi) == -1) {
-          const info = fila.split(';');
-          const nombre = info[0];
-          const tipo = info[1];
-          const aforo = Number(info[2]);
-  
-          const espacio_fisico = new EspacioFisicoDTO(nombre, tipo, aforo);
+      for (const fila of filas) {
+        const info = fila.split(';');
+        const nombre = info[0];
+        const tipo = info[1];
+        const facultad = info[2];
+        const aforo = Number(info[3]);
+
+        const entidad_tipo = await this.tipoAulaService.obtenerTipoAulaPorNombreYFacultad(tipo, facultad);
+
+        if (entidad_tipo) {
+          const espacio_fisico = this.espaciosFisicosRepository.create();
+          espacio_fisico.nombre = nombre;
+          espacio_fisico.tipo = entidad_tipo;
+          espacio_fisico.aforo = aforo;
+          
           espacios_fisicos.push(espacio_fisico);
         }
-      });
+      };
     }
 
     return espacios_fisicos;
