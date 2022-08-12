@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { TipoAulaDto } from "../dtos/tipo-aula.dto";
 import { TipoAulaService } from "../services/tipo-aula.service";
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags("Tipos de aulas de una facultad")
 @Controller("/api/tipoAula")
 export class TipoAulaController {
