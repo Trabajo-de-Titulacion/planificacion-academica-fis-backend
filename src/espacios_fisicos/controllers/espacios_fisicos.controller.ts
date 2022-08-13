@@ -25,7 +25,7 @@ export class EspaciosFisicosController {
   @ApiOperation({ summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.descripcion })
   @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.ruta)
   obtenerEspacioFisicoPorId(@Param('id') id: string) {
-    return this.espaciosFisicosService.obteneEspacioFisicoPorId(id);
+    return this.espaciosFisicosService.obtenerEspacioFisicoPorId(id);
   }
 
 
