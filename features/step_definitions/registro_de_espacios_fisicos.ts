@@ -125,14 +125,12 @@ After("@espacios_fisicos_prueba2", async function () {
     await this.repository.delete({ nombre: this.espacio_fisico_existente2.nombre });
     await this.repository.delete({ nombre: this.espacio_fisico_existente3.nombre });
     await this.repository.delete({ nombre: this.espacio_fisico_existente4.nombre });
+    await getRepository(FacultadEntity).delete(this.facultad);
 
     // Borrar registros creados en el Cuando
     for (const registro of this.respuesta.registros_creados) {
         await this.repository.delete(registro);
     }
-
-    // Borrar registros creados en el Before
-    await getRepository(FacultadEntity).delete(this.facultad);
 });
 
 
