@@ -19,7 +19,9 @@ export class JornadaLaboralEntity{
     @Column()
     horaFin : string;
 
-    @ManyToOne(() => SemestreEntity, semestre => semestre.jornadas)
+    @ManyToOne(() => SemestreEntity, semestre => semestre.jornadas, {
+        onDelete: "CASCADE"
+    })
     @JoinColumn({ name: 'id_semestre'})
     semestre: SemestreEntity
 }
