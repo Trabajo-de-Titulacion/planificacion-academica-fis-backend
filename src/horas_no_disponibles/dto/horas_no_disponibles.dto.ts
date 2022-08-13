@@ -3,8 +3,8 @@ import { IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 export class HorasNoDisponiblesDTO {
     
-    constructor(docente_id: string, dia: string, hora_inicio: number) {
-        this.dia = dia;
+    constructor(docente_id: string, dia_id: string, hora_inicio: number) {
+        this.dia_id = dia_id;
         this.hora_inicio = hora_inicio;
         this.docente_id = docente_id
     }
@@ -12,7 +12,7 @@ export class HorasNoDisponiblesDTO {
     @ApiProperty()
     @IsString()
     @IsNotEmpty()
-    dia: string;
+    dia_id: string;
 
     @ApiProperty()
     @IsNumber()

@@ -20,7 +20,7 @@ export class HorasNoDisponiblesController {
   crearHoraNoDisponible(@Body() hora_no_disponible: HorasNoDisponiblesDTO) {
     return this.horasNoDisponiblesService.crearHoraNoDisponible(hora_no_disponible);
   }
-
+  
   @ApiOperation({summary: configuraciones.controladores.horas_no_disponibles.operaciones.crearHorasNoDisponibles.descripcion})
   @Post(configuraciones.controladores.horas_no_disponibles.operaciones.crearHorasNoDisponibles.ruta)
   crearHorasNoDisponibles(@Body() horas_no_disponibles: HorasNoDisponiblesDTO[]) {

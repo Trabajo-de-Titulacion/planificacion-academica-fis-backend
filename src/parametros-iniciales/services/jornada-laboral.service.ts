@@ -28,6 +28,10 @@ export class JornadaLaboralService{
         return this.repositorioJornadaLaboral.find({relations: ["semestre"]});
     }
 
+    async obtenerJornadaPorId(id: string) {
+        return this.repositorioJornadaLaboral.findOne(id);
+    }
+
     async obtenerIntervalos(idJornada : string){
         const jornada = await this.repositorioJornadaLaboral.findOne(idJornada);
         const horaInicio = jornada.horaInicio.split(':').map(tiempo => parseInt(tiempo))[0];
