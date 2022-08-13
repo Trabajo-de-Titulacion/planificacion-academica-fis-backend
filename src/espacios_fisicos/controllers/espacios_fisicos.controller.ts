@@ -6,6 +6,7 @@ import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { configuraciones } from '../../config/swagger-config';
 import { Roles } from '../../auth/decorators/roles.decorator';
 import { RolesEnum } from '../../utils/enum/rol.enum';
+import { isUUID } from 'class-validator';
 
 @ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.espacios_fisicos.tag)
@@ -25,6 +26,9 @@ export class EspaciosFisicosController {
   @ApiOperation({ summary: configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.descripcion })
   @Get(configuraciones.controladores.espacios_fisicos.operaciones.obtenerEspacioFisicoPorId.ruta)
   obtenerEspacioFisicoPorId(@Param('id') id: string) {
+    if (id && !isUUID(id)) {
+      throw new HttpException('ID inválido', HttpStatus.BAD_REQUEST);
+    }
     return this.espaciosFisicosService.obtenerEspacioFisicoPorId(id);
   }
 
@@ -56,6 +60,9 @@ export class EspaciosFisicosController {
   @ApiOperation({ summary: configuraciones.controladores.espacios_fisicos.operaciones.actualizarEspacioFisicoPorId.descripcion })
   @Put(configuraciones.controladores.espacios_fisicos.operaciones.actualizarEspacioFisicoPorId.ruta)
   actualizarEspacioFisicoPorId(@Param('id') id: string, @Body() espacio_fisico: EspacioFisicoDTO) {
+    if (id && !isUUID(id)) {
+      throw new HttpException('ID inválido', HttpStatus.BAD_REQUEST);
+    }
     return this.espaciosFisicosService.actualizarEspacioFisicoPorId(id, espacio_fisico);
   }
 
@@ -64,6 +71,9 @@ export class EspaciosFisicosController {
   @ApiOperation({ summary: configuraciones.controladores.espacios_fisicos.operaciones.eliminarEspacioFisicoPorId.descripcion })
   @Delete(configuraciones.controladores.espacios_fisicos.operaciones.eliminarEspacioFisicoPorId.ruta)
   eliminarEspacioFisicoPorId(@Param('id') id: string) {
+    if (id && !isUUID(id)) {
+      throw new HttpException('ID inválido', HttpStatus.BAD_REQUEST);
+    }
     return this.espaciosFisicosService.eliminarEspacioFisicoPorId(id);
   }
 
