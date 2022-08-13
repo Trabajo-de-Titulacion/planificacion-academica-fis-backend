@@ -84,9 +84,9 @@ When('también el día Jueves de {int} a {int}', async function (hora_inicio: nu
 });
 
 
-Then('al consultar la base de datos se observan {int} registros.', async function (numero_registros: number) {
+Then('al consultar la base de datos de horas no disponibles se observan {int} registros.', async function (numero_registros: number) {
     // Se consulta a la base de datos
-    this.registros_almacenados = this.horasNoDisponiblesController.obtenerHorasNoDisponiblesPorDocenteId(this.docente.id);
+    this.registros_almacenados = await this.horasNoDisponiblesController.obtenerHorasNoDisponiblesPorDocenteId(this.docente.id);
     
     // Numero de registros creados
     assert.equal(this.registros_almacenados.length, numero_registros);
