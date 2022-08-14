@@ -70,10 +70,6 @@ const configuracionesAPI = {
                     ruta: '/obtenerHorasNoDisponiblesPorDocente/:id',
                     descripcion: 'Método para obtener todas las horas no disponibles de un docente mediante su ID.'
                 },
-                crearHoraNoDisponible: {
-                    ruta: '/crearHoraNoDisponible',
-                    descripcion: 'Método para crear una hora no disponible para un docente.'
-                },
                 crearHorasNoDisponibles: {
                     ruta: '/crearHorasNoDisponibles',
                     descripcion: 'Método para crear múltiples horas no disponibles para un docente.'

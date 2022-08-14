@@ -6,7 +6,7 @@ export class EspacioFisicoEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({length: 30})
+    @Column({ length: 30, unique: true })
     nombre: string;
 
     @ManyToOne( () => TipoAulaEntity, tipo => tipo.id )

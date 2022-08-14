@@ -28,8 +28,13 @@ export class JornadaLaboralService{
         return this.repositorioJornadaLaboral.find({relations: ["semestre"]});
     }
 
+
     async obtenerJornadaLaboralPorSemestre(idSemestre : string){
         return this.repositorioJornadaLaboral.find({where: {semestre: {id: idSemestre}}})
+    }
+
+    async obtenerJornadaPorId(id: string) {
+        return this.repositorioJornadaLaboral.findOne(id);
     }
 
     async obtenerIntervalos(idJornada : string){

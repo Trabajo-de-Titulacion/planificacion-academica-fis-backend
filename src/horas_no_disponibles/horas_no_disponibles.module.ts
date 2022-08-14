@@ -6,14 +6,18 @@ import { HorasNoDisponiblesService } from './services/horas_no_disponibles.servi
 import { DocenteModule } from '../../src/docente/docente.module';
 import { DocenteService } from '../../src/docente/services/docente.service';
 import { DocenteEntity } from '../../src/docente/entities/docente.entity';
+import { JornadaLaboralService } from '../../src/parametros-iniciales/services/jornada-laboral.service';
+import { JornadaLaboralEntity } from '../../src/parametros-iniciales/entities/jornada-laboral.entity';
+import { SemestreService } from '../../src/parametros-iniciales/services/semestre.service';
+import { SemestreEntity } from '../../src/parametros-iniciales/entities/semestre.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([HoraNoDisponibleEntity, DocenteEntity]),
+    TypeOrmModule.forFeature([HoraNoDisponibleEntity, DocenteEntity, JornadaLaboralEntity, SemestreEntity]),
     DocenteModule
   ],
   controllers: [HorasNoDisponiblesController],
-  providers: [HorasNoDisponiblesService, DocenteService],
+  providers: [HorasNoDisponiblesService, DocenteService, JornadaLaboralService, SemestreService],
 })
 export class HorasNoDisponiblesModule {
   

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { EspacioFisicoDTO } from '../dto';
@@ -101,19 +101,50 @@ export class EspaciosFisicosService {
 
   /* Read */
   async obtenerEspaciosFisicos(): Promise<EspacioFisicoEntity[]> {
-    return await this.espaciosFisicosRepository.find();
+    return await this.espaciosFisicosRepository.find({
+      relations: ['tipo'],
+    });
   }
 
-  async obteneEspacioFisicoPorId(id: string): Promise<EspacioFisicoEntity> {
+  async obtenerEspacioFisicoPorId(id: string): Promise<EspacioFisicoEntity> {
     return await this.espaciosFisicosRepository.findOne({
       where: {id: id},
+      relations: ['tipo'],
     });
   }
 
 
   /* Update */
   async actualizarEspacioFisicoPorId(id: string, espacio_fisico: EspacioFisicoDTO) {
-    return await this.espaciosFisicosRepository.update(id, espacio_fisico);
+    let filas_alteradas: number;
+    let mensaje: string;
+
+    const coincidencias = await this.espaciosFisicosRepository.find({
+      where: { nombre: espacio_fisico.nombre }
+    });
+
+    // Si ya existen registros con el mismo nombre
+    if (coincidencias.length > 1) {
+      filas_alteradas = 0;
+      mensaje = `El espacio físico con el nombre ${espacio_fisico.nombre} ya existe. Ingrese un nuevo nombre.`
+    }
+    // No existen registros con el mismo nombre
+    else {
+      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(espacio_fisico.tipo_id);
+      const registroActualizado: EspacioFisicoEntity = {
+        id: id,
+        nombre: espacio_fisico.nombre,
+        tipo: tipoAula,
+        aforo: espacio_fisico.aforo
+      };
+      const registro = await this.espaciosFisicosRepository.update(id, registroActualizado);
+      filas_alteradas = 1;
+      mensaje = 'Actualizado exitosamente';
+    }
+    return {
+      filas_alteradas: filas_alteradas,
+      mensaje: mensaje,
+    }
   }
 
 
@@ -150,7 +181,13 @@ export class EspaciosFisicosService {
           
           espacios_fisicos.push(espacio_fisico);
         }
-      };
+      }
+      if (espacios_fisicos.length == 0) {
+        throw new HttpException(
+            'No se encontraron registros válidos. Verifique que los datos sean correctos.',
+            HttpStatus.BAD_REQUEST
+          );
+      }
     }
 
     return espacios_fisicos;
