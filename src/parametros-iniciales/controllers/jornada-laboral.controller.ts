@@ -12,7 +12,7 @@ export class JornadaLaboralController {
         private servicioJornadaLaboral : JornadaLaboralService
     ){}
 
-    @Post("/servicioJornadaLaboral")
+    @Post("/crearJornadaLaboral")
     async crearJornadaLaboral(@Body() jornada : JornadaLaboralDto){
         this.servicioJornadaLaboral.crearJornadaLaboral(jornada);
     }

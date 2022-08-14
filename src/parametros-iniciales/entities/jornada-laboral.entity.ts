@@ -7,7 +7,7 @@ export class JornadaLaboralEntity{
     @PrimaryGeneratedColumn('uuid')
     id : string;
 
-    @Column({enum: DIAS})
+    @Column({nullable: true})
     dia : DIAS;
 
     @Column()
@@ -19,7 +19,9 @@ export class JornadaLaboralEntity{
     @Column()
     horaFin : string;
 
-    @ManyToOne(() => SemestreEntity, semestre => semestre.jornadas)
+    @ManyToOne(() => SemestreEntity, semestre => semestre.jornadas, {
+        onDelete: "CASCADE"
+    })
     @JoinColumn({ name: 'id_semestre'})
     semestre: SemestreEntity
 }
