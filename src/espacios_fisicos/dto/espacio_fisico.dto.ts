@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsNumber, IsNotEmpty } from "class-validator";
+import { IsString, IsNotEmpty, IsInt, Min, Max } from "class-validator";
 
 export class EspacioFisicoDTO {
 
@@ -20,7 +20,9 @@ export class EspacioFisicoDTO {
     tipo_id: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsInt()
+    @Min(3)
+    @Max(200)
     @IsNotEmpty()
     aforo: number;
 }
