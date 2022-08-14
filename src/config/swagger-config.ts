@@ -103,8 +103,19 @@ const configuracionesAPI = {
                 obtenerDocentePorCorreoElectronico: {
                     ruta: '/obtenerDocentePorCorreoElectronico/:correo',
                     descripcion: 'Método que permite obtener el nombre e identificador (ID) de un docente por medio de su correo electrónico.'
-                }
-                //TODO: COLOCAR EL RESTO DEL CRUD.
+                },
+                obtenerDocentes: {
+                    ruta: '/obtenerDocentes',
+                    descripcion: 'Método que permite obtener un arreglo con todos los docentes registrados en el sistema.'
+                },
+                actualizarDocentePorID: {
+                    ruta: '/actualizarDocentePorID/:id',
+                    descripcion: 'Método que permite actualizar los datos del docente por medio del identificador (ID).'
+                },
+                eliminarDocentePorID: {
+                    ruta: 'eliminarDocentePorID/:id',
+                    descripcion: 'Método que permite eliminar un docente por medio de su identificador (ID).'
+                },
             }
         }
     }

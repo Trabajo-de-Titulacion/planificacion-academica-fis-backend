@@ -7,7 +7,7 @@ export class JornadaLaboralEntity{
     @PrimaryGeneratedColumn('uuid')
     id : string;
 
-    @Column({nullable: true})
+    @Column({enum: DIAS, default: DIAS.LUNES})
     dia : DIAS;
 
     @Column()
