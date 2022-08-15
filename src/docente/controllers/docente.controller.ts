@@ -25,7 +25,7 @@ export class DocenteController {
     @Roles(RolesEnum.COORDINADOR)
     crearDocente(@Body() docenteDto: DocenteDto) {
         //Formaterar y generar los datos
-        docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase();
+        docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase().trim();
         return this.docenteService.crearDocente(docenteDto, this.generarClaveDocente());
     }
 
@@ -135,10 +135,10 @@ export class DocenteController {
         for (let i = 0; i < informacionDocentes.length; i = i + 2) {
             if (informacionDocentes[i].trim() != "") {
                 arregloDocente[i / 2] = {
-                    nombreCompleto: informacionDocentes[i].toUpperCase(), correoElectronico: informacionDocentes[i + 1]
+                    nombreCompleto: informacionDocentes[i].toUpperCase().trim(), correoElectronico: informacionDocentes[i + 1]
                 }
                 arregloUsuario[i / 2] = {
-                    correo: informacionDocentes[i].toUpperCase(), clave: this.generarClaveDocente()
+                    correo: informacionDocentes[i].toUpperCase().trim(), clave: this.generarClaveDocente()
                 }
             }
         }
