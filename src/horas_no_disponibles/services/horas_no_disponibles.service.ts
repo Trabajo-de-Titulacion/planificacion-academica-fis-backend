@@ -5,7 +5,8 @@ import { JornadaLaboralService } from '../../../src/parametros-iniciales/service
 import { Repository } from 'typeorm';
 import { HorasNoDisponiblesDTO } from '../dto';
 import { HoraNoDisponibleEntity } from '../entities/hora_no_disponible.entity';
-import { isUUID } from 'class-validator';
+import { isUUID, validate } from 'class-validator';
+import { plainToInstance } from 'class-transformer';
 
 @Injectable()
 export class HorasNoDisponiblesService {
@@ -81,7 +82,7 @@ export class HorasNoDisponiblesService {
 
       return {
         filas_alteradas: registrosCreados.length,
-        mensaje: `Se han creado ${registrosCreados.length} registros. Hay ${registrosErroneos.length} erróneos.`,
+        mensaje: `Se ha(n) creado ${registrosCreados.length} registro(s). Hay ${registrosErroneos.length} erróneo(s).`,
         registros_creados: registrosCreados,
         registrosErroneos: registrosErroneos,
       }
@@ -102,6 +103,40 @@ export class HorasNoDisponiblesService {
     return await this.horasNoDisponiblesRepository.delete({
       docente: docente
     });
+  }
+
+  async comprobarArregloDeHorasNoDisponibles(arreglo: any[]) {
+    // Comprobar que lo recibido sea un arreglo
+    if (!Array.isArray(arreglo)) {
+      throw new HttpException('Los datos enviados no corresponden a un arreglo.', HttpStatus.BAD_REQUEST);
+    }
+    // Comprobar arreglo vacio
+    if (arreglo.length == 0) {
+      throw new HttpException('Los datos enviados corresponden a un arreglo vacío.', HttpStatus.BAD_REQUEST);
+    }
+    for (let item of arreglo) {
+      if (!(typeof item === 'object' && item !== null && !Array.isArray(item))) {
+        const dtoEjemplo = plainToInstance(HorasNoDisponiblesDTO, {});
+        const errores = await validate(dtoEjemplo);
+        const estructura = errores.map(error => {
+          return { 'propiedad': error.property, 'restricciones': error.constraints }
+        });
+
+        throw new HttpException(
+          {
+            status: HttpStatus.BAD_REQUEST,
+            message: 'El arreglo enviado no contiene elementos con la estructura requerida. Cada elemento debe tener las siguientes propiedades con sus respectivas restricciones:',
+            estructura: estructura,
+          },
+          HttpStatus.BAD_REQUEST
+        );
+      }
+      const itemDTO = plainToInstance(HorasNoDisponiblesDTO, item);
+      const errores = await validate(itemDTO);
+      if (errores.length > 0) {
+        throw new HttpException(errores, HttpStatus.BAD_REQUEST);
+      }
+    }
   }
 
 }

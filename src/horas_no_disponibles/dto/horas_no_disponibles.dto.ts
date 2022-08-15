@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsInt, IsNotEmpty, IsString, Max, Min } from "class-validator";
 
 export class HorasNoDisponiblesDTO {
     
@@ -15,7 +15,9 @@ export class HorasNoDisponiblesDTO {
     dia_id: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsInt()
+    @Min(0)
+    @Max(24)
     @IsNotEmpty()
     hora_inicio: number;
 
