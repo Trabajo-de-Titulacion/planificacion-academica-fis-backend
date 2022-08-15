@@ -73,7 +73,7 @@ Then('se obtendrá una respuesta del envio de correo electrónico {string}.', as
      */
 
     //Realizar comprobación
-    assert.equal(this.resultado_ingresar_docente, respuesta_correo);
+    assert.equal(this.resultado_ingresar_docente.mensaje, respuesta_correo);
 });
 
 After("@Registro_de_docente", async function () {

@@ -56,13 +56,16 @@ export class DocenteService {
                 usuario: existenciaUsuario
             };
             await this.docenteRepository.save(nuevoDocente);
-
-            return "Se creó el docente " + docenteDto.nombreCompleto + " existosamente." +
-                " Se envió un correo electrónico a " + docenteDto.correoElectronico + " con el código de acceso.";
+            return {
+                mensaje: "Se creó el docente " + docenteDto.nombreCompleto + " existosamente." +
+                    " Se envió un correo electrónico a " + docenteDto.correoElectronico + " con el código de acceso."
+            }
 
         } else {
-            return "El docente " + docenteDto.nombreCompleto + " ya se encuentra registrado. "
-                + "No se pudo enviar un correo electrónico a " + docenteDto.correoElectronico + " con el código de acceso."
+            return {
+                mensaje: "El docente " + docenteDto.nombreCompleto + " ya se encuentra registrado. "
+                    + "No se pudo enviar un correo electrónico a " + docenteDto.correoElectronico + " con el código de acceso."
+            }
         }
     }
 
