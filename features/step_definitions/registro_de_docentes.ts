@@ -10,6 +10,8 @@ import { UsuarioService } from '../../src/usuarios/services/usuario.service';
 import { getRepository } from 'typeorm';
 import * as fs from 'fs';
 
+const path = require('path');
+
 /* ESCENARIO 1 - Ingreso individual de un docente */
 
 Given('que se tiene un docente llamado {string} con el correo electrónico {string}', { timeout: 5 * 5000 }, async function (nombre_docente, correo_electronico) {
@@ -92,16 +94,17 @@ After("@Registro_de_docente", async function () {
 
 /* ESCENARIO 2 - Ingreso por archivo de docentes */
 
-When('se ingrese varios docentes por medio de un archivo {string}', { timeout: 5 * 5000 }, async function (path_archivo) {
+When('se ingrese varios docentes por medio de un archivo {string}', { timeout: 5 * 5000 }, async function (nombre_archivo) {
     /*
     Los datos recibidos son:
     |       Significado       | Nombre variable  | Tipo de dato necesario |
-    |  Dirección del archivo  | path_archivo     | string                 |
+    |  Nombre del archivo     | nombre_archivo   | string                 |
      */
 
     // Ingresar varios docentes por medio del archivo
 
     this.docenteController = await this.app.get(DocenteController);
+    const path_archivo = path.join(__dirname, "..", "documents_test", nombre_archivo);
     this.lecturaArchivo = fs.readFileSync(path_archivo);
     this.resultado_ingresar_varios_docentes = await this.docenteController.crearVariosDocentes({ buffer: this.lecturaArchivo });
 });
