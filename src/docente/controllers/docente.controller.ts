@@ -108,7 +108,7 @@ export class DocenteController {
             mayusculas: "QWERTYUIOPASDFGHJKLZXCVBNM",
             minusculas: "qwertyuiopasdfghjklzxcvbnm",
             numeros: "1234567890",
-            simbolos: "!@#$%^&*"
+            simbolos: "!@$%&*"
         }
 
         const obtenerValorAleatorioDelString = (str) => str.charAt(Math.floor(Math.random() * str.length))
