@@ -104,14 +104,23 @@ export class DocenteController {
     /* ====================================================================================================================== */
 
     generarClaveDocente() {
-        const generador = (
-            length = 20, // Código de 20 digitos
-            wishlist = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$'
-        ) =>
-            Array.from(crypto.randomFillSync(new Uint32Array(length)))
-                .map((x) => wishlist[Number(x) % wishlist.length])
-                .join('')
-        return generador();
+        const valoresPosibles = {
+            mayusculas: "QWERTYUIOPASDFGHJKLZXCVBNM",
+            minusculas: "qwertyuiopasdfghjklzxcvbnm",
+            numeros: "1234567890",
+            simbolos: "!@#$%^&*"
+        }
+
+        const obtenerValorAleatorioDelString = (str) => str.charAt(Math.floor(Math.random() * str.length))
+        let clave = "";
+        clave += obtenerValorAleatorioDelString(valoresPosibles.mayusculas);
+        clave += obtenerValorAleatorioDelString(valoresPosibles.minusculas);
+        clave += obtenerValorAleatorioDelString(valoresPosibles.numeros);
+        clave += obtenerValorAleatorioDelString(valoresPosibles.simbolos);
+        for (let i = clave.length; i < 16; i++) {
+            clave += obtenerValorAleatorioDelString(Object.values(valoresPosibles).join(''));
+        }
+        return clave;
     }
 
     /* ====================================================================================================================== */
