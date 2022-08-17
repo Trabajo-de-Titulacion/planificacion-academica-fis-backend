@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { SemestreDTO } from "../dtos/semestre.dto";
 import { SemestreService } from "../services/semestre.service";
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags("Semestres")
 @Controller("/api/semestre")
 export class SemestreController {
