@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UsuarioEntity } from '../../../src/usuarios/entities/usuario.entity';
 import { UsuarioService } from '../../../src/usuarios/services/usuario.service';
@@ -57,6 +57,10 @@ export class AuthService {
     }
 
     verificarToken(token: string): PayloadToken {
-        return this.jwtServicio.verify(token) as PayloadToken;
+        try {
+            return this.jwtServicio.verify(token) as PayloadToken;
+        } catch {
+            throw new HttpException('Token no válido', HttpStatus.BAD_REQUEST);
+        }
     }
 }
