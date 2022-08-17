@@ -25,7 +25,8 @@ export class HorasNoDisponiblesService {
       throw new HttpException('No se encontró el docente.', HttpStatus.BAD_REQUEST);
     }
     return await this.horasNoDisponiblesRepository.find({
-      where: { docente: docente }
+      where: { docente: docente },
+      relations: ['dia'],
     });;
   }
 
