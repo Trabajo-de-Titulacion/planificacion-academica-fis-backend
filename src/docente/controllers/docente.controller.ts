@@ -60,7 +60,7 @@ export class DocenteController {
 
     @ApiOperation({ summary: configuraciones.controladores.docente.operaciones.obtenerDocentePorCorreoElectronico.descripcion })
     @Get(configuraciones.controladores.docente.operaciones.obtenerDocentePorCorreoElectronico.ruta)
-    @Roles(RolesEnum.COORDINADOR)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.DOCENTE)
     obtenerDocentePorCorreoElectronico(@Param('correo') correoElectronicoDocente: string) {
         return this.docenteService.obtenerDocentePorCorreoElectronico(correoElectronicoDocente); // Envio del correo electronico
     }
