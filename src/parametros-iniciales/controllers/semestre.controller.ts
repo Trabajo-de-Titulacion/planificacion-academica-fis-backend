@@ -21,4 +21,9 @@ export class SemestreController {
     async obtenerSemestres(){
         return this.servicioSemestre.obtenerSemestres();
     }
+
+    @Get('/obtenerSemestreConPlanificacionEnProgreso')
+    async obtenerSemestreConPlanificacionEnProgreso(){
+        return this.servicioSemestre.obtenerSemestreConPlanificacionEnProgreso();
+    }
 }

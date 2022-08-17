@@ -28,4 +28,11 @@ export class SemestreService {
     async obtenerSemestres(){
         return this.semestreRepository.find();
     }
+
+    async obtenerSemestreConPlanificacionEnProgreso() {
+        return await this.semestreRepository.findOne({
+            where: { estado: ESTADO_SEMESTRE.PLANIFICACION_EN_PROGRESO },
+            relations: ['jornadas'],
+        })
+    }
 }
