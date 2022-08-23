@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { EspacioFisicoDTO } from '../dto';
 import { EspacioFisicoEntity } from '../entities/espacio_fisico.entity';
 import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo-aula.service';
+import { FacultadService } from 'src/parametros-iniciales/services/facultad.service';
 
 @Injectable()
 export class EspaciosFisicosService {
@@ -12,6 +13,7 @@ export class EspaciosFisicosService {
     @InjectRepository(EspacioFisicoEntity)
     private espaciosFisicosRepository: Repository<EspacioFisicoEntity>,
     private readonly tipoAulaService: TipoAulaService,
+    private readonly facultadService: FacultadService,
   ) {}
 
 
@@ -93,6 +95,7 @@ export class EspaciosFisicosService {
       filas_alteradas: registros_creados.length,
       mensaje: `Se han creado ${registros_creados.length} registros. Hay ${registros_repetidos.length} repetidos` + mensaje_repetidos + '.',
       registros_creados: registros_creados,
+      registros_repetidos: registros_repetidos,
     }
 
     return respuesta;
@@ -165,14 +168,34 @@ export class EspaciosFisicosService {
 
     if (filas) {
       for (const fila of filas) {
+        // Se obtienen los datos de la fila del archivo
         const info = fila.split(';');
         const nombre = info[0];
         const tipo = info[1];
         const facultad = info[2];
         const aforo = Number(info[3]);
 
-        const entidad_tipo = await this.tipoAulaService.obtenerTipoAulaPorNombreYFacultad(tipo, facultad);
+        // Busca si la facultad existe
+        const entidadFacultad = await this.facultadService.obtenerFacultadPorSuNombre(facultad);
+        // Si una facultad del archivo no existe
+        if (!entidadFacultad) {
+          throw new HttpException(
+            'Se encontraron errores en la columna "Facultad". Verifique que las facultades indicadas en el archivo existan en el sistema.',
+            HttpStatus.BAD_REQUEST
+          );
+        }
 
+        // Comprueba que el aforo se encuentre bajo los límites establecidos
+        if ((aforo < 3) || (aforo > 200) || !(Number.isInteger(aforo))) {
+          throw new HttpException(
+            'Se encontraron errores en la columna "Aforo". Verifique que el aforo sea un entero entre 3 y 200.',
+            HttpStatus.BAD_REQUEST
+          );
+        }
+
+        // Busca si el tipo existe en la facultad indicada
+        const entidad_tipo = await this.tipoAulaService.obtenerTipoAulaPorNombreYFacultad(tipo, facultad);
+        // El tipo existe en la facultad indicada
         if (entidad_tipo) {
           const espacio_fisico = this.espaciosFisicosRepository.create();
           espacio_fisico.nombre = nombre;
@@ -180,13 +203,12 @@ export class EspaciosFisicosService {
           espacio_fisico.aforo = aforo;
           
           espacios_fisicos.push(espacio_fisico);
-        }
-      }
-      if (espacios_fisicos.length == 0) {
-        throw new HttpException(
-            'No se encontraron registros válidos. Verifique que los datos sean correctos.',
+        } else {
+          throw new HttpException(
+            'Se encontraron errores en la columna "Tipo". Verifique que los tipos indicados en el archivo correspondan a una facultad existente.',
             HttpStatus.BAD_REQUEST
           );
+        }
       }
     }
 
