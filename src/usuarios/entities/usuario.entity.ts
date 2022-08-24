@@ -1,7 +1,7 @@
 import { RolUsuarioEntity } from "../../../src/auth/entities/rol-usuario.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('Usuario')
+@Entity('usuario')
 export class UsuarioEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;

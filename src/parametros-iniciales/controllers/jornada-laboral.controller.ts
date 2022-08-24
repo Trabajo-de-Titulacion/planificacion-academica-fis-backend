@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { JornadaLaboralDto } from "../dtos/jornada-laboral.dto";
 import { JornadaLaboralService } from "../services/jornada-laboral.service";
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags("Jornada Laboral (días y horas laborales)")
 @Controller("api/jornadaLaboral")
 export class JornadaLaboralController {
@@ -11,18 +12,23 @@ export class JornadaLaboralController {
         private servicioJornadaLaboral : JornadaLaboralService
     ){}
 
-    @Post("/api/servicioJornadaLaboral")
+    @Post("/crearJornadaLaboral")
     async crearJornadaLaboral(@Body() jornada : JornadaLaboralDto){
         this.servicioJornadaLaboral.crearJornadaLaboral(jornada);
     }
 
-    @Get('/api/obtenerIntervalos/:idJornada')
+    @Get('/obtenerIntervalos/:idJornada')
     async obtenerIntervalos(@Param('idJornada') idJornada : string){
         return this.servicioJornadaLaboral.obtenerIntervalos(idJornada);
     }
 
-    @Get('/api/obtenerJornadasLaborales')
-    async obtenerJornadas(){
+    @Get('/obtenerJornadasLaborales')
+    async obtenerJornadasLaborales(){
         return this.servicioJornadaLaboral.obtenerJornadasLaborales();
+    }
+
+    @Get('/obtenerJornadaLaboralPorSemestre/:idSemestre')
+    async obtenerJornadaLaboralPorSemestre(@Param('idSemestre') idSemestre : string){
+        return this.servicioJornadaLaboral.obtenerJornadaLaboralPorSemestre(idSemestre);
     }
 }

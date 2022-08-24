@@ -43,4 +43,20 @@ export class TipoAulaService {
             }
         });
     }
+
+    async eliminarTipoAula( id : string){
+        const tipoAula = this.obtenerTipoAulaPorId(id);
+        if(tipoAula){
+            return this.tipoAulaRepository.delete(id);
+        }else{
+            return null;
+        }
+    }
+
+    async actualizarTipoAula( tipoAula : TipoAulaDto, id: string ){
+        const tipoAulaExistente = await this.tipoAulaRepository.findOne(id);
+        tipoAulaExistente.facultad = await this.servicioFacultad.obtenerFacultadPorSuID(tipoAula.idFacultad);
+        tipoAulaExistente.tipo = tipoAula.tipo;
+        return this.tipoAulaRepository.save(tipoAulaExistente);
+    }
 }

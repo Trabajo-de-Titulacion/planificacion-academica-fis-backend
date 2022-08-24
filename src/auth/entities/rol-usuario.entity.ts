@@ -2,7 +2,7 @@ import { UsuarioEntity } from "../../../src/usuarios/entities/usuario.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { RolEntity } from "./rol.entity";
 
-@Entity('Rol_Usuario')
+@Entity('rolUsuario')
 export class RolUsuarioEntity {
 
     @Column({

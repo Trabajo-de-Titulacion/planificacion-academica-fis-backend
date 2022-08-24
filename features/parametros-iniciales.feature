@@ -3,9 +3,9 @@
 Característica: Parámetros iniciales
     Como coordinador deseo establecer los parámetros iniciales de la planificación 
     semestral como por ejemplo el semestre en curso, los días hábiles laborables y 
-    su horario en intervalos de horas del día, los nombres y nomenclatura de los edificios
-    y  tipos de aulas, para que posteriormente al generar los horarios estos cumplan
-    con las restricciones iniciales y se evite obtener horarios no aplicables en la modalidad
+    su horario en intervalos de horas del día, el nombre de la facultad y sus tipos
+    de aulas, para que posteriormente al generar los horarios estos cumplan con las
+    restricciones iniciales y se evite obtener horarios no aplicables en la modalidad
     de trabajo de la institución.  
 
     @parametros_iniciales_escenario1

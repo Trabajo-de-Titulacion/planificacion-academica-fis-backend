@@ -1,7 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { TipoAulaEntity } from "./tipo-aula.entity";
 
-@Entity('Facultad')
+@Entity('facultad')
 export class FacultadEntity{
     @PrimaryGeneratedColumn('uuid')
     id : string;

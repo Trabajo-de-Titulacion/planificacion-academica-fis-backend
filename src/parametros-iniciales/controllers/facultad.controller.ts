@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Param, Post } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { FacultadDTO } from "../dtos/facultad.dto";
 import { FacultadService } from "../services/facultad.service";
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags("Facultades")
 @Controller("api/facultades")
 export class FacultadController {

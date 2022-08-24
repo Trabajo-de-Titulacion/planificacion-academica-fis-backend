@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGene
 import DIAS from "../types/dia.type";
 import { SemestreEntity } from "./semestre.entity";
 
-@Entity("Jornada_Laboral")
+@Entity("jornadaLaboral")
 export class JornadaLaboralEntity{
     @PrimaryGeneratedColumn('uuid')
     id : string;

@@ -1,8 +1,9 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { TipoAulaDto } from "../dtos/tipo-aula.dto";
 import { TipoAulaService } from "../services/tipo-aula.service";
 
+@ApiBearerAuth('defaultBearerAuth')
 @ApiTags("Tipos de aulas de una facultad")
 @Controller("/api/tipoAula")
 export class TipoAulaController {
@@ -19,5 +20,15 @@ export class TipoAulaController {
     @Get('/obtenerTipoAulas')
     async obtenerTipoAulas(){
         return this.servicioTipoAula.obtenerTipoAulas()
+    }
+
+    @Delete('/eliminarTipoAula/:id')
+    async eliminarTipoAula(@Param('id') id : string){
+        return this.servicioTipoAula.eliminarTipoAula(id);
+    }
+
+    @Put('/actualizarTipoAula/:id')
+    async actualizarTipoAula(@Param('id') id: string, @Body() tipoAula : TipoAulaDto){
+        return this.servicioTipoAula.actualizarTipoAula(tipoAula, id);
     }
 }
