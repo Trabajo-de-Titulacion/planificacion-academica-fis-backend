@@ -52,7 +52,8 @@ import { RolesGuard } from './guards/roles.guard';
       useClass: RolesGuard,
     }
   ],
-  controllers: [AuthController, RolController, RolUsuarioController]
+  controllers: [AuthController, RolController, RolUsuarioController],
+  exports: [AuthService]
 })
 export class AuthModule { }
 

@@ -25,7 +25,7 @@ export class DocenteController {
     @Roles(RolesEnum.COORDINADOR)
     crearDocente(@Body() docenteDto: DocenteDto) {
         //Formaterar y generar los datos
-        docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase();
+        docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase().trim();
         return this.docenteService.crearDocente(docenteDto, this.generarClaveDocente());
     }
 
@@ -60,7 +60,7 @@ export class DocenteController {
 
     @ApiOperation({ summary: configuraciones.controladores.docente.operaciones.obtenerDocentePorCorreoElectronico.descripcion })
     @Get(configuraciones.controladores.docente.operaciones.obtenerDocentePorCorreoElectronico.ruta)
-    @Roles(RolesEnum.COORDINADOR)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.DOCENTE)
     obtenerDocentePorCorreoElectronico(@Param('correo') correoElectronicoDocente: string) {
         return this.docenteService.obtenerDocentePorCorreoElectronico(correoElectronicoDocente); // Envio del correo electronico
     }
@@ -104,14 +104,23 @@ export class DocenteController {
     /* ====================================================================================================================== */
 
     generarClaveDocente() {
-        const generador = (
-            length = 20, // Código de 20 digitos
-            wishlist = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$'
-        ) =>
-            Array.from(crypto.randomFillSync(new Uint32Array(length)))
-                .map((x) => wishlist[Number(x) % wishlist.length])
-                .join('')
-        return generador();
+        const valoresPosibles = {
+            mayusculas: "QWERTYUIOPASDFGHJKLZXCVBNM",
+            minusculas: "qwertyuiopasdfghjklzxcvbnm",
+            numeros: "1234567890",
+            simbolos: "!@$%&*"
+        }
+
+        const obtenerValorAleatorioDelString = (str) => str.charAt(Math.floor(Math.random() * str.length))
+        let clave = "";
+        clave += obtenerValorAleatorioDelString(valoresPosibles.mayusculas);
+        clave += obtenerValorAleatorioDelString(valoresPosibles.minusculas);
+        clave += obtenerValorAleatorioDelString(valoresPosibles.numeros);
+        clave += obtenerValorAleatorioDelString(valoresPosibles.simbolos);
+        for (let i = clave.length; i < 16; i++) {
+            clave += obtenerValorAleatorioDelString(Object.values(valoresPosibles).join(''));
+        }
+        return clave;
     }
 
     /* ====================================================================================================================== */
@@ -126,10 +135,10 @@ export class DocenteController {
         for (let i = 0; i < informacionDocentes.length; i = i + 2) {
             if (informacionDocentes[i].trim() != "") {
                 arregloDocente[i / 2] = {
-                    nombreCompleto: informacionDocentes[i].toUpperCase(), correoElectronico: informacionDocentes[i + 1]
+                    nombreCompleto: informacionDocentes[i].toUpperCase().trim(), correoElectronico: informacionDocentes[i + 1]
                 }
                 arregloUsuario[i / 2] = {
-                    correo: informacionDocentes[i].toUpperCase(), clave: this.generarClaveDocente()
+                    correo: informacionDocentes[i].toUpperCase().trim(), clave: this.generarClaveDocente()
                 }
             }
         }

@@ -17,10 +17,10 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
           },
         },
         defaults: {
-          from: '"Planificacion Academica" <trabajodetitulacion2022@outlook.com>'
+          from: '"Planificación Académica" <trabajodetitulacion2022@outlook.com>'
         },
         template: {
-          dir: 'D:/Proyectos Codigo/TrabajoDeTitulacion/planificacion-academica-fis-backend/src/templates/',
+          dir: `src/templates/`,
           adapter: new HandlebarsAdapter(),
           options: {
             strict: false,
