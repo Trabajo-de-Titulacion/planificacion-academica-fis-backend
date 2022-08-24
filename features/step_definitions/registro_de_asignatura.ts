@@ -1,105 +1,112 @@
 const assert = require('assert');
-import { Given, When, Then } from '@cucumber/cucumber';
+import { Given, When, Then, After } from '@cucumber/cucumber';
 import { getRepository } from 'typeorm';
 import { AsignaturaEntity } from '../../src/asignatura/entities/asignatura.entity'
 import * as fs from 'fs';
 import { AsignaturaController } from '../../src/asignatura/controllers/asignatura.controller';
 
+const path = require('path');
+
 /* ESCENARIO 1 - Ingreso individual de una asignatura */
 
-Given('que se tiene una asignatura con código {string}, nombre {string}, cantidad de créditos {string}, código de requisito {string} y código de correquisito {string}', async function (codigo_asignatura_existente, nombre_asignatura_existente, creditos_asignatura_existente, codigos_requisito_asignatura_existente, codigos_correquisito_asignatura_existente) {
+Given('que se tiene una asignatura con el código {string}, nombre {string} y cantidad de créditos {string}', { timeout: 5 * 5000 }, async function (codigoAsignaturaExistente, nombreAsignaturaExistente, creditosAsignaturaExistente) {
     /*
     Los datos recibidos son:
-    |            Significado           | Nombre variable                           | Tipo de dato necesario |
-    |Código de la asignatura existente | codigo_asignatura_existente               | string                 |
-    |Nombre de la asigantura existente | nombre_asignatura_existente               | string                 |
-    |Cantidad de créditos              | creditos_asignatura_existente             | number                 |
-    |Códigos de requisitos             | codigos_requisito_asignatura_existente    | string                 |
-    |Códigos de correquisitos          | codigos_correquisito_asignatura_existente | string                 |
+    |            Significado           |         Nombre variable                 | Tipo de dato necesario |
+    |Código de la asignatura existente | codigoAsignaturaExistente               | string                 |
+    |Nombre de la asigantura existente | nombreAsignaturaExistente               | string                 |
+    |Cantidad de créditos              | creditosAsignaturaExistente             | number                 |
      */
-
-    // Convertir a tipos de datos correspondientes
-
-    creditos_asignatura_existente = Number(creditos_asignatura_existente);
 
     // Ingresar asignatura existente
 
-    await getRepository(AsignaturaEntity).save({
-        codigo: codigo_asignatura_existente,
-        nombre: nombre_asignatura_existente,
-        creditos: creditos_asignatura_existente,
-        codigoRequisito: codigos_requisito_asignatura_existente,
-        codigoCorrequisito: codigos_correquisito_asignatura_existente
-    })
+    this.asignaturaExistente = {
+        codigo: codigoAsignaturaExistente,
+        nombre: nombreAsignaturaExistente,
+        creditos: Number(creditosAsignaturaExistente)
+    }
+
+    await getRepository(AsignaturaEntity).save(this.asignaturaExistente)
 });
 
-When('se ingrese el asignatura con código {string}, nombre {string}, cantidad de créditos {string}, código de requisito {string} y código de correquisito {string},', async function (codigo_asignatura_nueva, nombre_asignatura_nueva, creditos_asignatura_nueva, codigos_requisito_asignatura_nueva, codigos_correquisito_asignatura_nueva) {
+When('se ingrese el asignatura con código {string}, nombre {string} y cantidad de créditos {string}', { timeout: 5 * 5000 }, async function (codigoAsignaturaNueva, nombreAsignaturaNueva, creditosAsignaturaNueva) {
     /*
     Los datos recibidos son:
-    |            Significado           | Nombre variable                       | Tipo de dato necesario |
-    |Código de la asignatura nueva     | codigo_asignatura_nueva               | string                 |
-    |Nombre de la asigantura nueva     | nombre_asignatura_nueva               | string                 |
-    |Cantidad de créditos              | creditos_asignatura_nueva             | number                 |
-    |Códigos de requisitos             | codigos_requisito_asignatura_nueva    | string                 |
-    |Códigos de correquisitos          | codigos_correquisito_asignatura_nueva | string                 |
+    |            Significado           | Nombre variable                     | Tipo de dato necesario |
+    |Código de la asignatura nueva     | codigoAsignaturaNueva               | string                 |
+    |Nombre de la asigantura nueva     | nombreAsignaturaNueva               | string                 |
+    |Cantidad de créditos              | creditosAsignaturaNueva             | number                 |
      */
-
-    // Convertir a tipos de datos correspondientes
-
-    creditos_asignatura_nueva = Number(creditos_asignatura_nueva);
 
     //Ingresar nueva asignatura
 
     this.asignaturaController = await this.app.get(AsignaturaController);
 
-    this.resultado_ingresar_asignatura = await this.asignaturaController.createAsignatura({
-        codigo: codigo_asignatura_nueva,
-        nombre: nombre_asignatura_nueva,
-        creditos: creditos_asignatura_nueva,
-        codigoRequisito: codigos_requisito_asignatura_nueva,
-        codigoCorrequisito: codigos_correquisito_asignatura_nueva
-    })
+    this.asignaturaACrear = {
+        codigo: codigoAsignaturaNueva,
+        nombre: nombreAsignaturaNueva,
+        creditos: Number(creditosAsignaturaNueva)
+    }
+
+    this.resultadoIngresarAsignatura = await this.asignaturaController.crearUnaAsignatura(this.asignaturaACrear);
 
 });
 
-Then('se obtendrá la respuesta {string} del sistema', async function (respuesta_ingreso_asignatura) {
+Then('se obtendrá una respuesta del registro individual {string}.', { timeout: 5 * 5000 }, async function (respuestaIngresoAsignaturaIndividual) {
     /*
     Los datos recibidos son: 
-    |          Significado              | Nombre variable                 | Tipo de dato necesario |
-    |Cantidad de asignaturas ingresados | respuesta_ingreso_asignatura    | string                 |
+    |          Significado              | Nombre variable                            | Tipo de dato necesario |
+    |Cantidad de asignaturas ingresados | respuestaIngresoAsignaturaIndividual    | string                 |
      */
 
     // Realizar comprobación
 
-    assert.equal(this.resultado_ingresar_asignatura.mensaje, respuesta_ingreso_asignatura);
+    assert.equal(this.resultadoIngresarAsignatura.mensaje, respuestaIngresoAsignaturaIndividual);
+});
+
+After("@RegistroDeAsignatura", async function () {
+
+    //Eliminar asignaturas
+    await getRepository(AsignaturaEntity).delete(this.asignaturaExistente);
+    await getRepository(AsignaturaEntity).delete(this.asignaturaACrear);
+
 });
 
 /* ESCENARIO 2 - Ingreso por archivo de asignaturas */
 
-When('se ingrese varios asignaturas por medio de un archivo {string}', async function (path_archivo) {
+When('se ingrese varias asignaturas por medio de un archivo csv {string}', { timeout: 5 * 5000 }, async function (nombreArchivo) {
     /*
     Los datos recibidos son:
-    |       Significado       | Nombre variable  | Tipo de dato necesario |
-    |  Dirección del archivo  | path_archivo     | string                 |
+    |       Significado       | Nombre variable   | Tipo de dato necesario |
+    |  Nombre del archivo     | nombreArchivo     | string                 |
      */
 
     // Ingresar varios docentes por medio del archivo
 
     this.asignaturaController = await this.app.get(AsignaturaController);
-
-    this.lecturaArchivo = fs.readFileSync(path_archivo);
-
-    this.resultado_ingresar_varios_docentes = await this.asignaturaController.createVariasAsignaturas({ buffer: this.lecturaArchivo });
+    const pathArchivo = path.join(__dirname, "..", "documents_test", nombreArchivo);
+    this.lecturaArchivo = fs.readFileSync(pathArchivo);
+    this.resultadoIngresarVariasAsignatura = await this.asignaturaController.crearVariasAsignaturas({ buffer: this.lecturaArchivo });
 });
 
-Then('se obtendrá la respuesta {string}', function (respuesta_de_multiples_ingresos_asignaturas) {
+Then('se obtendrá una respuesta del registro múltiple {string}.', { timeout: 5 * 5000 }, function (respuestaDeMultiplesIngresosAsignaturas) {
     /*
     Los datos recibidos son: 
     |          Significado               | Nombre variable                            | Tipo de dato necesario |
-    |Respuesta de asignaturas ingresados | respuesta_de_multiples_ingresos_asignaturas| string                 |
+    |Respuesta de asignaturas ingresados | respuestaDeMultiplesIngresosAsignaturas| string                 |
      */
 
     // Realizar comprobación
 
-    assert.equal(this.resultado_ingresar_asignatura.mensaje, respuesta_de_multiples_ingresos_asignaturas);
+    assert.equal(this.resultadoIngresarVariasAsignatura.mensaje, respuestaDeMultiplesIngresosAsignaturas);
+});
+
+After("@RegistroDeVariasAsignaturas", async function () {
+    //Eliminar asignaturas usadas y creadas
+
+    await getRepository(AsignaturaEntity).delete(this.asignaturaExistente);
+
+    for (let i = 0; i < this.resultadoIngresarVariasAsignatura.asignaturasIngresados.length; i++) {
+        await getRepository(AsignaturaEntity).delete(this.resultadoIngresarVariasAsignatura.asignaturasIngresados[i]);
+    }
 });
