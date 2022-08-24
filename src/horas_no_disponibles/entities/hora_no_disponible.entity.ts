@@ -3,7 +3,7 @@ import { JornadaLaboralEntity } from "../../../src/parametros-iniciales/entities
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity('Hora_No_Disponible')
+@Entity('horaNoDisponible')
 export class HoraNoDisponibleEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;

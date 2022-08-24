@@ -2,7 +2,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import ESTADO_SEMESTRE from "../types/estado-semestre.type";
 import { JornadaLaboralEntity } from "./jornada-laboral.entity";
 
-@Entity('Semestre')
+@Entity('semestre')
 export class SemestreEntity {
     @PrimaryGeneratedColumn('uuid')
     id : string

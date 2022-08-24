@@ -1,7 +1,7 @@
 import ROLES from "src/utils/types/rol.type";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('Rol')
+@Entity('rol')
 export class RolEntity {
 
     @PrimaryGeneratedColumn('uuid')

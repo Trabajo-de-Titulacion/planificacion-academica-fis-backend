@@ -1,7 +1,7 @@
 import { TipoAulaEntity } from "../../../src/parametros-iniciales/entities/tipo-aula.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('Espacio_Fisico')
+@Entity('espacioFisico')
 export class EspacioFisicoEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;

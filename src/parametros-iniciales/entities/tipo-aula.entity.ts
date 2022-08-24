@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { FacultadEntity } from "./facultad.entity";
 
-@Entity('TipoAula')
+@Entity('tipoAula')
 export class TipoAulaEntity {
     @PrimaryGeneratedColumn('uuid')
     public id : string;

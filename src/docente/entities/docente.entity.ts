@@ -1,7 +1,7 @@
 import { UsuarioEntity } from "../../../src/usuarios/entities/usuario.entity";
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('Docente')
+@Entity('docente')
 export class DocenteEntity {
 
     @PrimaryGeneratedColumn('uuid')
