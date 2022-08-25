@@ -97,7 +97,6 @@ Then('se obtendrá una respuesta del registro múltiple {string}.', { timeout: 5
      */
 
     // Realizar comprobación
-
     assert.equal(this.resultadoIngresarVariasAsignatura.mensaje, respuestaDeMultiplesIngresosAsignaturas);
 });
 
@@ -106,7 +105,7 @@ After("@RegistroDeVariasAsignaturas", async function () {
 
     await getRepository(AsignaturaEntity).delete(this.asignaturaExistente);
 
-    for (let i = 0; i < this.resultadoIngresarVariasAsignatura.asignaturasIngresados.length; i++) {
-        await getRepository(AsignaturaEntity).delete(this.resultadoIngresarVariasAsignatura.asignaturasIngresados[i]);
+    for (let i = 0; i < this.resultadoIngresarVariasAsignatura.asignaturasIngresadas.length; i++) {
+        await getRepository(AsignaturaEntity).delete(this.resultadoIngresarVariasAsignatura.asignaturasIngresadas[i]);
     }
 });

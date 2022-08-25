@@ -50,13 +50,13 @@ export class AsignaturaService {
             // Busqueda de las asignaturas
             const existenciaAsignaturaArchivo = await this.obtenerAsignaturaPorCodigo(arregloAsignaturas[i].codigo);
             if (existenciaAsignaturaArchivo instanceof NotFoundException) {
+
                 const asignaturaNueva = {
                     codigo: arregloAsignaturas[i].codigo,
                     nombre: arregloAsignaturas[i].nombre,
                     creditos: Number(arregloAsignaturas[i].creditos)
                 }
                 await this.asignaturaRepository.save(asignaturaNueva);
-
                 // Arreglo de asignaturas guardadas
                 asignaturasGuardadas[cantidadAsignaturaGuardada] = arregloAsignaturas[i];
                 cantidadAsignaturaGuardada++;
@@ -65,27 +65,26 @@ export class AsignaturaService {
                 asignaturasNoGuardadas[cantidadAsignaturaNoGuardada] = arregloAsignaturas[i];
                 cantidadAsignaturaNoGuardada++;
             }
+        }
+        // Envió de resultados
+        if (cantidadAsignaturaNoGuardada == 0) {
+            return {
+                mensaje: 'Se han creado exitosamente ' + cantidadAsignaturaGuardada + ' asignaturas.',
+                asignaturasIngresadas: asignaturasGuardadas
+            }
+        } else {
+            // Crear un arreglo con los nombres de las asignaturas duplicadas
+            let nombreAsignaturasDuplicados = asignaturasNoGuardadas.map((asignatura) => {
+                return asignatura.codigo + " - " + asignatura.nombre
+            });
 
-            // Envió de resultados
-            if (cantidadAsignaturaNoGuardada == 0) {
-                return {
-                    mensaje: 'Se han creado exitosamente ' + arregloAsignaturas.length + ' asignaturas.',
-                    asignaturasIngresados: arregloAsignaturas
-                }
-            } else {
-                // Crear un arreglo con los nombres de las asignaturas duplicadas
-                let nombreAsignaturasDuplicados = asignaturasNoGuardadas.map((asignatura) => {
-                    return asignatura.codigo + " - " + asignatura.nombre
-                });
+            const nombresImprimibles = nombreAsignaturasDuplicados.join(", ");
 
-                const nombresImprimibles = nombreAsignaturasDuplicados.join(", ");
-
-                return {
-                    mensaje: 'Se han creado exitosamente ' + asignaturasGuardadas.length +
-                        ' asignaturas.  No se pudo crear la/s asignatura/s: ' + nombresImprimibles +
-                        ', ya que, existen dentro del sistema.',
-                    asignaturasIngresadas: asignaturasGuardadas
-                }
+            return {
+                mensaje: 'Se han creado exitosamente ' + cantidadAsignaturaGuardada +
+                    ' asignaturas.  No se pudo crear la/s asignatura/s: ' + nombresImprimibles +
+                    ', ya que, existen dentro del sistema.',
+                asignaturasIngresadas: asignaturasGuardadas
             }
         }
     }
