@@ -137,7 +137,8 @@ export class DocenteService {
                 mensaje: "Se han creado exitosamente " + arregloDocentesCreados.length +
                     " docentes y se ha enviado un correo electrónico con la clave de acceso a cada uno. No se pudo crear a los docentes: "
                     + nombresImprimibles + ", ya que, existen dentro del sistema.",
-                docentesIngresados: arregloDocentesCreados
+                docentesIngresados: arregloDocentesCreados,
+                docentesNoIngresados: docentesNoGuardados
             }
         }
     }
