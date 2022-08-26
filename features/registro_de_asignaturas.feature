@@ -12,7 +12,7 @@
 
 			Ejemplos:
 			| códigoAsignaturaExistente | nombreAsignaturaExistente           | cantidadDeCréditosAsignaturaExistente | códigoAsignaturaNueva | nombreAsignaturaNueva               | cantidadDeCréditosAsignaturaNueva | respuestaIngresoAsignaturaIndividual                                                    |
-			| MATD113                   | Algebra lineal                      | 3                                     | ICCD1444              | Programacion I                      | 4                                 | Se creó la asignatura ICCD1444 - PROGRAMACION I existosamente.                          |
+			| MATD113                   | Algebra lineal                      | 3                                     | ICCD444               | Programacion I                      | 4                                 | Se creó la asignatura ICCD444 - PROGRAMACION I existosamente.                           |
 			| MATD213                   | Ecuaciones diferenciales ordinarias | 3                                     | MATD213               | Ecuaciones diferenciales ordinarias | 4                                 | La asignatura MATD213 - ECUACIONES DIFERENCIALES ORDINARIAS ya se encuentra registrada. |
 
 			@RegistroDeVariasAsignaturas
