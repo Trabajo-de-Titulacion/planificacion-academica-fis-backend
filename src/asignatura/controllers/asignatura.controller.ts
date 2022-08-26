@@ -61,8 +61,8 @@ export class AsignaturaController {
     /* ==================================== ELIMINAR UNA ASIGNATURA EN LA BASE DE DATOS ===================================== */
     /* ====================================================================================================================== */
 
-    @ApiOperation({ summary: configuraciones.controladores.asignatura.operaciones.eliminarDocentePorID.descripcion })
-    @Delete(configuraciones.controladores.asignatura.operaciones.eliminarDocentePorID.ruta)
+    @ApiOperation({ summary: configuraciones.controladores.asignatura.operaciones.eliminarAsignaturaPorID.descripcion })
+    @Delete(configuraciones.controladores.asignatura.operaciones.eliminarAsignaturaPorID.ruta)
     @Roles(RolesEnum.COORDINADOR)
     eliminarAsignaturaPorID(@Param('id') idAsignatura: string) {
         return this.asignaturaService.eliminarAsignaturaPorID(idAsignatura);

@@ -142,8 +142,8 @@ const configuracionesAPI = {
                     ruta: '/actualizarAsignaturaPorID/:id',
                     descripcion: 'Método que permite actualizar los datos de la asignatura por medio del identificador (ID).'
                 },
-                eliminarDocentePorID: {
-                    ruta: 'eliminarDocentePorID/:id',
+                eliminarAsignaturaPorID: {
+                    ruta: 'eliminarAsignaturaPorID/:id',
                     descripcion: 'Método que permite eliminar una asigna por medio de su identificador (ID).'
                 }
             }
