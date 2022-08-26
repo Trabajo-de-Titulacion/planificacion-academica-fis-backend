@@ -40,7 +40,6 @@ export class AsignaturaService {
     /* ====================================================================================================================== */
 
     async crearVariasAsignaturas(arregloAsignaturas: AsignaturaDto[]) {
-
         let asignaturasNoGuardadas: AsignaturaDto[] = [];
         let cantidadAsignaturaNoGuardada = 0;
         let asignaturasGuardadas: AsignaturaDto[] = [];
@@ -70,7 +69,7 @@ export class AsignaturaService {
         if (cantidadAsignaturaNoGuardada == 0) {
             return {
                 mensaje: 'Se han creado exitosamente ' + cantidadAsignaturaGuardada + ' asignaturas.',
-                asignaturasIngresadas: asignaturasGuardadas
+                asignaturasIngresadas: asignaturasGuardadas,
             }
         } else {
             // Crear un arreglo con los nombres de las asignaturas duplicadas
@@ -84,7 +83,8 @@ export class AsignaturaService {
                 mensaje: 'Se han creado exitosamente ' + cantidadAsignaturaGuardada +
                     ' asignaturas.  No se pudo crear la/s asignatura/s: ' + nombresImprimibles +
                     ', ya que, existen dentro del sistema.',
-                asignaturasIngresadas: asignaturasGuardadas
+                asignaturasIngresadas: asignaturasGuardadas,
+                asignaturasNoIngresadas: asignaturasNoGuardadas,
             }
         }
     }
