@@ -5,7 +5,7 @@ import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { DocenteEntity } from '../entities/docente.entity';
 import { DocenteDto } from "../dto/docente.dto";
 import { UsuarioService } from "../../usuarios/services/usuario.service";
-import { CrearUsuarioDTO, UsuarioDto } from "../../usuarios/dtos/usuario.dto";
+import { CrearUsuarioDTO } from "../../usuarios/dtos/usuario.dto";
 import { RolesEnum } from "../../utils/enum/rol.enum";
 import { RolService } from "../../auth/services/rol.service";
 import RolUsuarioService from "../../../src/auth/services/rol-usuario.service";
@@ -58,13 +58,13 @@ export class DocenteService {
             await this.docenteRepository.save(nuevoDocente);
             return {
                 mensaje: "Se creó el docente " + docenteDto.nombreCompleto + " existosamente." +
-                    " Se envió un correo electrónico a " + docenteDto.correoElectronico + " con el código de acceso."
+                    " Se envió un correo electrónico a " + docenteDto.correoElectronico + " con la clave de acceso."
             }
 
         } else {
             return {
                 mensaje: "El docente " + docenteDto.nombreCompleto + " ya se encuentra registrado. "
-                    + "No se pudo enviar un correo electrónico a " + docenteDto.correoElectronico + " con el código de acceso."
+                    + "No se pudo enviar un correo electrónico a " + docenteDto.correoElectronico + " con la clave de acceso."
             }
         }
     }
@@ -122,8 +122,8 @@ export class DocenteService {
         if (cantidadDocentesNoGuardados == 0) {
             return {
                 mensaje: "Se han creado exitosamente " + arregloDocentes.length +
-                    " docentes. Se envió un correo electrónico con el código de acceso a cada uno de los docentes.",
-                docentes_ingresados: arregloDocentes
+                    " docentes. Se envió un correo electrónico con la clave de acceso a cada uno de los docentes.",
+                docentesIngresados: arregloDocentes
             }
         } else {
 
@@ -135,9 +135,10 @@ export class DocenteService {
 
             return {
                 mensaje: "Se han creado exitosamente " + arregloDocentesCreados.length +
-                    " docentes y se ha enviado un correo electrónico con el código de acceso a cada uno. No se pudo crear a los docentes: "
+                    " docentes y se ha enviado un correo electrónico con la clave de acceso a cada uno. No se pudo crear a los docentes: "
                     + nombresImprimibles + ", ya que, existen dentro del sistema.",
-                docentes_ingresados: arregloDocentesCreados
+                docentesIngresados: arregloDocentesCreados,
+                docentesNoIngresados: docentesNoGuardados
             }
         }
     }
@@ -151,7 +152,7 @@ export class DocenteService {
         if (docente) {
             return docente;
         } else {
-            return new NotFoundException(`No existe el docente con el id ${idDocente}`)
+            return new NotFoundException(`No existe el docente con el id ${idDocente}`);
         }
     }
 

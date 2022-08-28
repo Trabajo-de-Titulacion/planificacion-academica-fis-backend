@@ -24,7 +24,7 @@ export class DocenteController {
     @Post(configuraciones.controladores.docente.operaciones.crearUnDocente.ruta)
     @Roles(RolesEnum.COORDINADOR)
     crearDocente(@Body() docenteDto: DocenteDto) {
-        //Formaterar y generar los datos
+        //Formatear y generar los datos
         docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase().trim();
         return this.docenteService.crearDocente(docenteDto, this.generarClaveDocente());
     }
@@ -73,6 +73,8 @@ export class DocenteController {
     @Put(configuraciones.controladores.docente.operaciones.actualizarDocentePorID.ruta)
     @Roles(RolesEnum.COORDINADOR)
     actualizarDocentePorID(@Param('id') idDocente: string, @Body() docenteDto: DocenteDto) {
+        docenteDto.correoElectronico = docenteDto.correoElectronico.trim();
+        docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase().trim();
         return this.docenteService.actualizarDocentePorID(idDocente, docenteDto);
     }
 

@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { EspacioFisicoDTO } from '../dto';
 import { EspacioFisicoEntity } from '../entities/espacio_fisico.entity';
 import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo-aula.service';
-import { FacultadService } from 'src/parametros-iniciales/services/facultad.service';
+import { FacultadService } from '../../../src/parametros-iniciales/services/facultad.service';
 
 @Injectable()
 export class EspaciosFisicosService {
@@ -14,7 +14,7 @@ export class EspaciosFisicosService {
     private espaciosFisicosRepository: Repository<EspacioFisicoEntity>,
     private readonly tipoAulaService: TipoAulaService,
     private readonly facultadService: FacultadService,
-  ) {}
+  ) { }
 
 
   /* Create */
@@ -47,19 +47,19 @@ export class EspaciosFisicosService {
       filas_alteradas = 1;
       mensaje = `Se creó el espacio físico ${espacio_fisico.nombre} de manera exitosa!`;
     }
-    
+
     const respuesta = {
       filas_alteradas: filas_alteradas,
       mensaje: mensaje,
     }
-    
+
     return respuesta;
   }
 
   async crearMultiplesEspaciosFisicos(espacios_fisicos: EspacioFisicoEntity[]) {
 
     // Buscar registros ya existentes
-    const nombres = espacios_fisicos.map(espacio => {return {nombre: espacio.nombre}});
+    const nombres = espacios_fisicos.map(espacio => { return { nombre: espacio.nombre } });
 
     const coincidencias = await this.espaciosFisicosRepository.find({
       where: nombres
@@ -71,7 +71,7 @@ export class EspaciosFisicosService {
     const registros_nuevos: EspacioFisicoEntity[] = [];
     const registros_repetidos: EspacioFisicoEntity[] = [];
 
-    espacios_fisicos.forEach( espacio_fisico => {
+    espacios_fisicos.forEach(espacio_fisico => {
       // Si ya existe un registro con el mismo nombre
       if (nombres_coincidentes.includes(espacio_fisico.nombre)) {
         registros_repetidos.push(espacio_fisico);
@@ -87,8 +87,8 @@ export class EspaciosFisicosService {
     if (registros_nuevos.length > 0) {
       registros_creados = await this.espaciosFisicosRepository.save(registros_nuevos);
     }
-    
-    const mensaje_repetidos = (registros_repetidos.length > 0)?
+
+    const mensaje_repetidos = (registros_repetidos.length > 0) ?
       ': ' + registros_repetidos.map(registro => registro.nombre).join(', ') : '';
 
     const respuesta = {
@@ -111,7 +111,7 @@ export class EspaciosFisicosService {
 
   async obtenerEspacioFisicoPorId(id: string): Promise<EspacioFisicoEntity> {
     return await this.espaciosFisicosRepository.findOne({
-      where: {id: id},
+      where: { id: id },
       relations: ['tipo'],
     });
   }
@@ -201,7 +201,7 @@ export class EspaciosFisicosService {
           espacio_fisico.nombre = nombre;
           espacio_fisico.tipo = entidad_tipo;
           espacio_fisico.aforo = aforo;
-          
+
           espacios_fisicos.push(espacio_fisico);
         } else {
           throw new HttpException(

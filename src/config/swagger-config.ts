@@ -113,7 +113,71 @@ const configuracionesAPI = {
                     descripcion: 'Método que permite eliminar un docente por medio de su identificador (ID).'
                 },
             }
-        }
+        },
+        asignatura: {
+            ruta: 'api/asignatura',
+            tag: 'Asignatura',
+            operaciones: {
+                crearUnaAsignatura: {
+                    ruta: '/crearUnaAsignatura',
+                    descripcion: 'Método que permite crear una asignatura.'
+                },
+                crearVariasAsignaturas: {
+                    ruta: '/crearVariasAsignaturas',
+                    descripcion: 'Método que permite crear asignaturas no duplicadas dentro del archivo csv.'
+                },
+                obtenerAsignaturaPorID: {
+                    ruta: '/obtenerAsignaturaPorID/:id',
+                    descripcion: ' Método que permite obtener el código, nombre y cantidad de créditos de una asignatura por medio de su identificador (ID).'
+                },
+                obtenerAsignaturaPorCodigo: {
+                    ruta: '/obtenerAsignaturaPorCodigo/:codigo',
+                    descripcion: 'Método que permite obtener el identificador, nombre y cantidad de créditos de una asignatura por medio de su código'
+                },
+                obtenerAsignaturas: {
+                    ruta: '/obtenerAsignaturas',
+                    descripcion: 'Método que permite obtener un arreglo con todas las asignaturas registradas en el sistema.'
+                },
+                actualizarAsignaturaPorID: {
+                    ruta: '/actualizarAsignaturaPorID/:id',
+                    descripcion: 'Método que permite actualizar los datos de la asignatura por medio del identificador (ID).'
+                },
+                eliminarAsignaturaPorID: {
+                    ruta: 'eliminarAsignaturaPorID/:id',
+                    descripcion: 'Método que permite eliminar una asignatura por medio de su identificador (ID).'
+                }
+            }
+        },
+        carrera: {
+            ruta: 'api/carrera',
+            tag: 'Carrera',
+            operaciones: {
+                crearUnaCarrera: {
+                    ruta: '/crearUnaCarrera',
+                    descripcion: 'Método que permite crear una carrera.'
+                },
+                obtenerCarreraPorID: {
+                    ruta: '/obtenerCarreraPorID/:id',
+                    descripcion: 'Método que permite obtener el código, nombre, duración y modalidad de la carrera por medio de su identificador (ID).'
+                },
+                obtenerCarreraPorCodigo: {
+                    ruta: '/obtenerCarreraPorCodigo/:codigo',
+                    desripcion: 'Método que permite obtener el identificador, nombre, duración y modalidad de la carrera por medio de su código.'
+                },
+                obtenerCarreras: {
+                    ruta: '/obtenerCarreras',
+                    descripcion: 'Método que permite obtener un arreglo con todas las carreras registradas en el sistema.'
+                },
+                actualizarCarreraPorID: {
+                    ruta: '/actualizarCarreraPorID/:id',
+                    descripcion: 'Método que permite actualizar los datos de carrera por medio del identificador (ID).'
+                },
+                eliminarCarreraPorID: {
+                    ruta: '/eliminarCarreraPorID/:id',
+                    descripcion: 'Método que permite eliminar una carrera por medio de su identificador (ID).'
+                }
+            }
+        },
     }
 }
 
