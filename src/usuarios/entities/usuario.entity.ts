@@ -1,6 +1,6 @@
 import { RolUsuarioEntity } from "../../../src/auth/entities/rol-usuario.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { HorarioEntity } from "src/horario/entities/horario.entity";
+import { HorarioEntity } from "../../../src/horario/entities/horario.entity";
 
 @Entity('usuario')
 export class UsuarioEntity {
