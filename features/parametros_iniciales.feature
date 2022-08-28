@@ -9,12 +9,12 @@ Característica: Parámetros iniciales
     de trabajo de la institución.  
 
     @parametros_iniciales_escenario1
-    Escenario: Aquel en el que se establece el horario laboral de la institución
+    Escenario: Se establece el horario laboral de la institución
         Dado el semestre en curso '2022-A',
         Cuando se registre el día laboral "LUNES" en el horario de "07:00" a "21:00" horas con hora de almuerzo a las "13:00",
         Entonces se obtienen 13 horas laborales e intervalos de una hora.
 
-    Esquema del escenario: Aquel en el que se registra los tipos de aula de la FIS
+    Esquema del escenario: Se registra los tipos de aula de la FIS
         Dado que existe la facultad con nombre "FACULTAD DE INGENIERÍA DE SISTEMAS",
         Cuando se registre el tipo de aula "AULA REGULAR",
         Y el tipo de aula "LABORATORIO"

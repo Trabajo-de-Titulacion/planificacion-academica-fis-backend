@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Query } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { JornadaLaboralDto } from "../dtos/jornada-laboral.dto";
 import { JornadaLaboralService } from "../services/jornada-laboral.service";
@@ -13,22 +13,27 @@ export class JornadaLaboralController {
     ){}
 
     @Post("/crearJornadaLaboral")
-    async crearJornadaLaboral(@Body() jornada : JornadaLaboralDto){
+    crearJornadaLaboral(@Body() jornada : JornadaLaboralDto){
         this.servicioJornadaLaboral.crearJornadaLaboral(jornada);
     }
 
     @Get('/obtenerIntervalos/:idJornada')
-    async obtenerIntervalos(@Param('idJornada') idJornada : string){
+    obtenerIntervalos(@Param('idJornada') idJornada : string){
         return this.servicioJornadaLaboral.obtenerIntervalos(idJornada);
     }
 
     @Get('/obtenerJornadasLaborales')
-    async obtenerJornadasLaborales(){
+    obtenerJornadasLaborales(){
         return this.servicioJornadaLaboral.obtenerJornadasLaborales();
     }
 
     @Get('/obtenerJornadaLaboralPorSemestre/:idSemestre')
-    async obtenerJornadaLaboralPorSemestre(@Param('idSemestre') idSemestre : string){
+    obtenerJornadaLaboralPorSemestre(@Param('idSemestre') idSemestre : string){
         return this.servicioJornadaLaboral.obtenerJornadaLaboralPorSemestre(idSemestre);
+    }
+
+    @Delete('/jornadaLaboral/:idSemestre')
+    eliminarJornadaLaboralPorSemestre(@Param('idSemestre') idSemestre : string){
+        return this.servicioJornadaLaboral.eliminarJornadaLaboralPorSemestre(idSemestre);
     }
 }

@@ -16,6 +16,7 @@ import { ParametrosInicialesModule } from './parametros-iniciales/parametros-ini
 import { AsignaturaService } from './asignatura/services/asignatura.service';
 import { AsignaturaController } from './asignatura/controllers/asignatura.controller';
 import { AsignaturaModule } from './asignatura/asignatura.module';
+import { ActividadesModule } from './actividades/actividades.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { AsignaturaModule } from './asignatura/asignatura.module';
     ParametrosInicialesModule,
     DocenteModule,
     AsignaturaModule,
+    ActividadesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
