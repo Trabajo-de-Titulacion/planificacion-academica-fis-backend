@@ -144,10 +144,40 @@ const configuracionesAPI = {
                 },
                 eliminarAsignaturaPorID: {
                     ruta: 'eliminarAsignaturaPorID/:id',
-                    descripcion: 'Método que permite eliminar una asigna por medio de su identificador (ID).'
+                    descripcion: 'Método que permite eliminar una asignatura por medio de su identificador (ID).'
                 }
             }
-        }
+        },
+        carrera: {
+            ruta: 'api/carrera',
+            tag: 'Carrera',
+            operaciones: {
+                crearUnaCarrera: {
+                    ruta: '/crearUnaCarrera',
+                    descripcion: 'Método que permite crear una carrera.'
+                },
+                obtenerCarreraPorID: {
+                    ruta: '/obtenerCarreraPorID/:id',
+                    descripcion: 'Método que permite obtener el código, nombre, duración y modalidad de la carrera por medio de su identificador (ID).'
+                },
+                obtenerCarreraPorCodigo: {
+                    ruta: '/obtenerCarreraPorCodigo/:codigo',
+                    desripcion: 'Método que permite obtener el identificador, nombre, duración y modalidad de la carrera por medio de su código.'
+                },
+                obtenerCarreras: {
+                    ruta: '/obtenerCarreras',
+                    descripcion: 'Método que permite obtener un arreglo con todas las carreras registradas en el sistema.'
+                },
+                actualizarCarreraPorID: {
+                    ruta: '/actualizarCarreraPorID/:id',
+                    descripcion: 'Método que permite actualizar los datos de carrera por medio del identificador (ID).'
+                },
+                eliminarCarreraPorID: {
+                    ruta: '/eliminarCarreraPorID/:id',
+                    descripcion: 'Método que permite eliminar una carrera por medio de su identificador (ID).'
+                }
+            }
+        },
     }
 }
 
