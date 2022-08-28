@@ -17,6 +17,7 @@ import { AsignaturaService } from './asignatura/services/asignatura.service';
 import { AsignaturaController } from './asignatura/controllers/asignatura.controller';
 import { AsignaturaModule } from './asignatura/asignatura.module';
 import { ActividadesModule } from './actividades/actividades.module';
+import { HorarioModule } from './horario/horario.module';
 
 @Module({
   imports: [
@@ -41,6 +42,7 @@ import { ActividadesModule } from './actividades/actividades.module';
     DocenteModule,
     AsignaturaModule,
     ActividadesModule,
+    HorarioModule
   ],
   controllers: [AppController],
   providers: [AppService],
