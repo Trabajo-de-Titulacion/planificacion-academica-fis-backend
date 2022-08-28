@@ -1,6 +1,6 @@
 import { SemestreEntity } from "src/parametros-iniciales/entities/semestre.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { NivelEntity } from "./nivel.service";
+import { NivelEntity } from "./nivel.entity";
 
 @Entity('grupo')
 export class GrupoEntity {

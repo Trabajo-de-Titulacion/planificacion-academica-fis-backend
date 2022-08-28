@@ -8,7 +8,7 @@ Característica: Actividades
     Esquema del escenario: Se registra una actividad
 	Dado que existe un docente con correo <correo_docente>
     Y la asignatura con código <codigo_asignatura>
-    Y un subgrupo con códgo <codigo_subgrupo>
+    Y un subgrupo con código <codigo_subgrupo>
     Y un tipo de aula con nombre <tipo_aula> en la facultad con nombre <facultad>
     Cuando se registre una actividad indicando un número de estudiantes de <número_estudiantes>
     Entonces al consultar la base de datos de actividades se observan <numero_registros> registros.
