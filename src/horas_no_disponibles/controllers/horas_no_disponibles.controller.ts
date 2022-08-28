@@ -31,7 +31,7 @@ export class HorasNoDisponiblesController {
   @Post(configuraciones.controladores.horas_no_disponibles.operaciones.crearHorasNoDisponibles.ruta)
   @UseGuards(VerificarIdDocentePorCuerpoGuard)
   async crearHorasNoDisponibles(@Body() horas_no_disponibles: HorasNoDisponiblesDTO[]) {
-    return this.horasNoDisponiblesService.crearHorasNoDisponibles(horas_no_disponibles);
+    return this.horasNoDisponiblesService.solicitarHorasNoDisponibles(horas_no_disponibles);
   }
 
   @ApiOperation({summary: configuraciones.controladores.horas_no_disponibles.operaciones.eliminarHorasNoDisponiblesPorDocenteId.descripcion})

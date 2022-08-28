@@ -1,6 +1,5 @@
 import { HorasNoDisponiblesDTO } from "../../src/horas_no_disponibles/dto";
 import { HorasNoDisponiblesController } from "../../src/horas_no_disponibles/controllers/horas_no_disponibles.controller";
-import { HoraNoDisponibleEntity } from "../../src/horas_no_disponibles/entities/hora_no_disponible.entity";
 import { DocenteEntity } from "../../src/docente/entities/docente.entity";
 import { UsuarioEntity } from "../../src/usuarios/entities/usuario.entity";
 import { RolEntity } from "../../src/auth/entities/rol.entity";
@@ -78,7 +77,7 @@ When('el día Martes de {int} a {int}', async function (hora_inicio: number, hor
 When('también el día Jueves de {int} a {int}', async function (hora_inicio: number, hora_fin: number) {
     this.horas_no_disponibles3 = new HorasNoDisponiblesDTO(this.docente.id, this.jueves.id, hora_inicio);
 
-    await this.horasNoDisponiblesController.crearHorasNoDisponibles([
+    await this.horasNoDisponiblesController.solicitarHorasNoDisponibles([
         this.horas_no_disponibles1, this.horas_no_disponibles2, this.horas_no_disponibles3
     ]);
 });

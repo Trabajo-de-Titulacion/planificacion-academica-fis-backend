@@ -2,6 +2,7 @@ import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestj
 import { InjectRepository } from '@nestjs/typeorm';
 import { DocenteService } from '../../../src/docente/services/docente.service';
 import { JornadaLaboralService } from '../../../src/parametros-iniciales/services/jornada-laboral.service';
+import { SemestreService } from '../../../src/parametros-iniciales/services/semestre.service';
 import { Repository } from 'typeorm';
 import { HorasNoDisponiblesDTO } from '../dto';
 import { HoraNoDisponibleEntity } from '../entities/hora_no_disponible.entity';
@@ -15,6 +16,7 @@ export class HorasNoDisponiblesService {
     @InjectRepository(HoraNoDisponibleEntity)
     private horasNoDisponiblesRepository: Repository<HoraNoDisponibleEntity>,
     private jornadasLaboralesService: JornadaLaboralService,
+    private semestreService: SemestreService,
     private docentesService: DocenteService,
   ) {}
 
@@ -24,14 +26,22 @@ export class HorasNoDisponiblesService {
     if (docente instanceof NotFoundException) {
       throw new HttpException('No se encontró el docente.', HttpStatus.BAD_REQUEST);
     }
-    return await this.horasNoDisponiblesRepository.find({
+    // Obtener semestre cuya planificación está en progreso
+    const semestreEnProgreso = await this.semestreService.obtenerSemestreConPlanificacionEnProgreso();
+    // Obtener todas las horas no disponibles de un docente
+    const horasNoDisponiblesDocente = await this.horasNoDisponiblesRepository.find({
       where: { docente: docente },
       relations: ['dia'],
     });;
+
+    // Retornar aquellas horas que pertenezcan al semestre en progreso
+    return horasNoDisponiblesDocente.filter(h => {
+      return semestreEnProgreso.jornadas.map(jornada => jornada.id).includes(h.dia.id);
+    });
   }
 
   /* Create */
-  async crearHorasNoDisponibles(horas_no_disponibles: HorasNoDisponiblesDTO[]) {
+  async solicitarHorasNoDisponibles(horas_no_disponibles: HorasNoDisponiblesDTO[]) {
     const idDocente = horas_no_disponibles[0].docente_id;
     if (idDocente && !isUUID(idDocente)) {
       throw new HttpException('ID de docente inválido', HttpStatus.BAD_REQUEST);
