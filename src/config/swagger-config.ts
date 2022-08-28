@@ -18,21 +18,7 @@ const configuracionesAPI = {
                 }
             },
         },
-        accciones: {
-            ruta: 'api/acciones',
-            tag: 'Acciones',
-            operaciones: {
-                obtenerAcciones: {
-                    ruta: '/obtenerAcciones',
-                    description: 'Método para obtener todas las acciones de todos los roles.'
-                },
-                obtenerAccionesPorRol: {
-                    ruta: '/obtenerAccionesPorRol/:id',
-                    description: 'Método de las acciones de un rol.'
-                }
-            }
-        },
-        espacios_fisicos: {
+        espaciosFisicos: {
             ruta: 'api/espacios_fisicos',
             tag: 'Espacios físicos',
             operaciones: {

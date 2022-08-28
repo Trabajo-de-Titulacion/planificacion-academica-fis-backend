@@ -18,84 +18,84 @@ export class EspaciosFisicosService {
 
 
   /* Create */
-  async crearEspacioFisico(espacio_fisico: EspacioFisicoDTO) {
+  async crearEspacioFisico(espacioFisico: EspacioFisicoDTO) {
 
-    let filas_alteradas: number;
+    let filasAlteradas: number;
     let mensaje: string;
 
     // Buscar registros ya existentes
     const coincidencias = await this.espaciosFisicosRepository.find({
-      where: { nombre: espacio_fisico.nombre }
+      where: { nombre: espacioFisico.nombre }
     });
 
     // Si ya existen registros con el mismo nombre
     if (coincidencias.length > 0) {
-      filas_alteradas = 0;
-      mensaje = `El espacio físico ${espacio_fisico.nombre} ya está registrado.`
+      filasAlteradas = 0;
+      mensaje = `El espacio físico ${espacioFisico.nombre} ya está registrado.`
     }
     // No existen registros con el mismo nombre
     else {
-      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(espacio_fisico.tipo_id);
+      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(espacioFisico.tipo_id);
 
-      const entidad_a_registrar = this.espaciosFisicosRepository.create();
-      entidad_a_registrar.nombre = espacio_fisico.nombre;
-      entidad_a_registrar.tipo = tipoAula;
-      entidad_a_registrar.aforo = espacio_fisico.aforo;
+      const entidadARegistrar = this.espaciosFisicosRepository.create();
+      entidadARegistrar.nombre = espacioFisico.nombre;
+      entidadARegistrar.tipo = tipoAula;
+      entidadARegistrar.aforo = espacioFisico.aforo;
 
       // Crear registro
-      const registro_creado = await this.espaciosFisicosRepository.save(entidad_a_registrar);
-      filas_alteradas = 1;
-      mensaje = `Se creó el espacio físico ${espacio_fisico.nombre} de manera exitosa!`;
+      const registroCreado = await this.espaciosFisicosRepository.save(entidadARegistrar);
+      filasAlteradas = 1;
+      mensaje = `Se creó el espacio físico ${espacioFisico.nombre} de manera exitosa!`;
     }
 
     const respuesta = {
-      filas_alteradas: filas_alteradas,
+      filasAlteradas: filasAlteradas,
       mensaje: mensaje,
     }
 
     return respuesta;
   }
 
-  async crearMultiplesEspaciosFisicos(espacios_fisicos: EspacioFisicoEntity[]) {
+  async crearMultiplesEspaciosFisicos(espaciosFisicos: EspacioFisicoEntity[]) {
 
     // Buscar registros ya existentes
-    const nombres = espacios_fisicos.map(espacio => { return { nombre: espacio.nombre } });
+    const nombres = espaciosFisicos.map(espacio => {return {nombre: espacio.nombre}});
 
     const coincidencias = await this.espaciosFisicosRepository.find({
       where: nombres
     });
 
-    const nombres_coincidentes = coincidencias.map(espacio => espacio.nombre);
+    const nombresCoincidentes = coincidencias.map(espacio => espacio.nombre);
 
     // Arreglos para almacenar registros nuevos y repetidos
-    const registros_nuevos: EspacioFisicoEntity[] = [];
-    const registros_repetidos: EspacioFisicoEntity[] = [];
+    const registrosNuevos: EspacioFisicoEntity[] = [];
+    const registrosRepetidos: EspacioFisicoEntity[] = [];
 
-    espacios_fisicos.forEach(espacio_fisico => {
+    espaciosFisicos.forEach( espacioFisico => {
       // Si ya existe un registro con el mismo nombre
-      if (nombres_coincidentes.includes(espacio_fisico.nombre)) {
-        registros_repetidos.push(espacio_fisico);
+      if (nombresCoincidentes.includes(espacioFisico.nombre)) {
+        registrosRepetidos.push(espacioFisico);
       }
       // Si no existe un espacio físico con el mismo nombre
       else {
-        registros_nuevos.push(espacio_fisico);
+        registrosNuevos.push(espacioFisico);
       }
     });
 
     // Crear registros
-    let registros_creados: EspacioFisicoEntity[] = [];
-    if (registros_nuevos.length > 0) {
-      registros_creados = await this.espaciosFisicosRepository.save(registros_nuevos);
+    let registrosCreados: EspacioFisicoEntity[] = [];
+    if (registrosNuevos.length > 0) {
+      registrosCreados = await this.espaciosFisicosRepository.save(registrosNuevos);
     }
-
-    const mensaje_repetidos = (registros_repetidos.length > 0) ?
-      ': ' + registros_repetidos.map(registro => registro.nombre).join(', ') : '';
+    
+    const mensajeRepetidos = (registrosRepetidos.length > 0)?
+      ': ' + registrosRepetidos.map(registro => registro.nombre).join(', ') : '';
 
     const respuesta = {
-      filas_alteradas: registros_creados.length,
-      mensaje: `Se han creado ${registros_creados.length} registros. Hay ${registros_repetidos.length} repetidos` + mensaje_repetidos + '.',
-      registros_creados: registros_creados,
-      registros_repetidos: registros_repetidos,
+      filasAlteradas: registrosCreados.length,
+      mensaje: `Se han creado ${registrosCreados.length} registros. Hay ${registrosRepetidos.length} repetidos` + mensajeRepetidos + '.',
+      registrosCreados: registrosCreados,
+      registrosRepetidos: registrosRepetidos,
     }
 
     return respuesta;
@@ -118,34 +118,34 @@ export class EspaciosFisicosService {
 
 
   /* Update */
-  async actualizarEspacioFisicoPorId(id: string, espacio_fisico: EspacioFisicoDTO) {
-    let filas_alteradas: number;
+  async actualizarEspacioFisicoPorId(id: string, espacioFisico: EspacioFisicoDTO) {
+    let filasAlteradas: number;
     let mensaje: string;
 
     const coincidencias = await this.espaciosFisicosRepository.find({
-      where: { nombre: espacio_fisico.nombre }
+      where: { nombre: espacioFisico.nombre }
     });
 
     // Si ya existen registros con el mismo nombre
     if (coincidencias.length > 1) {
-      filas_alteradas = 0;
-      mensaje = `El espacio físico con el nombre ${espacio_fisico.nombre} ya existe. Ingrese un nuevo nombre.`
+      filasAlteradas = 0;
+      mensaje = `El espacio físico con el nombre ${espacioFisico.nombre} ya existe. Ingrese un nuevo nombre.`
     }
     // No existen registros con el mismo nombre
     else {
-      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(espacio_fisico.tipo_id);
+      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(espacioFisico.tipo_id);
       const registroActualizado: EspacioFisicoEntity = {
         id: id,
-        nombre: espacio_fisico.nombre,
+        nombre: espacioFisico.nombre,
         tipo: tipoAula,
-        aforo: espacio_fisico.aforo
+        aforo: espacioFisico.aforo
       };
       const registro = await this.espaciosFisicosRepository.update(id, registroActualizado);
-      filas_alteradas = 1;
+      filasAlteradas = 1;
       mensaje = 'Actualizado exitosamente';
     }
     return {
-      filas_alteradas: filas_alteradas,
+      filasAlteradas: filasAlteradas,
       mensaje: mensaje,
     }
   }
@@ -164,7 +164,7 @@ export class EspaciosFisicosService {
     const expresionRegular = /[A-Za-z0-9 ]*;[A-Za-z0-9 ]*;[A-Za-z0-9 ]*;[0-9]+/g;
     const filas = datos.match(expresionRegular);
 
-    const espacios_fisicos: EspacioFisicoEntity[] = [];
+    const espaciosFisicos: EspacioFisicoEntity[] = [];
 
     if (filas) {
       for (const fila of filas) {
@@ -194,15 +194,15 @@ export class EspaciosFisicosService {
         }
 
         // Busca si el tipo existe en la facultad indicada
-        const entidad_tipo = await this.tipoAulaService.obtenerTipoAulaPorNombreYFacultad(tipo, facultad);
+        const entidadTipo = await this.tipoAulaService.obtenerTipoAulaPorNombreYFacultad(tipo, facultad);
         // El tipo existe en la facultad indicada
-        if (entidad_tipo) {
-          const espacio_fisico = this.espaciosFisicosRepository.create();
-          espacio_fisico.nombre = nombre;
-          espacio_fisico.tipo = entidad_tipo;
-          espacio_fisico.aforo = aforo;
-
-          espacios_fisicos.push(espacio_fisico);
+        if (entidadTipo) {
+          const espacioFisico = this.espaciosFisicosRepository.create();
+          espacioFisico.nombre = nombre;
+          espacioFisico.tipo = entidadTipo;
+          espacioFisico.aforo = aforo;
+          
+          espaciosFisicos.push(espacioFisico);
         } else {
           throw new HttpException(
             'Se encontraron errores en la columna "Tipo". Verifique que los tipos indicados en el archivo correspondan a una facultad existente.',
@@ -212,7 +212,7 @@ export class EspaciosFisicosService {
       }
     }
 
-    return espacios_fisicos;
+    return espaciosFisicos;
   }
 
 }
