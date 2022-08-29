@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CarreraModule } from 'src/carrera/carrera.module';
-import { CarreraEntity } from 'src/carrera/entities/carrera.entity';
-import { CarreraService } from 'src/carrera/services/carrera.service';
+import { CarreraModule } from '../../src/carrera/carrera.module';
 import { GrupoController } from './controllers/grupo.controller';
 import { NivelController } from './controllers/nivel.controller';
 import { GrupoEntity } from './entities/grupo.entity';
@@ -11,7 +9,7 @@ import { GrupoService } from './services/grupo.service';
 import { NivelService } from './services/nivel.service';
 
 @Module({
-  imports:[
+  imports: [
     TypeOrmModule.forFeature([GrupoEntity, NivelEntity]),
     CarreraModule
   ],
@@ -19,4 +17,4 @@ import { NivelService } from './services/nivel.service';
   providers: [NivelService, GrupoService],
   exports: [TypeOrmModule]
 })
-export class NivelesModule {}
+export class NivelesModule { }
