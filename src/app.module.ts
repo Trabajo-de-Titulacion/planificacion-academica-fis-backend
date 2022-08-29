@@ -18,6 +18,7 @@ import { AsignaturaController } from './asignatura/controllers/asignatura.contro
 import { AsignaturaModule } from './asignatura/asignatura.module';
 import { ActividadesModule } from './actividades/actividades.module';
 import { HorarioModule } from './horario/horario.module';
+import { NivelesModule } from './niveles/niveles.module';
 
 @Module({
   imports: [
@@ -42,7 +43,8 @@ import { HorarioModule } from './horario/horario.module';
     DocenteModule,
     AsignaturaModule,
     ActividadesModule,
-    HorarioModule
+    HorarioModule,
+    NivelesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

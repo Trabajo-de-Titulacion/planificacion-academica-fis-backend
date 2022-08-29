@@ -58,7 +58,7 @@ export class CarreraController {
     /* ============================= OBTENER UNA CARRERA POR SU CÓDIGO EN LA BASE DE DATOS ================================== */
     /* ====================================================================================================================== */
 
-    @ApiOperation({ summary: configuraciones.controladores.carrera.operaciones.obtenerCarreraPorCodigo.desripcion })
+    @ApiOperation({ summary: configuraciones.controladores.carrera.operaciones.obtenerCarreraPorCodigo.descripcion })
     @Get(configuraciones.controladores.carrera.operaciones.obtenerCarreraPorCodigo.ruta)
     @Roles(RolesEnum.COORDINADOR)
     obtenerCarreraPorCodigo(@Param('codigo') codigoCarrera: string) {

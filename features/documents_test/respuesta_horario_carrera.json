@@ -1,0 +1,216 @@
+[
+    {
+        "docente": "TENEMAZA VERA REGINA MARITZOL",
+        "asignatura": "INGENIERÍA DE SOFTWARE II (ICCD632)",
+        "tipoAula": "Aula regular",
+        "dia": "LUNES",
+        "horario": "09:00-10:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "TENEMAZA VERA REGINA MARITZOL",
+        "asignatura": "INGENIERÍA DE SOFTWARE II (ICCD632)",
+        "tipoAula": "Aula regular",
+        "dia": "LUNES",
+        "horario": "10:00-11:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "AGUIAR PONTES JOSAFÁ DE JESÚS",
+        "asignatura": "DATA MINING Y MACHINE LEARNING (ICCD623)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "LUNES",
+        "horario": "16:00-17:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "AGUIAR PONTES JOSAFÁ DE JESÚS",
+        "asignatura": "DATA MINING Y MACHINE LEARNING (ICCD623)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "LUNES",
+        "horario": "17:00-18:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "ORDOÑEZ CALERO HERNÁN DAVID",
+        "asignatura": "APLICACIONES WEB (ISWD613)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "07:00-08:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "ORDOÑEZ CALERO HERNÁN DAVID",
+        "asignatura": "APLICACIONES WEB (ISWD613)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "08:00-09:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "ORDOÑEZ CALERO HERNÁN DAVID",
+        "asignatura": "APLICACIONES WEB (ISWD613)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "09:00-10:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "YOO PARK SANG GUUN",
+        "asignatura": "TECNOLOGÍAS DE SEGURIDAD (ICCD643)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "10:00-11:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "MAFLA GALLEGOS LUIS ENRIQUE",
+        "asignatura": "COMPUTACIÓN DISTRIBUIDA (ICCD654)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "MARTES",
+        "horario": "11:00-12:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "MAFLA GALLEGOS LUIS ENRIQUE",
+        "asignatura": "COMPUTACIÓN DISTRIBUIDA (ICCD654)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "MARTES",
+        "horario": "12:00-13:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "YOO PARK SANG GUUN",
+        "asignatura": "TECNOLOGÍAS DE SEGURIDAD (ICCD643)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "14:00-15:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "YOO PARK SANG GUUN",
+        "asignatura": "TECNOLOGÍAS DE SEGURIDAD (ICCD643)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "15:00-16:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "MAFLA GALLEGOS LUIS ENRIQUE",
+        "asignatura": "COMPUTACIÓN DISTRIBUIDA (ICCD654)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "16:00-17:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "MAFLA GALLEGOS LUIS ENRIQUE",
+        "asignatura": "COMPUTACIÓN DISTRIBUIDA (ICCD654)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "17:00-18:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "TENEMAZA VERA REGINA MARITZOL",
+        "asignatura": "INGENIERÍA DE SOFTWARE II (ICCD632)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "MIÉRCOLES",
+        "horario": "09:00-10:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "TENEMAZA VERA REGINA MARITZOL",
+        "asignatura": "INGENIERÍA DE SOFTWARE II (ICCD632)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "MIÉRCOLES",
+        "horario": "10:00-11:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "YOO PARK SANG GUUN",
+        "asignatura": "TECNOLOGÍAS DE SEGURIDAD (ICCD643)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "MIÉRCOLES",
+        "horario": "11:00-12:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "YOO PARK SANG GUUN",
+        "asignatura": "TECNOLOGÍAS DE SEGURIDAD (ICCD643)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "MIÉRCOLES",
+        "horario": "12:00-13:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "AGUIAR PONTES JOSAFÁ DE JESÚS",
+        "asignatura": "DATA MINING Y MACHINE LEARNING (ICCD623)",
+        "tipoAula": "Aula regular",
+        "dia": "MIÉRCOLES",
+        "horario": "16:00-17:00",
+        "aula": "SIGMA-ISW"
+    },
+    {
+        "docente": "AGUIAR PONTES JOSAFÁ DE JESÚS",
+        "asignatura": "DATA MINING Y MACHINE LEARNING (ICCD623)",
+        "tipoAula": "Aula regular",
+        "dia": "MIÉRCOLES",
+        "horario": "17:00-18:00",
+        "aula": "SIGMA-ISW"
+    },
+    {
+        "docente": "MAFLA GALLEGOS LUIS ENRIQUE",
+        "asignatura": "COMPUTACIÓN DISTRIBUIDA (ICCD654)",
+        "tipoAula": "Aula regular",
+        "dia": "JUEVES",
+        "horario": "09:00-10:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "MAFLA GALLEGOS LUIS ENRIQUE",
+        "asignatura": "COMPUTACIÓN DISTRIBUIDA (ICCD654)",
+        "tipoAula": "Aula regular",
+        "dia": "JUEVES",
+        "horario": "10:00-11:00",
+        "aula": "GAMMA-ICC"
+    },
+    {
+        "docente": "PROFESOR DE ADMINISTRATIVAS 5",
+        "asignatura": "GESTIÓN ORGANIZACIONAL (ADMD511)",
+        "tipoAula": "Aula regular",
+        "dia": "JUEVES",
+        "horario": "14:00-15:00"
+    },
+    {
+        "docente": "PROFESOR DE ADMINISTRATIVAS 5",
+        "asignatura": "GESTIÓN ORGANIZACIONAL (ADMD511)",
+        "tipoAula": "Aula regular",
+        "dia": "JUEVES",
+        "horario": "15:00-16:00"
+    },
+    {
+        "docente": "ORDOÑEZ CALERO HERNÁN DAVID",
+        "asignatura": "APLICACIONES WEB (ISWD613)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "VIERNES",
+        "horario": "14:00-15:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "ORDOÑEZ CALERO HERNÁN DAVID",
+        "asignatura": "APLICACIONES WEB (ISWD613)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "VIERNES",
+        "horario": "15:00-16:00",
+        "aula": "KAPPA-ICC"
+    },
+    {
+        "docente": "AGUIAR PONTES JOSAFÁ DE JESÚS",
+        "asignatura": "DATA MINING Y MACHINE LEARNING (ICCD623)",
+        "tipoAula": "Aula regular",
+        "dia": "VIERNES",
+        "horario": "17:00-18:00",
+        "aula": "GAMMA-ICC"
+    }
+]

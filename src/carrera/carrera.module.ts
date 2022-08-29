@@ -9,6 +9,7 @@ import { CarreraEntity } from './entities/carrera.entity';
     TypeOrmModule.forFeature([CarreraEntity])
   ],
   providers: [CarreraService],
-  controllers: [CarreraController]
+  controllers: [CarreraController],
+  exports: [CarreraService]
 })
 export class CarreraModule { }
