@@ -162,7 +162,7 @@ const configuracionesAPI = {
                 },
                 obtenerCarreraPorCodigo: {
                     ruta: '/obtenerCarreraPorCodigo/:codigo',
-                    desripcion: 'Método que permite obtener el identificador, nombre, duración y modalidad de la carrera por medio de su código.'
+                    descripcion: 'Método que permite obtener el identificador, nombre, duración y modalidad de la carrera por medio de su código.'
                 },
                 obtenerCarreras: {
                     ruta: '/obtenerCarreras',
@@ -175,6 +175,24 @@ const configuracionesAPI = {
                 eliminarCarreraPorID: {
                     ruta: '/eliminarCarreraPorID/:id',
                     descripcion: 'Método que permite eliminar una carrera por medio de su identificador (ID).'
+                }
+            }
+        },
+        horario: {
+            ruta: 'api/horario',
+            tag: 'Horario',
+            operaciones: {
+                crearHorario: {
+                    ruta: '/crearHorario',
+                    descripcion: ''
+                },
+                obtenerHorarioDocente: {
+                    ruta: '/obtenerHorarioDocente/:nombreDocente:idHorario',
+                    descripcion: 'Método para obtener el horario del docente seleccionado.'
+                },
+                obtenerHorarioGrupo: {
+                    ruta: '/obtenerHorarioGrupo/:grupo:idHorario',
+                    descripcion: 'Método para obtener el horario de un semestre, paralelo y grupo específico.'
                 }
             }
         },
