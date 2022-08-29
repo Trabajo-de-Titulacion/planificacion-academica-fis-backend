@@ -5,11 +5,6 @@ export class GrupoDto {
     @ApiProperty()
     @IsString()
     @IsNotEmpty()
-    id: string;
-
-    @ApiProperty()
-    @IsString()
-    @IsNotEmpty()
     nombre: string;
 
     @ApiProperty()

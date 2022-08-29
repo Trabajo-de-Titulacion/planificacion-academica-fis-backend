@@ -11,6 +11,6 @@ export class GrupoEntity {
     nombre: string;
 
     @ManyToOne(() => NivelEntity, nivel => nivel.grupos)
-    @JoinColumn({name: 'idNivel'})
+    @JoinColumn({name: 'idGrupo'})
     nivel : NivelEntity;
 }

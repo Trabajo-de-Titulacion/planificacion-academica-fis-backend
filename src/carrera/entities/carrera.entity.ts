@@ -1,5 +1,5 @@
 import { NivelEntity } from "src/niveles/entities/nivel.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('carrera')
 export class CarreraEntity {
@@ -18,4 +18,7 @@ export class CarreraEntity {
 
     @Column({ length: 50 })
     modalidad: string;
+
+    @OneToMany(() => NivelEntity, nivel => nivel.carrera)
+    niveles: NivelEntity[]
 }
