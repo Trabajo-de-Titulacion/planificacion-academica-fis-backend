@@ -1,4 +1,4 @@
-import { NivelEntity } from "src/niveles/entities/nivel.entity";
+import { NivelEntity } from "../../../src/niveles/entities/nivel.entity";
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('carrera')
