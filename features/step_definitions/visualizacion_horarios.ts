@@ -31,7 +31,8 @@ Given('que se tiene un archivo tipo JSON con el horario generado previamente lla
 
     this.horarioGenerado = {
         fechaCreacion: this.fechaHoraActual,
-        horarioJson: this.lecturaArchivo
+        horarioJson: this.lecturaArchivo,
+        descripcion: "Horario generado con los datos de software "
     }
 
     this.horarioGenerado = await getRepository(HorarioEntity).save(this.horarioGenerado);

@@ -173,12 +173,16 @@ const configuracionesAPI = {
                     descripcion: ''
                 },
                 obtenerHorarioDocente: {
-                    ruta: '/obtenerHorarioDocente/:nombreDocente:idHorario',
+                    ruta: '/obtenerHorarioDocente/:nombreDocente/:idHorario',
                     descripcion: 'Método para obtener el horario del docente seleccionado.'
                 },
                 obtenerHorarioGrupo: {
-                    ruta: '/obtenerHorarioGrupo/:grupo:idHorario',
+                    ruta: '/obtenerHorarioGrupo/:grupo/:idHorario',
                     descripcion: 'Método para obtener el horario de un semestre, paralelo y grupo específico.'
+                },
+                obtenerHorarios: {
+                    ruta: '/obtenerHorarios',
+                    descripcion: 'Método para obtener una lista de horarios generados previamente.'
                 }
             }
         },

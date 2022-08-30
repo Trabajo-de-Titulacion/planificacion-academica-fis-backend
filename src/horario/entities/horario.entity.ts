@@ -12,6 +12,9 @@ export class HorarioEntity {
     @Column({ type: "text" })
     horarioJson: string
 
+    @Column({ type: "text" })
+    descripcion: string
+
     @ManyToOne(() => UsuarioEntity, usuario => usuario.horarios)
     @JoinColumn({ name: "idUsuario" })
     usuario: UsuarioEntity

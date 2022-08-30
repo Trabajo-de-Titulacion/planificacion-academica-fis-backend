@@ -39,4 +39,11 @@ export class HorarioController {
         grupo = grupo.toUpperCase();
         return this.horarioService.obtenerHorarioGrupo(grupo, idHorario);
     }
+
+    @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarios.descripcion })
+    @Get(configuraciones.controladores.horario.operaciones.obtenerHorarios.ruta)
+    @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
+    obtenerHorarios() {
+        return this.horarioService.obtenerHorarios();
+    }
 }

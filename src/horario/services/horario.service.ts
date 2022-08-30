@@ -12,13 +12,20 @@ export class HorarioService {
         @InjectRepository(HorarioEntity) private repositorioHorario: Repository<HorarioEntity>,
         private usuarioService: UsuarioService,
     ) { }
+    /* TODO: COLOCAR LA DESCRIPCION
+        async crearHorario(horario: HorarioDto) {
+            const usuario = await this.usuarioService.obtenerUsuarioCompletoPorSuID(horario.idUsuario);
+            if (usuario) {
+                const horarioNuevo = this.repositorioHorario.create(horario);
+                horarioNuevo.usuario = usuario;
+            }
+        }*/
+    /* ===================================================================================================== */
+    /* ======================================= OBTENER HORARIO DOCENTE ===================================== */
+    /* ===================================================================================================== */
 
-    async crearHorario(horario: HorarioDto) {
-        const usuario = await this.usuarioService.obtenerUsuarioCompletoPorSuID(horario.idUsuario);
-        if (usuario) {
-            const horarioNuevo = this.repositorioHorario.create(horario);
-            horarioNuevo.usuario = usuario;
-        }
+    obtenerHorarios(): Promise<HorarioEntity[]> {
+        return this.repositorioHorario.find({ relations: ['usuario'] });
     }
 
     /* ===================================================================================================== */
