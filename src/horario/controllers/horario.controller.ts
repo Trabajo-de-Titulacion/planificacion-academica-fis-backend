@@ -1,5 +1,6 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, HttpException, HttpStatus, Param, Post } from "@nestjs/common";
 import { ApiBearerAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
+import { isUUID } from "class-validator";
 import { Roles } from "../../../src/auth/decorators/roles.decorator";
 import { configuraciones } from "../../../src/config/swagger-config";
 import { RolesEnum } from "../../../src/utils/enum/rol.enum";
@@ -22,6 +23,10 @@ export class HorarioController {
         this.horarioService.crearHorario(horario);
     }
 
+    /* ===================================================================================================== */
+    /* ======================================= OBTENER HORARIO DOCENTE ===================================== */
+    /* ===================================================================================================== */
+
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarioDocente.descripcion })
     @Get(configuraciones.controladores.horario.operaciones.obtenerHorarioDocente.ruta)
     @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
@@ -30,6 +35,10 @@ export class HorarioController {
         nombreDocente = nombreDocente.toUpperCase();
         return this.horarioService.obtenerHorarioDocente(nombreDocente, idHorario);
     }
+
+    /* ===================================================================================================== */
+    /* ======================================= OBTENER HORARIO GRUPO ======================================= */
+    /* ===================================================================================================== */
 
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarioGrupo.descripcion })
     @Get(configuraciones.controladores.horario.operaciones.obtenerHorarioGrupo.ruta)
@@ -40,10 +49,28 @@ export class HorarioController {
         return this.horarioService.obtenerHorarioGrupo(grupo, idHorario);
     }
 
+    /* ========================================================================================================= */
+    /* ======================================= OBTENER TODOS LOS HORARIOS  ===================================== */
+    /* ========================================================================================================= */
+
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarios.descripcion })
     @Get(configuraciones.controladores.horario.operaciones.obtenerHorarios.ruta)
     @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
     obtenerHorarios() {
         return this.horarioService.obtenerHorarios();
+    }
+
+    /* ================================================================================================= */
+    /* ======================================= OBTENER UN HORARIO  ===================================== */
+    /* ================================================================================================= */
+
+    @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarioPorID.descripcion })
+    @Get(configuraciones.controladores.horario.operaciones.obtenerHorarioPorID.ruta)
+    @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
+    obtenerHorarioPorID(@Param('id') idHorario: string) {
+        if (idHorario && !isUUID(idHorario)) {
+            throw new HttpException('ID de horario inválido', HttpStatus.BAD_REQUEST);
+        }
+        return this.horarioService.obtenerHorarioPorID(idHorario);
     }
 }
