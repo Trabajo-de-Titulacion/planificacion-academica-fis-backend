@@ -50,7 +50,7 @@ export class HorarioService {
     async obtenerHorarioDocente(nombreDocente: string, idHorario: string) {
 
         //Buscar horario
-        const horario = await this.repositorioHorario.findOne({ id: idHorario });
+        const horario = await this.obtenerHorarioPorID(idHorario);
 
         // Arreglo de respuesta
         let horarioFiltrado = [];
