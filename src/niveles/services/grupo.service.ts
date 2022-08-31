@@ -12,26 +12,29 @@ import { NivelService } from "./nivel.service";
 export class GrupoService {
 
     constructor(
-       @InjectRepository(GrupoEntity) private grupoRepositorio : Repository<GrupoEntity>,
-       private nivelService : NivelService
-    ){}
+        @InjectRepository(GrupoEntity) private grupoRepositorio: Repository<GrupoEntity>,
+        private nivelService: NivelService
+    ) { }
 
-    async crearGrupo(grupo : GrupoDto){
+    async crearGrupo(grupo: GrupoDto) {
         const grupoACrear = this.grupoRepositorio.create(grupo);
         const nivel = await this.nivelService.obtenerNivelPorId(grupo.idNivel);
-        if(nivel){
+        if (nivel) {
             grupoACrear.nivel = nivel;
             return this.grupoRepositorio.save(grupoACrear);
-        }else{
+        } else {
             return "No existe el nivel";
         }
     }
 
-    async obtenerGruposPorIdNivel(idNivel: string){
+    async obtenerGruposPorIdNivel(idNivel: string) {
         const nivel = await this.nivelService.obtenerNivelPorId(idNivel);
-        if(nivel){
-            return this.grupoRepositorio.find({where: { nivel: {id: idNivel}}})
+        if (nivel) {
+            return this.grupoRepositorio.find({ where: { nivel: { id: idNivel } } })
         }
     }
 
+    async obtenerTodosLosGrupos() {
+        return this.grupoRepositorio.find();
+    }
 }

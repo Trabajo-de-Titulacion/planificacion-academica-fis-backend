@@ -183,6 +183,10 @@ const configuracionesAPI = {
                 obtenerHorarios: {
                     ruta: '/obtenerHorarios',
                     descripcion: 'Método para obtener una lista de horarios generados previamente.'
+                },
+                obtenerHorarioPorID: {
+                    ruta: '/obtenerHorarioPorID/:id',
+                    descripcion: 'Método para obtener el arreglo con la información generada de un horario específico.'
                 }
             }
         },
