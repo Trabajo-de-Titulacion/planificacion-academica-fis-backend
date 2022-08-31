@@ -18,9 +18,9 @@ export class HorarioController {
 
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.crearHorario.descripcion })
     @Post(configuraciones.controladores.horario.operaciones.crearHorario.ruta)
-    @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
     crearHorario(@Body() horario: HorarioDto) {
-        this.horarioService.crearHorario(horario);
+        // this.horarioService.crearHorario(horario);
     }
 
     /* ===================================================================================================== */
@@ -29,7 +29,7 @@ export class HorarioController {
 
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarioDocente.descripcion })
     @Get(configuraciones.controladores.horario.operaciones.obtenerHorarioDocente.ruta)
-    @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
     obtenerHorarioDocente(@Param('nombreDocente') nombreDocente: string, @Param('idHorario') idHorario: string) {
         // Formatear y convertir en mayúsculas
         nombreDocente = nombreDocente.toUpperCase();
@@ -42,7 +42,7 @@ export class HorarioController {
 
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarioGrupo.descripcion })
     @Get(configuraciones.controladores.horario.operaciones.obtenerHorarioGrupo.ruta)
-    @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
     obtenerHorarioGrupo(@Param('grupo') grupo: string, @Param('idHorario') idHorario: string) {
         // Formatear y convertir en mayúsculas
         grupo = grupo.toUpperCase();
@@ -55,7 +55,7 @@ export class HorarioController {
 
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarios.descripcion })
     @Get(configuraciones.controladores.horario.operaciones.obtenerHorarios.ruta)
-    @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
     obtenerHorarios() {
         return this.horarioService.obtenerHorarios();
     }
@@ -66,7 +66,7 @@ export class HorarioController {
 
     @ApiOperation({ summary: configuraciones.controladores.horario.operaciones.obtenerHorarioPorID.descripcion })
     @Get(configuraciones.controladores.horario.operaciones.obtenerHorarioPorID.ruta)
-    @Roles(RolesEnum.COORDINADOR || RolesEnum.SUBDECANO)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
     obtenerHorarioPorID(@Param('id') idHorario: string) {
         if (idHorario && !isUUID(idHorario)) {
             throw new HttpException('ID de horario inválido', HttpStatus.BAD_REQUEST);
