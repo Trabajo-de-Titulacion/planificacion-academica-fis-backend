@@ -1,0 +1,34 @@
+<style>
+	.encabezado {
+		width: 600px;
+		padding: 1vw 2vh;
+        background-color: #01547e;
+        background-image: linear-gradient(to left, #01547e , #012b67);
+	}
+    .logos {
+		max-height: 100px;
+        display: flex;
+		justify-content: space-around;
+    }
+</style>
+<div>
+    <!-- Encabezado -->
+	<div class="encabezado">
+        <div class="logos">
+			<img src="https://www.epn.edu.ec/wp-content/uploads/2019/02/logo-EPN-blanco.png" alt="Logo de la Escuela Politécnica Nacional" height="100">
+            <img src="https://fis.epn.edu.ec/images/logo-FIS-sin-fondo.png" alt="Logo de la Facultad de Ingeniería de Sistemas" height="100">
+        </div>
+        <div style="text-align: center;">
+            <h1 style="color: white">SISTEMA DE PLANIFICACIÓN ACADÉMICA FIS</h1>
+        </div>
+	</div>
+	<!-- Contenido -->
+	<div>
+		<p class="MsoNormal" style="color:#645974;text-decoration:none">
+			Estimado {{nombreDocente}},
+		</p>
+		<p class="MsoNormal" style="color:#645974;text-decoration:none">
+			La solicitud de sus horas no disponibles para el semestre {{abreviaturaSemestre}} ha sido rechazada.
+		</p>
+	</div>
+</div>

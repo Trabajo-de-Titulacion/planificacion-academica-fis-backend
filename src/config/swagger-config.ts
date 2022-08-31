@@ -48,22 +48,34 @@ const configuracionesAPI = {
                 },
             }
         },
-        horas_no_disponibles: {
+        horasNoDisponibles: {
             ruta: 'api/horas_no_disponibles',
             tag: 'Horas no disponibles',
             operaciones: {
-                obtenerHorasNoDisponiblesPorDocenteId: {
-                    ruta: '/obtenerHorasNoDisponiblesPorDocente/:id',
+                solicitarHorasNoDisponibles: {
+                    ruta: '/solicitarHorasNoDisponibles/:id',
+                    descripcion: 'Método para solicitar múltiples horas no disponibles de un docente.'
+                },
+                obtenerHorasNoDisponiblesSolicitadasPorDocenteId: {
+                    ruta: '/obtenerHorasNoDisponiblesSolicitadasPorDocenteId/:id',
                     descripcion: 'Método para obtener todas las horas no disponibles de un docente mediante su ID.'
                 },
-                crearHorasNoDisponibles: {
-                    ruta: '/crearHorasNoDisponibles',
-                    descripcion: 'Método para crear múltiples horas no disponibles para un docente.'
+                aprobarSolicitudHorasNoDisponiblesPorDocenteId: {
+                    ruta: '/aprobarSolicitudHorasNoDisponiblesPorDocenteId/:id',
+                    descripcion: 'Método para aprobar la última solicitud de horas no disponibles de un docente mediante su ID.'
+                },
+                rechazarSolicitudHorasNoDisponiblesPorDocenteId: {
+                    ruta: '/rechazarSolicitudHorasNoDisponiblesPorDocenteId/:id',
+                    descripcion: 'Método para rechazar la última solicitud de horas no disponibles de un docente mediante su ID.'
                 },
                 eliminarHorasNoDisponiblesPorDocenteId: {
                     ruta: '/eliminarHoras/:id',
                     descripcion: 'Método para eliminar horas no disponibles de un docente.'
                 },
+                obtenerTodasLasHorasNoDisponiblesAprobadas: {
+                    ruta: '/obtenerTodasLasHorasNoDisponiblesAprobadas',
+                    descripcion: 'Método para obtener todas las horas no disponibles aprobadas de cada docente, para usarlas en la generación de horarios.'
+                }
             }
         },
         docente: {
