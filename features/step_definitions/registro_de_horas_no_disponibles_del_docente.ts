@@ -12,7 +12,7 @@ import { Given, When, Then, After } from '@cucumber/cucumber';
 const assert = require('assert');
 
 
-/* Se agregan horas no disponibles de un docente */
+/* Se aprueba la solicitud horas no disponibles de un docente */
 
 Given('que existe un docente con correo docente.prueba@epn.edu.ec', async function () {
     // Rol
@@ -39,7 +39,7 @@ Given('que existe un docente con correo docente.prueba@epn.edu.ec', async functi
 
 Given('un semestre con jornada laboral de lunes a sábado desde las 7h hasta las 20h con almuerzo a las 13h', async function () {
     // Semestre
-    this.semestre = getRepository(SemestreEntity).create({ abreviatura: '2022-Prueba'});
+    this.semestre = getRepository(SemestreEntity).create({ abreviatura: '2022-PruebaHoras'});
     await getRepository(SemestreEntity).save(this.semestre);
     // Jornada laboral
     const jornada = { horaInicio: '07:00', horaAlmuerzo: '13:00', horaFin: '20:00', semestre: this.semestre };
@@ -64,36 +64,65 @@ Given('un semestre con jornada laboral de lunes a sábado desde las 7h hasta las
 });
 
 
-When('se agregan como horas no disponibles el día Martes de {int} a {int}', async function (hora_inicio: number, hora_fin: number) {
+When('se solicitan como horas no disponibles el día Martes de {int} a {int}', async function (horaInicio: number, horaFin: number) {
     this.horasNoDisponiblesController = await this.app.get(HorasNoDisponiblesController);
 
-    this.horas_no_disponibles1 = new HorasNoDisponiblesDTO(this.docente.id, this.martes.id, hora_inicio);
+    this.horasNoDisponibles1 = new HorasNoDisponiblesDTO(this.martes.id, horaInicio);
 });
 
-When('el día Martes de {int} a {int}', async function (hora_inicio: number, hora_fin: number) {
-    this.horas_no_disponibles2 = new HorasNoDisponiblesDTO(this.docente.id, this.martes.id, hora_inicio);
+When('el día Martes de {int} a {int}', async function (horaInicio: number, horaFin: number) {
+    this.horasNoDisponibles2 = new HorasNoDisponiblesDTO(this.martes.id, horaInicio);
 });
 
-When('también el día Jueves de {int} a {int}', async function (hora_inicio: number, hora_fin: number) {
-    this.horas_no_disponibles3 = new HorasNoDisponiblesDTO(this.docente.id, this.jueves.id, hora_inicio);
+When('también el día Jueves de {int} a {int}', async function (horaInicio: number, horaFin: number) {
+    this.horasNoDisponibles3 = new HorasNoDisponiblesDTO(this.jueves.id, horaInicio);
 
-    await this.horasNoDisponiblesController.solicitarHorasNoDisponibles([
-        this.horas_no_disponibles1, this.horas_no_disponibles2, this.horas_no_disponibles3
-    ]);
+    await this.horasNoDisponiblesController.solicitarHorasNoDisponibles(
+        this.docente.id,
+        [this.horasNoDisponibles1, this.horasNoDisponibles2, this.horasNoDisponibles3]
+    );
+});
+
+When('el jefe de departamento aprueba la solicitud', async function () {
+    this.resultadoAprobarSolicitud = await this.horasNoDisponiblesController.aprobarSolicitudHorasNoDisponiblesPorDocenteId(this.docente.id);
 });
 
 
-Then('al consultar la base de datos de horas no disponibles se observan {int} registros.', async function (numero_registros: number) {
+Then('al consultar la base de datos de horas no disponibles se observan {int} registros', async function (numeroRegistros: number) {
     // Se consulta a la base de datos
-    this.registros_almacenados = await this.horasNoDisponiblesController.obtenerHorasNoDisponiblesPorDocenteId(this.docente.id);
+    this.registrosAlmacenados = await this.horasNoDisponiblesController.obtenerHorasNoDisponiblesSolicitadasPorDocenteId(this.docente.id);
     
     // Numero de registros creados
-    assert.equal(this.registros_almacenados.length, numero_registros);
+    assert.equal(this.registrosAlmacenados.length, numeroRegistros);
 });
+
+Then('el docente recibe un correo electrónico indicando la aprobación de su solicitud.', async function () {
+    const mensajeEsperado = `Solicitud aprobada. Se ha enviado la notificación respectiva al correo ${this.docente.correoElectronico}.`;
+    // Correo recibido
+    assert.equal(this.resultadoAprobarSolicitud.mensaje, mensajeEsperado);
+});
+
+
+
+
+/* Se rechaza la solicitud horas no disponibles de un docente */
+
+// Dado que la mayor parte de steps son iguales en ambos escenarios,
+// para la segunda prueba solo se escriben los que son diferentes
+When('el jefe de departamento rechaza la solicitud', async function () {
+    this.resultadoRechazarSolicitud = await this.horasNoDisponiblesController.rechazarSolicitudHorasNoDisponiblesPorDocenteId(this.docente.id);
+});
+
+Then('el docente recibe un correo electrónico indicando el rechazo de su solicitud.', async function () {
+    const mensajeEsperado = `Solicitud rechazada. Se ha enviado la notificación respectiva al correo ${this.docente.correoElectronico}.`;
+    // Correo recibido
+    assert.equal(this.resultadoRechazarSolicitud.mensaje, mensajeEsperado);
+});
+
 
 
 // Borrar datos de la prueba
-After("@horas_no_disponibles_prueba1", async function () {
+After(async function () {
     // Borrar registros creados en el Dado
     await getRepository(RolUsuarioEntity).delete(this.rolUsuario);
     await getRepository(RolEntity).delete(this.rolDocente);
