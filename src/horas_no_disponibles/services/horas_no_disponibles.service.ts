@@ -34,6 +34,12 @@ export class HorasNoDisponiblesService {
       throw new HttpException('No se encontró el docente.', HttpStatus.BAD_REQUEST);
     }
 
+    // Buscar si existe una solicitud ya creada
+    const solicitudActual = await this.obtenerSolicitudDeSemestreEnProgresoPorDocenteId(idDocente);
+    if (solicitudActual && solicitudActual.estaAprobada) {
+      throw new HttpException('No se puede modificar la solicitud puesto que ya ha sido aprobada.', HttpStatus.BAD_REQUEST);
+    }
+
     const registrosCorrectos: HoraNoDisponibleEntity[] = [];
     const registrosErroneos: HorasNoDisponiblesDTO[] = [];
     for (let horaDTO of horasNoDisponibles) {
@@ -65,8 +71,6 @@ export class HorasNoDisponiblesService {
     if (registrosCorrectos.length >  0 && registrosErroneos.length == 0) {
       // Mensaje a devolver
       let mensaje: string;
-      // Buscar si existe una solicitud ya creada
-      const solicitudActual = await this.obtenerSolicitudDeSemestreEnProgresoPorDocenteId(idDocente);
       // Si ya existe una solicitud
       if (solicitudActual) {
         // Eliminar horas anteriormente registradas
@@ -136,6 +140,17 @@ export class HorasNoDisponiblesService {
     return await this.horasNoDisponiblesRepository.find({
       where: { solicitud: solicitudActual },
       relations: ['dia', 'solicitud'],
+    });
+  }
+
+  async obtenerSolicitudesDelSemestreEnProgreso() {
+    const semestreEnProgreso = await this.semestreService.obtenerSemestreConPlanificacionEnProgreso();
+    if (!semestreEnProgreso) {
+      throw new HttpException('No hay un semestre cuya planificación esté en progreso.', HttpStatus.BAD_REQUEST)
+    }
+    return await this.solicitudHorasNoDisponiblesRepository.find({
+      where: { semestre: semestreEnProgreso },
+      relations: ['docente'],
     });
   }
 
@@ -225,6 +240,9 @@ export class HorasNoDisponiblesService {
     const solicitud = await this.obtenerSolicitudDeSemestreEnProgresoPorDocenteId(id);
     if (!solicitud) {
       throw new HttpException('El docente no cuenta con una solicitud existente.', HttpStatus.BAD_REQUEST);
+    }
+    if (solicitud && solicitud.estaAprobada) {
+      throw new HttpException('No se puede modificar la solicitud puesto que ya ha sido aprobada.', HttpStatus.BAD_REQUEST);
     }
     return await this.solicitudHorasNoDisponiblesRepository.delete(solicitud);
   }

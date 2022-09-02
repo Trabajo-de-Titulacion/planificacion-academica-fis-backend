@@ -36,6 +36,13 @@ export class HorasNoDisponiblesController {
     return this.horasNoDisponiblesService.obtenerHorasNoDisponiblesSolicitadasPorDocenteId(id);
   }
 
+  @ApiOperation({summary: configuraciones.controladores.horasNoDisponibles.operaciones.obtenerSolicitudesDelSemestreEnProgreso.descripcion})
+  @Get(configuraciones.controladores.horasNoDisponibles.operaciones.obtenerSolicitudesDelSemestreEnProgreso.ruta)
+  @Roles(RolesEnum.JEFE_DE_DEPARTAMENTO)
+  async obtenerSolicitudesDelSemestreEnProgreso() {
+    return this.horasNoDisponiblesService.obtenerSolicitudesDelSemestreEnProgreso();
+  }
+
   @ApiOperation({summary: configuraciones.controladores.horasNoDisponibles.operaciones.aprobarSolicitudHorasNoDisponiblesPorDocenteId.descripcion})
   @Get(configuraciones.controladores.horasNoDisponibles.operaciones.aprobarSolicitudHorasNoDisponiblesPorDocenteId.ruta)
   @Roles(RolesEnum.JEFE_DE_DEPARTAMENTO)

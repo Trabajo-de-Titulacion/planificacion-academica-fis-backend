@@ -60,6 +60,10 @@ const configuracionesAPI = {
                     ruta: '/obtenerHorasNoDisponiblesSolicitadasPorDocenteId/:id',
                     descripcion: 'Método para obtener todas las horas no disponibles de un docente mediante su ID.'
                 },
+                obtenerSolicitudesDelSemestreEnProgreso: {
+                    ruta: '/obtenerSolicitudesDelSemestreEnProgreso',
+                    descripcion: 'Método para obtener todas las solicitudes de horas no disponibles del semestre en progreso.'
+                },
                 aprobarSolicitudHorasNoDisponiblesPorDocenteId: {
                     ruta: '/aprobarSolicitudHorasNoDisponiblesPorDocenteId/:id',
                     descripcion: 'Método para aprobar la última solicitud de horas no disponibles de un docente mediante su ID.'
