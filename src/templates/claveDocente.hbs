@@ -1,12 +1,40 @@
-<div style="background-color: #307E48; padding: 10px; text-align: center;">
-    <h1 style="color: white">SISTEMA DE PLANIFICACIÓN ACADÉMICA FIS</h1>
+<style>
+    .encabezado {
+        width: 600px;
+        padding: 10px 20px;
+        background-color: #01547e;
+        background-image: linear-gradient(to left, #01547e, #012b67);
+    }
+
+    .logos {
+        max-height: 100px;
+    }
+</style>
+<div>
+    <!-- Encabezado -->
+    <div class="encabezado">
+        <div class="logos">
+            <img src="https://www.epn.edu.ec/wp-content/uploads/2019/02/logo-EPN-blanco.png"
+                alt="Logo de la Escuela Politécnica Nacional" width="100" style="padding-right: 390px;">
+            <img src="https://fis.epn.edu.ec/images/logo-FIS-sin-fondo.png"
+                alt="Logo de la Facultad de Ingeniería de Sistemas" width="100">
+        </div>
+        <div style="text-align: center;">
+            <h1 style="color: white">SISTEMA DE PLANIFICACIÓN ACADÉMICA FIS</h1>
+        </div>
+    </div>
+    <!-- Contenido -->
+    <div>
+        <p class="MsoNormal" style="color:#645974;text-decoration:none">
+            Estimado {{ nombre }},
+        </p>
+        <p class="MsoNormal" style="color:#645974;text-decoration:none">
+            Su clave de acceso para el Sistema de Planificación Académica es: {{ clave }}
+        </p>
+        <p class="MsoNormal" style="color:#645974;text-decoration:none">
+            Con esta clave puede acceder a nuestro
+            <font style="color: #012b67; text-decoration: underline; cursor: pointer">sitio web</font>
+            .
+        </p>
+    </div>
 </div>
-
-<p>Bienvenido {{ nombre }}.</p>
-<br>
-<p>Por favor, ingresa a nuestro sitio: <a href="">www.planificacionacademicafis.com</a></p>
-
-
-<br>
-<p>Su clave de acceso es: {{ clave }}</p>
-<br>
