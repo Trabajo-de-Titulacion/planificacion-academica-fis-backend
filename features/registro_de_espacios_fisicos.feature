@@ -1,8 +1,8 @@
 # language: es
 Característica: Registro de espacios físicos
-    Como gestor de espacios físicos deseo registrar las diferentes aulas y laboratorios con su disponibilidad,
-    ya sea de forma masiva a partir de un archivo o individualmente a través de un formulario, para distribuir
-    los cursos de manera adecuada así evitando problemas por falta de infraestructura y evitar aglomeraciones.
+    Como gestor de espacios físicos deseo registrar las diferentes aulas y laboratorios, ya sea de forma
+    masiva a partir de un archivo o individualmente a través de un formulario, para distribuir los cursos
+    de manera adecuada así evitando problemas por falta de infraestructura y evitar aglomeraciones.
 
     @espaciosFisicosPruebaCrearUnEspacioFisico
     Esquema del escenario: Se agrega un espacio físico
