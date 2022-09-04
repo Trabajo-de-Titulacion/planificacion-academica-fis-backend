@@ -128,7 +128,7 @@ After("@espaciosFisicosPruebaCrearMultiplesEspaciosFisicos", async function () {
     await getRepository(FacultadEntity).delete(this.facultad);
 
     // Borrar registros creados en el Cuando
-    for (const registro of this.respuesta.registros_creados) {
+    for (const registro of this.respuesta.registrosCreados) {
         await this.repository.delete(registro);
     }
 });

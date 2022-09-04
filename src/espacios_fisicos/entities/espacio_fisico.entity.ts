@@ -9,7 +9,9 @@ export class EspacioFisicoEntity {
     @Column({ length: 30, unique: true })
     nombre: string;
 
-    @ManyToOne( () => TipoAulaEntity, tipo => tipo.id )
+    @ManyToOne( () => TipoAulaEntity, tipo => tipo.id, {
+        onDelete: "CASCADE",
+    } )
     @JoinColumn({ name: "tipo_id" })
     tipo: TipoAulaEntity;
 
