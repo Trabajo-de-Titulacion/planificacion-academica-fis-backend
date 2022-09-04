@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UploadedFile, UseInterceptors } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, Put, UploadedFile, UseInterceptors } from "@nestjs/common";
 import { DocenteService } from "../services/docente.service";
 import { DocenteDto } from "../dto/docente.dto";
 import { FileInterceptor } from "@nestjs/platform-express";
@@ -7,6 +7,7 @@ import { ApiBearerAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { Roles } from "../../auth/decorators/roles.decorator";
 import { RolesEnum } from "../../utils/enum/rol.enum";
 import { CrearUsuarioDTO } from "../../usuarios/dtos/usuario.dto";
+import { isUUID } from "class-validator";
 const crypto = require('crypto');
 
 @ApiBearerAuth('defaultBearerAuth')
@@ -49,8 +50,11 @@ export class DocenteController {
 
     @ApiOperation({ summary: configuraciones.controladores.docente.operaciones.obtenerDocentePorID.descripcion })
     @Get(configuraciones.controladores.docente.operaciones.obtenerDocentePorID.ruta)
-    @Roles(RolesEnum.COORDINADOR)
+    @Roles(RolesEnum.COORDINADOR, RolesEnum.JEFE_DE_DEPARTAMENTO)
     obtenerDocentePorID(@Param('id') id: string) {
+        if (id && !isUUID(id)) {
+            throw new HttpException('ID del docente inválido', HttpStatus.BAD_REQUEST);
+        }
         return this.docenteService.obtenerDocentePorID(id); // Envio del id 
     }
 
@@ -73,6 +77,9 @@ export class DocenteController {
     @Put(configuraciones.controladores.docente.operaciones.actualizarDocentePorID.ruta)
     @Roles(RolesEnum.COORDINADOR)
     actualizarDocentePorID(@Param('id') idDocente: string, @Body() docenteDto: DocenteDto) {
+        if (idDocente && !isUUID(idDocente)) {
+            throw new HttpException('ID del docente inválido', HttpStatus.BAD_REQUEST);
+        }
         docenteDto.correoElectronico = docenteDto.correoElectronico.trim();
         docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase().trim();
         return this.docenteService.actualizarDocentePorID(idDocente, docenteDto);
@@ -87,6 +94,9 @@ export class DocenteController {
     @Delete(configuraciones.controladores.docente.operaciones.eliminarDocentePorID.ruta)
     @Roles(RolesEnum.COORDINADOR)
     eliminarDocentePorID(@Param('id') idDocente: string) {
+        if (idDocente && !isUUID(idDocente)) {
+            throw new HttpException('ID del docente inválido', HttpStatus.BAD_REQUEST);
+        }
         return this.docenteService.eliminarDocentePorID(idDocente);
     }
 

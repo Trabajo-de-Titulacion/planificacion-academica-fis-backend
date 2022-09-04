@@ -14,14 +14,14 @@ const assert = require('assert');
 
 /* Se aprueba la solicitud horas no disponibles de un docente */
 
-Given('que existe un docente con correo docente.prueba@epn.edu.ec', async function () {
+Given('que existe un docente con correo mahatma.quijano@epn.edu.ec', async function () {
     // Rol
     this.rolDocente = getRepository(RolEntity).create();
     this.rolDocente.nombre = 'DocentePrueba';
     await getRepository(RolEntity).save(this.rolDocente);
     // Usuario
     this.docenteUsuario = getRepository(UsuarioEntity).create();
-    this.docenteUsuario.correo = 'docente.prueba@epn.edu.ec';
+    this.docenteUsuario.correo = 'mahatma.quijano@epn.edu.ec';
     this.docenteUsuario.clave = 'Abcd1234!';
     await getRepository(UsuarioEntity).save(this.docenteUsuario);
     // RolUsuario
@@ -31,7 +31,7 @@ Given('que existe un docente con correo docente.prueba@epn.edu.ec', async functi
     await getRepository(RolUsuarioEntity).save(this.rolUsuario);
     // Docente
     this.docente = getRepository(DocenteEntity).create();
-    this.docente.correoElectronico = 'docente.prueba@epn.edu.ec';
+    this.docente.correoElectronico = 'mahatma.quijano@epn.edu.ec';
     this.docente.nombreCompleto = 'Nombre Docente';
     this.docente.usuario = this.docenteUsuario;
     await getRepository(DocenteEntity).save(this.docente);
@@ -122,7 +122,7 @@ Then('el docente recibe un correo electrónico indicando el rechazo de su solici
 
 
 // Borrar datos de la prueba
-After("@horasNoDisponiblesPruebaHorasAprobadas and @horasNoDisponiblesPruebaHorasRechazadas", async function () {
+After(async function () {
     // Borrar registros creados en el Dado
     await getRepository(RolUsuarioEntity).delete(this.rolUsuario);
     await getRepository(RolEntity).delete(this.rolDocente);

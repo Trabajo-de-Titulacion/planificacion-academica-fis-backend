@@ -6,7 +6,7 @@ Característica: Registro de horas no disponibles del docente
 
     @horasNoDisponiblesPruebaHorasAprobadas
     Escenario: Se aprueba la solicitud horas no disponibles de un docente
-        Dado que existe un docente con correo docente.prueba@epn.edu.ec
+        Dado que existe un docente con correo mahatma.quijano@epn.edu.ec
         Y un semestre con jornada laboral de lunes a sábado desde las 7h hasta las 20h con almuerzo a las 13h
         Cuando se solicitan como horas no disponibles el día Martes de 14 a 15
         Y el día Martes de 15 a 16
@@ -17,7 +17,7 @@ Característica: Registro de horas no disponibles del docente
 
     @horasNoDisponiblesPruebaHorasRechazadas
     Escenario: Se rechaza la solicitud horas no disponibles de un docente
-        Dado que existe un docente con correo docente.prueba@epn.edu.ec
+        Dado que existe un docente con correo mahatma.quijano@epn.edu.ec
         Y un semestre con jornada laboral de lunes a sábado desde las 7h hasta las 20h con almuerzo a las 13h
         Cuando se solicitan como horas no disponibles el día Martes de 14 a 15
         Y el día Martes de 15 a 16
