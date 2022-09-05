@@ -82,6 +82,20 @@ const configuracionesAPI = {
                 }
             }
         },
+        numeroEstudiantesPorSemestre: {
+            ruta: 'api/numero_estudiantes_por_semestre',
+            tag: 'Número de estudiantes por semestre',
+            operaciones: {
+                registrarNumeroEstudiantesPorSemestre: {
+                    ruta: '/registrarNumeroEstudiantesPorSemestre',
+                    descripcion: 'Método para registrar el número de estudiantes de cada asignatura de un semestre en curso.'
+                },
+                obtenerNumeroEstudiantesPorSemestreId: {
+                    ruta: '/obtenerNumeroEstudiantesPorSemestreId/:id',
+                    descripcion: 'Método para obtener el número de estudiantes por cada asignatura de un semestre indicado por su ID.'
+                },
+            }
+        },
         docente: {
             ruta: 'api/docente',
             tag: 'Docente',

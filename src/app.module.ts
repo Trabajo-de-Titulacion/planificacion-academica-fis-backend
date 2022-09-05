@@ -19,6 +19,7 @@ import { AsignaturaModule } from './asignatura/asignatura.module';
 import { ActividadesModule } from './actividades/actividades.module';
 import { HorarioModule } from './horario/horario.module';
 import { NivelesModule } from './niveles/niveles.module';
+import { NumeroEstudiantesPorSemestreModule } from './numero_estudiantes/numeroEstudiantesPorSemestre.module';
 
 @Module({
   imports: [
@@ -45,6 +46,7 @@ import { NivelesModule } from './niveles/niveles.module';
     ActividadesModule,
     HorarioModule,
     NivelesModule,
+    NumeroEstudiantesPorSemestreModule,
   ],
   controllers: [AppController],
   providers: [AppService],
