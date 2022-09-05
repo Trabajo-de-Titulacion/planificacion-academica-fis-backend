@@ -121,8 +121,18 @@ Then('el docente recibe un correo electrónico indicando el rechazo de su solici
 
 
 
-// Borrar datos de la prueba
-After(async function () {
+// Borrar datos de la prueba 1
+After("@horasNoDisponiblesPruebaHorasAprobadas", async function () {
+    // Borrar registros creados en el Dado
+    await getRepository(RolUsuarioEntity).delete(this.rolUsuario);
+    await getRepository(RolEntity).delete(this.rolDocente);
+    await getRepository(DocenteEntity).delete(this.docente);
+    await getRepository(UsuarioEntity).delete(this.docenteUsuario);
+    await getRepository(SemestreEntity).delete(this.semestre);
+});
+
+// Borrar datos de la prueba 2
+After("@horasNoDisponiblesPruebaHorasRechazadas", async function () {
     // Borrar registros creados en el Dado
     await getRepository(RolUsuarioEntity).delete(this.rolUsuario);
     await getRepository(RolEntity).delete(this.rolDocente);
