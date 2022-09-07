@@ -16,7 +16,7 @@ export class NumeroEstudiantesPorSemestreEntity {
     @ManyToOne( () => AsignaturaEntity, asignatura => asignatura.id, {
         onDelete: "CASCADE",
     })
-    @JoinColumn({ name: "idSolicitud" })
+    @JoinColumn({ name: "idAsignatura" })
     asignatura: AsignaturaEntity;
 
     @Column()
