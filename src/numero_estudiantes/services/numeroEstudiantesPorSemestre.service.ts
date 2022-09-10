@@ -42,7 +42,32 @@ export class NumeroEstudiantesPorSemestreService {
       });
       entidadesARegistrar.push(entidad);
     }
-    const registrosCreados = await this.numeroEstudiantesPorSemestreRepository.save(entidadesARegistrar);
+
+    const registrosCreados: NumeroEstudiantesPorSemestreEntity[] = [];
+
+    for (let entidad of entidadesARegistrar) {
+      const registroExistente = await this.numeroEstudiantesPorSemestreRepository.findOne({
+        where: { asignatura: entidad.asignatura, semestre: entidad.semestre }
+      });
+      // Si ya existe, actualiza
+      if (registroExistente) {
+        if (entidad.numeroEstudiantes > 0) {
+          await this.numeroEstudiantesPorSemestreRepository.update(registroExistente, {
+            numeroEstudiantes: entidad.numeroEstudiantes
+          });
+          registrosCreados.push(entidad);
+        } else {
+          await this.numeroEstudiantesPorSemestreRepository.delete(registroExistente);
+        }
+      }
+      // Si no existe, crea
+      else {
+        if (entidad.numeroEstudiantes > 0) {
+          const creado = await this.numeroEstudiantesPorSemestreRepository.save(entidad);
+          registrosCreados.push(creado);
+        }
+      }
+    }
 
     return {
       mensaje: `Se ha registrado el número de estudiantes de ${registrosCreados.length} asignatura(s).`,

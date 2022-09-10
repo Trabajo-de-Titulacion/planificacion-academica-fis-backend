@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsInt, IsNotEmpty, IsUUID } from "class-validator";
+import { IsInt, IsNotEmpty, IsUUID, Min, Max } from "class-validator";
 
 export class NumeroEstudiantesPorSemestreDTO {
     
@@ -22,5 +22,7 @@ export class NumeroEstudiantesPorSemestreDTO {
     @ApiProperty()
     @IsInt()
     @IsNotEmpty()
+    @Min(0)
+    @Max(200)
     numeroEstudiantes: number;
 }
