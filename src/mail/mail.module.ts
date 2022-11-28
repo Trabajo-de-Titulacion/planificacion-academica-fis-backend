@@ -9,15 +9,15 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
       useFactory: () => ({
         transport: {
           host: process.env.MAIL_HOST,
-          port: Number(process.env.MAIL_PORT),
+          port: +process.env.MAIL_PORT,
           secure: false,
           auth: {
             user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASSWORD
+            pass: process.env.MAIL_PASSWORD,
           },
         },
         defaults: {
-          from: '"Planificación Académica" <trabajodetitulacion2022@outlook.com>'
+          from: '"Planificación Académica" <trabajodetitulacion2022@outlook.com>',
         },
         template: {
           dir: `src/templates/`,
@@ -26,10 +26,10 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
             strict: false,
           },
         },
-      })
+      }),
     }),
   ],
   providers: [MailService],
-  exports: [MailService]
+  exports: [MailService],
 })
-export class MailModule { }
+export class MailModule {}

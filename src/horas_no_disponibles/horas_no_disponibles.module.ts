@@ -19,15 +19,20 @@ import { SolicitudHoraNoDisponibleEntity } from './entities/solicitudHoraNoDispo
     TypeOrmModule.forFeature([
       HoraNoDisponibleEntity,
       SolicitudHoraNoDisponibleEntity,
-      DocenteEntity, 
-      JornadaLaboralEntity, 
+      DocenteEntity,
+      JornadaLaboralEntity,
       SemestreEntity,
     ]),
-    DocenteModule, AuthModule, JwtModule
+    DocenteModule,
+    AuthModule,
+    JwtModule,
   ],
   controllers: [HorasNoDisponiblesController],
-  providers: [HorasNoDisponiblesService, DocenteService, JornadaLaboralService, SemestreService],
+  providers: [
+    HorasNoDisponiblesService,
+    DocenteService,
+    JornadaLaboralService,
+    SemestreService,
+  ],
 })
-export class HorasNoDisponiblesModule {
-  
-}
+export class HorasNoDisponiblesModule {}

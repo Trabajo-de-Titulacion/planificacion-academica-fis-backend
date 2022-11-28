@@ -17,8 +17,10 @@ import { AsignaturaEntity } from '../../src/asignatura/entities/asignatura.entit
     ]),
   ],
   controllers: [NumeroEstudiantesPorSemestreController],
-  providers: [NumeroEstudiantesPorSemestreService, SemestreService, AsignaturaService],
+  providers: [
+    NumeroEstudiantesPorSemestreService,
+    SemestreService,
+    AsignaturaService,
+  ],
 })
-export class NumeroEstudiantesPorSemestreModule {
-  
-}
+export class NumeroEstudiantesPorSemestreModule {}

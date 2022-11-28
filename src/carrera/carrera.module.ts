@@ -5,11 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CarreraEntity } from './entities/carrera.entity';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([CarreraEntity])
-  ],
+  imports: [TypeOrmModule.forFeature([CarreraEntity])],
   providers: [CarreraService],
   controllers: [CarreraController],
-  exports: [CarreraService]
+  exports: [CarreraService],
 })
-export class CarreraModule { }
+export class CarreraModule {}

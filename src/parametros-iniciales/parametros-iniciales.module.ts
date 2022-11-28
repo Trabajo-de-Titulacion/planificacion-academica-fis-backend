@@ -15,25 +15,25 @@ import { TipoAulaEntity } from './entities/tipo-aula.entity';
 import { TipoAulaService } from './services/tipo-aula.service';
 
 @Module({
-    imports: [TypeOrmModule.forFeature(
-        [
-            FacultadEntity,
-            JornadaLaboralEntity,
-            SemestreEntity,
-            TipoAulaEntity
-        ]
-    )],
-    controllers: [
-        FacultadController,
-        JornadaLaboralController,
-        SemestreController,
-        TipoAulaController
-    ],
-    providers: [
-        FacultadService,
-        JornadaLaboralService,
-        SemestreService,
-        TipoAulaService
-    ]
+  imports: [
+    TypeOrmModule.forFeature([
+      FacultadEntity,
+      JornadaLaboralEntity,
+      SemestreEntity,
+      TipoAulaEntity,
+    ]),
+  ],
+  controllers: [
+    FacultadController,
+    JornadaLaboralController,
+    SemestreController,
+    TipoAulaController,
+  ],
+  providers: [
+    FacultadService,
+    JornadaLaboralService,
+    SemestreService,
+    TipoAulaService,
+  ],
 })
-export class ParametrosInicialesModule { }
+export class ParametrosInicialesModule {}

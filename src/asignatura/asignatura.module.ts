@@ -5,13 +5,11 @@ import { AsignaturaEntity } from './entities/asignatura.entity';
 import { AsignaturaService } from './services/asignatura.service';
 
 @Module({
-    imports: [
-        TypeOrmModule.forFeature([AsignaturaEntity]),
-    ],
-    exports: [],
-    controllers: [AsignaturaController],
-    providers: [AsignaturaService]
+  imports: [TypeOrmModule.forFeature([AsignaturaEntity])],
+  exports: [],
+  controllers: [AsignaturaController],
+  providers: [AsignaturaService],
 })
 export class AsignaturaModule {
-    constructor(private asignaturaService: AsignaturaService) { }
+  constructor(private asignaturaService: AsignaturaService) {}
 }
