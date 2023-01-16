@@ -17,6 +17,11 @@ export class NivelEntity {
   @Column()
   nombre: string;
 
+  @Column({
+    default: 50,
+  })
+  numeroEstudiantes: number;
+
   @OneToMany(() => GrupoEntity, (grupo) => grupo.nivel)
   grupos: GrupoEntity[];
 

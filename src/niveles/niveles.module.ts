@@ -15,6 +15,6 @@ import { NivelService } from './services/nivel.service';
   ],
   controllers: [NivelController, GrupoController],
   providers: [NivelService, GrupoService],
-  exports: [TypeOrmModule],
+  exports: [TypeOrmModule, GrupoService, NivelService],
 })
 export class NivelesModule {}

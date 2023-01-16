@@ -40,6 +40,7 @@
     "cucumber-console-formatter": "^1.0.0",
     "dayjs": "^1.11.4",
     "dotenv": "^16.0.1",
+    "fast-xml-parser": "^4.0.13",
     "handlebars": "^4.7.7",
     "joi": "^17.7.0",
     "module_name": "^1.0.0",

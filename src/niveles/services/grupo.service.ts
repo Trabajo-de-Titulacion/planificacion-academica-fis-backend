@@ -34,4 +34,8 @@ export class GrupoService {
   async obtenerTodosLosGrupos() {
     return this.grupoRepositorio.find();
   }
+
+  async obtenerGrupoPorID(id: string) {
+    return await this.grupoRepositorio.findOne({ id: id });
+  }
 }

@@ -34,5 +34,6 @@ import { SolicitudHoraNoDisponibleEntity } from './entities/solicitudHoraNoDispo
     JornadaLaboralService,
     SemestreService,
   ],
+  exports: [HorasNoDisponiblesService],
 })
 export class HorasNoDisponiblesModule {}

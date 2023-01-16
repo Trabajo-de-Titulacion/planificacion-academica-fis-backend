@@ -18,5 +18,6 @@ import { FacultadEntity } from '../../src/parametros-iniciales/entities/facultad
   ],
   controllers: [EspaciosFisicosController],
   providers: [EspaciosFisicosService, TipoAulaService, FacultadService],
+  exports: [EspaciosFisicosService],
 })
 export class EspaciosFisicosModule {}

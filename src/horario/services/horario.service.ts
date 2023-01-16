@@ -1,9 +1,22 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UsuarioService } from '../../../src/usuarios/services/usuario.service';
 import { Repository } from 'typeorm';
 import { HorarioDto } from '../dto/horario.dto';
 import { HorarioEntity } from '../entities/horario.entity';
+import { XMLBuilder } from 'fast-xml-parser';
+import { nombreFacultad, nombreUniversidad } from 'src/utils/constantes';
+import { JornadaLaboralService } from 'src/parametros-iniciales/services/jornada-laboral.service';
+import { SemestreService } from 'src/parametros-iniciales/services/semestre.service';
+import { AsignaturaService } from 'src/asignatura/services/asignatura.service';
+import { TipoAulaService } from 'src/parametros-iniciales/services/tipo-aula.service';
+import { DocenteService } from 'src/docente/services/docente.service';
+import { HorasNoDisponiblesService } from 'src/horas_no_disponibles/services/horas_no_disponibles.service';
+import { ActividadesService } from 'src/actividades/services/actividades.service';
+import { NivelService } from 'src/niveles/services/nivel.service';
+import { FacultadService } from 'src/parametros-iniciales/services/facultad.service';
+import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_fisicos.service';
+import * as fs from 'fs';
 
 @Injectable()
 export class HorarioService {
@@ -11,6 +24,16 @@ export class HorarioService {
     @InjectRepository(HorarioEntity)
     private repositorioHorario: Repository<HorarioEntity>,
     private usuarioService: UsuarioService,
+    private jornadaLaboralService: JornadaLaboralService,
+    private semestreService: SemestreService,
+    private asignaturasService: AsignaturaService,
+    private tipoAulaService: TipoAulaService,
+    private docentesService: DocenteService,
+    private horasNoDisponiblesService: HorasNoDisponiblesService,
+    private actividadesService: ActividadesService,
+    private nivelesService: NivelService,
+    private facultadesService: FacultadService,
+    private espaciosFisicosService: EspaciosFisicosService,
   ) {}
   //TODO: COLOCAR LA DESCRIPCION
   async crearHorario(horario: HorarioDto) {
@@ -156,5 +179,255 @@ export class HorarioService {
     }
 
     return horarioFiltrado;
+  }
+
+  async generarHorario() {
+    // Jornadas
+    const semestreEnCurso =
+      await this.semestreService.obtenerSemestreConPlanificacionEnProgreso();
+
+    const diasLaborables =
+      await this.jornadaLaboralService.obtenerJornadaLaboralPorSemestre(
+        semestreEnCurso.id,
+      );
+
+    const intervalos = await this.jornadaLaboralService.obtenerIntervalos(
+      diasLaborables[0].id,
+    );
+
+    const soloHoras = intervalos.map((intervalo) => {
+      return {
+        Name: `${
+          parseInt(intervalo[0]) < 10 ? '0' + intervalo[0] : intervalo[0]
+        }-${parseInt(intervalo[1]) < 10 ? '0' + intervalo[1] : intervalo[1]}`,
+      };
+    });
+
+    const soloDias = diasLaborables.map((jornada) => {
+      return {
+        Name: jornada.dia
+          .toLowerCase()
+          .replace(/^./, jornada.dia[0].toUpperCase()),
+      };
+    });
+
+    // Asignaturas
+    const asignaturas = await this.asignaturasService.obtenerAsignatura();
+    const soloNombreCodigosAsignaturas = asignaturas.map((asignatura) => {
+      return {
+        Name: `${asignatura.nombre} (${asignatura.codigo})`,
+        Comments: '',
+      };
+    });
+
+    // Tipo Aulas
+    const tipoAulas = await this.tipoAulaService.obtenerTipoAulas();
+
+    const soloTiposAulas = tipoAulas.map((tipo) => {
+      return {
+        Name: `${tipo.tipo}`,
+        Printable: 'true',
+        Comments: `${tipo.facultad.nombre}`,
+      };
+    });
+
+    // Docentes
+    const docentes = await this.docentesService.obtenerDocentes();
+    const informacionCompletaDocentes = [];
+
+    for (let index = 0; index < docentes.length; index++) {
+      const docente = docentes[index];
+      const docentesMap = new Map();
+
+      const asignaturasDocente =
+        await this.actividadesService.obtenerAsignaturasPorDocente(docente.id);
+
+      asignaturasDocente.map((asignatura) => {
+        docentesMap.set(
+          `${asignatura.nombre} (${asignatura.codigo})`,
+          `${asignatura.nombre} (${asignatura.codigo})`,
+        );
+      });
+
+      const infoDocente = {
+        Name: docente.nombreCompleto,
+        Target_Number_of_Hours: 10,
+        Qualified_Subjects: {
+          Qualified_Subject: Array.from(docentesMap.values()),
+        },
+        Comments: '',
+      };
+      informacionCompletaDocentes.push(infoDocente);
+    }
+
+    // Niveles y grupos - Years
+    const niveles = await this.nivelesService.obtenerTodosLosNivelesYGrupos();
+    const nivelesYGrupos = niveles.map((nivel) => {
+      return {
+        Name: nivel.nombre,
+        Number_of_Students: nivel.numeroEstudiantes,
+        Comments: nivel.carrera.nombre,
+        Separator: ' ',
+        Group: nivel.grupos.map((grupo) => {
+          return {
+            Name: grupo.nombre,
+            Number_of_Students: grupo.numeroEstudiantes,
+            Comments: '',
+          };
+        }),
+      };
+    });
+
+    // Actividades
+    const actividades = await this.actividadesService.obtenerActividades();
+    console.log('ACTIVIDADES', actividades);
+    const actividadesInfoCompleta = actividades.map((actividad, index) => {
+      return {
+        Teacher: actividad.docente.nombreCompleto,
+        Subject: `${actividad.asignatura.nombre} (${actividad.asignatura.codigo})`,
+        Activity_Tag: actividad.tipoAula.tipo,
+        Students: actividad.grupo.nombre,
+        Duration: actividad.duracion,
+        Total_Duration: actividad.duracion,
+        Id: index + 1,
+        Activity_Group_Id: 0,
+        Number_Of_Students: actividad.numeroEstudiantes,
+        Active: actividad.estado,
+        Comments: '',
+      };
+    });
+
+    // Facultades
+    const facultades = await this.facultadesService.obtenerFacultades();
+
+    const facultadesInfo = facultades.map((facultad) => {
+      return {
+        Name: facultad.nombre,
+        Comments: '',
+      };
+    });
+
+    // Espacios
+    const espaciosFisicos =
+      await this.espaciosFisicosService.obtenerEspaciosFisicos();
+
+    const espaciosInfo = espaciosFisicos.map((espacio) => {
+      return {
+        Name: espacio.nombre,
+        Building: espacio.tipo.facultad.nombre,
+        Capacity: espacio.aforo,
+        Virtual: false,
+        Comments: espacio.tipo.tipo,
+      };
+    });
+
+    // Builders
+    const builderDias = new XMLBuilder({
+      arrayNodeName: 'Day',
+      format: true,
+    });
+
+    const buildersHoras = new XMLBuilder({
+      arrayNodeName: 'Hour',
+      format: true,
+    });
+
+    const buildersAsignaturas = new XMLBuilder({
+      arrayNodeName: 'Subject',
+      format: true,
+    });
+
+    const builderTipoAulas = new XMLBuilder({
+      arrayNodeName: 'Activity_Tag',
+      format: true,
+    });
+
+    const builderInfoDocentes = new XMLBuilder({
+      arrayNodeName: 'Teacher',
+      format: true,
+    });
+
+    const builderInfoGruposYNiveles = new XMLBuilder({
+      arrayNodeName: 'Year',
+      format: true,
+    });
+
+    const builderActividades = new XMLBuilder({
+      arrayNodeName: 'Activity',
+      format: true,
+    });
+
+    const builderFacultades = new XMLBuilder({
+      arrayNodeName: 'Building',
+      format: true,
+    });
+
+    const builderEspacios = new XMLBuilder({
+      arrayNodeName: 'Room',
+      format: true,
+    });
+
+    const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
+\n<fet version="6.1.5">
+\n<Institution_Name>${nombreUniversidad}</Institution_Name>
+\n<Comments>${nombreFacultad}</Comments>
+\n<Days_List>
+<Number_of_Days>${diasLaborables.length}</Number_of_Days>
+${builderDias.build(soloDias)}</Days_List>\n
+<Hours_List>
+<Number_of_Hours>${intervalos.length}</Number_of_Hours>
+${buildersHoras.build(soloHoras)}</Hours_List>
+\n<Subjects_List>
+${buildersAsignaturas.build(soloNombreCodigosAsignaturas)}</Subjects_List>
+\n<Activity_Tags_List>
+${builderTipoAulas.build(soloTiposAulas)}</Activity_Tags_List>
+\n<Teachers_List>
+${builderInfoDocentes.build(informacionCompletaDocentes)}</Teachers_List>
+\n<Students_List>
+${builderInfoGruposYNiveles.build(nivelesYGrupos)}</Students_List>
+\n<Activities_List>
+${builderActividades.build(actividadesInfoCompleta)}</Activities_List>
+\n<Buildings_List>
+${builderFacultades.build(facultadesInfo)}</Buildings_List>
+<Rooms_List>
+${builderEspacios.build(espaciosInfo)}</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsoryTime>
+<ConstraintBreakTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Break_Times>1</Number_of_Break_Times>
+	<Break_Time>
+		<Day>Jueves</Day>
+		<Hour>11:00-12:00</Hour>
+	</Break_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBreakTimes>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsorySpace>
+</Space_Constraints_List>
+
+
+</fet>
+`;
+    console.log(xmlContent);
+    fs.writeFile('./test.fet', xmlContent, () => {
+      Logger.log('Archivo creado');
+    });
+
+    return {
+      xmlContent,
+    };
   }
 }

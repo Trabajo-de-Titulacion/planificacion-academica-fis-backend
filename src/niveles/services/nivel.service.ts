@@ -38,6 +38,12 @@ export class NivelService {
     return await this.nivelRepository.find({ relations: ['carrera'] });
   }
 
+  async obtenerTodosLosNivelesYGrupos() {
+    return await this.nivelRepository.find({
+      relations: ['carrera', 'grupos'],
+    });
+  }
+
   async obtenerNivelPorId(idNivel: string) {
     return await this.nivelRepository.findOne(idNivel);
   }

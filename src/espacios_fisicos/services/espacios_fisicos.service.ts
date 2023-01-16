@@ -112,7 +112,7 @@ export class EspaciosFisicosService {
   /* Read */
   async obtenerEspaciosFisicos(): Promise<EspacioFisicoEntity[]> {
     return await this.espaciosFisicosRepository.find({
-      relations: ['tipo'],
+      relations: ['tipo', 'tipo.facultad'],
     });
   }
 

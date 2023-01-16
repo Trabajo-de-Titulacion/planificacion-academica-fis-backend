@@ -19,6 +19,11 @@ export class GrupoEntity {
   })
   nombre: string;
 
+  @Column({
+    default: 20,
+  })
+  numeroEstudiantes: number;
+
   @ManyToOne(() => NivelEntity, (nivel) => nivel.grupos)
   @JoinColumn({ name: 'idGrupo' })
   nivel: NivelEntity;

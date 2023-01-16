@@ -6,7 +6,7 @@ import { AsignaturaService } from './services/asignatura.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([AsignaturaEntity])],
-  exports: [],
+  exports: [AsignaturaService],
   controllers: [AsignaturaController],
   providers: [AsignaturaService],
 })

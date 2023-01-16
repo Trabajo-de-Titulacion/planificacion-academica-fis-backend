@@ -23,7 +23,10 @@ export class ActividadEntity {
   estado: boolean; // true for active
 
   @Column()
-  horas: number;
+  duracion: number;
+
+  @Column()
+  numeroEstudiantes: number;
 
   @ManyToOne(() => DocenteEntity, (docente) => docente.actividades)
   @JoinColumn({

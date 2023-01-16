@@ -22,6 +22,18 @@ export class NumeroEstudiantesPorSemestreService {
     private asignaturaService: AsignaturaService,
   ) {}
 
+  async obtenerAsignaturaPorIdDeNumeroEstudiantes(idNumeroEstudiantes: string) {
+    const numeroEstudiante =
+      await this.numeroEstudiantesPorSemestreRepository.findOne({
+        where: {
+          id: idNumeroEstudiantes,
+        },
+        relations: ['asignatura'],
+      });
+
+    return numeroEstudiante;
+  }
+
   async registrarNumeroEstudiantesPorSemestre(
     arregloNumeroEstudiantesPorSemestre: NumeroEstudiantesPorSemestreDTO[],
   ) {

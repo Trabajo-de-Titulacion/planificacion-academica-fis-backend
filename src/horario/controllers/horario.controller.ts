@@ -111,4 +111,9 @@ export class HorarioController {
     }
     return this.horarioService.obtenerHorarioPorID(idHorario);
   }
+
+  @Get('generarHorario')
+  generarHorario() {
+    return this.horarioService.generarHorario();
+  }
 }

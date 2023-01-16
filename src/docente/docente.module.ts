@@ -18,7 +18,13 @@ import { UsuarioService } from '../../src/usuarios/services/usuario.service';
     UsuariosModule,
     AuthModule,
   ],
-  exports: [MailModule, UsuarioService, RolService, RolUsuarioService],
+  exports: [
+    MailModule,
+    UsuarioService,
+    RolService,
+    RolUsuarioService,
+    DocenteService,
+  ],
   controllers: [DocenteController],
   providers: [DocenteService, RolService, RolUsuarioService, UsuarioService],
 })

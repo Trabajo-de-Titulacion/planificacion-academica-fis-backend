@@ -35,5 +35,11 @@ import { TipoAulaService } from './services/tipo-aula.service';
     SemestreService,
     TipoAulaService,
   ],
+  exports: [
+    TipoAulaService,
+    JornadaLaboralService,
+    SemestreService,
+    FacultadService,
+  ],
 })
 export class ParametrosInicialesModule {}

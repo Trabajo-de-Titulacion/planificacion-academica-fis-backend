@@ -22,5 +22,6 @@ import { AsignaturaEntity } from '../../src/asignatura/entities/asignatura.entit
     SemestreService,
     AsignaturaService,
   ],
+  exports: [NumeroEstudiantesPorSemestreService],
 })
 export class NumeroEstudiantesPorSemestreModule {}
