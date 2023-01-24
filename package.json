@@ -34,6 +34,7 @@
     "@nestjs/terminus": "^9.1.4",
     "@nestjs/typeorm": "8.0.1",
     "@types/bcrypt": "^5.0.0",
+    "@types/xml-js": "^1.0.0",
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
@@ -54,7 +55,8 @@
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "swagger-ui-express": "^4.5.0",
-    "typeorm": "0.2.34"
+    "typeorm": "0.2.34",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^8.4.0",

@@ -12,6 +12,7 @@ import { isUUID } from 'class-validator';
 import { Roles } from '../../../src/auth/decorators/roles.decorator';
 import { configuraciones } from '../../../src/config/swagger-config';
 import { RolesEnum } from '../../../src/utils/enum/rol.enum';
+import { GenerarHorarioDto } from '../dto/generar-horario.dto';
 import { HorarioDto } from '../dto/horario.dto';
 import { HorarioService } from '../services/horario.service';
 
@@ -112,8 +113,8 @@ export class HorarioController {
     return this.horarioService.obtenerHorarioPorID(idHorario);
   }
 
-  @Get('generarHorario')
-  generarHorario() {
-    return this.horarioService.generarHorario();
+  @Post('generarHorario')
+  generarHorario(@Body() data: GenerarHorarioDto) {
+    return this.horarioService.generarHorario(data.email);
   }
 }

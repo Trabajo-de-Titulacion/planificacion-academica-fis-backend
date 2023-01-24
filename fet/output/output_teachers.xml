@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Teachers_Timetable>
+  <Teacher name="MARIA ANA GOMEZ">
+   <Day name="Lunes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Jueves">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Sábado">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Martes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     <Activity id="1"></Activity><Subject name="APLICACIONES MOVILES (ISWD713)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="1-GR1-ISW"></Students>
+    </Hour>
+    <Hour name="12:00-13:00">
+     <Activity id="1"></Activity><Subject name="APLICACIONES MOVILES (ISWD713)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="1-GR1-ISW"></Students>
+    </Hour>
+    <Hour name="14:00-15:00">
+     <Activity id="1"></Activity><Subject name="APLICACIONES MOVILES (ISWD713)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="1-GR1-ISW"></Students>
+    </Hour>
+    <Hour name="15:00-16:00">
+     <Activity id="1"></Activity><Subject name="APLICACIONES MOVILES (ISWD713)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="1-GR1-ISW"></Students>
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Miércoles">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Viernes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+  </Teacher>
+  <Teacher name="JUAN JOSE GOMEZ TUSA">
+   <Day name="Lunes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Jueves">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Sábado">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Martes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Miércoles">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     <Activity id="2"></Activity><Subject name="ALGEBRA LINEAL (MATD113)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR1-ICC"></Students>
+    </Hour>
+    <Hour name="16:00-17:00">
+     <Activity id="2"></Activity><Subject name="ALGEBRA LINEAL (MATD113)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR1-ICC"></Students>
+    </Hour>
+    <Hour name="17:00-18:00">
+     <Activity id="2"></Activity><Subject name="ALGEBRA LINEAL (MATD113)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR1-ICC"></Students>
+    </Hour>
+    <Hour name="18:00-19:00">
+     <Activity id="2"></Activity><Subject name="ALGEBRA LINEAL (MATD113)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR1-ICC"></Students>
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Viernes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+  </Teacher>
+  <Teacher name="PEPE JOSE LUCIO NARANJO">
+   <Day name="Lunes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Jueves">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Sábado">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Martes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Miércoles">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     
+    </Hour>
+    <Hour name="14:00-15:00">
+     
+    </Hour>
+    <Hour name="15:00-16:00">
+     
+    </Hour>
+    <Hour name="16:00-17:00">
+     
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+   <Day name="Viernes">
+    <Hour name="07:00-08:00">
+     
+    </Hour>
+    <Hour name="08:00-09:00">
+     
+    </Hour>
+    <Hour name="09:00-10:00">
+     
+    </Hour>
+    <Hour name="10:00-11:00">
+     
+    </Hour>
+    <Hour name="11:00-12:00">
+     
+    </Hour>
+    <Hour name="12:00-13:00">
+     <Activity id="3"></Activity><Subject name="MECANICA NEWTONIANA (FISD134)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR2-ICC"></Students>
+    </Hour>
+    <Hour name="14:00-15:00">
+     <Activity id="3"></Activity><Subject name="MECANICA NEWTONIANA (FISD134)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR2-ICC"></Students>
+    </Hour>
+    <Hour name="15:00-16:00">
+     <Activity id="3"></Activity><Subject name="MECANICA NEWTONIANA (FISD134)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR2-ICC"></Students>
+    </Hour>
+    <Hour name="16:00-17:00">
+     <Activity id="3"></Activity><Subject name="MECANICA NEWTONIANA (FISD134)"></Subject><Activity_Tag name="Regular"></Activity_Tag><Students name="1-GR2-ICC"></Students>
+    </Hour>
+    <Hour name="17:00-18:00">
+     
+    </Hour>
+    <Hour name="18:00-19:00">
+     
+    </Hour>
+    <Hour name="19:00-20:00">
+     
+    </Hour>
+   </Day>
+  </Teacher>
+</Teachers_Timetable>

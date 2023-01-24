@@ -17,6 +17,8 @@ import { NivelService } from 'src/niveles/services/nivel.service';
 import { FacultadService } from 'src/parametros-iniciales/services/facultad.service';
 import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_fisicos.service';
 import * as fs from 'fs';
+import { exec } from 'node:child_process';
+import { xml2js } from 'xml-js';
 
 @Injectable()
 export class HorarioService {
@@ -51,6 +53,7 @@ export class HorarioService {
   /* ========================================================================================================= */
 
   obtenerHorarios(): Promise<HorarioEntity[]> {
+    Logger.log('obtenerHorarios', 'HORARIOS');
     return this.repositorioHorario.find({
       relations: ['usuario'],
       select: ['id', 'fechaCreacion', 'descripcion', 'usuario'],
@@ -62,6 +65,7 @@ export class HorarioService {
   /* ================================================================================================= */
 
   obtenerHorarioPorID(idHorario: string): Promise<HorarioEntity> {
+    Logger.log('obtenerHorarioPorId', 'HORARIO');
     return this.repositorioHorario.findOne({
       where: { id: idHorario },
       select: ['id', 'horarioJson'],
@@ -83,6 +87,8 @@ export class HorarioService {
     // Transformador de texto a JSON
     const arreglo = JSON.parse(horario.horarioJson.toString());
     const subgrupos = arreglo.Students_Timetable.Subgroup;
+
+    console.log('arreglo', arreglo);
 
     // Revisión por cada grupo
     for (let i = 0; i < subgrupos.length; i++) {
@@ -140,6 +146,8 @@ export class HorarioService {
     const arreglo = JSON.parse(horario.horarioJson.toString());
     const subgrupos = arreglo.Students_Timetable.Subgroup;
 
+    console.log('subgrupos', subgrupos);
+
     // Revisión por cada grupo
     for (let i = 0; i < subgrupos.length; i++) {
       if (subgrupos[i]['-name'].split(' ', 1) == grupo) {
@@ -181,7 +189,8 @@ export class HorarioService {
     return horarioFiltrado;
   }
 
-  async generarHorario() {
+  async generarHorario(email: string) {
+    const usuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(email);
     // Jornadas
     const semestreEnCurso =
       await this.semestreService.obtenerSemestreConPlanificacionEnProgreso();
@@ -280,7 +289,6 @@ export class HorarioService {
 
     // Actividades
     const actividades = await this.actividadesService.obtenerActividades();
-    console.log('ACTIVIDADES', actividades);
     const actividadesInfoCompleta = actividades.map((actividad, index) => {
       return {
         Teacher: actividad.docente.nombreCompleto,
@@ -421,11 +429,109 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 
 </fet>
 `;
-    console.log(xmlContent);
-    fs.writeFile('./test.fet', xmlContent, () => {
-      Logger.log('Archivo creado');
-    });
 
+    fs.writeFile('./fet/output.fet', xmlContent, () => {
+      Logger.log(`Archivo creado ${usuario.id}`, 'FET');
+
+      // run the `ls` command using exec
+      exec(
+        'cp ./fet/output.fet $HOME/Documents/FINAL_FINAL_FINAL_FINAL/repositories/usr/bin/output.fet',
+        (err, output) => {
+          // once the command has completed, the callback function is called
+          if (err) {
+            // log and return if we encounter an error
+            console.error('could not execute command: ', err);
+            return;
+          }
+
+          exec(
+            './fet-cl --inputfile=output.fet',
+            {
+              cwd: `/home/sivek/Documents/FINAL_FINAL_FINAL_FINAL/repositories/usr/bin`,
+            },
+            (err, output) => {
+              // once the command has completed, the callback function is called
+              if (err) {
+                // log and return if we encounter an error
+                console.error('could not execute command: ', err);
+                return;
+              }
+
+              exec(
+                'cp -r ./output /home/sivek/Documents/FINAL_FINAL_FINAL_FINAL/repositories/planificacion-academica-fis-backend/fet',
+                {
+                  cwd: `/home/sivek/Documents/FINAL_FINAL_FINAL_FINAL/repositories/usr/bin/timetables`,
+                },
+                (err, output) => {
+                  // once the command has completed, the callback function is called
+                  if (err) {
+                    // log and return if we encounter an error
+                    console.error('could not execute command: ', err);
+                    return;
+                  }
+
+                  const data = fs.readFileSync(
+                    './fet/output/output_subgroups.xml',
+                    { encoding: 'utf8', flag: 'r' },
+                  );
+
+                  const jsonData = xml2js(data, {
+                    compact: true,
+                    nameKey: '-name',
+                    alwaysArray: false,
+                    ignoreDoctype: true,
+                    alwaysChildren: false,
+                    attributesKey: '-name',
+                    attributeValueFn(
+                      attributeValue,
+                      attributeName,
+                      parentElement,
+                    ) {
+                      console.log(attributeValue);
+                      return attributeValue;
+                    },
+                  });
+                  const jsonDataFormat = JSON.stringify(jsonData);
+                  const subs = jsonData['Students_Timetable']['Subgroup'].map(
+                    (grupo) => {
+                      console.log(
+                        'Day',
+                        grupo['Day'].map((day) => {
+                          return {
+                            '-name': day['-name']['name'],
+                            Hour: day['Hour'].map((hour) => {
+                              console.log('four', hour);
+                              return { '-name': hour['-name']['name'] };
+                            }),
+                          };
+                        }),
+                      );
+                      return {
+                        '-name': grupo['name'],
+                        Day: grupo['Day'],
+                      };
+                    },
+                  );
+
+                  console.log({
+                    Students_Timetable: {
+                      Subgroup: subs,
+                    },
+                  });
+
+                  this.repositorioHorario.save({
+                    descripcion: 'Horario por subgrupos',
+                    fechaCreacion: new Date(),
+                    horarioJson: jsonDataFormat,
+                    usuario: usuario,
+                  });
+                },
+              );
+            },
+          );
+        },
+      );
+    });
     return {
       xmlContent,
     };
