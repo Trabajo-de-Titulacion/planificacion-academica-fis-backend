@@ -6,10 +6,10 @@ export class AsignaturaEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ length: 7, unique: true })
+  @Column({  unique: true})
   codigo: string;
 
-  @Column({ length: 80 })
+  @Column()
   nombre: string;
 
   @Column()

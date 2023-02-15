@@ -4,8 +4,11 @@ import {
   Get,
   HttpException,
   HttpStatus,
+  Logger,
   Param,
   Post,
+  UploadedFile,
+  UseInterceptors,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { isUUID } from 'class-validator';
@@ -15,6 +18,7 @@ import { RolesEnum } from '../../../src/utils/enum/rol.enum';
 import { GenerarHorarioDto } from '../dto/generar-horario.dto';
 import { HorarioDto } from '../dto/horario.dto';
 import { HorarioService } from '../services/horario.service';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.horario.tag)
@@ -116,5 +120,17 @@ export class HorarioController {
   @Post('generarHorario')
   generarHorario(@Body() data: GenerarHorarioDto) {
     return this.horarioService.generarHorario(data.email);
+  }
+
+  @Post('cargarFET')
+  @UseInterceptors(FileInterceptor('archivoFet'))
+  @Roles(RolesEnum.COORDINADOR)
+  async cargarFET(@UploadedFile() file: Express.Multer.File){
+
+    // Guardar información
+    const informacion = file.buffer.toString();
+
+    Logger.log("[CARGAR_FET] cargando fet...")
+    return await this.horarioService.procesarPlanificacion(informacion, "coordinador@epn.edu.ec");
   }
 }

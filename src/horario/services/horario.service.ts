@@ -36,7 +36,7 @@ export class HorarioService {
     private nivelesService: NivelService,
     private facultadesService: FacultadService,
     private espaciosFisicosService: EspaciosFisicosService,
-  ) {}
+  ) { }
   //TODO: COLOCAR LA DESCRIPCION
   async crearHorario(horario: HorarioDto) {
     const usuario = await this.usuarioService.obtenerUsuarioCompletoPorSuID(
@@ -77,6 +77,7 @@ export class HorarioService {
   /* ===================================================================================================== */
 
   async obtenerHorarioDocente(nombreDocente: string, idHorario: string) {
+    Logger.log('obtenerHorarioDocente');
     //Buscar horario
     const horario = await this.obtenerHorarioPorID(idHorario);
 
@@ -88,8 +89,6 @@ export class HorarioService {
     const arreglo = JSON.parse(horario.horarioJson.toString());
     const subgrupos = arreglo.Students_Timetable.Subgroup;
 
-    console.log('arreglo', arreglo);
-
     // Revisión por cada grupo
     for (let i = 0; i < subgrupos.length; i++) {
       const dias = subgrupos[i].Day;
@@ -100,8 +99,9 @@ export class HorarioService {
         for (let k = 0; k < horas.length; k++) {
           // Comprueba que exista horario en la hora iterada
           if (horas[k].Teacher) {
+            console.log("horas[k].Teacher", horas[k].Teacher);
             // Si el profesor se llama igual al enviado
-            if (horas[k].Teacher['-name'].toUpperCase() == nombreDocente) {
+            if (horas[k].Teacher['-name'].toUpperCase() === nombreDocente) {
               // Si se vinculó un espacio físico se añade este
               if (horas[k].Room) {
                 horarioFiltrado[index] = {
@@ -135,6 +135,7 @@ export class HorarioService {
   /* ===================================================================================================== */
 
   async obtenerHorarioGrupo(grupo: string, idHorario: string) {
+    Logger.log('obtenerHorarioGrupo');
     //Buscar horario
     const horario = await this.repositorioHorario.findOne({ id: idHorario });
 
@@ -145,8 +146,6 @@ export class HorarioService {
     // Transformador de texto a JSON
     const arreglo = JSON.parse(horario.horarioJson.toString());
     const subgrupos = arreglo.Students_Timetable.Subgroup;
-
-    console.log('subgrupos', subgrupos);
 
     // Revisión por cada grupo
     for (let i = 0; i < subgrupos.length; i++) {
@@ -189,6 +188,12 @@ export class HorarioService {
     return horarioFiltrado;
   }
 
+  async Format() {
+    let obj = {};
+    obj['Students_Timetable'];
+
+  }
+
   async generarHorario(email: string) {
     const usuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(email);
     // Jornadas
@@ -206,9 +211,8 @@ export class HorarioService {
 
     const soloHoras = intervalos.map((intervalo) => {
       return {
-        Name: `${
-          parseInt(intervalo[0]) < 10 ? '0' + intervalo[0] : intervalo[0]
-        }-${parseInt(intervalo[1]) < 10 ? '0' + intervalo[1] : intervalo[1]}`,
+        Name: `${parseInt(intervalo[0]) < 10 ? '0' + intervalo[0] : intervalo[0]
+          }-${parseInt(intervalo[1]) < 10 ? '0' + intervalo[1] : intervalo[1]}`,
       };
     });
 
@@ -435,7 +439,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 
       // run the `ls` command using exec
       exec(
-        'cp ./fet/output.fet $HOME/Documents/FINAL_FINAL_FINAL_FINAL/repositories/usr/bin/output.fet',
+        'cp ./fet/output.fet $HOME/Documents/zwippe/usr/bin/output.fet',
         (err, output) => {
           // once the command has completed, the callback function is called
           if (err) {
@@ -445,9 +449,9 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
           }
 
           exec(
-            './fet-cl --inputfile=output.fet',
+            'fet-cl --inputfile=output.fet',
             {
-              cwd: `/home/sivek/Documents/FINAL_FINAL_FINAL_FINAL/repositories/usr/bin`,
+              cwd: `/home/parallels/Documents/zwippe/usr/bin`,
             },
             (err, output) => {
               // once the command has completed, the callback function is called
@@ -458,9 +462,9 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               }
 
               exec(
-                'cp -r ./output /home/sivek/Documents/FINAL_FINAL_FINAL_FINAL/repositories/planificacion-academica-fis-backend/fet',
+                'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
                 {
-                  cwd: `/home/sivek/Documents/FINAL_FINAL_FINAL_FINAL/repositories/usr/bin/timetables`,
+                  cwd: `/home/parallels/Documents/zwippe/usr/bin/timetables`,
                 },
                 (err, output) => {
                   // once the command has completed, the callback function is called
@@ -487,37 +491,73 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
                       attributeName,
                       parentElement,
                     ) {
-                      console.log(attributeValue);
                       return attributeValue;
                     },
                   });
-                  const jsonDataFormat = JSON.stringify(jsonData);
+
+                  ///////////////// FORMAAAAAAAT
+
+                  let format = {};
+                  let formatSubgrups = [];
+
+                  formatSubgrups = jsonData['Students_Timetable']['Subgroup'].map(sub => {
+                    let subgroup = {
+                      "-name": sub['-name'].name,
+                      "Day": sub['Day'].map(d => {
+                        let day = {
+                          "-name": d['-name']['name'],
+                          "Hour": d['Hour'].map(h => {
+                            console.log("hora", h)
+                            let keysHora = Object.keys(h);
+                            if (!keysHora.includes('Activity')) {
+                              return { '-name': h['-name']['name'] }
+                            } else {
+                              return {
+                                '-name': h['-name']['name'],
+                                'Activity': {
+                                  '-id': h['Activity']['-name']['id']
+                                },
+                                'Teacher': {
+                                  '-name': h['Teacher']['-name']['name']
+                                },
+                                'Subject': {
+                                  '-name': h['Subject']['-name']['name']
+                                },
+                                'Activity_Tag': h['Activity_Tag']['-name']['name'],
+                                'Room': {
+                                  '-name': 'KAPPA-IC'
+                                }
+                              }
+                            }
+
+                          })
+                        }
+                        return day;
+                      }),
+                    }
+                    return subgroup;
+                    //                    formatSubgrups.push
+                  });
+
+                  // Primer nodo
+                  format["Students_Timetable"] = {
+                    "Subgroup": formatSubgrups,
+                  }
+
+                  console.log("format", format)
+
+                  /////////////////// FORMAT
+
+                  const jsonDataFormat = JSON.stringify(format);
                   const subs = jsonData['Students_Timetable']['Subgroup'].map(
                     (grupo) => {
-                      console.log(
-                        'Day',
-                        grupo['Day'].map((day) => {
-                          return {
-                            '-name': day['-name']['name'],
-                            Hour: day['Hour'].map((hour) => {
-                              console.log('four', hour);
-                              return { '-name': hour['-name']['name'] };
-                            }),
-                          };
-                        }),
-                      );
+
                       return {
                         '-name': grupo['name'],
                         Day: grupo['Day'],
                       };
                     },
                   );
-
-                  console.log({
-                    Students_Timetable: {
-                      Subgroup: subs,
-                    },
-                  });
 
                   this.repositorioHorario.save({
                     descripcion: 'Horario por subgrupos',
@@ -535,5 +575,165 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
     return {
       xmlContent,
     };
+  }
+
+  async procesarPlanificacion(contenido: string, email: string) {
+
+
+    const usuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(email);
+    fs.writeFile('./fet/output.fet', contenido, () => {
+      Logger.log(`Archivo creado ${usuario.id}`, 'FET');
+
+      // run the `ls` command using exec
+      exec(
+        'cp ./fet/output.fet $HOME/Documents/zwippe/usr/bin/output.fet',
+        (err, output) => {
+          // once the command has completed, the callback function is called
+          if (err) {
+            // log and return if we encounter an error
+            console.error('could not execute command: ', err);
+            return;
+          }
+
+          exec(
+            'fet-cl --inputfile=output.fet',
+            {
+              cwd: `/home/parallels/Documents/zwippe/usr/bin`,
+            },
+            (err, output) => {
+              // once the command has completed, the callback function is called
+              if (err) {
+                // log and return if we encounter an error
+                console.error('could not execute command: ', err);
+                return;
+              }
+
+              exec(
+                'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
+                {
+                  cwd: `/home/parallels/Documents/zwippe/usr/bin/timetables`,
+                },
+                async (err, output) => {
+                  // once the command has completed, the callback function is called
+                  if (err) {
+                    // log and return if we encounter an error
+                    console.error('could not execute command: ', err);
+                    return;
+                  }
+
+                  const data = fs.readFileSync(
+                    './fet/output/output_subgroups.xml',
+                    { encoding: 'utf8', flag: 'r' },
+                  );
+
+                  const jsonData = xml2js(data, {
+                    compact: true,
+                    nameKey: '-name',
+                    alwaysArray: false,
+                    ignoreDoctype: true,
+                    alwaysChildren: false,
+                    attributesKey: '-name',
+                    attributeValueFn(
+                      attributeValue,
+                      attributeName,
+                      parentElement,
+                    ) {
+                      return attributeValue;
+                    },
+                  });
+
+                  ///////////////// FORMAAAAAAAT
+
+                  let format = {};
+                  let formatSubgrups = [];
+
+                  console.log("jsonData ===> ", jsonData)
+
+                  formatSubgrups = jsonData['Students_Timetable']['Subgroup'].map(sub => {
+                    let subgroup = {
+                      "-name": sub['-name'].name,
+                      "Day": sub['Day'].map(d => {
+                        let day = {
+                          "-name": d['-name']['name'],
+                          "Hour": d['Hour'].map(h => {
+                            console.log("hora  ===> ", h)
+                            let keysHora = Object.keys(h);
+                            if (!keysHora.includes('Activity')) {
+                              return { '-name': h['-name']['name'] }
+                            } else {
+
+                              if (!keysHora.includes('Teacher') && !keysHora.includes('Room')) {
+                                return {
+                                  '-name': h['-name']['name'],
+                                  'Activity': {
+                                    '-id': h['Activity']['-name']['id']
+                                  },
+                                  'Subject': {
+                                    '-name': h['Subject']['-name']['name']
+                                  },
+                                  'Activity_Tag': h['Activity_Tag']['-name']['name'],
+                                }                              }
+
+                              return {
+                                '-name': h['-name']['name'],
+                                'Activity': {
+                                  '-id': h['Activity']['-name']['id']
+                                },
+                                'Teacher': {
+                                  '-name': h['Teacher']['-name']['name']
+                                },
+                                'Subject': {
+                                  '-name': h['Subject']['-name']['name']
+                                },
+                                'Activity_Tag': h['Activity_Tag']['-name']['name'],
+                                'Room': {
+                                  '-name': 'KAPPA-IC'
+                                }
+                              }
+                            }
+
+                          })
+                        }
+                        return day;
+                      }),
+                    }
+                    return subgroup;
+                    //                    formatSubgrups.push
+                  });
+
+                  // Primer nodo
+                  format["Students_Timetable"] = {
+                    "Subgroup": formatSubgrups,
+                  }
+
+                  console.log("format", format)
+
+                  /////////////////// FORMAT
+
+                  const jsonDataFormat = JSON.stringify(format);
+                  const subs = jsonData['Students_Timetable']['Subgroup'].map(
+                    (grupo) => {
+
+                      return {
+                        '-name': grupo['name'],
+                        Day: grupo['Day'],
+                      };
+                    },
+                  );
+
+                  await this.repositorioHorario.save({
+                    descripcion: 'Horario por subgrupos',
+                    fechaCreacion: new Date(),
+                    horarioJson: jsonDataFormat,
+                    usuario: usuario,
+                  });
+                },
+              );
+            },
+          );
+        },
+      );
+    });
+
   }
 }
