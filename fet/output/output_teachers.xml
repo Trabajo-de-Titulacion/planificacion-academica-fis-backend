@@ -2686,16 +2686,16 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="256"></Activity><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
     </Hour>
     <Hour name="19:00-20:00">
-     
+     <Activity id="256"></Activity><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="256"></Activity><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
+     
     </Hour>
     <Hour name="21:00-22:00">
-     <Activity id="256"></Activity><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
+     
     </Hour>
    </Day>
    <Day name="Jueves">
@@ -9502,10 +9502,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="568"></Activity><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="568"></Activity><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -9549,10 +9549,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="568"></Activity><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="19:00-20:00">
-     
+     <Activity id="568"></Activity><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -10544,7 +10544,7 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="972"></Activity><Subject name="ALMACENAMIENTO DE DATOS MASIVOS (MSIR123)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
+     
     </Hour>
     <Hour name="19:00-20:00">
      
@@ -10685,7 +10685,7 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="972"></Activity><Subject name="ALMACENAMIENTO DE DATOS MASIVOS (MSIR123)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
     </Hour>
     <Hour name="19:00-20:00">
      
@@ -13384,13 +13384,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="264"></Activity><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="264"></Activity><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="264"></Activity><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -13431,13 +13431,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="264"></Activity><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="19:00-20:00">
-     
+     <Activity id="264"></Activity><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="20:00-21:00">
-     
+     <Activity id="264"></Activity><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -34400,13 +34400,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="262"></Activity><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="19:00-20:00">
-     
+     <Activity id="262"></Activity><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="20:00-21:00">
-     
+     <Activity id="262"></Activity><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -34447,13 +34447,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="262"></Activity><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="262"></Activity><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="262"></Activity><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -34494,16 +34494,16 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="259"></Activity><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
+     
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="259"></Activity><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
+     
     </Hour>
     <Hour name="20:00-21:00">
-     
+     <Activity id="259"></Activity><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
     </Hour>
     <Hour name="21:00-22:00">
-     
+     <Activity id="259"></Activity><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="Nivel 1 - MSI"></Students>
     </Hour>
    </Day>
    <Day name="Jueves">
@@ -39796,13 +39796,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="265"></Activity><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR2-MSI"></Students>
     </Hour>
     <Hour name="19:00-20:00">
      <Activity id="265"></Activity><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR2-MSI"></Students>
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="265"></Activity><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR2-MSI"></Students>
+     
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -39890,10 +39890,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="569"></Activity><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="19:00-20:00">
-     
+     <Activity id="569"></Activity><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -39937,10 +39937,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="569"></Activity><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="569"></Activity><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Students name="2-GR1-MSI"></Students>
+     
     </Hour>
     <Hour name="20:00-21:00">
      

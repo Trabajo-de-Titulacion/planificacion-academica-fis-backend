@@ -11112,7 +11112,7 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="972"></Activity><Teacher name="Martínez Mosquera Silvia Diana"></Teacher><Subject name="ALMACENAMIENTO DE DATOS MASIVOS (MSIR123)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="19:00-20:00">
      <Activity id="260"></Activity><Teacher name="Paz Arias Henry Patricio"></Teacher><Subject name="APRENDIZAJE DE MÁQUINA (MSIR153)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
@@ -11206,16 +11206,16 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="259"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="256"></Activity><Teacher name="Calle Jiménez Tania Elizabeth"></Teacher><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="259"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="256"></Activity><Teacher name="Calle Jiménez Tania Elizabeth"></Teacher><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="256"></Activity><Teacher name="Calle Jiménez Tania Elizabeth"></Teacher><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="259"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="21:00-22:00">
-     <Activity id="256"></Activity><Teacher name="Calle Jiménez Tania Elizabeth"></Teacher><Subject name="METODOLOGÍA DE LA INVESTIGACIÓN (MSIR162)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="259"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="ANALITICA DE DATOS (MSIR112)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
    </Day>
    <Day name="Jueves">
@@ -11253,7 +11253,7 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="972"></Activity><Teacher name="Martínez Mosquera Silvia Diana"></Teacher><Subject name="ALMACENAMIENTO DE DATOS MASIVOS (MSIR123)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
      <Activity id="257"></Activity><Teacher name="Galindo Lozada Julián Andrés"></Teacher><Subject name="INTELIGENCIA DE NEGOCIOS (MSIR143)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
@@ -11396,13 +11396,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="264"></Activity><Teacher name="Pineda Arias Israel Gustavo"></Teacher><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="262"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="264"></Activity><Teacher name="Pineda Arias Israel Gustavo"></Teacher><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="262"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="264"></Activity><Teacher name="Pineda Arias Israel Gustavo"></Teacher><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="262"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -11443,13 +11443,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="262"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="264"></Activity><Teacher name="Pineda Arias Israel Gustavo"></Teacher><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="262"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="264"></Activity><Teacher name="Pineda Arias Israel Gustavo"></Teacher><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="262"></Activity><Teacher name="Recalde Cerda Lorena Katherine"></Teacher><Subject name="VISUALIZACIÓN DE DATOS (MSIO243)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="264"></Activity><Teacher name="Pineda Arias Israel Gustavo"></Teacher><Subject name="PROCESAMIENTO DE DATOS MASIVOS (MSIO213)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -11490,10 +11490,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="568"></Activity><Teacher name="Loza Aguirre Edison Fernando"></Teacher><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
+     <Activity id="569"></Activity><Teacher name="Yoo Park Sang Guun"></Teacher><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="568"></Activity><Teacher name="Loza Aguirre Edison Fernando"></Teacher><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
+     <Activity id="569"></Activity><Teacher name="Yoo Park Sang Guun"></Teacher><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -11537,10 +11537,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="569"></Activity><Teacher name="Yoo Park Sang Guun"></Teacher><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="568"></Activity><Teacher name="Loza Aguirre Edison Fernando"></Teacher><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="569"></Activity><Teacher name="Yoo Park Sang Guun"></Teacher><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     <Activity id="568"></Activity><Teacher name="Loza Aguirre Edison Fernando"></Teacher><Subject name="TOMA ESTRATÉGICA DE DECISIONES (MSIO232)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -11680,13 +11680,13 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="265"></Activity><Teacher name="Yoo Park Sang Guun"></Teacher><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
      <Activity id="265"></Activity><Teacher name="Yoo Park Sang Guun"></Teacher><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
-     <Activity id="265"></Activity><Teacher name="Yoo Park Sang Guun"></Teacher><Subject name="TÓPICOS ESPECIALES (MSIO222)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="21:00-22:00">
      
