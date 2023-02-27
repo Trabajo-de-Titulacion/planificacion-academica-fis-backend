@@ -1,4 +1,4 @@
-import { ActividadEntity } from 'src/actividades/entities/actividad.entity';
+import { ActividadEntity } from '../../actividades/entities/actividad.entity';
 import {
   Column,
   Entity,

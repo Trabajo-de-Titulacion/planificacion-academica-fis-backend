@@ -1,4 +1,4 @@
-import { ActividadEntity } from 'src/actividades/entities/actividad.entity';
+import { ActividadEntity } from '../../actividades/entities/actividad.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('asignatura')
@@ -6,15 +6,15 @@ export class AsignaturaEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({  unique: true})
+  @Column({ unique: true })
   codigo: string;
 
   @Column()
   nombre: string;
 
   @Column()
-  creditos: number;
+  creditos?: number;
 
   @OneToMany(() => ActividadEntity, (actividades) => actividades.asignatura)
-  actividades: ActividadEntity[];
+  actividades?: ActividadEntity[];
 }

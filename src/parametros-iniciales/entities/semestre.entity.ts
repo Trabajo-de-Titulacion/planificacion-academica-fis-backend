@@ -11,7 +11,7 @@ export class SemestreEntity {
   abreviatura: string;
 
   @OneToMany(() => JornadaLaboralEntity, (jornada) => jornada.semestre)
-  jornadas: JornadaLaboralEntity[];
+  jornadas?: JornadaLaboralEntity[];
 
   @Column({
     enum: ESTADO_SEMESTRE,

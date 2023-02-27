@@ -7,7 +7,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { ActividadEntity } from 'src/actividades/entities/actividad.entity';
+import { ActividadEntity } from '../../actividades/entities/actividad.entity';
 
 @Entity('docente')
 export class DocenteEntity {
@@ -22,8 +22,8 @@ export class DocenteEntity {
 
   @OneToOne(() => UsuarioEntity)
   @JoinColumn()
-  usuario: UsuarioEntity;
+  usuario?: UsuarioEntity;
 
   @OneToMany(() => ActividadEntity, (actividades) => actividades.docente)
-  actividades: ActividadEntity[];
+  actividades?: ActividadEntity[];
 }

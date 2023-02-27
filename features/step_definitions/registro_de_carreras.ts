@@ -4,10 +4,17 @@ import { CarreraController } from '../../src/carrera/controllers/carrera.control
 import { CarreraEntity } from '../../src/carrera/entities/carrera.entity';
 import { getRepository } from 'typeorm';
 
-
 /* ESCENARIO 1 - Ingreso individual de un carrera */
 
-Given('que se tiene una carrera con código {string}, nombre {string}, duración {string} y modalidad {string}', { timeout: 5 * 5000 }, async function (codigoCarreraExistente, nombreCarreraExistente, duracionCarreraExistente, modalidadCarreraExistente) {
+Given(
+  'que se tiene una carrera con código {string}, nombre {string}, duración {string} y modalidad {string}',
+  { timeout: 5 * 5000 },
+  async function (
+    codigoCarreraExistente,
+    nombreCarreraExistente,
+    duracionCarreraExistente,
+    modalidadCarreraExistente,
+  ) {
     /*
     Los datos recibidos son:
     |   Significado                     | Nombre variable           | Tipo de dato necesario |
@@ -20,15 +27,24 @@ Given('que se tiene una carrera con código {string}, nombre {string}, duración
     // Declarar e ingresar la carrera previa para comprobación
 
     this.carreraExistente = {
-        codigo: codigoCarreraExistente,
-        nombre: nombreCarreraExistente,
-        duracion: Number(duracionCarreraExistente),
-        modalidad: modalidadCarreraExistente
-    }
+      codigo: codigoCarreraExistente,
+      nombre: nombreCarreraExistente,
+      duracion: Number(duracionCarreraExistente),
+      modalidad: modalidadCarreraExistente,
+    };
     await getRepository(CarreraEntity).save(this.carreraExistente);
-});
+  },
+);
 
-When('se ingrese una carrera con código {string}, nombre {string}, duración {string} y modalidad {string}', { timeout: 5 * 5000 }, async function (codigoCarreraNueva, nombreCarreraNueva, duracionCarreraNueva, modalidadCarreraNueva) {
+When(
+  'se ingrese una carrera con código {string}, nombre {string}, duración {string} y modalidad {string}',
+  { timeout: 5 * 5000 },
+  async function (
+    codigoCarreraNueva,
+    nombreCarreraNueva,
+    duracionCarreraNueva,
+    modalidadCarreraNueva,
+  ) {
     /*
     Los datos recibidos son:
     |   Significado                     | Nombre variable       | Tipo de dato necesario |
@@ -43,17 +59,21 @@ When('se ingrese una carrera con código {string}, nombre {string}, duración {s
     this.carreraController = await this.app.get(CarreraController);
 
     this.carreraNueva = {
-        codigo: codigoCarreraNueva,
-        nombre: nombreCarreraNueva,
-        duracion: Number(duracionCarreraNueva),
-        modalidad: modalidadCarreraNueva
-    }
+      codigo: codigoCarreraNueva,
+      nombre: nombreCarreraNueva,
+      duracion: Number(duracionCarreraNueva),
+      modalidad: modalidadCarreraNueva,
+    };
 
-    this.resultadoIngresarCarrera = await this.carreraController.crearUnaCarrera(this.carreraNueva);
+    this.resultadoIngresarCarrera =
+      await this.carreraController.crearUnaCarrera(this.carreraNueva);
+  },
+);
 
-});
-
-Then('se obtendrá la respuesta {string}.', { timeout: 5 * 5000 }, async function (respuestaIngresoCarrera) {
+Then(
+  'se obtendrá la respuesta {string}.',
+  { timeout: 5 * 5000 },
+  async function (respuestaIngresoCarrera) {
     /*
     Los datos recibidos son: 
     |           Significado           | Nombre variable            | Tipo de dato necesario |
@@ -62,12 +82,15 @@ Then('se obtendrá la respuesta {string}.', { timeout: 5 * 5000 }, async functio
 
     // Realizar comprobación
 
-    assert.equal(this.resultadoIngresarCarrera.mensaje, respuestaIngresoCarrera);
-});
+    assert.equal(
+      this.resultadoIngresarCarrera.mensaje,
+      respuestaIngresoCarrera,
+    );
+  },
+);
 
-After("@RegistroDeCarrera", async function () {
-
-    // Eliminar carreras usadas
-    await getRepository(CarreraEntity).delete(this.carreraExistente);
-    await getRepository(CarreraEntity).delete(this.carreraNueva);
+After('@RegistroDeCarrera', async function () {
+  // Eliminar carreras usadas
+  await getRepository(CarreraEntity).delete(this.carreraExistente);
+  await getRepository(CarreraEntity).delete(this.carreraNueva);
 });

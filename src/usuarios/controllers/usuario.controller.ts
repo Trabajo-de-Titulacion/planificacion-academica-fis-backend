@@ -3,7 +3,7 @@ import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { configuraciones } from '../../../src/config/swagger-config';
 import { CrearUsuarioDTO, ObtenerUsuarioDto } from '../dtos/usuario.dto';
 import { UsuarioService } from '../../../src/usuarios/services/usuario.service';
-import { Public } from 'src/auth/decorators/public.decorator';
+import { Public } from '../../../src/auth/decorators/public.decorator';
 
 //@ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.usuario.tag)

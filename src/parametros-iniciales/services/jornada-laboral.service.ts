@@ -21,7 +21,7 @@ export class JornadaLaboralService {
     );
     if (semestre) {
       jornadaLaboralACrear.semestre = semestre;
-      this.repositorioJornadaLaboral.save(jornadaLaboralACrear);
+      return await this.repositorioJornadaLaboral.save(jornadaLaboralACrear);
     } else {
       return new NotFoundException('No se ha creado la jornada laboral');
     }
@@ -38,11 +38,19 @@ export class JornadaLaboralService {
   }
 
   async obtenerJornadaPorId(id: string) {
-    return this.repositorioJornadaLaboral.findOne(id);
+    return await this.repositorioJornadaLaboral.findOne(id);
   }
 
   async obtenerIntervalos(idJornada: string) {
     const jornada = await this.repositorioJornadaLaboral.findOne(idJornada);
+    return this.obtenerIntervalosDeUnaJornada(jornada);
+  }
+
+  async obtenerNumeroDeIntervalos(jornada: JornadaLaboralEntity) {
+    return (await this.obtenerIntervalosDeUnaJornada(jornada)).length;
+  }
+
+  async obtenerIntervalosDeUnaJornada(jornada: JornadaLaboralEntity) {
     const horaInicio = jornada.horaInicio
       .split(':')
       .map((tiempo) => parseInt(tiempo))[0];

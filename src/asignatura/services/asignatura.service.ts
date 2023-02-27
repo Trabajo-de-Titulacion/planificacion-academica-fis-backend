@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { ActividadEntity } from 'src/actividades/entities/actividad.entity';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { AsignaturaDto } from '../dto/asignatura.dto';
 import { AsignaturaEntity } from '../entities/asignatura.entity';

@@ -5,17 +5,20 @@ import { Repository } from 'typeorm';
 import { HorarioDto } from '../dto/horario.dto';
 import { HorarioEntity } from '../entities/horario.entity';
 import { XMLBuilder } from 'fast-xml-parser';
-import { nombreFacultad, nombreUniversidad } from 'src/utils/constantes';
-import { JornadaLaboralService } from 'src/parametros-iniciales/services/jornada-laboral.service';
-import { SemestreService } from 'src/parametros-iniciales/services/semestre.service';
-import { AsignaturaService } from 'src/asignatura/services/asignatura.service';
-import { TipoAulaService } from 'src/parametros-iniciales/services/tipo-aula.service';
-import { DocenteService } from 'src/docente/services/docente.service';
-import { HorasNoDisponiblesService } from 'src/horas_no_disponibles/services/horas_no_disponibles.service';
-import { ActividadesService } from 'src/actividades/services/actividades.service';
-import { NivelService } from 'src/niveles/services/nivel.service';
-import { FacultadService } from 'src/parametros-iniciales/services/facultad.service';
-import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_fisicos.service';
+import {
+  nombreFacultad,
+  nombreUniversidad,
+} from '../../../src/utils/constantes';
+import { JornadaLaboralService } from '../../../src/parametros-iniciales/services/jornada-laboral.service';
+import { SemestreService } from '../../../src/parametros-iniciales/services/semestre.service';
+import { AsignaturaService } from '../../../src/asignatura/services/asignatura.service';
+import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo-aula.service';
+import { DocenteService } from '../../../src/docente/services/docente.service';
+import { HorasNoDisponiblesService } from '../../../src/horas_no_disponibles/services/horas_no_disponibles.service';
+import { ActividadesService } from '../../../src/actividades/services/actividades.service';
+import { NivelService } from '../../../src/niveles/services/nivel.service';
+import { FacultadService } from '../../../src/parametros-iniciales/services/facultad.service';
+import { EspaciosFisicosService } from '../../../src/espacios_fisicos/services/espacios_fisicos.service';
 import * as fs from 'fs';
 import { exec } from 'node:child_process';
 import { xml2js } from 'xml-js';
@@ -36,7 +39,7 @@ export class HorarioService {
     private nivelesService: NivelService,
     private facultadesService: FacultadService,
     private espaciosFisicosService: EspaciosFisicosService,
-  ) { }
+  ) {}
   //TODO: COLOCAR LA DESCRIPCION
   async crearHorario(horario: HorarioDto) {
     const usuario = await this.usuarioService.obtenerUsuarioCompletoPorSuID(
@@ -99,7 +102,7 @@ export class HorarioService {
         for (let k = 0; k < horas.length; k++) {
           // Comprueba que exista horario en la hora iterada
           if (horas[k].Teacher) {
-            console.log("horas[k].Teacher", horas[k].Teacher);
+            console.log('horas[k].Teacher', horas[k].Teacher);
             // Si el profesor se llama igual al enviado
             if (horas[k].Teacher['-name'].toUpperCase() === nombreDocente) {
               // Si se vinculó un espacio físico se añade este
@@ -189,9 +192,8 @@ export class HorarioService {
   }
 
   async Format() {
-    let obj = {};
+    const obj = {};
     obj['Students_Timetable'];
-
   }
 
   async generarHorario(email: string) {
@@ -211,8 +213,9 @@ export class HorarioService {
 
     const soloHoras = intervalos.map((intervalo) => {
       return {
-        Name: `${parseInt(intervalo[0]) < 10 ? '0' + intervalo[0] : intervalo[0]
-          }-${parseInt(intervalo[1]) < 10 ? '0' + intervalo[1] : intervalo[1]}`,
+        Name: `${
+          parseInt(intervalo[0]) < 10 ? '0' + intervalo[0] : intervalo[0]
+        }-${parseInt(intervalo[1]) < 10 ? '0' + intervalo[1] : intervalo[1]}`,
       };
     });
 
@@ -497,61 +500,62 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 
                   ///////////////// FORMAAAAAAAT
 
-                  let format = {};
+                  const format = {};
                   let formatSubgrups = [];
 
-                  formatSubgrups = jsonData['Students_Timetable']['Subgroup'].map(sub => {
-                    let subgroup = {
-                      "-name": sub['-name'].name,
-                      "Day": sub['Day'].map(d => {
-                        let day = {
-                          "-name": d['-name']['name'],
-                          "Hour": d['Hour'].map(h => {
-                            console.log("hora", h)
-                            let keysHora = Object.keys(h);
+                  formatSubgrups = jsonData['Students_Timetable'][
+                    'Subgroup'
+                  ].map((sub) => {
+                    const subgroup = {
+                      '-name': sub['-name'].name,
+                      Day: sub['Day'].map((d) => {
+                        const day = {
+                          '-name': d['-name']['name'],
+                          Hour: d['Hour'].map((h) => {
+                            console.log('hora', h);
+                            const keysHora = Object.keys(h);
                             if (!keysHora.includes('Activity')) {
-                              return { '-name': h['-name']['name'] }
+                              return { '-name': h['-name']['name'] };
                             } else {
                               return {
                                 '-name': h['-name']['name'],
-                                'Activity': {
-                                  '-id': h['Activity']['-name']['id']
+                                Activity: {
+                                  '-id': h['Activity']['-name']['id'],
                                 },
-                                'Teacher': {
-                                  '-name': h['Teacher']['-name']['name']
+                                Teacher: {
+                                  '-name': h['Teacher']['-name']['name'],
                                 },
-                                'Subject': {
-                                  '-name': h['Subject']['-name']['name']
+                                Subject: {
+                                  '-name': h['Subject']['-name']['name'],
                                 },
-                                'Activity_Tag': h['Activity_Tag']['-name']['name'],
-                                'Room': {
-                                  '-name': 'KAPPA-IC'
-                                }
-                              }
+                                Activity_Tag:
+                                  h['Activity_Tag']['-name']['name'],
+                                Room: {
+                                  '-name': 'KAPPA-IC',
+                                },
+                              };
                             }
-
-                          })
-                        }
+                          }),
+                        };
                         return day;
                       }),
-                    }
+                    };
                     return subgroup;
                     //                    formatSubgrups.push
                   });
 
                   // Primer nodo
-                  format["Students_Timetable"] = {
-                    "Subgroup": formatSubgrups,
-                  }
+                  format['Students_Timetable'] = {
+                    Subgroup: formatSubgrups,
+                  };
 
-                  console.log("format", format)
+                  console.log('format', format);
 
                   /////////////////// FORMAT
 
                   const jsonDataFormat = JSON.stringify(format);
                   const subs = jsonData['Students_Timetable']['Subgroup'].map(
                     (grupo) => {
-
                       return {
                         '-name': grupo['name'],
                         Day: grupo['Day'],
@@ -578,8 +582,6 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
   }
 
   async procesarPlanificacion(contenido: string, email: string) {
-
-
     const usuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(email);
     fs.writeFile('./fet/output.fet', contenido, () => {
       Logger.log(`Archivo creado ${usuario.id}`, 'FET');
@@ -644,76 +646,81 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 
                   ///////////////// FORMAAAAAAAT
 
-                  let format = {};
+                  const format = {};
                   let formatSubgrups = [];
 
-                  console.log("jsonData ===> ", jsonData)
+                  console.log('jsonData ===> ', jsonData);
 
-                  formatSubgrups = jsonData['Students_Timetable']['Subgroup'].map(sub => {
-                    let subgroup = {
-                      "-name": sub['-name'].name,
-                      "Day": sub['Day'].map(d => {
-                        let day = {
-                          "-name": d['-name']['name'],
-                          "Hour": d['Hour'].map(h => {
-                            console.log("hora  ===> ", h)
-                            let keysHora = Object.keys(h);
+                  formatSubgrups = jsonData['Students_Timetable'][
+                    'Subgroup'
+                  ].map((sub) => {
+                    const subgroup = {
+                      '-name': sub['-name'].name,
+                      Day: sub['Day'].map((d) => {
+                        const day = {
+                          '-name': d['-name']['name'],
+                          Hour: d['Hour'].map((h) => {
+                            console.log('hora  ===> ', h);
+                            const keysHora = Object.keys(h);
                             if (!keysHora.includes('Activity')) {
-                              return { '-name': h['-name']['name'] }
+                              return { '-name': h['-name']['name'] };
                             } else {
-
-                              if (!keysHora.includes('Teacher') && !keysHora.includes('Room')) {
+                              if (
+                                !keysHora.includes('Teacher') &&
+                                !keysHora.includes('Room')
+                              ) {
                                 return {
                                   '-name': h['-name']['name'],
-                                  'Activity': {
-                                    '-id': h['Activity']['-name']['id']
+                                  Activity: {
+                                    '-id': h['Activity']['-name']['id'],
                                   },
-                                  'Subject': {
-                                    '-name': h['Subject']['-name']['name']
+                                  Subject: {
+                                    '-name': h['Subject']['-name']['name'],
                                   },
-                                  'Activity_Tag': h['Activity_Tag']['-name']['name'],
-                                }                              }
+                                  Activity_Tag:
+                                    h['Activity_Tag']['-name']['name'],
+                                };
+                              }
 
                               return {
                                 '-name': h['-name']['name'],
-                                'Activity': {
-                                  '-id': h['Activity']['-name']['id']
+                                Activity: {
+                                  '-id': h['Activity']['-name']['id'],
                                 },
-                                'Teacher': {
-                                  '-name': h['Teacher']['-name']['name']
+                                Teacher: {
+                                  '-name': h['Teacher']['-name']['name'],
                                 },
-                                'Subject': {
-                                  '-name': h['Subject']['-name']['name']
+                                Subject: {
+                                  '-name': h['Subject']['-name']['name'],
                                 },
-                                'Activity_Tag': h['Activity_Tag']['-name']['name'],
-                                'Room': {
-                                  '-name': 'KAPPA-IC'
-                                }
-                              }
+                                Activity_Tag:
+                                  h['Activity_Tag']['-name']['name'],
+                                Room: {
+                                  '-name': 'KAPPA-IC',
+                                },
+                              };
                             }
-
-                          })
-                        }
+                          }),
+                        };
                         return day;
                       }),
-                    }
+                    };
                     return subgroup;
                     //                    formatSubgrups.push
                   });
 
                   // Primer nodo
-                  format["Students_Timetable"] = {
-                    "Subgroup": formatSubgrups,
-                  }
+                  format['Students_Timetable'] = {
+                    Subgroup: formatSubgrups,
+                  };
 
-                  console.log("format", format)
+                  console.log('format', format);
 
                   /////////////////// FORMAT
 
                   const jsonDataFormat = JSON.stringify(format);
                   const subs = jsonData['Students_Timetable']['Subgroup'].map(
                     (grupo) => {
-
                       return {
                         '-name': grupo['name'],
                         Day: grupo['Day'],
@@ -734,6 +741,5 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
         },
       );
     });
-
   }
 }

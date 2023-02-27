@@ -1,4 +1,4 @@
-import { ActividadEntity } from 'src/actividades/entities/actividad.entity';
+import { ActividadEntity } from '../../actividades/entities/actividad.entity';
 import {
   Column,
   Entity,
@@ -22,5 +22,5 @@ export class TipoAulaEntity {
   facultad: FacultadEntity;
 
   @OneToMany(() => ActividadEntity, (actividades) => actividades.tipoAula)
-  actividades: ActividadEntity[];
+  actividades?: ActividadEntity[];
 }

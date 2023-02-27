@@ -1,20 +1,22 @@
 import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { AsignaturaEntity } from 'src/asignatura/entities/asignatura.entity';
-import { AsignaturaService } from 'src/asignatura/services/asignatura.service';
-import { DocenteEntity } from 'src/docente/entities/docente.entity';
-import { DocenteService } from 'src/docente/services/docente.service';
-import { GrupoEntity } from 'src/niveles/entities/grupo.entity';
-import { GrupoService } from 'src/niveles/services/grupo.service';
-import { NumeroEstudiantesPorSemestreService } from 'src/numero_estudiantes/services/numeroEstudiantesPorSemestre.service';
-import { TipoAulaEntity } from 'src/parametros-iniciales/entities/tipo-aula.entity';
-import { TipoAulaService } from 'src/parametros-iniciales/services/tipo-aula.service';
+import { AsignaturaEntity } from '../../asignatura/entities/asignatura.entity';
+import { AsignaturaService } from '../../../src/asignatura/services/asignatura.service';
+import { DocenteEntity } from '../../../src/docente/entities/docente.entity';
+import { DocenteService } from '../../../src/docente/services/docente.service';
+import { GrupoEntity } from '../../../src/niveles/entities/grupo.entity';
+import { GrupoService } from '../../../src/niveles/services/grupo.service';
+import { NumeroEstudiantesPorSemestreService } from '../../../src/numero_estudiantes/services/numeroEstudiantesPorSemestre.service';
+import { TipoAulaEntity } from '../../../src/parametros-iniciales/entities/tipo-aula.entity';
+import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo-aula.service';
 import { Repository } from 'typeorm';
 import { CrearActividadDto } from '../dtos/crear-actividad.dto';
 import { ActividadEntity } from '../entities/actividad.entity';
 
 @Injectable()
 export class ActividadesService {
+  private readonly limiteActividadDuracion = 9;
+
   constructor(
     @InjectRepository(ActividadEntity)
     private actividadRespository: Repository<ActividadEntity>,
@@ -24,6 +26,21 @@ export class ActividadesService {
     private tipoAulaService: TipoAulaService,
     private numeroEstudiantesService: NumeroEstudiantesPorSemestreService,
   ) {}
+
+  validarDuracionActividad(actividad: ActividadEntity) {
+    if (actividad.duracion <= this.limiteActividadDuracion) {
+      return {
+        actividad,
+        mensaje: 'La actividad ha sido creada exitosamente',
+      };
+    } else {
+      return {
+        actividad: null,
+        mensaje:
+          'Las duración semanal de la actividad no debe ser mayor a 9 horas',
+      };
+    }
+  }
 
   async crearActividad(actividad: CrearActividadDto): Promise<ActividadEntity> {
     const { idAsignatura, idDocente, idGrupo, idTipoAula, duracion } =

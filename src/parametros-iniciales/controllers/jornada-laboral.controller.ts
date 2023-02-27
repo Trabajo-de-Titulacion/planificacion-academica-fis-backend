@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JornadaLaboralDto } from '../dtos/jornada-laboral.dto';
 import { JornadaLaboralService } from '../services/jornada-laboral.service';
 
@@ -10,13 +10,18 @@ export class JornadaLaboralController {
   constructor(private servicioJornadaLaboral: JornadaLaboralService) {}
 
   @Post('/crearJornadaLaboral')
-  crearJornadaLaboral(@Body() jornada: JornadaLaboralDto) {
-    this.servicioJornadaLaboral.crearJornadaLaboral(jornada);
+  @ApiOperation({
+    summary:
+      'Método para crear una jornada laboral indicando la hora de inicio, almuerzo y fin, y los días de la jornada laboral.',
+    description: '',
+  })
+  async crearJornadaLaboral(@Body() jornada: JornadaLaboralDto) {
+    return await this.servicioJornadaLaboral.crearJornadaLaboral(jornada);
   }
 
   @Get('/obtenerIntervalos/:idJornada')
-  obtenerIntervalos(@Param('idJornada') idJornada: string) {
-    return this.servicioJornadaLaboral.obtenerIntervalos(idJornada);
+  async obtenerIntervalos(@Param('idJornada') idJornada: string) {
+    return await this.servicioJornadaLaboral.obtenerIntervalos(idJornada);
   }
 
   @Get('/obtenerJornadasLaborales')

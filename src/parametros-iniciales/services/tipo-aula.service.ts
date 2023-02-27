@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { TipoAulaDto } from '../dtos/tipo-aula.dto';
+import { FacultadEntity } from '../entities/facultad.entity';
 import { TipoAulaEntity } from '../entities/tipo-aula.entity';
 import { FacultadService } from './facultad.service';
 
@@ -28,6 +29,10 @@ export class TipoAulaService {
 
   async obtenerTipoAulas() {
     return this.tipoAulaRepository.find({ relations: ['facultad'] });
+  }
+
+  obtenerCantidadLaboratorios(facultad: FacultadEntity) {
+    return facultad.tiposAulas.filter((f) => f.tipo === 'LABORATORIO').length;
   }
 
   async obtenerTipoAulaPorId(id: string) {

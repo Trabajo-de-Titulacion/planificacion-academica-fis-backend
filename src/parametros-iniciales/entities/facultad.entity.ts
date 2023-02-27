@@ -10,5 +10,5 @@ export class FacultadEntity {
   nombre: string;
 
   @OneToMany(() => TipoAulaEntity, (tipoAula) => tipoAula.facultad)
-  tiposAulas: TipoAulaEntity[];
+  tiposAulas?: TipoAulaEntity[];
 }
