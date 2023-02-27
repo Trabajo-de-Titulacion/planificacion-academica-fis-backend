@@ -125,12 +125,14 @@ export class HorarioController {
   @Post('cargarFET')
   @UseInterceptors(FileInterceptor('archivoFet'))
   @Roles(RolesEnum.COORDINADOR)
-  async cargarFET(@UploadedFile() file: Express.Multer.File){
-
+  async cargarFET(@UploadedFile() file: Express.Multer.File) {
     // Guardar información
     const informacion = file.buffer.toString();
 
-    Logger.log("[CARGAR_FET] cargando fet...")
-    return await this.horarioService.procesarPlanificacion(informacion, "coordinador@epn.edu.ec");
+    Logger.log('[CARGAR_FET] cargando fet...');
+    return await this.horarioService.procesarPlanificacion(
+      informacion,
+      'coordinador@epn.edu.ec',
+    );
   }
 }

@@ -682,6 +682,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
                                 };
                               }
 
+                              console.log('h --->', h);
                               return {
                                 '-name': h['-name']['name'],
                                 Activity: {
@@ -696,7 +697,9 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
                                 Activity_Tag:
                                   h['Activity_Tag']['-name']['name'],
                                 Room: {
-                                  '-name': 'KAPPA-IC',
+                                  '-name': h['Room']
+                                    ? h['Room']['-name']['name']
+                                    : '',
                                 },
                               };
                             }
