@@ -745,4 +745,60 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
       );
     });
   }
+
+  async generarHorarioXML(contenido: string) {
+    fs.writeFile('./fet/output.fet', contenido, () => {
+      Logger.log(`Archivo creado`, 'FET');
+
+      // run the `ls` command using exec
+      exec(
+        'cp ./fet/output.fet $HOME/Documents/zwippe/usr/bin/output.fet',
+        (err, output) => {
+          // once the command has completed, the callback function is called
+          if (err) {
+            // log and return if we encounter an error
+            console.error('could not execute command: ', err);
+            return;
+          }
+
+          exec(
+            'fet-cl --inputfile=output.fet',
+            {
+              cwd: `/home/parallels/Documents/zwippe/usr/bin`,
+            },
+            (err, output) => {
+              // once the command has completed, the callback function is called
+              if (err) {
+                // log and return if we encounter an error
+                console.error('could not execute command: ', err);
+                return;
+              }
+
+              exec(
+                'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
+                {
+                  cwd: `/home/parallels/Documents/zwippe/usr/bin/timetables`,
+                },
+                async (err, output) => {
+                  // once the command has completed, the callback function is called
+                  if (err) {
+                    // log and return if we encounter an error
+                    console.error('could not execute command: ', err);
+                    return;
+                  }
+
+                  const data = fs.readFileSync(
+                    './fet/output/output_subgroups.xml',
+                    { encoding: 'utf8', flag: 'r' },
+                  );
+
+                  return data;
+                },
+              );
+            },
+          );
+        },
+      );
+    });
+  }
 }

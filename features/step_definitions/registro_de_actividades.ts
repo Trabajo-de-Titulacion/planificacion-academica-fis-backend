@@ -1,10 +1,4 @@
-import {
-  After,
-  Given,
-  setDefaultTimeout,
-  Then,
-  When,
-} from '@cucumber/cucumber';
+import { Given, setDefaultTimeout, Then, When } from '@cucumber/cucumber';
 import { faker } from '@faker-js/faker';
 import { FacultadEntity } from '../../src/parametros-iniciales/entities/facultad.entity';
 import { TipoAulaEntity } from '../../src/parametros-iniciales/entities/tipo-aula.entity';
