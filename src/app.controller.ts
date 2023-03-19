@@ -1,12 +1,24 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { ApiTags } from '@nestjs/swagger';
+import {
+  HealthCheck,
+  HealthCheckService,
+  TypeOrmHealthIndicator,
+} from '@nestjs/terminus';
+import { Public } from './auth/decorators/public.decorator';
 
-@Controller()
+@ApiTags('Health check')
+@Controller('health')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly health: HealthCheckService,
+    private db: TypeOrmHealthIndicator,
+  ) {}
 
+  @Public()
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @HealthCheck()
+  check() {
+    return this.health.check([() => this.db.pingCheck('database')]);
   }
 }

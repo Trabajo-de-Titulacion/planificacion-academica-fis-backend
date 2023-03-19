@@ -1,25 +1,35 @@
-import { DocenteEntity } from "../../../src/docente/entities/docente.entity";
-import { JornadaLaboralEntity } from "../../../src/parametros-iniciales/entities/jornada-laboral.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-
+import { JornadaLaboralEntity } from '../../../src/parametros-iniciales/entities/jornada-laboral.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { SolicitudHoraNoDisponibleEntity } from './solicitudHoraNoDisponible.entity';
 
 @Entity('horaNoDisponible')
 export class HoraNoDisponibleEntity {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @ManyToOne( () => JornadaLaboralEntity, jornada => jornada.id, {
-        onDelete: "CASCADE"
-    })
-    @JoinColumn({ name: "dia_id" })
-    dia: JornadaLaboralEntity;
+  @ManyToOne(() => JornadaLaboralEntity, (jornada) => jornada.id, {
+    onDelete: 'CASCADE',
+  })
+  @JoinColumn({ name: 'dia_id' })
+  dia: JornadaLaboralEntity;
 
-    @Column()
-    hora_inicio: number;
+  @Column()
+  hora_inicio: number;
 
-    @ManyToOne( () => DocenteEntity, docente => docente.id, {
-        onDelete: "CASCADE"
-    })
-    @JoinColumn({ name: "docente_id" })
-    docente: DocenteEntity;
+  @ManyToOne(
+    () => SolicitudHoraNoDisponibleEntity,
+    (solicitud) => solicitud.id,
+    {
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+    },
+  )
+  @JoinColumn({ name: 'idSolicitud' })
+  solicitud: SolicitudHoraNoDisponibleEntity;
 }

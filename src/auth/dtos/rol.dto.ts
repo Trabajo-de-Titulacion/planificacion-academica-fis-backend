@@ -1,11 +1,11 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { IsNotEmpty, IsString, Matches } from "class-validator";
-import ROLES from "src/utils/types/rol.type";
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNotEmpty, IsString, Matches } from 'class-validator';
+import ROLES from 'src/utils/types/rol.type';
 
 export class RolDto {
-    @IsString()
-    @IsNotEmpty()
-    @ApiProperty()
-    @Matches(/(DOCENTE)|(COORDINADOR)|(SUBDECANO)|(GESTOR DE ESPACIOS)/)
-    public readonly nombre : ROLES;
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
+  @Matches(/(DOCENTE)|(COORDINADOR)|(SUBDECANO)|(GESTOR DE ESPACIOS)/)
+  public readonly nombre: ROLES;
 }

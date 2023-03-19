@@ -32,10 +32,10 @@ import { RolesGuard } from './guards/roles.guard';
           secret: configService.jwtSecret,
           signOptions: {
             expiresIn: '5h',
-          }
-        }
-      }
-    })
+          },
+        };
+      },
+    }),
   ],
   providers: [
     LocalStrategy,
@@ -50,11 +50,9 @@ import { RolesGuard } from './guards/roles.guard';
     {
       provide: APP_GUARD,
       useClass: RolesGuard,
-    }
+    },
   ],
   controllers: [AuthController, RolController, RolUsuarioController],
-  exports: [AuthService]
+  exports: [AuthService],
 })
-export class AuthModule { }
-
-
+export class AuthModule {}

@@ -1,9 +1,14 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class NivelDto {
-    @ApiProperty()
-    id: string;
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  nombre: string;
 
-    @ApiProperty()
-    nombre: string;
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  idCarrera: string;
 }

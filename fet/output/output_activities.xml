@@ -1,0 +1,2739 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Activities_Timetable>
+<Activity>
+	<Id>1</Id>
+	<Day>Sábado</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>2</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>3</Id>
+	<Day>Sábado</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>4</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>5</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>16</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>23</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>24</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>56</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>57</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>69</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>81</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>82</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>91</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>92</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>97</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>98</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>99</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>100</Id>
+	<Day>Sábado</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>101</Id>
+	<Day>Sábado</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>102</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>103</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>104</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>105</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>106</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>110</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>111</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>114</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>115</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>130</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>132</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>136</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>137</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>138</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>141</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>142</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>143</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>144</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>146</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>147</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>150</Id>
+	<Day>Martes</Day>
+	<Hour>12:00-13:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>151</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>152</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>153</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>158</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>159</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>165</Id>
+	<Day>Miércoles</Day>
+	<Hour>15:00-16:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>166</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>169</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>170</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>171</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>172</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>176</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>177</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>256</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>257</Id>
+	<Day>Jueves</Day>
+	<Hour>19:00-20:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>259</Id>
+	<Day>Miércoles</Day>
+	<Hour>20:00-21:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>260</Id>
+	<Day>Lunes</Day>
+	<Hour>19:00-20:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>261</Id>
+	<Day>Martes</Day>
+	<Hour>20:00-21:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>262</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>263</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>264</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>265</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>268</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>276</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>281</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>282</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>283</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>284</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>285</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>286</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>288</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>289</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>290</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>291</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>300</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>301</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>305</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>306</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>307</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>309</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>310</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>313</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>317</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>319</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>320</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>329</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>331</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>332</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>333</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>334</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>335</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>342</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>343</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>344</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>345</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>347</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>348</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>349</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>350</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>351</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>355</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>362</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>364</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>365</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>366</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>367</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>368</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>369</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>370</Id>
+	<Day>Sábado</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>376</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>377</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>379</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>380</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>381</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>382</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>383</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>384</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>388</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>389</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>390</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>392</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>393</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>394</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>395</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>397</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>398</Id>
+	<Day>Jueves</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>399</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>401</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>402</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>405</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>406</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>413</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>414</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>417</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>425</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>426</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>429</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>430</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>437</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>438</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>445</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>446</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>453</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>454</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>456</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>457</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>459</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>460</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>461</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>462</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>464</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>467</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>468</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>474</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>484</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>486</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>487</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>488</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>489</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>490</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>492</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>493</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>494</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>495</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>496</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>497</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>500</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>501</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>503</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>504</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>509</Id>
+	<Day>Jueves</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>510</Id>
+	<Day>Sábado</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>514</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>519</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>520</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>522</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>525</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E26/P2/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>526</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>555</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>556</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>561</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>562</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>565</Id>
+	<Day>Viernes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>566</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>567</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>568</Id>
+	<Day>Jueves</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>569</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>570</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>577</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>579</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>580</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>581</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>582</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>585</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>586</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>590</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>591</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>592</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>596</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>597</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>599</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>601</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>604</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>605</Id>
+	<Day>Sábado</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>606</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>608</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>609</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>610</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>612</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>613</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>614</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>615</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>616</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>618</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>619</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>620</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>621</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>622</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>623</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>624</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>625</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>626</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>627</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>630</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>632</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>633</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>634</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>635</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>636</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>637</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>638</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>639</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>640</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>641</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>642</Id>
+	<Day>Viernes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>644</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>645</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>647</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>648</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>649</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>654</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>659</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>660</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>661</Id>
+	<Day>Martes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>662</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>663</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>664</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>666</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>667</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>668</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>669</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>670</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>671</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>673</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>675</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>694</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>720</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>721</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>722</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>724</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>725</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>728</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>729</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>730</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>731</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>732</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>733</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>734</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>735</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>736</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>737</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>738</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>739</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>740</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>755</Id>
+	<Day>Sábado</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>764</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>765</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>767</Id>
+	<Day>Jueves</Day>
+	<Hour>15:00-16:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>769</Id>
+	<Day>Lunes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P4/E007-LI SmartC</Room>
+</Activity>
+<Activity>
+	<Id>777</Id>
+	<Day>Viernes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>SE/SA E26/P2/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>778</Id>
+	<Day>Jueves</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>SE/SA E26/P2/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>781</Id>
+	<Day>Viernes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>782</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>783</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>784</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>785</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>786</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>787</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>788</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>789</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>790</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>791</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>792</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>793</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>794</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>795</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>796</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>797</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>798</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>799</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>800</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>801</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>802</Id>
+	<Day>Sábado</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>803</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>804</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>805</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>809</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>810</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>812</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>SE/SA E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>815</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>816</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>817</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>818</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>819</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>820</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>821</Id>
+	<Day>Lunes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>822</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>823</Id>
+	<Day>Martes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>824</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>825</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>826</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>827</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>828</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>830</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>831</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>832</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>839</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>840</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>841</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>842</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>843</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>844</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>845</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>847</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>849</Id>
+	<Day>Miércoles</Day>
+	<Hour>15:00-16:00</Hour>
+	<Room>E20/P4/E010-L</Room>
+</Activity>
+<Activity>
+	<Id>852</Id>
+	<Day>Viernes</Day>
+	<Hour>12:00-13:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>863</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>864</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>865</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>866</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>867</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>868</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>870</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>871</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>872</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>875</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>876</Id>
+	<Day>Jueves</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>877</Id>
+	<Day>Sábado</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>878</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>879</Id>
+	<Day>Lunes</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>880</Id>
+	<Day>Viernes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>882</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>884</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>885</Id>
+	<Day>Lunes</Day>
+	<Hour>12:00-13:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>887</Id>
+	<Day>Martes</Day>
+	<Hour>20:00-21:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>888</Id>
+	<Day>Miércoles</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>889</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>890</Id>
+	<Day>Lunes</Day>
+	<Hour>12:00-13:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>892</Id>
+	<Day>Miércoles</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>E20/P4/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>893</Id>
+	<Day>Martes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>SE/SA E26/P2/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>894</Id>
+	<Day>Viernes</Day>
+	<Hour>17:00-18:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>895</Id>
+	<Day>Martes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>896</Id>
+	<Day>Viernes</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>E20/P4/E004-LI Lasinac</Room>
+</Activity>
+<Activity>
+	<Id>897</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>898</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>SE/SA E26/P1/E020-A</Room>
+</Activity>
+<Activity>
+	<Id>899</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>900</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>901</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>902</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>904</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>905</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>907</Id>
+	<Day>Martes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>908</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>909</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>910</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>911</Id>
+	<Day>Jueves</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>912</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>913</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>914</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>915</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>916</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>917</Id>
+	<Day>Jueves</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>918</Id>
+	<Day>Miércoles</Day>
+	<Hour>15:00-16:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>919</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>920</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>921</Id>
+	<Day>Lunes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>922</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>923</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>924</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>925</Id>
+	<Day>Sábado</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>926</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>927</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>928</Id>
+	<Day>Jueves</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>929</Id>
+	<Day>Jueves</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>930</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>931</Id>
+	<Day>Miércoles</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>932</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>933</Id>
+	<Day>Sábado</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>934</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>935</Id>
+	<Day>Jueves</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>936</Id>
+	<Day>Lunes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>937</Id>
+	<Day>Lunes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>938</Id>
+	<Day>Sábado</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>939</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>940</Id>
+	<Day>Viernes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>941</Id>
+	<Day>Viernes</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>942</Id>
+	<Day>Sábado</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>943</Id>
+	<Day>Viernes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>944</Id>
+	<Day>Martes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>945</Id>
+	<Day>Jueves</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>946</Id>
+	<Day>Martes</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>947</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>948</Id>
+	<Day>Sábado</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>949</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>950</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>951</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>952</Id>
+	<Day>Miércoles</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>953</Id>
+	<Day>Lunes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P5/E010-A</Room>
+</Activity>
+<Activity>
+	<Id>954</Id>
+	<Day>Jueves</Day>
+	<Hour>20:00-21:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>955</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>956</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>957</Id>
+	<Day>Martes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>958</Id>
+	<Day>Miércoles</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+<Activity>
+	<Id>960</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E008-L</Room>
+</Activity>
+<Activity>
+	<Id>961</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>963</Id>
+	<Day>Sábado</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>SE/SA E26/P1/E020-A</Room>
+</Activity>
+<Activity>
+	<Id>964</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>SE/SA E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>965</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>966</Id>
+	<Day>Martes</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>E20/P5/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>967</Id>
+	<Day>Martes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>968</Id>
+	<Day>Viernes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>969</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>971</Id>
+	<Day>Jueves</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>972</Id>
+	<Day>Jueves</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>974</Id>
+	<Day>Miércoles</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>975</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>976</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>977</Id>
+	<Day>Miércoles</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P3/E004-L</Room>
+</Activity>
+<Activity>
+	<Id>978</Id>
+	<Day>Viernes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P3/E010-L iMacs</Room>
+</Activity>
+<Activity>
+	<Id>979</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>SE/SA E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>980</Id>
+	<Day>Martes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>SE/SA E26/P2/E011-A</Room>
+</Activity>
+<Activity>
+	<Id>981</Id>
+	<Day>Lunes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>982</Id>
+	<Day>Jueves</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>983</Id>
+	<Day>Viernes</Day>
+	<Hour>19:00-20:00</Hour>
+	<Room>E20/P5/E009-A</Room>
+</Activity>
+<Activity>
+	<Id>984</Id>
+	<Day>Martes</Day>
+	<Hour>16:00-17:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>985</Id>
+	<Day>Martes</Day>
+	<Hour>17:00-18:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>986</Id>
+	<Day>Viernes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E002-A</Room>
+</Activity>
+<Activity>
+	<Id>987</Id>
+	<Day>Lunes</Day>
+	<Hour>09:00-10:00</Hour>
+	<Room>E20/P4/E001-L</Room>
+</Activity>
+<Activity>
+	<Id>988</Id>
+	<Day>Viernes</Day>
+	<Hour>10:00-11:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>989</Id>
+	<Day>Miércoles</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P5/E007-A</Room>
+</Activity>
+<Activity>
+	<Id>990</Id>
+	<Day>Viernes</Day>
+	<Hour>14:00-15:00</Hour>
+	<Room>E20/P3/E009-L AIO-Dell</Room>
+</Activity>
+<Activity>
+	<Id>991</Id>
+	<Day>Lunes</Day>
+	<Hour>11:00-12:00</Hour>
+	<Room>E20/P4/E008-A</Room>
+</Activity>
+<Activity>
+	<Id>992</Id>
+	<Day>Viernes</Day>
+	<Hour>08:00-09:00</Hour>
+	<Room>SE/SA E26/P1/E001-A</Room>
+</Activity>
+<Activity>
+	<Id>993</Id>
+	<Day>Viernes</Day>
+	<Hour>07:00-08:00</Hour>
+	<Room></Room>
+</Activity>
+<Activity>
+	<Id>994</Id>
+	<Day>Viernes</Day>
+	<Hour>18:00-19:00</Hour>
+	<Room>E20/P3/E005-L</Room>
+</Activity>
+</Activities_Timetable>

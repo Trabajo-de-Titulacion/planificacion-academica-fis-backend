@@ -1,13 +1,16 @@
-version: '3.3'
+version: '3'
 
 services:
-  db:
-    image: postgres:13
-    environment:
-      - POSTGRES_DB=spadbepn
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=123456
+  # Postrgesql container
+  spa-db:
+    image: postgres:14.3
+    container_name: ${SPA_DB_DATABASE}
     ports:
-      - '5432:5432'
+      - ${SPA_DB_PORT}:5432
+    environment:
+      POSTGRES_PASSSWORD: ${SPA_DB_PASSWORD}
+      POSTGRES_DB: ${SPA_DB_DATABASE}
+      POSTGRES_USER: ${SPA_DB_USERNAME}
+      POSTGRES_HOST_AUTH_METHOD: "trust"
     volumes:
-      - ./databaseData:/var/lib/postgresql/data
+      - ./postgres:/var/lib/postgresql/data

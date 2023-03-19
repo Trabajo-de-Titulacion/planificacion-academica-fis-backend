@@ -1,20 +1,24 @@
-import { IsNotEmpty, IsNumber, IsString, IsUUID } from "class-validator";
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CarreraDto {
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  codigo: string;
 
-    @IsString()
-    @IsNotEmpty()
-    codigo: string;
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  nombre: string;
 
-    @IsString()
-    @IsNotEmpty()
-    nombre: string;
+  @ApiProperty()
+  @IsNumber()
+  @IsNotEmpty()
+  duracion: number;
 
-    @IsNumber()
-    @IsNotEmpty()
-    duracion: number;
-
-    @IsString()
-    @IsNotEmpty()
-    modalidad: string;
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  modalidad: string;
 }

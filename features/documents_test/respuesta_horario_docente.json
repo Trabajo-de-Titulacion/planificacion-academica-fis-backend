@@ -1,0 +1,110 @@
+[
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "07:00-08:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)",
+        "tipoAula": "Aula regular",
+        "dia": "MARTES",
+        "horario": "08:00-09:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "VIERNES",
+        "horario": "07:00-08:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "VIERNES",
+        "horario": "08:00-09:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)",
+        "tipoAula": "Aula regular",
+        "dia": "SÁBADO",
+        "horario": "11:00-12:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)",
+        "tipoAula": "Aula regular",
+        "dia": "JUEVES",
+        "horario": "14:00-15:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)",
+        "tipoAula": "Aula regular",
+        "dia": "JUEVES",
+        "horario": "15:00-16:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "VIERNES",
+        "horario": "14:00-15:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "VIERNES",
+        "horario": "15:00-16:00"
+    },
+    {
+        "asignatura": "FUNDAMENTOS DE ELECTRÓNICA PARA COMPUTACIÓN (ICCD233)",
+        "tipoAula": "Aula regular",
+        "dia": "SÁBADO",
+        "horario": "12:00-13:00"
+    },
+    {
+        "asignatura": "SISTEMAS OPERATIVOS (ICCD323)",
+        "tipoAula": "Aula regular",
+        "dia": "LUNES",
+        "horario": "07:00-08:00"
+    },
+    {
+        "asignatura": "SISTEMAS OPERATIVOS (ICCD323)",
+        "tipoAula": "Aula regular",
+        "dia": "LUNES",
+        "horario": "08:00-09:00"
+    },
+    {
+        "asignatura": "SISTEMAS OPERATIVOS (ICCD323)",
+        "tipoAula": "Aula regular",
+        "dia": "LUNES",
+        "horario": "09:00-10:00"
+    },
+    {
+        "asignatura": "SISTEMAS OPERATIVOS (ICCD323)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "JUEVES",
+        "horario": "07:00-08:00"
+    },
+    {
+        "asignatura": "SISTEMAS OPERATIVOS (ICCD323)-CP",
+        "tipoAula": "Laboratorio",
+        "dia": "JUEVES",
+        "horario": "08:00-09:00"
+    },
+    {
+        "asignatura": "ALMACENAMIENTO DE DATOS MASIVOS (MSIR123)",
+        "tipoAula": "Laboratorio",
+        "dia": "MIÉRCOLES",
+        "horario": "21:00-22:00"
+    },
+    {
+        "asignatura": "ALMACENAMIENTO DE DATOS MASIVOS (MSIR123)",
+        "tipoAula": "Laboratorio",
+        "dia": "JUEVES",
+        "horario": "20:00-21:00"
+    },
+    {
+        "asignatura": "ALMACENAMIENTO DE DATOS MASIVOS (MSIR123)",
+        "tipoAula": "Laboratorio",
+        "dia": "JUEVES",
+        "horario": "21:00-22:00"
+    }
+]
