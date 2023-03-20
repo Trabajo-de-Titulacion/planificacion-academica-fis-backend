@@ -1,73 +1,46 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+## Instalación para desarrollo
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+### Prerequisitos
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- Haber seguido la guía de instalación del FET-CL: https://www.notion.so/Instalaci-n-del-CLI-del-Software-FET-3d6bcf3e04ae4e0f8576bb0bfb906c2e?pvs=4
 
-## Description
+### Instalación
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+1. Clone el repositorio del componente en GitHub:
 
 ```bash
-$ npm install
+git clone https://github.com/Trabajo-de-Titulacion/planificacion-academica-fis-backend.git
 ```
 
-## Running the app
+1. Dentro del directorio del proyecto, cambie su rama actual a la rama de un integrante, en este caso a:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git checkout development-alejandro-llanganate
 ```
 
-## Test
+1. En el directorio principal del proyecto cree un archivo `.env` y configure dentro del mismo las siguientes variables de entorno:
 
 ```bash
-# unit tests
-$ npm run test
+SPA_PORT=300
+PREFIX=api
 
-# e2e tests
-$ npm run test:e2e
+# Database
+SPA_DB_DATABASE=
+SPA_DB_USERNAME=
+SPA_DB_PASSWORD=
+SPA_DB_PORT=
+SPA_DB_HOST=
 
-# test coverage
-$ npm run test:cov
+# Auth
+JWT_SECRET=
+
+# Mailing
+MAIL_HOST=outlook
+MAIL_PORT=5042
+MAIL_USER=user@example.com
+MAIL_PASSWORD=password
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+> 📖 **Nota:** Si se desea utilizar la funcionalidad de envío de mails del componente "Manejo de datos ingresados por el usuario y validación/aprobación de horarios generados” es necesario que cree una cuenta en Gmail, Outlook u otro y configure sus credenciales en “Mailing”. Actualmente está funcionalidad está desactivada pero puede ser comprendida en el [componente](https://bibdigital.epn.edu.ec/bitstream/15000/23393/1/CD%2012813.pdf) de la integrante [Diana López](https://bibdigital.epn.edu.ec/bitstream/15000/23393/1/CD%2012813.pdf).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
