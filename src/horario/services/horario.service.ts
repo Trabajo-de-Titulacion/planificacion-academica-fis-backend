@@ -442,7 +442,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 
       // run the `ls` command using exec
       exec(
-        'cp ./fet/output.fet $HOME/Documents/zwippe/usr/bin/output.fet',
+        'cp ./fet/output.fet $HOME/Documents/spa/output.fet',
         (err, output) => {
           // once the command has completed, the callback function is called
           if (err) {
@@ -454,7 +454,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
           exec(
             'fet-cl --inputfile=output.fet',
             {
-              cwd: `/home/parallels/Documents/zwippe/usr/bin`,
+              cwd: `/home/parallels/Documents/spa`,
             },
             (err, output) => {
               // once the command has completed, the callback function is called
@@ -467,7 +467,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               exec(
                 'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
                 {
-                  cwd: `/home/parallels/Documents/zwippe/usr/bin/timetables`,
+                  cwd: `/home/parallels/Documents/spa/timetables`,
                 },
                 (err, output) => {
                   // once the command has completed, the callback function is called
@@ -588,7 +588,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 
       // run the `ls` command using exec
       exec(
-        'cp ./fet/output.fet $HOME/Documents/zwippe/usr/bin/output.fet',
+        'cp ./fet/output.fet $HOME/Documents/spa/output.fet',
         (err, output) => {
           // once the command has completed, the callback function is called
           if (err) {
@@ -600,7 +600,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
           exec(
             'fet-cl --inputfile=output.fet',
             {
-              cwd: `/home/parallels/Documents/zwippe/usr/bin`,
+              cwd: `/home/parallels/Documents/spa`,
             },
             (err, output) => {
               // once the command has completed, the callback function is called
@@ -613,7 +613,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               exec(
                 'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
                 {
-                  cwd: `/home/parallels/Documents/zwippe/usr/bin/timetables`,
+                  cwd: `/home/parallels/Documents/spa/timetables`,
                 },
                 async (err, output) => {
                   // once the command has completed, the callback function is called
@@ -752,7 +752,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 
       // run the `ls` command using exec
       exec(
-        'cp ./fet/output.fet $HOME/Documents/zwippe/usr/bin/output.fet',
+        'cp ./fet/output.fet $HOME/Documents/spa/output.fet',
         (err, output) => {
           // once the command has completed, the callback function is called
           if (err) {
@@ -764,7 +764,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
           exec(
             'fet-cl --inputfile=output.fet',
             {
-              cwd: `/home/parallels/Documents/zwippe/usr/bin`,
+              cwd: `/home/parallels/Documents/spa`,
             },
             (err, output) => {
               // once the command has completed, the callback function is called
@@ -777,7 +777,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               exec(
                 'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
                 {
-                  cwd: `/home/parallels/Documents/zwippe/usr/bin/timetables`,
+                  cwd: `/home/parallels/Documents/spa/timetables`,
                 },
                 async (err, output) => {
                   // once the command has completed, the callback function is called
