@@ -454,7 +454,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
           exec(
             'fet-cl --inputfile=output.fet',
             {
-              cwd: `/home/parallels/Documents/spa`,
+              cwd: `$HOME/Documents/spa`,
             },
             (err, output) => {
               // once the command has completed, the callback function is called
@@ -467,7 +467,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               exec(
                 'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
                 {
-                  cwd: `/home/parallels/Documents/spa/timetables`,
+                  cwd: `$HOME/Documents/spa/timetables`,
                 },
                 (err, output) => {
                   // once the command has completed, the callback function is called
@@ -600,7 +600,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
           exec(
             'fet-cl --inputfile=output.fet',
             {
-              cwd: `/home/parallels/Documents/spa`,
+              cwd: `$HOME/Documents/spa`,
             },
             (err, output) => {
               // once the command has completed, the callback function is called
@@ -613,7 +613,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               exec(
                 'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
                 {
-                  cwd: `/home/parallels/Documents/spa/timetables`,
+                  cwd: `$HOME/Documents/spa/timetables`,
                 },
                 async (err, output) => {
                   // once the command has completed, the callback function is called
@@ -764,7 +764,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
           exec(
             'fet-cl --inputfile=output.fet',
             {
-              cwd: `/home/parallels/Documents/spa`,
+              cwd: `$HOME/Documents/spa`,
             },
             (err, output) => {
               // once the command has completed, the callback function is called
@@ -777,7 +777,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               exec(
                 'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
                 {
-                  cwd: `/home/parallels/Documents/spa/timetables`,
+                  cwd: `$HOME/Documents/spa/timetables`,
                 },
                 async (err, output) => {
                   // once the command has completed, the callback function is called
