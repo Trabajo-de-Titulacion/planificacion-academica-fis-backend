@@ -465,7 +465,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               }
 
               exec(
-                'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
+                'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
                 {
                   cwd: `/home/nobh/Documents/spa/timetables`,
                 },
@@ -611,7 +611,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               }
 
               exec(
-                'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
+                'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
                 {
                   cwd: `/home/nobh/Documents/spa/timetables`,
                 },
@@ -775,7 +775,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
               }
 
               exec(
-                'cp -r ./output $HOME/Documents/zwippe/planificacion-academica-fis-backend/fet',
+                'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
                 {
                   cwd: `/home/nobh/Documents/spa/timetables`,
                 },
