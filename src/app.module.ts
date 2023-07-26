@@ -19,6 +19,7 @@ import { NivelesModule } from './niveles/niveles.module';
 import { NumeroEstudiantesPorSemestreModule } from './numero_estudiantes/numeroEstudiantesPorSemestre.module';
 import * as Joi from 'joi';
 import { TerminusModule } from '@nestjs/terminus';
+import { ExperimentacionModule } from './experimentacion/experimentacion.module';
 
 @Module({
   imports: [
@@ -46,7 +47,7 @@ import { TerminusModule } from '@nestjs/terminus';
       useClass: PostgresConfigService,
       inject: [PostgresConfigService],
     }),
-    AuthModule,
+    //AuthModule,
     UsuariosModule,
     MailModule,
     CarreraModule,
@@ -60,6 +61,8 @@ import { TerminusModule } from '@nestjs/terminus';
     NivelesModule,
     NumeroEstudiantesPorSemestreModule,
     TerminusModule,
+    //ModuloExperimentacion
+    ExperimentacionModule
   ],
   controllers: [AppController],
 })

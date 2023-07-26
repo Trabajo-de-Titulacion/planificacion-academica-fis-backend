@@ -78,20 +78,6 @@ export class HorasNoDisponiblesController {
   @ApiOperation({
     summary:
       configuraciones.controladores.horasNoDisponibles.operaciones
-        .obtenerSolicitudesDelSemestreEnProgreso.descripcion,
-  })
-  @Get(
-    configuraciones.controladores.horasNoDisponibles.operaciones
-      .obtenerSolicitudesDelSemestreEnProgreso.ruta,
-  )
-  @Roles(RolesEnum.JEFE_DE_DEPARTAMENTO)
-  async obtenerSolicitudesDelSemestreEnProgreso() {
-    return this.horasNoDisponiblesService.obtenerSolicitudesDelSemestreEnProgreso();
-  }
-
-  @ApiOperation({
-    summary:
-      configuraciones.controladores.horasNoDisponibles.operaciones
         .aprobarSolicitudHorasNoDisponiblesPorDocenteId.descripcion,
   })
   @Get(
@@ -131,39 +117,4 @@ export class HorasNoDisponiblesController {
     );
   }
 
-  @ApiOperation({
-    summary:
-      configuraciones.controladores.horasNoDisponibles.operaciones
-        .eliminarHorasNoDisponiblesPorDocenteId.descripcion,
-  })
-  @Delete(
-    configuraciones.controladores.horasNoDisponibles.operaciones
-      .eliminarHorasNoDisponiblesPorDocenteId.ruta,
-  )
-  @Roles(RolesEnum.DOCENTE)
-  @UseGuards(VerificarIdDocentePorParametroGuard)
-  async eliminarSolicitudHorasNoDisponiblesPorDocenteId(
-    @Param('id') id: string,
-  ) {
-    if (id && !isUUID(id)) {
-      throw new HttpException('ID de docente inválido', HttpStatus.BAD_REQUEST);
-    }
-    return await this.horasNoDisponiblesService.eliminarSolicitudHorasNoDisponiblesPorDocenteId(
-      id,
-    );
-  }
-
-  @ApiOperation({
-    summary:
-      configuraciones.controladores.horasNoDisponibles.operaciones
-        .obtenerTodasLasHorasNoDisponiblesAprobadas.descripcion,
-  })
-  @Get(
-    configuraciones.controladores.horasNoDisponibles.operaciones
-      .obtenerTodasLasHorasNoDisponiblesAprobadas.ruta,
-  )
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
-  async obtenerTodasLasHorasNoDisponiblesAprobadas() {
-    return await this.horasNoDisponiblesService.obtenerTodasLasHorasNoDisponiblesAprobadas();
-  }
 }

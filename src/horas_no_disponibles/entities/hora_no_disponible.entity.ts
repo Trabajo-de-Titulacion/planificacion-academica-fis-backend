@@ -1,3 +1,4 @@
+import { DocenteEntity } from 'src/docente/entities/docente.entity';
 import { JornadaLaboralEntity } from '../../../src/parametros-iniciales/entities/jornada-laboral.entity';
 import {
   Column,
@@ -6,7 +7,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { SolicitudHoraNoDisponibleEntity } from './solicitudHoraNoDisponible.entity';
+
 
 @Entity('horaNoDisponible')
 export class HoraNoDisponibleEntity {
@@ -22,14 +23,8 @@ export class HoraNoDisponibleEntity {
   @Column()
   hora_inicio: number;
 
-  @ManyToOne(
-    () => SolicitudHoraNoDisponibleEntity,
-    (solicitud) => solicitud.id,
-    {
-      onDelete: 'CASCADE',
-      onUpdate: 'CASCADE',
-    },
-  )
-  @JoinColumn({ name: 'idSolicitud' })
-  solicitud: SolicitudHoraNoDisponibleEntity;
+  @ManyToOne( () => DocenteEntity, (docente) => docente.horasNoDisponibles)
+  @JoinColumn({ name: 'docente_id'})
+  docente: DocenteEntity;
+  
 }

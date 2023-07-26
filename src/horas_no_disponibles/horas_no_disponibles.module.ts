@@ -12,13 +12,11 @@ import { SemestreService } from '../../src/parametros-iniciales/services/semestr
 import { SemestreEntity } from '../../src/parametros-iniciales/entities/semestre.entity';
 import { AuthModule } from '../../src/auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
-import { SolicitudHoraNoDisponibleEntity } from './entities/solicitudHoraNoDisponible.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([
       HoraNoDisponibleEntity,
-      SolicitudHoraNoDisponibleEntity,
       DocenteEntity,
       JornadaLaboralEntity,
       SemestreEntity,
