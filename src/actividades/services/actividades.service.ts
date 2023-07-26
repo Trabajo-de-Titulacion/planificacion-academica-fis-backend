@@ -115,4 +115,6 @@ export class ActividadesService {
       return [];
     }
   }
+
+  //async obtenerActividadPorId(idActividad:number): Promise<ActividadEntity>
 }
