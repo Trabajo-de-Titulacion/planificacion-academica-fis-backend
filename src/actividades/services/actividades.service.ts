@@ -116,5 +116,17 @@ export class ActividadesService {
     }
   }
 
-  //async obtenerActividadPorId(idActividad:number): Promise<ActividadEntity>
+  async obtenerActividadPorId(idActividad:number): Promise<ActividadEntity>{
+    const actividad = await this.actividadRespository.findOne({
+      where:{
+        id: idActividad,
+      },
+      relations: ['docente','tipoAula','asignatura','grupo']
+    });
+    if(actividad){
+      return actividad;
+    }else{
+      throw new Error("No existe la actividad");
+    }
+  }
 }

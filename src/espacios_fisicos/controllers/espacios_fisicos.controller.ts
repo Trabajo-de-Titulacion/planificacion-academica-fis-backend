@@ -19,15 +19,16 @@ import { configuraciones } from '../../config/swagger-config';
 import { Roles } from '../../auth/decorators/roles.decorator';
 import { RolesEnum } from '../../utils/enum/rol.enum';
 import { isUUID } from 'class-validator';
+import { Public } from 'src/auth/decorators/public.decorator';
 
-@ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.espaciosFisicos.tag)
 @Controller(configuraciones.controladores.espaciosFisicos.ruta)
-@Roles(RolesEnum.GESTOR_ESPACIOS_FISICOS)
+//@Roles(RolesEnum.GESTOR_ESPACIOS_FISICOS)
 export class EspaciosFisicosController {
   constructor(private espaciosFisicosService: EspaciosFisicosService) {}
 
-  /* Read */
+  /* Read */ 
+  @Public()
   @ApiOperation({
     summary:
       configuraciones.controladores.espaciosFisicos.operaciones
@@ -37,9 +38,21 @@ export class EspaciosFisicosController {
     configuraciones.controladores.espaciosFisicos.operaciones
       .obtenerEspaciosFisicos.ruta,
   )
-  obtenerEspaciosFisicos() {
-    return this.espaciosFisicosService.obtenerEspaciosFisicos();
+  async obtenerEspaciosFisicos() {
+    return await this.espaciosFisicosService.obtenerEspaciosFisicos();
   }
+
+//
+  @Public()
+  @ApiOperation({
+
+  })
+  @Get(
+    'obtenerEspaciosFisicoPorTipoDeAula/:idTipoAula'
+  )
+  async obtenerEspaciosFisicoPorTipoDeAula(@Param('idTipoAula') id:string){
+    return await this.espaciosFisicosService.obtenerEspaciosFisicosPorTipoDeAula(id)
+  } 
 
   @ApiOperation({
     summary:
