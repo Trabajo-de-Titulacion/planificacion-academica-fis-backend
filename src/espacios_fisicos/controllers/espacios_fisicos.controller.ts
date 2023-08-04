@@ -42,7 +42,7 @@ export class EspaciosFisicosController {
     return await this.espaciosFisicosService.obtenerEspaciosFisicos();
   }
 
-//
+//Controlador para obtener espacio fìsico por tipo de aula
   @Public()
   @ApiOperation({
 

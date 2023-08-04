@@ -12,6 +12,9 @@ import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo
 import { Repository } from 'typeorm';
 import { CrearActividadDto } from '../dtos/crear-actividad.dto';
 import { ActividadEntity } from '../entities/actividad.entity';
+import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_fisicos.service';
+import { CrearRestriccionDto } from '../dtos/crear-restriccion.dto';
+import { RestriccionActividadEntity } from '../entities/restriccion-actividad.entity';
 
 @Injectable()
 export class ActividadesService {
@@ -25,6 +28,9 @@ export class ActividadesService {
     private grupoService: GrupoService,
     private tipoAulaService: TipoAulaService,
     private numeroEstudiantesService: NumeroEstudiantesPorSemestreService,
+    private espacioFisicoService: EspaciosFisicosService,
+    @InjectRepository(RestriccionActividadEntity)
+    private restriccionActividadRespository: Repository<RestriccionActividadEntity>,
   ) {}
 
   validarDuracionActividad(actividad: ActividadEntity) {
@@ -128,5 +134,21 @@ export class ActividadesService {
     }else{
       throw new Error("No existe la actividad");
     }
+  }
+
+  async crearRestriccion(restriccion:CrearRestriccionDto){
+    const espacioFisico= await this.espacioFisicoService.obtenerEspacioFisicoPorId(restriccion.idEspacioFisico)
+    const actividad = await this.actividadRespository.findOne({
+      where:{
+        id: restriccion.idActividad
+      }
+    });
+
+    await this.restriccionActividadRespository.save({
+      hora: restriccion.hora,
+      dia: restriccion.dia,
+      actividad: actividad,
+      espacioFisico: espacioFisico 
+    });
   }
 }

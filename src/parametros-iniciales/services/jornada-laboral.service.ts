@@ -90,6 +90,11 @@ export class JornadaLaboralService {
     }
   }
 
+  /**/ 
+  async obtenerDiasDeUnaJornada(jornada: JornadaLaboralEntity){
+
+  }
+
   async eliminarJornadaLaboralPorSemestre(idSemestre: string) {
     const semestre = await this.servicioSemestre.obtenerSemestrePorSuID(
       idSemestre,
