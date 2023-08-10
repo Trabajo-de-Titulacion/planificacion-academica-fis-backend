@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { CrearActividadDto } from '../dtos/crear-actividad.dto';
 import { ActividadesService } from '../services/actividades.service';
 import { ApiTags } from '@nestjs/swagger';
@@ -30,6 +30,18 @@ export class ActividadesController {
   @Public()
   async obtenerActividadporId(@Param('id',ParseIntPipe) id:number){
     return await this.actividadesService.obtenerActividadPorId(id);
+  }
+
+  @Get('obtenerRestriccionesPorId/:id')
+  @Public()
+  async obtenerRestriccionesPorId(@Param('id',ParseIntPipe) id: number){
+    return await this.actividadesService.obtenerRestriccionesPorId(id);
+  }
+
+  @Delete('eliminarRestriccionPorId/:id')
+  @Public()
+  async eliminarRestriccionPorId(@Param('id',ParseIntPipe) id: number){
+    return await this.actividadesService.eliminarRestriccionPorId(id);
   }
 
 }

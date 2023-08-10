@@ -151,4 +151,45 @@ export class ActividadesService {
       espacioFisico: espacioFisico 
     });
   }
+
+  async obtenerRestriccionesPorId(idActividad:number){
+    const restricciones = await this.restriccionActividadRespository.find({
+      where:{
+        actividad:{
+          id: idActividad,
+        }
+      },
+      relations:['espacioFisico']
+    })
+    if(restricciones.length){
+      const restriccionesFiltro = restricciones.map((param)=>{
+        return {
+          idRestriccion:param.id,
+          idEspacioFisico: param.espacioFisico.id,
+          espacioFisico:param.espacioFisico.nombre,
+          dia: param.dia,
+          hora: param.hora,
+        }
+      })
+      return restriccionesFiltro;
+    }else{
+      throw new Error("No existe la restriccion");
+    }
+  }
+
+  async eliminarRestriccionPorId(idRestriccion: number){
+    const restriccion = await this.restriccionActividadRespository.findOne({
+      where:{
+        id: idRestriccion,
+      }
+    })
+    if(restriccion){
+      await this.restriccionActividadRespository.delete(idRestriccion);
+      //console.log("Restriccion eliminada")
+      return restriccion;
+    }else{
+      throw new Error("No existe la restriccion");
+    }
+  }
+
 }
