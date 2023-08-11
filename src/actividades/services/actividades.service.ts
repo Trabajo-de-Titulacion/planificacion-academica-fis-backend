@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import { BadGatewayException, BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AsignaturaEntity } from '../../asignatura/entities/asignatura.entity';
 import { AsignaturaService } from '../../../src/asignatura/services/asignatura.service';
@@ -143,6 +143,20 @@ export class ActividadesService {
         id: restriccion.idActividad
       }
     });
+    const exiteRestriccion = await this.restriccionActividadRespository.findOne({
+      where:{
+        hora: restriccion.hora,
+        dia: restriccion.dia,
+        actividad: actividad,
+        espacioFisico: espacioFisico 
+      }
+    })
+
+    if(exiteRestriccion){
+      throw new BadGatewayException({
+        message: 'Ya existe dicha restricción'
+      })
+    }
 
     await this.restriccionActividadRespository.save({
       hora: restriccion.hora,
