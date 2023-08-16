@@ -147,14 +147,15 @@ export class ActividadesService {
       where:{
         hora: restriccion.hora,
         dia: restriccion.dia,
-        actividad: actividad,
         espacioFisico: espacioFisico 
-      }
+      },
+      relations:['actividad','actividad.docente']
     })
 
     if(exiteRestriccion){
       throw new BadGatewayException({
-        message: 'Ya existe dicha restricción'
+        message: 'Ya existe dicha restricción',
+        data: {restriccion:exiteRestriccion}
       })
     }
 
@@ -187,7 +188,7 @@ export class ActividadesService {
       })
       return restriccionesFiltro;
     }else{
-      throw new Error("No existe la restriccion");
+      return restricciones
     }
   }
 

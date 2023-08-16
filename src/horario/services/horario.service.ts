@@ -423,6 +423,10 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBreakTimes>
+
+<ConstraintActivityPreferredStartingTime>
+
+</ConstraintActivityPreferredStartingTime>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -431,6 +435,10 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
+
+<ConstraintActivityPreferredRoom>
+
+</ConstraintActivityPreferredRoom>
 </Space_Constraints_List>
 
 
