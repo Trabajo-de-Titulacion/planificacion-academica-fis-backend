@@ -207,4 +207,23 @@ export class ActividadesService {
     }
   }
 
+  async obtenerConstraintActivityPreferredStartingTime(){
+    const restricciones = await this.restriccionActividadRespository.find({
+      relations: ['actividad','espacioFisico'],
+    })
+    let restriccionesFiltro = restricciones.map((restriccion)=>{
+      return {
+        Weight_Percentage:100,
+        Activity_Id: restriccion.actividad.id,
+        Preferred_Day: restriccion.dia.charAt(0).toUpperCase() + restriccion.dia.slice(1,).toLowerCase(),
+        Preferred_Hour: restriccion.hora,
+        Permanently_Locked: true,
+        Active: true,
+        Comments: " ",
+      }
+    })
+
+    return restriccionesFiltro;
+  }
+
 }
