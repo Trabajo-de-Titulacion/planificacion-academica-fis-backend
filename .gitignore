@@ -18,6 +18,8 @@ lerna-debug.log*
 .DS_Store
 usr
 
+.yarn-lock
+
 # Tests
 /coverage
 /.nyc_output
