@@ -22,10 +22,10 @@ import { isUUID } from 'class-validator';
 import { Roles } from '../../auth/decorators/roles.decorator';
 import { RolesEnum } from '../../utils/enum/rol.enum';
 import { VerificarIdDocentePorParametroGuard } from '../guards/verificar_id_docente_por_parametro.guard';
+import { HoraDiaNoDisponibleDTO } from '../dto/hora_dia_noDisponible.dto';
+import { Public } from 'src/auth/decorators/public.decorator';
 
-@ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.horasNoDisponibles.tag)
-@ApiExtraModels(HorasNoDisponiblesDTO)
 @Controller(configuraciones.controladores.horasNoDisponibles.ruta)
 export class HorasNoDisponiblesController {
   constructor(private horasNoDisponiblesService: HorasNoDisponiblesService) {}
@@ -54,6 +54,21 @@ export class HorasNoDisponiblesController {
     );
   }
 
+  //Para horarios no disponibles
+  @Public()
+  @Post("hora_dia_noDisponible")
+  async crearHoraDiaNoDisponible(@Body() data: HoraDiaNoDisponibleDTO){
+    return await this.horasNoDisponiblesService.crearHoraDiaNoDisponible(data) 
+    
+  }
+
+  @Public()
+  @Get("horas_dias_noDisponibles/:idDocente")
+  async obtenerHorasNoDisponiblesPorIdDocente(@Param("idDocente") idDocente: string){
+      return await this.horasNoDisponiblesService.obtenerHorasDiasNoDisponiblesDelDocente(idDocente)
+  }
+
+
   @ApiOperation({
     summary:
       configuraciones.controladores.horasNoDisponibles.operaciones
@@ -63,7 +78,7 @@ export class HorasNoDisponiblesController {
     configuraciones.controladores.horasNoDisponibles.operaciones
       .obtenerHorasNoDisponiblesSolicitadasPorDocenteId.ruta,
   )
-  @Roles(RolesEnum.DOCENTE, RolesEnum.JEFE_DE_DEPARTAMENTO)
+  @Public()
   async obtenerHorasNoDisponiblesSolicitadasPorDocenteId(
     @Param('id') id: string,
   ) {
@@ -84,7 +99,7 @@ export class HorasNoDisponiblesController {
     configuraciones.controladores.horasNoDisponibles.operaciones
       .aprobarSolicitudHorasNoDisponiblesPorDocenteId.ruta,
   )
-  @Roles(RolesEnum.JEFE_DE_DEPARTAMENTO)
+  @Public()
   async aprobarSolicitudHorasNoDisponiblesPorDocenteId(
     @Param('id') id: string,
   ) {

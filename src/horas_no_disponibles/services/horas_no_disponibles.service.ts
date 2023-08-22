@@ -1,7 +1,9 @@
 import {
+  BadRequestException,
   HttpException,
   HttpStatus,
   Injectable,
+  Logger,
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -15,6 +17,11 @@ import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { MailService } from '../../../src/mail/services/mail.service';
 import ESTADO_SOLICITUD_HORA_NO_DISPONIBLE from '../types/estadoSolicitudHoraNoDisponible.type';
+import { HoraDiaNoDisponibleDTO } from 'src/horas_no_disponibles/dto/hora_dia_noDisponible.dto';
+import { DocenteEntity } from 'src/docente/entities/docente.entity';
+import { log } from 'console';
+import { logger } from 'handlebars';
+import e from 'express';
 
 @Injectable()
 export class HorasNoDisponiblesService {
@@ -72,7 +79,7 @@ export class HorasNoDisponiblesService {
         horaDTO.hora_inicio != horaAlmuerzo
       ) {
         const horaEntidad = this.horasNoDisponiblesRepository.create({
-          dia: jornada,
+          jornada: jornada,
           hora_inicio: horaDTO.hora_inicio,
         });
         registrosCorrectos.push(horaEntidad);
@@ -267,4 +274,57 @@ export class HorasNoDisponiblesService {
       }
     }
   }
+
+  //Para crar hora dia NO disponible
+  async crearHoraDiaNoDisponible(data: HoraDiaNoDisponibleDTO){
+    await this.horasNoDisponiblesRepository.delete({
+      docente:{id:data.docente_id},
+      jornada:{id:data.jornada_id},
+      hora_inicio: data.hora_inicio
+    })
+    console.log("Se han recibido los datos")
+    const docente = await this.docentesService.obtenerDocentePorID(data.docente_id)
+    const jornada = await this.jornadasLaboralesService.obtenerJornadaPorId(data.jornada_id)
+
+    const horaNoDisponibleExiste = await this.horasNoDisponiblesRepository.findOne({
+      where: {
+        docente: docente as DocenteEntity,
+        jornada: jornada,
+        hora_inicio: data.hora_inicio
+      }
+    })
+    if(horaNoDisponibleExiste){
+      throw new BadRequestException({
+        code: "HORA_DIA_YA_EXISTE",
+        message: "La hora y dia no disponible ya se encuentra registrada en el sistema"
+      })
+    }
+
+    await this.horasNoDisponiblesRepository.save({
+     docente: docente as DocenteEntity,
+     jornada: jornada,
+     hora_inicio: data.hora_inicio
+    }) 
+  }
+
+  //Para obtener horas dias No disponbiles por id docente
+  async obtenerHorasDiasNoDisponiblesDelDocente(idDocente: string){
+    const docente = await this.docentesService.obtenerDocentePorID(idDocente)
+    const horasNoDisponbilesDelDocente = await this.horasNoDisponiblesRepository.find({
+      where: {
+        docente: docente as DocenteEntity,
+      },
+      relations: ["jornada"]
+    })
+    const horasNoDisponiblesFiltro = horasNoDisponbilesDelDocente.map(e => {
+      return {
+        idHoraNoDisponible: e.id,
+        idJornada: e.jornada.id,
+        dia: e.jornada.dia,
+        hora_inicio: e.hora_inicio
+      }
+    })
+    return horasNoDisponiblesFiltro
+  }
+  
 }

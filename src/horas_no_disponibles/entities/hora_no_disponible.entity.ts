@@ -17,8 +17,8 @@ export class HoraNoDisponibleEntity {
   @ManyToOne(() => JornadaLaboralEntity, (jornada) => jornada.id, {
     onDelete: 'CASCADE',
   })
-  @JoinColumn({ name: 'dia_id' })
-  dia: JornadaLaboralEntity;
+  @JoinColumn({ name: 'jornada_id' })
+  jornada: JornadaLaboralEntity;
 
   @Column()
   hora_inicio: number;
