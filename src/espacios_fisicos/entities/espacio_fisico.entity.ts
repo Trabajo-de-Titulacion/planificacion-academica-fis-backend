@@ -1,9 +1,11 @@
+import { RestriccionActividadEntity } from 'src/actividades/entities/restriccion-actividad.entity';
 import { TipoAulaEntity } from '../../../src/parametros-iniciales/entities/tipo-aula.entity';
 import {
   Column,
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -23,4 +25,8 @@ export class EspacioFisicoEntity {
 
   @Column()
   aforo: number;
+
+  @OneToMany(()=> RestriccionActividadEntity, (restriccionActividad)=>restriccionActividad.espacioFisico)
+  restricciones ?: RestriccionActividadEntity[]
+
 }

@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import { BadGatewayException, BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AsignaturaEntity } from '../../asignatura/entities/asignatura.entity';
 import { AsignaturaService } from '../../../src/asignatura/services/asignatura.service';
@@ -12,6 +12,9 @@ import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo
 import { Repository } from 'typeorm';
 import { CrearActividadDto } from '../dtos/crear-actividad.dto';
 import { ActividadEntity } from '../entities/actividad.entity';
+import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_fisicos.service';
+import { CrearRestriccionDto } from '../dtos/crear-restriccion.dto';
+import { RestriccionActividadEntity } from '../entities/restriccion-actividad.entity';
 
 @Injectable()
 export class ActividadesService {
@@ -25,6 +28,9 @@ export class ActividadesService {
     private grupoService: GrupoService,
     private tipoAulaService: TipoAulaService,
     private numeroEstudiantesService: NumeroEstudiantesPorSemestreService,
+    private espacioFisicoService: EspaciosFisicosService,
+    @InjectRepository(RestriccionActividadEntity)
+    private restriccionActividadRespository: Repository<RestriccionActividadEntity>,
   ) {}
 
   validarDuracionActividad(actividad: ActividadEntity) {
@@ -115,4 +121,109 @@ export class ActividadesService {
       return [];
     }
   }
+
+  async obtenerActividadPorId(idActividad:number): Promise<ActividadEntity>{
+    const actividad = await this.actividadRespository.findOne({
+      where:{
+        id: idActividad,
+      },
+      relations: ['docente','tipoAula','asignatura','grupo']
+    });
+    if(actividad){
+      return actividad;
+    }else{
+      throw new Error("No existe la actividad");
+    }
+  }
+
+  async crearRestriccion(restriccion:CrearRestriccionDto){
+    const espacioFisico= await this.espacioFisicoService.obtenerEspacioFisicoPorId(restriccion.idEspacioFisico)
+    const actividad = await this.actividadRespository.findOne({
+      where:{
+        id: restriccion.idActividad
+      }
+    });
+    const exiteRestriccion = await this.restriccionActividadRespository.findOne({
+      where:{
+        hora: restriccion.hora,
+        dia: restriccion.dia,
+        espacioFisico: espacioFisico 
+      },
+      relations:['actividad','actividad.docente']
+    })
+
+    if(exiteRestriccion){
+      throw new BadGatewayException({
+        message: 'Ya existe dicha restricción',
+        data: {restriccion:exiteRestriccion}
+      })
+    }
+
+    await this.restriccionActividadRespository.save({
+      hora: restriccion.hora,
+      dia: restriccion.dia,
+      actividad: actividad,
+      espacioFisico: espacioFisico 
+    });
+  }
+
+  async obtenerRestriccionesPorId(idActividad:number){
+    const restricciones = await this.restriccionActividadRespository.find({
+      where:{
+        actividad:{
+          id: idActividad,
+        }
+      },
+      relations:['espacioFisico']
+    })
+    if(restricciones.length){
+      const restriccionesFiltro = restricciones.map((param)=>{
+        return {
+          idRestriccion:param.id,
+          idEspacioFisico: param.espacioFisico.id,
+          espacioFisico:param.espacioFisico.nombre,
+          dia: param.dia,
+          hora: param.hora,
+        }
+      })
+      return restriccionesFiltro;
+    }else{
+      return restricciones
+    }
+  }
+
+  async eliminarRestriccionPorId(idRestriccion: number){
+    const restriccion = await this.restriccionActividadRespository.findOne({
+      where:{
+        id: idRestriccion,
+      }
+    })
+    if(restriccion){
+      await this.restriccionActividadRespository.delete(idRestriccion);
+      //console.log("Restriccion eliminada")
+      return restriccion;
+    }else{
+      throw new Error("No existe la restriccion");
+    }
+  }
+
+  async obtenerConstraintActivityPreferredStartingTime(){
+    const restricciones = await this.restriccionActividadRespository.find({
+      relations: ['actividad','espacioFisico'],
+    })
+    let restriccionesFiltro = restricciones.map((restriccion)=>{
+      return {
+        Weight_Percentage:100,
+        Activity_Id: restriccion.actividad.id,
+        Preferred_Day: restriccion.dia.charAt(0).toUpperCase() + restriccion.dia.slice(1,).toLowerCase(),
+        Preferred_Hour: restriccion.hora,
+        Permanently_Locked: true,
+        Active: true,
+        Comments: " ",
+      }
+    })
+
+    return restriccionesFiltro;
+  }
+
 }

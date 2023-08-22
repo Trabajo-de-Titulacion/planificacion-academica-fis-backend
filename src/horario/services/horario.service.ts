@@ -197,6 +197,7 @@ export class HorarioService {
   }
 
   async generarHorario(email: string) {
+    console.log('generear horario')
     const usuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(email);
     // Jornadas
     const semestreEnCurso =
@@ -336,6 +337,11 @@ export class HorarioService {
       };
     });
 
+    //Restricciones
+    const restriccionesInfo = await this.actividadesService.obtenerConstraintActivityPreferredStartingTime();
+    console.log('restriccionesInfo',restriccionesInfo)
+
+
     // Builders
     const builderDias = new XMLBuilder({
       arrayNodeName: 'Day',
@@ -382,6 +388,12 @@ export class HorarioService {
       format: true,
     });
 
+    //Builder restrcciones
+    const builderRestricciones = new XMLBuilder({
+      arrayNodeName:'ConstraintActivityPreferredStartingTime',
+      format: true,
+    })
+    console.log(builderRestricciones.build(restriccionesInfo))
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 \n<fet version="6.1.5">
 \n<Institution_Name>${nombreUniversidad}</Institution_Name>
@@ -423,6 +435,9 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBreakTimes>
+
+${builderRestricciones.build(restriccionesInfo)}
+
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -431,6 +446,10 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
+
+<ConstraintActivityPreferredRoom>
+
+</ConstraintActivityPreferredRoom>
 </Space_Constraints_List>
 
 
