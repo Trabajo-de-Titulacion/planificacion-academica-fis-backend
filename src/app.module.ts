@@ -61,6 +61,7 @@ import { ExperimentacionModule } from './experimentacion/experimentacion.module'
     NivelesModule,
     NumeroEstudiantesPorSemestreModule,
     TerminusModule,
+    //ModuloExperimentacion
     ExperimentacionModule
   ],
   controllers: [AppController],

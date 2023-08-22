@@ -1,7 +1,9 @@
 import {
+  BadRequestException,
   HttpException,
   HttpStatus,
   Injectable,
+  Logger,
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -11,19 +13,21 @@ import { SemestreService } from '../../../src/parametros-iniciales/services/seme
 import { Repository } from 'typeorm';
 import { HorasNoDisponiblesDTO } from '../dto';
 import { HoraNoDisponibleEntity } from '../entities/hora_no_disponible.entity';
-import { SolicitudHoraNoDisponibleEntity } from '../entities/solicitudHoraNoDisponible.entity';
 import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { MailService } from '../../../src/mail/services/mail.service';
 import ESTADO_SOLICITUD_HORA_NO_DISPONIBLE from '../types/estadoSolicitudHoraNoDisponible.type';
+import { HoraDiaNoDisponibleDTO } from 'src/horas_no_disponibles/dto/hora_dia_noDisponible.dto';
+import { DocenteEntity } from 'src/docente/entities/docente.entity';
+import { log } from 'console';
+import { logger } from 'handlebars';
+import e from 'express';
 
 @Injectable()
 export class HorasNoDisponiblesService {
   constructor(
     @InjectRepository(HoraNoDisponibleEntity)
     private horasNoDisponiblesRepository: Repository<HoraNoDisponibleEntity>,
-    @InjectRepository(SolicitudHoraNoDisponibleEntity)
-    private solicitudHorasNoDisponiblesRepository: Repository<SolicitudHoraNoDisponibleEntity>,
     private jornadasLaboralesService: JornadaLaboralService,
     private semestreService: SemestreService,
     private docentesService: DocenteService,
@@ -75,7 +79,7 @@ export class HorasNoDisponiblesService {
         horaDTO.hora_inicio != horaAlmuerzo
       ) {
         const horaEntidad = this.horasNoDisponiblesRepository.create({
-          dia: jornada,
+          jornada: jornada,
           hora_inicio: horaDTO.hora_inicio,
         });
         registrosCorrectos.push(horaEntidad);
@@ -91,19 +95,19 @@ export class HorasNoDisponiblesService {
       if (solicitudActual) {
         // Eliminar horas anteriormente registradas
         await this.horasNoDisponiblesRepository.delete({
-          solicitud: solicitudActual,
+          //solicitud: solicitudActual,
         });
         // Se asocian las nuevas horas a la solicitud ya creada
-        registrosCorrectos.forEach(
-          (hora) => (hora.solicitud = solicitudActual),
-        );
+        //registrosCorrectos.forEach(
+          //(hora) => (hora.solicitud = solicitudActual),
+        //);
         // Se actualiza la fecha de modificación de la solicitud
-        await this.solicitudHorasNoDisponiblesRepository.update(
-          solicitudActual,
-          {
-            ultimaModificacion: new Date(),
-          },
-        );
+        //await this.solicitudHorasNoDisponiblesRepository.update(
+          //solicitudActual,
+          //{
+            //ultimaModificacion: new Date(),
+          //},
+        //);
         // Se guardan los nuevos registros de horas
         await this.horasNoDisponiblesRepository.save(registrosCorrectos);
         // Mensaje al actualizar
@@ -118,14 +122,6 @@ export class HorasNoDisponiblesService {
             HttpStatus.BAD_REQUEST,
           );
         }
-        const solicitud = this.solicitudHorasNoDisponiblesRepository.create({
-          docente: docente,
-          semestre: semestreEnProgreso,
-          horasNoDisponibles: registrosCorrectos,
-        });
-        await this.solicitudHorasNoDisponiblesRepository.save(solicitud);
-        // Mensaje al crear nueva solicitud
-        mensaje = `Se ha creado una nueva solicitud para el semestre ${solicitud.semestre.abreviatura}, con ${registrosCorrectos.length} hora(s) no disponible(s).`;
       }
       // Retornar mensaje y arreglo de los registros creados
       return {
@@ -152,13 +148,8 @@ export class HorasNoDisponiblesService {
     // Buscar solicitud del semestre en progreso
     const semestreEnProgreso =
       await this.semestreService.obtenerSemestreConPlanificacionEnProgreso();
-    const solicitudDocente =
-      await this.solicitudHorasNoDisponiblesRepository.findOne({
-        where: { docente: docente, semestre: semestreEnProgreso },
-        relations: ['semestre'],
-      });
 
-    return solicitudDocente;
+    return null;
   }
 
   async obtenerHorasNoDisponiblesSolicitadasPorDocenteId(id: string) {
@@ -171,21 +162,6 @@ export class HorasNoDisponiblesService {
     return await this.horasNoDisponiblesRepository.find({
       where: { solicitud: solicitudActual },
       relations: ['dia', 'solicitud'],
-    });
-  }
-
-  async obtenerSolicitudesDelSemestreEnProgreso() {
-    const semestreEnProgreso =
-      await this.semestreService.obtenerSemestreConPlanificacionEnProgreso();
-    if (!semestreEnProgreso) {
-      throw new HttpException(
-        'No hay un semestre cuya planificación esté en progreso.',
-        HttpStatus.BAD_REQUEST,
-      );
-    }
-    return await this.solicitudHorasNoDisponiblesRepository.find({
-      where: { semestre: semestreEnProgreso },
-      relations: ['docente'],
     });
   }
 
@@ -215,32 +191,9 @@ export class HorasNoDisponiblesService {
       );
     }
 
-    // Aprobar solicitud de horas no disponibles
-    await this.solicitudHorasNoDisponiblesRepository.update(solicitudDocente, {
-      estado: ESTADO_SOLICITUD_HORA_NO_DISPONIBLE.APROBADA,
-    });
-
     return new Promise((resolve, reject) => {
       solicitudDocente.docente = docente;
       // Enviar notificación al docente sobre la aprobación de sus horas solicitadas
-      this.mailService
-        .envioCorreoAprobacionHorasNoDisponibles(solicitudDocente)
-        .then(() => {
-          const respuesta = {
-            mensaje: `Solicitud aprobada. Se ha enviado la notificación respectiva al correo ${docente.correoElectronico}.`,
-          };
-          resolve(respuesta);
-        })
-        .catch((error) => {
-          console.error(error);
-          // La solicitud se ha aprobado, pero el correo no ha podido enviarse
-          reject(
-            new HttpException(
-              'Solicitud aprobada. Hubo un error al enviar la notificación al docente.',
-              HttpStatus.INTERNAL_SERVER_ERROR,
-            ),
-          );
-        });
     });
   }
 
@@ -270,56 +223,9 @@ export class HorasNoDisponiblesService {
       );
     }
 
-    // Rechazar la solicitud (eliminarla)
-    await this.solicitudHorasNoDisponiblesRepository.delete(solicitudDocente);
-
     return new Promise((resolve, reject) => {
       solicitudDocente.docente = docente;
       // Enviar notificación al docente sobre el rechazo de sus horas solicitadas
-      this.mailService
-        .envioCorreoRechazoHorasNoDisponibles(solicitudDocente)
-        .then(() => {
-          const respuesta = {
-            mensaje: `Solicitud rechazada. Se ha enviado la notificación respectiva al correo ${docente.correoElectronico}.`,
-          };
-          resolve(respuesta);
-        })
-        .catch((error) => {
-          console.error(error);
-          // La solicitud se ha aprobado, pero el correo no ha podido enviarse
-          reject(
-            new HttpException(
-              'Solicitud rechazada. Hubo un error al enviar la notificación al docente.',
-              HttpStatus.INTERNAL_SERVER_ERROR,
-            ),
-          );
-        });
-    });
-  }
-
-  async eliminarSolicitudHorasNoDisponiblesPorDocenteId(id: string) {
-    const solicitud =
-      await this.obtenerSolicitudDeSemestreEnProgresoPorDocenteId(id);
-    if (!solicitud) {
-      throw new HttpException(
-        'El docente no cuenta con una solicitud existente.',
-        HttpStatus.BAD_REQUEST,
-      );
-    }
-    if (solicitud && solicitud.estaAprobada) {
-      throw new HttpException(
-        'No se puede modificar la solicitud puesto que ya ha sido aprobada.',
-        HttpStatus.BAD_REQUEST,
-      );
-    }
-    return await this.solicitudHorasNoDisponiblesRepository.delete(solicitud);
-  }
-
-  async obtenerTodasLasHorasNoDisponiblesAprobadas() {
-    // Devuelve las solicitudes aprobadas de cada docente junto con sus horas no disponibles
-    return await this.solicitudHorasNoDisponiblesRepository.find({
-      where: { estado: ESTADO_SOLICITUD_HORA_NO_DISPONIBLE.APROBADA },
-      relations: ['horasNoDisponibles'],
     });
   }
 
@@ -368,4 +274,57 @@ export class HorasNoDisponiblesService {
       }
     }
   }
+
+  //Para crar hora dia NO disponible
+  async crearHoraDiaNoDisponible(data: HoraDiaNoDisponibleDTO){
+    await this.horasNoDisponiblesRepository.delete({
+      docente:{id:data.docente_id},
+      jornada:{id:data.jornada_id},
+      hora_inicio: data.hora_inicio
+    })
+    console.log("Se han recibido los datos")
+    const docente = await this.docentesService.obtenerDocentePorID(data.docente_id)
+    const jornada = await this.jornadasLaboralesService.obtenerJornadaPorId(data.jornada_id)
+
+    const horaNoDisponibleExiste = await this.horasNoDisponiblesRepository.findOne({
+      where: {
+        docente: docente as DocenteEntity,
+        jornada: jornada,
+        hora_inicio: data.hora_inicio
+      }
+    })
+    if(horaNoDisponibleExiste){
+      throw new BadRequestException({
+        code: "HORA_DIA_YA_EXISTE",
+        message: "La hora y dia no disponible ya se encuentra registrada en el sistema"
+      })
+    }
+
+    await this.horasNoDisponiblesRepository.save({
+     docente: docente as DocenteEntity,
+     jornada: jornada,
+     hora_inicio: data.hora_inicio
+    }) 
+  }
+
+  //Para obtener horas dias No disponbiles por id docente
+  async obtenerHorasDiasNoDisponiblesDelDocente(idDocente: string){
+    const docente = await this.docentesService.obtenerDocentePorID(idDocente)
+    const horasNoDisponbilesDelDocente = await this.horasNoDisponiblesRepository.find({
+      where: {
+        docente: docente as DocenteEntity,
+      },
+      relations: ["jornada"]
+    })
+    const horasNoDisponiblesFiltro = horasNoDisponbilesDelDocente.map(e => {
+      return {
+        idHoraNoDisponible: e.id,
+        idJornada: e.jornada.id,
+        dia: e.jornada.dia,
+        hora_inicio: e.hora_inicio
+      }
+    })
+    return horasNoDisponiblesFiltro
+  }
+  
 }

@@ -3,10 +3,17 @@
 ### Prerequisitos
 
 - Haber seguido la guía de instalación del FET-CL: https://www.notion.so/Instalaci-n-del-CLI-del-Software-FET-3d6bcf3e04ae4e0f8576bb0bfb906c2e?pvs=4
+- En su sistema operativo crear una carpeta `Documents` en $HOME en caso de que aún no exista. Luego cree la carpeta `spa` dentro de ese directorio.
+```
+$HOME
+     /Documents
+              /spa
+
+```
 
 ### Instalación
 
-1. Clone el repositorio del componente en GitHub:
+1. Clone el repositorio del componente en GitHub dentro de la carpeta `spa`:
 
 ```bash
 git clone https://github.com/Trabajo-de-Titulacion/planificacion-academica-fis-backend.git
