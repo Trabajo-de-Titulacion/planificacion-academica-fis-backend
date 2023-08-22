@@ -8,6 +8,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { ActividadEntity } from '../../actividades/entities/actividad.entity';
+import { HoraNoDisponibleEntity } from 'src/horas_no_disponibles/entities/hora_no_disponible.entity';
 
 @Entity('docente')
 export class DocenteEntity {
@@ -26,4 +27,7 @@ export class DocenteEntity {
 
   @OneToMany(() => ActividadEntity, (actividades) => actividades.docente)
   actividades?: ActividadEntity[];
+
+  @OneToMany(() => HoraNoDisponibleEntity, (horasNoDisponibles) => horasNoDisponibles.docente)
+  horasNoDisponibles?: HoraNoDisponibleEntity[];
 }

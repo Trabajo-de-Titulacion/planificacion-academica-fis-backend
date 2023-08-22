@@ -7,7 +7,6 @@ import { Public } from "src/auth/decorators/public.decorator";
 @Controller("estudiante")
 export class ExperimentacionController{
     constructor(private experimentacionService:ExperimentacionService){
-
     }
 
     @Public()
