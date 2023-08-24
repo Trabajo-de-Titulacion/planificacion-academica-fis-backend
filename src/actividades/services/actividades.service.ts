@@ -15,6 +15,7 @@ import { ActividadEntity } from '../entities/actividad.entity';
 import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_fisicos.service';
 import { CrearRestriccionDto } from '../dtos/crear-restriccion.dto';
 import { RestriccionActividadEntity } from '../entities/restriccion-actividad.entity';
+import { HorasNoDisponiblesService } from 'src/horas_no_disponibles/services/horas_no_disponibles.service';
 
 @Injectable()
 export class ActividadesService {
@@ -31,6 +32,7 @@ export class ActividadesService {
     private espacioFisicoService: EspaciosFisicosService,
     @InjectRepository(RestriccionActividadEntity)
     private restriccionActividadRespository: Repository<RestriccionActividadEntity>,
+    private horasNoDisponiblesService: HorasNoDisponiblesService
   ) {}
 
   validarDuracionActividad(actividad: ActividadEntity) {
@@ -140,8 +142,9 @@ export class ActividadesService {
     const espacioFisico= await this.espacioFisicoService.obtenerEspacioFisicoPorId(restriccion.idEspacioFisico)
     const actividad = await this.actividadRespository.findOne({
       where:{
-        id: restriccion.idActividad
-      }
+        id: restriccion.idActividad,
+      },
+      relations:['docente']
     });
     const exiteRestriccion = await this.restriccionActividadRespository.findOne({
       where:{
@@ -150,6 +153,19 @@ export class ActividadesService {
         espacioFisico: espacioFisico 
       },
       relations:['actividad','actividad.docente']
+    });
+
+    const horasNoDisponiblesDocente = await this.horasNoDisponiblesService.obtenerHorasDiasNoDisponiblesDelDocente(actividad.docente.id)
+
+    horasNoDisponiblesDocente.map((horaNoDisponible)=>{
+      const horaFormato = `${horaNoDisponible.hora_inicio}:00-${horaNoDisponible.hora_inicio +1}:00`
+      console.log(this.verificarDiaHora(restriccion.dia.toUpperCase(), restriccion.hora, horaNoDisponible.dia.toUpperCase(),horaFormato))
+      if(this.verificarDiaHora(restriccion.dia.toUpperCase(), restriccion.hora, horaNoDisponible.dia.toUpperCase(),horaFormato)){
+       return
+      }
+      throw new BadGatewayException({
+        message: `El docente no esta disponible el dia ${horaNoDisponible.dia} de ${horaFormato}`
+      })
     })
 
     if(exiteRestriccion){
@@ -165,6 +181,18 @@ export class ActividadesService {
       actividad: actividad,
       espacioFisico: espacioFisico 
     });
+  }
+
+  verificarDiaHora(diaRestriccion:string,horaRestriccion:string, diaDocente:String, horaDocente:string){
+    if(diaRestriccion === diaDocente && horaRestriccion === horaDocente){
+      console.log("hora permitida: ", diaRestriccion,horaRestriccion, diaDocente, horaDocente)
+      return false
+    }else{
+      return true
+    }
+
+    
+  
   }
 
   async obtenerRestriccionesPorId(idActividad:number){

@@ -10,6 +10,7 @@ import { ActividadEntity } from './entities/actividad.entity';
 import { ActividadesService } from './services/actividades.service';
 import { RestriccionActividadEntity } from './entities/restriccion-actividad.entity';
 import { EspaciosFisicosModule } from 'src/espacios_fisicos/espacios_fisicos.module';
+import { HorasNoDisponiblesModule } from 'src/horas_no_disponibles/horas_no_disponibles.module';
 
 @Module({
   imports: [
@@ -20,7 +21,8 @@ import { EspaciosFisicosModule } from 'src/espacios_fisicos/espacios_fisicos.mod
     NumeroEstudiantesPorSemestreModule,
     ParametrosInicialesModule,
     NivelesModule,
-    EspaciosFisicosModule
+    EspaciosFisicosModule,
+    HorasNoDisponiblesModule
   ],
   controllers: [ActividadesController],
   providers: [ActividadesService],
