@@ -254,4 +254,22 @@ export class ActividadesService {
     return restriccionesFiltro;
   }
 
+  async obtenerConstraintActivityPreferredRoom(){
+    const restricciones = await this.restriccionActividadRespository.find({
+      relations: ['actividad','espacioFisico'],
+    })
+    let restriccionesFiltro = restricciones.map((restriccion)=>{
+      return {
+        Weight_Percentage:100,
+        Activity_Id: restriccion.actividad.id,
+        Room: restriccion.espacioFisico.nombre,
+        Permanently_Locked: true,
+        Active: true,
+        Comments: " ",
+      }
+    })
+
+    return restriccionesFiltro;
+  }
+
 }
