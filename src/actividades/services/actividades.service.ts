@@ -1,4 +1,4 @@
-import { BadGatewayException, BadRequestException, Injectable, Logger } from '@nestjs/common';
+import { BadGatewayException, BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AsignaturaEntity } from '../../asignatura/entities/asignatura.entity';
 import { AsignaturaService } from '../../../src/asignatura/services/asignatura.service';
@@ -9,7 +9,7 @@ import { GrupoService } from '../../../src/niveles/services/grupo.service';
 import { NumeroEstudiantesPorSemestreService } from '../../../src/numero_estudiantes/services/numeroEstudiantesPorSemestre.service';
 import { TipoAulaEntity } from '../../../src/parametros-iniciales/entities/tipo-aula.entity';
 import { TipoAulaService } from '../../../src/parametros-iniciales/services/tipo-aula.service';
-import { Repository } from 'typeorm';
+import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { CrearActividadDto } from '../dtos/crear-actividad.dto';
 import { ActividadEntity } from '../entities/actividad.entity';
 import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_fisicos.service';
@@ -33,7 +33,7 @@ export class ActividadesService {
     @InjectRepository(RestriccionActividadEntity)
     private restriccionActividadRespository: Repository<RestriccionActividadEntity>,
     private horasNoDisponiblesService: HorasNoDisponiblesService
-  ) {}
+  ) { }
 
   validarDuracionActividad(actividad: ActividadEntity) {
     if (actividad.duracion <= this.limiteActividadDuracion) {
@@ -99,12 +99,26 @@ export class ActividadesService {
     return nuevaActividad;
   }
 
+  //Actualizar actividad
+  async actualizarActividadPorId(
+    idActividad: number,
+    actividadDto: CrearActividadDto
+  ): Promise<UpdateResult | NotFoundException> {
+    const actividad = await this.obtenerActividadPorId(idActividad);
+    if (actividad) {
+      return await this.actividadRespository.update(idActividad, actividadDto);
+    } else {
+      return new NotFoundException(`No existe el docente con id ${idActividad}`);
+    }
+  }
+
   async obtenerActividades() {
     Logger.log('Se han listado las actividades', 'ACTIVIDADES');
     return await this.actividadRespository.find({
       relations: ['asignatura', 'docente', 'grupo', 'tipoAula'],
     });
   }
+
 
   async obtenerAsignaturasPorDocente(
     idDocente: string,
@@ -124,54 +138,71 @@ export class ActividadesService {
     }
   }
 
-  async obtenerActividadPorId(idActividad:number): Promise<ActividadEntity>{
+  async obtenerActividadPorId(idActividad: number): Promise<ActividadEntity> {
     const actividad = await this.actividadRespository.findOne({
-      where:{
+      where: {
         id: idActividad,
       },
-      relations: ['docente','tipoAula','asignatura','grupo']
+      relations: ['docente', 'tipoAula', 'asignatura', 'grupo']
     });
-    if(actividad){
+    if (actividad) {
       return actividad;
-    }else{
+    } else {
       throw new Error("No existe la actividad");
     }
   }
 
-  async crearRestriccion(restriccion:CrearRestriccionDto){
-    const espacioFisico= await this.espacioFisicoService.obtenerEspacioFisicoPorId(restriccion.idEspacioFisico)
+  //
+  async eliminarActividadPorId(idActividad: number) {
     const actividad = await this.actividadRespository.findOne({
-      where:{
+      where: {
+        id: idActividad,
+      }
+    })
+    if (actividad) {
+      await this.actividadRespository.delete(idActividad);
+      console.log("Restriccion eliminada")
+      return actividad;
+    } else {
+      throw new Error("No existe la actividad");
+    }
+  }
+
+
+  async crearRestriccion(restriccion: CrearRestriccionDto) {
+    const espacioFisico = await this.espacioFisicoService.obtenerEspacioFisicoPorId(restriccion.idEspacioFisico)
+    const actividad = await this.actividadRespository.findOne({
+      where: {
         id: restriccion.idActividad,
       },
-      relations:['docente']
+      relations: ['docente']
     });
     const exiteRestriccion = await this.restriccionActividadRespository.findOne({
-      where:{
+      where: {
         hora: restriccion.hora,
         dia: restriccion.dia,
-        espacioFisico: espacioFisico 
+        espacioFisico: espacioFisico
       },
-      relations:['actividad','actividad.docente']
+      relations: ['actividad', 'actividad.docente']
     });
 
     const horasNoDisponiblesDocente = await this.horasNoDisponiblesService.obtenerHorasDiasNoDisponiblesDelDocente(actividad.docente.id)
 
-    horasNoDisponiblesDocente.map((horaNoDisponible)=>{
-      const horaFormato = `${horaNoDisponible.hora_inicio}:00-${horaNoDisponible.hora_inicio +1}:00`
-      console.log(this.verificarDiaHora(restriccion.dia.toUpperCase(), restriccion.hora, horaNoDisponible.dia.toUpperCase(),horaFormato))
-      if(this.verificarDiaHora(restriccion.dia.toUpperCase(), restriccion.hora, horaNoDisponible.dia.toUpperCase(),horaFormato)){
-       return
+    horasNoDisponiblesDocente.map((horaNoDisponible) => {
+      const horaFormato = `${horaNoDisponible.hora_inicio}:00-${horaNoDisponible.hora_inicio + 1}:00`
+      console.log(this.verificarDiaHora(restriccion.dia.toUpperCase(), restriccion.hora, horaNoDisponible.dia.toUpperCase(), horaFormato))
+      if (this.verificarDiaHora(restriccion.dia.toUpperCase(), restriccion.hora, horaNoDisponible.dia.toUpperCase(), horaFormato)) {
+        return
       }
       throw new BadGatewayException({
         message: `El docente no esta disponible el dia ${horaNoDisponible.dia} de ${horaFormato}`
       })
     })
 
-    if(exiteRestriccion){
+    if (exiteRestriccion) {
       throw new BadGatewayException({
         message: 'Ya existe dicha restricción',
-        data: {restriccion:exiteRestriccion}
+        data: { restriccion: exiteRestriccion }
       })
     }
 
@@ -179,69 +210,70 @@ export class ActividadesService {
       hora: restriccion.hora,
       dia: restriccion.dia,
       actividad: actividad,
-      espacioFisico: espacioFisico 
+      espacioFisico: espacioFisico
     });
   }
 
-  verificarDiaHora(diaRestriccion:string,horaRestriccion:string, diaDocente:String, horaDocente:string){
-    if(diaRestriccion === diaDocente && horaRestriccion === horaDocente){
-      console.log("hora permitida: ", diaRestriccion,horaRestriccion, diaDocente, horaDocente)
+  verificarDiaHora(diaRestriccion: string, horaRestriccion: string, diaDocente: String, horaDocente: string) {
+    if (diaRestriccion === diaDocente && horaRestriccion === horaDocente) {
+      console.log("hora permitida: ", diaRestriccion, horaRestriccion, diaDocente, horaDocente)
       return false
-    }else{
+    } else {
       return true
     }
 
-    
-  
+
+
   }
 
-  async obtenerRestriccionesPorId(idActividad:number){
+  async obtenerRestriccionesPorId(idActividad: number) {
     const restricciones = await this.restriccionActividadRespository.find({
-      where:{
-        actividad:{
+      where: {
+        actividad: {
           id: idActividad,
         }
       },
-      relations:['espacioFisico']
+      relations: ['espacioFisico']
     })
-    if(restricciones.length){
-      const restriccionesFiltro = restricciones.map((param)=>{
+    if (restricciones.length) {
+      const restriccionesFiltro = restricciones.map((param) => {
         return {
-          idRestriccion:param.id,
+          idRestriccion: param.id,
           idEspacioFisico: param.espacioFisico.id,
-          espacioFisico:param.espacioFisico.nombre,
+          espacioFisico: param.espacioFisico.nombre,
           dia: param.dia,
           hora: param.hora,
         }
       })
       return restriccionesFiltro;
-    }else{
+    } else {
       return restricciones
     }
   }
 
-  async eliminarRestriccionPorId(idRestriccion: number){
+  async eliminarRestriccionPorId(idRestriccion: number) {
     const restriccion = await this.restriccionActividadRespository.findOne({
-      where:{
+      where: {
         id: idRestriccion,
       }
     })
-    if(restriccion){
+    if (restriccion) {
       await this.restriccionActividadRespository.delete(idRestriccion);
       //console.log("Restriccion eliminada")
       return restriccion;
-    }else{
+    } else {
       throw new Error("No existe la restriccion");
     }
   }
 
-  async obtenerConstraintActivityPreferredStartingTime(){
+
+  async obtenerConstraintActivityPreferredStartingTime() {
     const restricciones = await this.restriccionActividadRespository.find({
-      relations: ['actividad','espacioFisico'],
+      relations: ['actividad', 'espacioFisico'],
     })
-    let restriccionesFiltro = restricciones.map((restriccion)=>{
+    let restriccionesFiltro = restricciones.map((restriccion) => {
       return {
-        Weight_Percentage:100,
+        Weight_Percentage: 100,
         Activity_Id: restriccion.actividad.id,
         Preferred_Day: restriccion.dia.charAt(0).toUpperCase() + restriccion.dia.slice(1,).toLowerCase(),
         Preferred_Hour: restriccion.hora,
@@ -254,13 +286,13 @@ export class ActividadesService {
     return restriccionesFiltro;
   }
 
-  async obtenerConstraintActivityPreferredRoom(){
+  async obtenerConstraintActivityPreferredRoom() {
     const restricciones = await this.restriccionActividadRespository.find({
-      relations: ['actividad','espacioFisico'],
+      relations: ['actividad', 'espacioFisico'],
     })
-    let restriccionesFiltro = restricciones.map((restriccion)=>{
+    let restriccionesFiltro = restricciones.map((restriccion) => {
       return {
-        Weight_Percentage:100,
+        Weight_Percentage: 100,
         Activity_Id: restriccion.actividad.id,
         Room: restriccion.espacioFisico.nombre,
         Permanently_Locked: true,

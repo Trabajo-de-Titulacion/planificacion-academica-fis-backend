@@ -1,9 +1,10 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
 import { CrearActividadDto } from '../dtos/crear-actividad.dto';
 import { ActividadesService } from '../services/actividades.service';
 import { ApiTags } from '@nestjs/swagger';
 import { Public } from 'src/auth/decorators/public.decorator';
 import { CrearRestriccionDto } from '../dtos/crear-restriccion.dto';
+import { isUUID } from 'class-validator';
 
 @ApiTags('Actividades')
 @Controller('actividades')
@@ -32,6 +33,22 @@ export class ActividadesController {
     return await this.actividadesService.obtenerActividadPorId(id);
   }
 
+  //
+  @Put('actualizarActividadPorId/:id')
+  @Public()
+  async actualizarActividadPorId(
+    @Param('id') idActividad: number,
+    @Body() actividadDto: CrearActividadDto,
+  ){
+    if (idActividad && !isUUID(idActividad)) {
+      throw new HttpException(
+        'No se ha encontrado la actividad',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+    return await this.actividadesService.actualizarActividadPorId(idActividad,actividadDto)
+  }
+
   @Get('obtenerRestriccionesPorId/:id')
   @Public()
   async obtenerRestriccionesPorId(@Param('id',ParseIntPipe) id: number){
@@ -42,6 +59,13 @@ export class ActividadesController {
   @Public()
   async eliminarRestriccionPorId(@Param('id',ParseIntPipe) id: number){
     return await this.actividadesService.eliminarRestriccionPorId(id);
+  }
+
+  //
+  @Delete('eliminarActividadPorId/:id')
+  @Public()
+  async eliminarActividad(@Param('id', ParseIntPipe) id: number){
+    return await this.actividadesService.eliminarActividadPorId(id)
   }
 
 }
