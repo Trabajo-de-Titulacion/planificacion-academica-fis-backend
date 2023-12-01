@@ -266,7 +266,44 @@ export class ActividadesService {
     }
   }
 
-  async eliminarRestriccionPorId(idRestriccion: number) {
+  //MEtodo apra obtener reestricciones del docente por id
+  async obtenerRestriccionesDelDocentePorId(idDocente: string){
+    const docente = await this.docenteService.obtenerDocentePorID(idDocente)
+    if(docente instanceof NotFoundException){
+      throw docente as NotFoundException
+    }
+    const actividadesDelDocente = await this.actividadRespository.find({
+      where: {
+        docente
+      }
+    })
+    let restricciones = actividadesDelDocente.map(async (actividad) => {
+      const restricciones = await this.restriccionActividadRespository.find({
+        where: {
+          actividad
+        },
+        relations: ["actividad"]
+      })
+      return restricciones
+    })
+   
+    let restriccionesResuelteas = await Promise.all(restricciones)
+    let restriccionesFIltro = [];
+
+    restriccionesResuelteas.map((restriccion) => {
+      restriccion.map((r) => {
+        restriccionesFIltro.push({
+          dia: r.dia,
+          hora_inicio: parseInt(r.hora.split(":")[0]),
+          idActividad: r.actividad.id,  
+        })
+      })
+    })
+
+    return restriccionesFIltro;
+  }
+
+  async eliminarRestriccionPorId(idRestriccion: number){
     const restriccion = await this.restriccionActividadRespository.findOne({
       where: {
         id: idRestriccion,

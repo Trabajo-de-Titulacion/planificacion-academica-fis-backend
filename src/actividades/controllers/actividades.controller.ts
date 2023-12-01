@@ -51,6 +51,13 @@ export class ActividadesController {
     return await this.actividadesService.obtenerRestriccionesPorId(id);
   }
 
+  //PAra obtener reestricciones del docente por ID
+  @Get('obtenerRestriccionesDelDocentePorId/:id')
+  @Public()
+  async obtenerRestriccionedelDocentePorId(@Param('id') id: string){
+    return await this.actividadesService.obtenerRestriccionesDelDocentePorId(id);
+  }
+
   @Delete('eliminarRestriccionPorId/:id')
   @Public()
   async eliminarRestriccionPorId(@Param('id',ParseIntPipe) id: number){
