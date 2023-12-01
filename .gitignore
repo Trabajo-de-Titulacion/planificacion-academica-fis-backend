@@ -4,6 +4,7 @@ databaseData/
 # compiled output
 /dist
 /node_modules
+/postgres
 
 # Logs
 logs

@@ -307,6 +307,11 @@ export class HorasNoDisponiblesService {
     }) 
   }
 
+  async calcultarTotalDeHorasNoDisponiblesDelDocente(idDocente: string){
+    const horasNoDisponiblesDelDocente = await this.obtenerHorasDiasNoDisponiblesDelDocente(idDocente);
+    return horasNoDisponiblesDelDocente.length;
+  }
+
   //Para obtener horas dias No disponbiles por id docente
   async obtenerHorasDiasNoDisponiblesDelDocente(idDocente: string){
     const docente = await this.docentesService.obtenerDocentePorID(idDocente)
@@ -330,22 +335,37 @@ export class HorasNoDisponiblesService {
   //Metodo para archivo FET
 
   async getEtiquetasHorarios(){
+    
     const horasNoDisponibles = await this.horasNoDisponiblesRepository.find({
       relations: [
         "jornada",
         "docente"
       ]
     })
-    let output = horasNoDisponibles.map(e => {
+    const docentes = await this.docentesService.obtenerDocentes();
+
+    let output = [];
+    let output_promises = docentes.map(async docente => {
+    const weight_percentage = 100;  
+    const totalHoras = await this.calcultarTotalDeHorasNoDisponiblesDelDocente(docente.id);
+    const horasNoDisponiblesDocente = await this.obtenerHorasDiasNoDisponiblesDelDocente(docente.id);
+    const horasFiltro = horasNoDisponiblesDocente.map( horaNoDisponibleDocente => {
+      return {
+        day: horaNoDisponibleDocente.dia,
+        hour: `${horaNoDisponibleDocente.hora_inicio < 10 ? '0' + horaNoDisponibleDocente.hora_inicio : horaNoDisponibleDocente.hora_inicio}:00-${horaNoDisponibleDocente.hora_inicio+1 < 10 ? '0'+horaNoDisponibleDocente.hora_inicio+1 : horaNoDisponibleDocente.hora_inicio+1}:00`,
+      }
+    }
+    ) 
        return {
-          weight_percentage: 100,
-          teacher: e.docente.nombreCompleto,
-          number_of_not_available_times: ,
+          weight_percentage,
+          teacher: docente.nombreCompleto,
+          number_of_not_available_times: totalHoras,
+          not_available_time: horasFiltro,
        }
     })
-    let outputTImes = horasNoDisponibles.map(e => {
-      day: e.jornada,
-      hour: e.hora_inicio,
+    return Promise.all(output_promises).then(resultados => {
+      output = resultados;
+      return output;
     })
   }
 }

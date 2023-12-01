@@ -132,4 +132,13 @@ export class HorasNoDisponiblesController {
     );
   }
 
+  @Public()
+  @Get("test-fet")
+  @ApiOperation({
+    summary: 'Probar etiquetas generadas de FET sobre horarios no disponibles del docente'
+  })
+  async testFet(){
+    return await this.horasNoDisponiblesService.getEtiquetasHorarios();
+  }
+
 }
