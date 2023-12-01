@@ -327,4 +327,25 @@ export class HorasNoDisponiblesService {
     return horasNoDisponiblesFiltro
   }
   
+  //Metodo para archivo FET
+
+  async getEtiquetasHorarios(){
+    const horasNoDisponibles = await this.horasNoDisponiblesRepository.find({
+      relations: [
+        "jornada",
+        "docente"
+      ]
+    })
+    let output = horasNoDisponibles.map(e => {
+       return {
+          weight_percentage: 100,
+          teacher: e.docente.nombreCompleto,
+          number_of_not_available_times: ,
+       }
+    })
+    let outputTImes = horasNoDisponibles.map(e => {
+      day: e.jornada,
+      hour: e.hora_inicio,
+    })
+  }
 }

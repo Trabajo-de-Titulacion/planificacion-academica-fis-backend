@@ -1,4 +1,4 @@
-import { BadGatewayException, BadRequestException, Injectable, Logger } from '@nestjs/common';
+import { BadGatewayException, BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AsignaturaEntity } from '../../asignatura/entities/asignatura.entity';
 import { AsignaturaService } from '../../../src/asignatura/services/asignatura.service';
@@ -190,6 +190,43 @@ export class ActividadesService {
     }else{
       return restricciones
     }
+  }
+
+  //MEtodo apra obtener reestricciones del docente por id
+  async obtenerRestriccionesDelDocentePorId(idDocente: string){
+    const docente = await this.docenteService.obtenerDocentePorID(idDocente)
+    if(docente instanceof NotFoundException){
+      throw docente as NotFoundException
+    }
+    const actividadesDelDocente = await this.actividadRespository.find({
+      where: {
+        docente
+      }
+    })
+    let restricciones = actividadesDelDocente.map(async (actividad) => {
+      const restricciones = await this.restriccionActividadRespository.find({
+        where: {
+          actividad
+        },
+        relations: ["actividad"]
+      })
+      return restricciones
+    })
+   
+    let restriccionesResuelteas = await Promise.all(restricciones)
+    let restriccionesFIltro = [];
+
+    restriccionesResuelteas.map((restriccion) => {
+      restriccion.map((r) => {
+        restriccionesFIltro.push({
+          dia: r.dia,
+          hora_inicio: parseInt(r.hora.split(":")[0]),
+          idActividad: r.actividad.id,  
+        })
+      })
+    })
+
+    return restriccionesFIltro;
   }
 
   async eliminarRestriccionPorId(idRestriccion: number){
