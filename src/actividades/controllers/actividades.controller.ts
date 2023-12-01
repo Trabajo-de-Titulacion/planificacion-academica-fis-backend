@@ -5,6 +5,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { Public } from 'src/auth/decorators/public.decorator';
 import { CrearRestriccionDto } from '../dtos/crear-restriccion.dto';
 import { isUUID } from 'class-validator';
+import { ActualizarActividadDto } from '../dtos/actualizar-actividad.dto';
 
 @ApiTags('Actividades')
 @Controller('actividades')
@@ -33,19 +34,14 @@ export class ActividadesController {
     return await this.actividadesService.obtenerActividadPorId(id);
   }
 
-  //
+  //Actualizar por Id
   @Put('actualizarActividadPorId/:id')
   @Public()
   async actualizarActividadPorId(
     @Param('id') idActividad: number,
-    @Body() actividadDto: CrearActividadDto,
+    @Body() actividadDto: ActualizarActividadDto,
   ){
-    if (idActividad && !isUUID(idActividad)) {
-      throw new HttpException(
-        'No se ha encontrado la actividad',
-        HttpStatus.BAD_REQUEST,
-      );
-    }
+    console.log("actualizar actividad", idActividad, actividadDto);
     return await this.actividadesService.actualizarActividadPorId(idActividad,actividadDto)
   }
 

@@ -16,6 +16,7 @@ import { EspaciosFisicosService } from 'src/espacios_fisicos/services/espacios_f
 import { CrearRestriccionDto } from '../dtos/crear-restriccion.dto';
 import { RestriccionActividadEntity } from '../entities/restriccion-actividad.entity';
 import { HorasNoDisponiblesService } from 'src/horas_no_disponibles/services/horas_no_disponibles.service';
+import { ActualizarActividadDto } from '../dtos/actualizar-actividad.dto';
 
 @Injectable()
 export class ActividadesService {
@@ -102,13 +103,27 @@ export class ActividadesService {
   //Actualizar actividad
   async actualizarActividadPorId(
     idActividad: number,
-    actividadDto: CrearActividadDto
-  ): Promise<UpdateResult | NotFoundException> {
+    actividadDto: ActualizarActividadDto
+  ): Promise<ActividadEntity> {
+
     const actividad = await this.obtenerActividadPorId(idActividad);
+    console.log("actividad: ",actividad);
     if (actividad) {
-      return await this.actividadRespository.update(idActividad, actividadDto);
+      const asignatura =await this.asignaturaService.obtenerAsignaturaPorID(actividadDto.idAsignatura);
+      const grupo = await this.grupoService.obtenerGrupoPorID(actividadDto.idGrupo);
+
+      console.log(asignatura)
+      let nuevaActividad : ActividadEntity;
+      nuevaActividad = actividad;
+      nuevaActividad.grupo= grupo;
+      nuevaActividad.duracion = actividadDto.duracion;
+      nuevaActividad.asignatura = asignatura as AsignaturaEntity
+
+      await this.actividadRespository.update(idActividad, actividadDto);
+
+      return nuevaActividad;
     } else {
-      return new NotFoundException(`No existe el docente con id ${idActividad}`);
+      throw new NotFoundException(`No existe la actividad con Id ${idActividad}`);
     }
   }
 
