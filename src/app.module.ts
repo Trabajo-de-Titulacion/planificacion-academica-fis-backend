@@ -19,7 +19,6 @@ import { NivelesModule } from './niveles/niveles.module';
 import { NumeroEstudiantesPorSemestreModule } from './numero_estudiantes/numeroEstudiantesPorSemestre.module';
 import * as Joi from 'joi';
 import { TerminusModule } from '@nestjs/terminus';
-import { ExperimentacionModule } from './experimentacion/experimentacion.module';
 
 @Module({
   imports: [
@@ -61,8 +60,6 @@ import { ExperimentacionModule } from './experimentacion/experimentacion.module'
     NivelesModule,
     NumeroEstudiantesPorSemestreModule,
     TerminusModule,
-    //ModuloExperimentacion
-    ExperimentacionModule
   ],
   controllers: [AppController],
 })

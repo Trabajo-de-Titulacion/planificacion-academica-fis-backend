@@ -337,10 +337,13 @@ export class HorarioService {
       };
     });
 
-    //Restricciones
+    //Restricciones de tiempo
     const restriccionesInfo = await this.actividadesService.obtenerConstraintActivityPreferredStartingTime();
     console.log('restriccionesInfo',restriccionesInfo)
 
+    //Restricciones de espacio 
+    const restriccionesEspacio = await this.actividadesService.obtenerConstraintActivityPreferredRoom();
+    
 
     // Builders
     const builderDias = new XMLBuilder({
@@ -392,8 +395,16 @@ export class HorarioService {
     const builderRestricciones = new XMLBuilder({
       arrayNodeName:'ConstraintActivityPreferredStartingTime',
       format: true,
-    })
+    });
     console.log(builderRestricciones.build(restriccionesInfo))
+
+    const builderRestriccionesEspacio = new XMLBuilder({
+      arrayNodeName:'ConstraintActivityPreferredRoom',
+      format: true,
+    })
+
+
+
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 \n<fet version="6.1.5">
 \n<Institution_Name>${nombreUniversidad}</Institution_Name>
@@ -427,10 +438,70 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 </ConstraintBasicCompulsoryTime>
 <ConstraintBreakTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Break_Times>1</Number_of_Break_Times>
+	<Number_of_Break_Times>16</Number_of_Break_Times>
+	<Break_Time>
+		<Day>Lunes</Day>
+		<Hour>13:00-14:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Martes</Day>
+		<Hour>13:00-14:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Miércoles</Day>
+		<Hour>13:00-14:00</Hour>
+	</Break_Time>
 	<Break_Time>
 		<Day>Jueves</Day>
 		<Hour>11:00-12:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Jueves</Day>
+		<Hour>12:00-13:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Jueves</Day>
+		<Hour>13:00-14:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Viernes</Day>
+		<Hour>13:00-14:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>13:00-14:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>14:00-15:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>15:00-16:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>16:00-17:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>17:00-18:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>18:00-19:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>19:00-20:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>20:00-21:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Sábado</Day>
+		<Hour>21:00-22:00</Hour>
 	</Break_Time>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -447,9 +518,8 @@ ${builderRestricciones.build(restriccionesInfo)}
 	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
 
-<ConstraintActivityPreferredRoom>
+${builderRestriccionesEspacio.build(restriccionesEspacio)}
 
-</ConstraintActivityPreferredRoom>
 </Space_Constraints_List>
 
 
