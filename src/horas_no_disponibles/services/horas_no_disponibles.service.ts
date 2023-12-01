@@ -335,19 +335,20 @@ export class HorasNoDisponiblesService {
   //Metodo para archivo FET
 
   async getEtiquetasHorarios(){
-    const weight_percentage = 100;
-
+    
     const horasNoDisponibles = await this.horasNoDisponiblesRepository.find({
       relations: [
         "jornada",
         "docente"
       ]
     })
+    const docentes = await this.docentesService.obtenerDocentes();
 
-    let output = horasNoDisponibles.map(async horasNoDisponible => {
-
-    const totalHoras = await this.calcultarTotalDeHorasNoDisponiblesDelDocente(horasNoDisponible.docente.id);
-    const horasNoDisponiblesDocente = await this.obtenerHorasDiasNoDisponiblesDelDocente(horasNoDisponible.docente.id);
+    let output = [];
+    let output_promises = docentes.map(async docente => {
+    const weight_percentage = 100;  
+    const totalHoras = await this.calcultarTotalDeHorasNoDisponiblesDelDocente(docente.id);
+    const horasNoDisponiblesDocente = await this.obtenerHorasDiasNoDisponiblesDelDocente(docente.id);
     const horasFiltro = horasNoDisponiblesDocente.map( horaNoDisponibleDocente => {
       return {
         day: horaNoDisponibleDocente.dia,
@@ -357,12 +358,14 @@ export class HorasNoDisponiblesService {
     ) 
        return {
           weight_percentage,
-          teacher: horasNoDisponible.docente.nombreCompleto,
+          teacher: docente.nombreCompleto,
           number_of_not_available_times: totalHoras,
           not_available_time: horasFiltro,
        }
     })
-
-    return output;
+    return Promise.all(output_promises).then(resultados => {
+      output = resultados;
+      return output;
+    })
   }
 }
