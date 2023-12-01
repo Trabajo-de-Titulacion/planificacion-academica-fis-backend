@@ -340,12 +340,7 @@ export class HorasNoDisponiblesService {
        return {
           weight_percentage: 100,
           teacher: e.docente.nombreCompleto,
-          number_of_not_available_times: ,
        }
-    })
-    let outputTImes = horasNoDisponibles.map(e => {
-      day: e.jornada,
-      hour: e.hora_inicio,
     })
   }
 }
