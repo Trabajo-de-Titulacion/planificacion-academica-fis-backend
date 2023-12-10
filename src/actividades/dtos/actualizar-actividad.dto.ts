@@ -11,6 +11,16 @@ export class ActualizarActividadDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
+  idDocente: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  idTipoAula: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
   idGrupo: string;
 
   @ApiProperty()

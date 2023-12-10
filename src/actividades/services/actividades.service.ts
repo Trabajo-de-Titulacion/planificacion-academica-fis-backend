@@ -110,16 +110,20 @@ export class ActividadesService {
     console.log("actividad: ",actividad);
     if (actividad) {
       const asignatura =await this.asignaturaService.obtenerAsignaturaPorID(actividadDto.idAsignatura);
+      const docente = await this.docenteService.obtenerDocentePorID(actividadDto.idDocente);
+      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(actividadDto.idTipoAula);
       const grupo = await this.grupoService.obtenerGrupoPorID(actividadDto.idGrupo);
 
-      console.log(asignatura)
+      console.log('asignatura**',asignatura)
       let nuevaActividad : ActividadEntity;
       nuevaActividad = actividad;
+      nuevaActividad.docente = docente as DocenteEntity;
+      nuevaActividad.tipoAula = tipoAula;
       nuevaActividad.grupo= grupo;
       nuevaActividad.duracion = actividadDto.duracion;
       nuevaActividad.asignatura = asignatura as AsignaturaEntity
 
-      await this.actividadRespository.update(idActividad, actividadDto);
+      await this.actividadRespository.update(idActividad, nuevaActividad);
 
       return nuevaActividad;
     } else {
