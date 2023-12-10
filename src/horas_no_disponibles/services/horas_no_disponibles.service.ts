@@ -22,6 +22,7 @@ import { DocenteEntity } from 'src/docente/entities/docente.entity';
 import { log } from 'console';
 import { logger } from 'handlebars';
 import e from 'express';
+import dayjs from 'dayjs';
 
 @Injectable()
 export class HorasNoDisponiblesService {
@@ -350,17 +351,30 @@ export class HorasNoDisponiblesService {
     const totalHoras = await this.calcultarTotalDeHorasNoDisponiblesDelDocente(docente.id);
     const horasNoDisponiblesDocente = await this.obtenerHorasDiasNoDisponiblesDelDocente(docente.id);
     const horasFiltro = horasNoDisponiblesDocente.map( horaNoDisponibleDocente => {
+      const day = (horaNoDisponibleDocente.dia && typeof horaNoDisponibleDocente.dia === 'string') ? horaNoDisponibleDocente.dia.charAt(0) + horaNoDisponibleDocente.dia.slice(1).toLowerCase(): '';
+      
+      const startHour = horaNoDisponibleDocente.hora_inicio < 10
+      ? '0' + horaNoDisponibleDocente.hora_inicio : horaNoDisponibleDocente.hora_inicio;
+
+      const endHour = horaNoDisponibleDocente.hora_inicio + 1 < 10
+      ? '0' + (horaNoDisponibleDocente.hora_inicio + 1) : horaNoDisponibleDocente.hora_inicio + 1;
+
       return {
-        day: horaNoDisponibleDocente.dia,
-        hour: `${horaNoDisponibleDocente.hora_inicio < 10 ? '0' + horaNoDisponibleDocente.hora_inicio : horaNoDisponibleDocente.hora_inicio}:00-${horaNoDisponibleDocente.hora_inicio+1 < 10 ? '0'+horaNoDisponibleDocente.hora_inicio+1 : horaNoDisponibleDocente.hora_inicio+1}:00`,
+        "Day": day,
+        "Hour": `${startHour}:00-${endHour}:00`,
       }
+
+      //return {
+        //day: horaNoDisponibleDocente.dia,
+        //hour: `${horaNoDisponibleDocente.hora_inicio < 10 ? '0' + horaNoDisponibleDocente.hora_inicio : horaNoDisponibleDocente.hora_inicio}:00-${horaNoDisponibleDocente.hora_inicio+1 < 10 ? '0'+horaNoDisponibleDocente.hora_inicio+1 : horaNoDisponibleDocente.hora_inicio+1}:00`,
+      //}
     }
     ) 
        return {
-          weight_percentage,
-          teacher: docente.nombreCompleto,
-          number_of_not_available_times: totalHoras,
-          not_available_time: horasFiltro,
+          "Weight_Percentage": weight_percentage,
+          "Teacher": docente.nombreCompleto,
+          "Number_of_Not_Available_Times": totalHoras,
+          "Not_Available_Time": horasFiltro,
        }
     })
     return Promise.all(output_promises).then(resultados => {

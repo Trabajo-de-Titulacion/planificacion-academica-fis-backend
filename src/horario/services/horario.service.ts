@@ -344,8 +344,15 @@ export class HorarioService {
     //Restricciones de espacio 
     const restriccionesEspacio = await this.actividadesService.obtenerConstraintActivityPreferredRoom();
     
+    //Restricciones de horarios no disponibles
+    const restriccionesHorariosNoDisponibles = await this.horasNoDisponiblesService.getEtiquetasHorarios();
 
-    // Builders
+    // Builders 
+    const builderHorasNoDisponibles = new XMLBuilder({
+      arrayNodeName: 'ConstraintTeacherNotAvailableTimes',
+      format: true,
+    });
+
     const builderDias = new XMLBuilder({
       arrayNodeName: 'Day',
       format: true,
@@ -508,6 +515,8 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 </ConstraintBreakTimes>
 
 ${builderRestricciones.build(restriccionesInfo)}
+
+${builderHorasNoDisponibles.build(restriccionesHorariosNoDisponibles)}
 
 </Time_Constraints_List>
 
