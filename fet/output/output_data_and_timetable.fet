@@ -9,15 +9,12 @@
 <Comments>Facultad de Ingeniería de Sistemas</Comments>
 
 <Days_List>
-<Number_of_Days>6</Number_of_Days>
+<Number_of_Days>5</Number_of_Days>
 <Day>
 	<Name>Lunes</Name>
 </Day>
 <Day>
 	<Name>Martes</Name>
-</Day>
-<Day>
-	<Name>Sábado</Name>
 </Day>
 <Day>
 	<Name>Miércoles</Name>
@@ -666,8 +663,6 @@
 	<Name>AGUIAR PONTES JOSAFÁ DE JESÚS</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
-		<Qualified_Subject>SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)</Qualified_Subject>
-		<Qualified_Subject>ISWR253 (FUNDAMENTOS DE PROGRAMACIÓN)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -675,7 +670,7 @@
 	<Name>AGUILAR WILBERT</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
-		<Qualified_Subject>ICCD733 (SEGURIDAD INFORMÁTICA)</Qualified_Subject>
+		<Qualified_Subject>SIC744 (ADMINISTRACION DE BASE DE DATOS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -690,6 +685,8 @@
 	<Name>ANDRADE HINOJOSA WILLIAM HUMBERTO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)</Qualified_Subject>
+		<Qualified_Subject>MCSR134 (ALGORITMOS Y COMPLEJIDAD)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -697,6 +694,7 @@
 	<Name>ANDRADE PAREDES ROBERTO OMAR</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWR442 (ALGORITMOS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -704,6 +702,7 @@
 	<Name>ASTUDILLO ESPINOZA BORIS ALFONSO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MSIR123 (ALMACENAMIENTO DE DATOS MASIVOS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -718,6 +717,7 @@
 	<Name>BARRIGA ANDRADE JHONATTAN JAVIER</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MSIR112 (ANALITICA DE DATOS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -725,6 +725,7 @@
 	<Name>BENALCÁZAR PALACIOS MARCO ENRIQUE</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>SIC644 (APLICACIONES EN AMBIENTES LIBRES)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -732,6 +733,7 @@
 	<Name>CALLE JIMÉNEZ TANIA ELIZABETH</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>SIC764 (APLICACIONES MOVILES)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -739,6 +741,7 @@
 	<Name>CAMPAÑA ORTEGA EDUARDO MAURICIO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWR724 (APLICACIONES MÓVILES)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -746,6 +749,7 @@
 	<Name>CARRERA IZURIETA IVÁN MARCELO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWR624 (APLICACIONES WEB)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -753,6 +757,7 @@
 	<Name>CARRILLO CALDERÓN SANTIAGO ROBERTO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MSIR153 (APRENDIZAJE DE MÁQUINA)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -760,6 +765,7 @@
 	<Name>CARRIÓN TORO MAYRA DEL CISNE</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWR163 (ARQUITECTURA DE COMPUTADORES)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -767,6 +773,7 @@
 	<Name>CEVALLOS TERÁN CARLOS XAVIER</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MSWR213 (ASEGURAMIENTO DE LA CALIDAD Y SEGURIDAD DE SOFTWARE)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -774,6 +781,7 @@
 	<Name>CHANCUSIG CHUQUILLA RODRIGO FABIÁN</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>SIC816 (AUDITORIA Y EVALUACION DE SISTEMAS COMPUTACIONALES)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -781,6 +789,8 @@
 	<Name>CHANCUSIG ESPÍN BERNARDINO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MATD113 (ALGEBRA LINEAL)</Qualified_Subject>
+		<Qualified_Subject>CSHD211 (ANÁLISIS SOCIOECONÓMICO Y POLÍTICO DEL ECUADOR)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -788,6 +798,7 @@
 	<Name>CÓRDOVA BAYAS MARCOS RAÚL</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWD813 (APLICACIONES WEB AVANZADAS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -795,6 +806,7 @@
 	<Name>DEL HIERRO CADENA PABLO FERNANDO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>CSHD300 (ASIGNATURA DE ARTES Y HUMANIDADES)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -802,6 +814,7 @@
 	<Name>ECHEVERRÍA CULQUI HENRY MANOLO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>CSHD500 (ASIGNATURA DE COMUNICACIÓN)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -809,6 +822,7 @@
 	<Name>EGUEZ SARZOSA VICENTE ADRIÁN</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>CSHD500 (ASIGNATURA DE COMUNICACIÓN)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -816,6 +830,7 @@
 	<Name>FLORES ARMAS DENYS ALBERTO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>CSHD400 (ASIGNATURA DE ECONOMÍA Y SOCIEDAD)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -823,6 +838,7 @@
 	<Name>FLORES NARANJO PAMELA CATHERINE</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ICCD833 (AUDITORÍA INFORMÁTICA)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -830,6 +846,7 @@
 	<Name>FUERTES DÍAZ WALTER MARCELO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWD762 (AUTOMATIZACIÓN DE PROCESOS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -837,6 +854,7 @@
 	<Name>GALINDO LOZADA JULIÁN ANDRÉS</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWR464 (BASE DE DATOS DISTRIBUIDAS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -844,6 +862,7 @@
 	<Name>GAVILANES SAGNAY FREDY MARCELO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWD553 (BASES DE DATOS DISTRIBUIDAS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -851,6 +870,7 @@
 	<Name>HALLO CARRASCO MARÍA ASUNCIÓN</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ICOD111 (BASES DE DATOS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -858,6 +878,7 @@
 	<Name>HERNÁNDEZ ÁLVAREZ MYRIAM BEATRIZ</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ISWD743 (BUSINESS INTELLIGENCE)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -865,6 +886,7 @@
 	<Name>HERRERA SILVA JUAN ALBERTO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MATR224 (CALCULO VECTORIAL)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -872,6 +894,7 @@
 	<Name>INTRIAGO PAZMIÑO MARÍA MONSERRATE</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MATR224 (CALCULO VECTORIAL)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -879,6 +902,7 @@
 	<Name>IÑIGUEZ JARRÍN CARLOS EFRAÍN</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>SIC734 (CALIDAD DE SOFTWARE)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -886,6 +910,7 @@
 	<Name>JARAMILLO JARAMILLO CECILIA ELIZABETH</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MSWR232 (CALIDAD DEL PROCESO DE SOFTWARE)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -893,6 +918,7 @@
 	<Name>LARCO AMPUDIA ENRIQUE ANDRÉS</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>MSWR222 (CALIDAD DEL PRODUCTO DE SOFTWARE)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -900,6 +926,7 @@
 	<Name>LOZA AGUIRRE EDISON FERNANDO</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>SIC800 (CERTIFICACIÓN PROFESIONAL)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -1348,6 +1375,7 @@
 	<Name>RIVERA GUEVARA RICHARD PAUL</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>ICCD654 (COMPUTACIÓN DISTRIBUIDA)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -1614,6 +1642,7 @@
 	<Name>SANDOBALÍN GUAMÁN JULIO CÉSAR</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>CIYSI (CLUB IOT Y SEGURIDAD INFORMÁTICA)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -1649,6 +1678,7 @@
 	<Name>YOO PARK SANG GUUN</Name>
 	<Target_Number_of_Hours>10</Target_Number_of_Hours>
 	<Qualified_Subjects>
+		<Qualified_Subject>SIC744 (ADMINISTRACION DE BASE DE DATOS)</Qualified_Subject>
 	</Qualified_Subjects>
 	<Comments></Comments>
 </Teacher>
@@ -1990,25 +2020,12 @@
 
 <Activities_List>
 <Activity>
-	<Teacher>AGUIAR PONTES JOSAFÁ DE JESÚS</Teacher>
-	<Subject>ISWR253 (FUNDAMENTOS DE PROGRAMACIÓN)</Subject>
-	<Activity_Tag>Laboratorio</Activity_Tag>
-	<Students>1-GR1-ICC</Students>
-	<Duration>3</Duration>
-	<Total_Duration>3</Total_Duration>
-	<Id>1</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Number_Of_Students>35</Number_Of_Students>
-	<Active>true</Active>
-	<Comments></Comments>
-</Activity>
-<Activity>
 	<Teacher>AGUILAR WILBERT</Teacher>
-	<Subject>ICCD733 (SEGURIDAD INFORMÁTICA)</Subject>
+	<Subject>SIC744 (ADMINISTRACION DE BASE DE DATOS)</Subject>
 	<Activity_Tag>Laboratorio</Activity_Tag>
-	<Students>5-GR1-ISW</Students>
-	<Duration>3</Duration>
-	<Total_Duration>3</Total_Duration>
+	<Students>1-GR2-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
 	<Id>2</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Number_Of_Students>30</Number_Of_Students>
@@ -2016,13 +2033,455 @@
 	<Comments></Comments>
 </Activity>
 <Activity>
-	<Teacher>AGUIAR PONTES JOSAFÁ DE JESÚS</Teacher>
-	<Subject>SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)</Subject>
+	<Teacher>YOO PARK SANG GUUN</Teacher>
+	<Subject>SIC744 (ADMINISTRACION DE BASE DE DATOS)</Subject>
 	<Activity_Tag>Laboratorio</Activity_Tag>
+	<Students>2-GR1-ICC</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>16</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>20</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ANDRADE HINOJOSA WILLIAM HUMBERTO</Teacher>
+	<Subject>SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>3-GR1-ICC</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>17</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ANDRADE HINOJOSA WILLIAM HUMBERTO</Teacher>
+	<Subject>MCSR134 (ALGORITMOS Y COMPLEJIDAD)</Subject>
+	<Activity_Tag>Aura regular</Activity_Tag>
+	<Students>3-GR1-ICC</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>19</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ANDRADE PAREDES ROBERTO OMAR</Teacher>
+	<Subject>ISWR442 (ALGORITMOS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>3-GR2-ICC</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>20</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ASTUDILLO ESPINOZA BORIS ALFONSO</Teacher>
+	<Subject>MSIR123 (ALMACENAMIENTO DE DATOS MASIVOS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>4-GR1-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>21</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>BARRIGA ANDRADE JHONATTAN JAVIER</Teacher>
+	<Subject>MSIR112 (ANALITICA DE DATOS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>4-GR2-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>22</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>BENALCÁZAR PALACIOS MARCO ENRIQUE</Teacher>
+	<Subject>SIC644 (APLICACIONES EN AMBIENTES LIBRES)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>5-GR1-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>23</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CALLE JIMÉNEZ TANIA ELIZABETH</Teacher>
+	<Subject>SIC764 (APLICACIONES MOVILES)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>5-GR2-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>24</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CAMPAÑA ORTEGA EDUARDO MAURICIO</Teacher>
+	<Subject>ISWR724 (APLICACIONES MÓVILES)</Subject>
+	<Activity_Tag>Laboratorio</Activity_Tag>
+	<Students>6-GR1-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>25</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CARRERA IZURIETA IVÁN MARCELO</Teacher>
+	<Subject>ISWR624 (APLICACIONES WEB)</Subject>
+	<Activity_Tag>Laboratorio</Activity_Tag>
+	<Students>6-GR2-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>26</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CARRILLO CALDERÓN SANTIAGO ROBERTO</Teacher>
+	<Subject>MSIR153 (APRENDIZAJE DE MÁQUINA)</Subject>
+	<Activity_Tag>Aura regular</Activity_Tag>
+	<Students>7-GR1-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>27</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CARRIÓN TORO MAYRA DEL CISNE</Teacher>
+	<Subject>ISWR163 (ARQUITECTURA DE COMPUTADORES)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>7-GR2-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>28</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CEVALLOS TERÁN CARLOS XAVIER</Teacher>
+	<Subject>MSWR213 (ASEGURAMIENTO DE LA CALIDAD Y SEGURIDAD DE SOFTWARE)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>8-GR1-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>29</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CHANCUSIG CHUQUILLA RODRIGO FABIÁN</Teacher>
+	<Subject>SIC816 (AUDITORIA Y EVALUACION DE SISTEMAS COMPUTACIONALES)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>1-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>30</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CHANCUSIG ESPÍN BERNARDINO</Teacher>
+	<Subject>MATD113 (ALGEBRA LINEAL)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>1-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>31</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>25</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CHANCUSIG ESPÍN BERNARDINO</Teacher>
+	<Subject>CSHD211 (ANÁLISIS SOCIOECONÓMICO Y POLÍTICO DEL ECUADOR)</Subject>
+	<Activity_Tag>Aura regular</Activity_Tag>
+	<Students>1-GR3-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>32</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>CÓRDOVA BAYAS MARCOS RAÚL</Teacher>
+	<Subject>ISWD813 (APLICACIONES WEB AVANZADAS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>2-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>33</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>DEL HIERRO CADENA PABLO FERNANDO</Teacher>
+	<Subject>CSHD300 (ASIGNATURA DE ARTES Y HUMANIDADES)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>2-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>34</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ECHEVERRÍA CULQUI HENRY MANOLO</Teacher>
+	<Subject>CSHD500 (ASIGNATURA DE COMUNICACIÓN)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>2-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>35</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>EGUEZ SARZOSA VICENTE ADRIÁN</Teacher>
+	<Subject>CSHD500 (ASIGNATURA DE COMUNICACIÓN)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>2-GR3-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>36</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>FLORES ARMAS DENYS ALBERTO</Teacher>
+	<Subject>CSHD400 (ASIGNATURA DE ECONOMÍA Y SOCIEDAD)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>3-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>37</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>FLORES NARANJO PAMELA CATHERINE</Teacher>
+	<Subject>ICCD833 (AUDITORÍA INFORMÁTICA)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>3-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>38</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>FUERTES DÍAZ WALTER MARCELO</Teacher>
+	<Subject>ISWD762 (AUTOMATIZACIÓN DE PROCESOS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>3-GR3-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>39</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>GALINDO LOZADA JULIÁN ANDRÉS</Teacher>
+	<Subject>ISWR464 (BASE DE DATOS DISTRIBUIDAS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>4-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>40</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>GAVILANES SAGNAY FREDY MARCELO</Teacher>
+	<Subject>ISWD553 (BASES DE DATOS DISTRIBUIDAS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>4-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>41</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>HALLO CARRASCO MARÍA ASUNCIÓN</Teacher>
+	<Subject>ICOD111 (BASES DE DATOS)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>5-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>42</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>HERNÁNDEZ ÁLVAREZ MYRIAM BEATRIZ</Teacher>
+	<Subject>ISWD743 (BUSINESS INTELLIGENCE)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>5-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>43</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>HERRERA SILVA JUAN ALBERTO</Teacher>
+	<Subject>MATR224 (CALCULO VECTORIAL)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>6-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>44</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>INTRIAGO PAZMIÑO MARÍA MONSERRATE</Teacher>
+	<Subject>MATR224 (CALCULO VECTORIAL)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>6-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>45</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>IÑIGUEZ JARRÍN CARLOS EFRAÍN</Teacher>
+	<Subject>SIC734 (CALIDAD DE SOFTWARE)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>7-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>46</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>JARAMILLO JARAMILLO CECILIA ELIZABETH</Teacher>
+	<Subject>MSWR232 (CALIDAD DEL PROCESO DE SOFTWARE)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>7-GR2-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>47</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>LARCO AMPUDIA ENRIQUE ANDRÉS</Teacher>
+	<Subject>MSWR222 (CALIDAD DEL PRODUCTO DE SOFTWARE)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
 	<Students>8-GR1-ISW</Students>
-	<Duration>5</Duration>
-	<Total_Duration>5</Total_Duration>
-	<Id>3</Id>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>48</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>LOZA AGUIRRE EDISON FERNANDO</Teacher>
+	<Subject>SIC800 (CERTIFICACIÓN PROFESIONAL)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>9-GR1-ISW</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>49</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>RIVERA GUEVARA RICHARD PAUL</Teacher>
+	<Subject>ICCD654 (COMPUTACIÓN DISTRIBUIDA)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>9-GR1-ICC</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>50</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>SANDOBALÍN GUAMÁN JULIO CÉSAR</Teacher>
+	<Subject>CIYSI (CLUB IOT Y SEGURIDAD INFORMÁTICA)</Subject>
+	<Activity_Tag>Aula regular</Activity_Tag>
+	<Students>8-GR2-ICC</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>51</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Number_Of_Students>30</Number_Of_Students>
 	<Active>true</Active>
@@ -2199,18 +2658,1123 @@
 </ConstraintBasicCompulsoryTime>
 <ConstraintBreakTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Break_Times>1</Number_of_Break_Times>
+	<Number_of_Break_Times>2</Number_of_Break_Times>
 	<Break_Time>
 		<Day>Jueves</Day>
 		<Hour>11:00-12:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Jueves</Day>
+		<Hour>12:00-13:00</Hour>
 	</Break_Time>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBreakTimes>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>1</Activity_Id>
-	<Preferred_Day>Lunes</Preferred_Day>
+	<Activity_Id>2</Activity_Id>
+	<Preferred_Day>Viernes</Preferred_Day>
+	<Preferred_Hour>11:00-12:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments> </Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>AGUIAR PONTES JOSAFÁ DE JESÚS</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>15:00-16:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>14:00-15:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>10:00-11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>09:00-10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>08:00-09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>07:00-08:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>AGUILAR WILBERT</Teacher>
+	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>12:00-13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>11:00-12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>10:00-11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>09:00-10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>08:00-09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>07:00-08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martes</Day>
+		<Hour>17:00-18:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martes</Day>
+		<Hour>16:00-17:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martes</Day>
+		<Hour>15:00-16:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martes</Day>
+		<Hour>14:00-15:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ANCHUNDIA VALENCIA CARLOS EDUARDO</Teacher>
+	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>10:00-11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>09:00-10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>08:00-09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunes</Day>
+		<Hour>07:00-08:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ANDRADE HINOJOSA WILLIAM HUMBERTO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ANDRADE PAREDES ROBERTO OMAR</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ASTUDILLO ESPINOZA BORIS ALFONSO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>BARONA LÓPEZ LORENA ISABEL</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>BARRIGA ANDRADE JHONATTAN JAVIER</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>BENALCÁZAR PALACIOS MARCO ENRIQUE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CALLE JIMÉNEZ TANIA ELIZABETH</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CAMPAÑA ORTEGA EDUARDO MAURICIO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CARRERA IZURIETA IVÁN MARCELO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CARRILLO CALDERÓN SANTIAGO ROBERTO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CARRIÓN TORO MAYRA DEL CISNE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CEVALLOS TERÁN CARLOS XAVIER</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CHANCUSIG CHUQUILLA RODRIGO FABIÁN</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CHANCUSIG ESPÍN BERNARDINO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>CÓRDOVA BAYAS MARCOS RAÚL</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>DEL HIERRO CADENA PABLO FERNANDO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ECHEVERRÍA CULQUI HENRY MANOLO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>EGUEZ SARZOSA VICENTE ADRIÁN</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>FLORES ARMAS DENYS ALBERTO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>FLORES NARANJO PAMELA CATHERINE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>FUERTES DÍAZ WALTER MARCELO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>GALINDO LOZADA JULIÁN ANDRÉS</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>GAVILANES SAGNAY FREDY MARCELO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>HALLO CARRASCO MARÍA ASUNCIÓN</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>HERNÁNDEZ ÁLVAREZ MYRIAM BEATRIZ</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>HERRERA SILVA JUAN ALBERTO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>INTRIAGO PAZMIÑO MARÍA MONSERRATE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>IÑIGUEZ JARRÍN CARLOS EFRAÍN</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>JARAMILLO JARAMILLO CECILIA ELIZABETH</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>LARCO AMPUDIA ENRIQUE ANDRÉS</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>LOZA AGUIRRE EDISON FERNANDO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>LUCIO NARANJO JOSÉ FRANCISCO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>MAFLA GALLEGOS LUIS ENRIQUE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>MALDONADO RUIZ DANIEL ALEJANDRO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>MARTÍNEZ MOSQUERA SILVIA DIANA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>MOLINA BUSTAMANTE MARCO EDUARDO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>MONTENEGRO ARMAS CARLOS ESTALESMIT</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>MOSQUERA ESPINOSA EVELYN MARCELA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>NAVARRETE RUEDA ROSA DEL CARMEN</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ORDOÑEZ CALERO HERNÁN DAVID</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PACCHA ANGAMARCA PATRICIO MICHEL</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PAZ ARIAS HENRY PATRICIO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PEÑAFIEL AGUILAR MYRIAM GUADALUPE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PINEDA ARIAS ISRAEL GUSTAVO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR INVITADO MCS</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR INVITADO MSW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 1 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 1-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 1-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 1-GR3-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 2 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 2-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 2-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 2-GR3-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 3 GR1-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 3 GR2-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 3-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 3-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 3-GR3-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 4 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 4-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 4-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 5 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 5-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 5-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 6 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 6-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 6-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 7 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 7-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 8 ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 8-GR2-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 9 ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR OCASIONAL TP2</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 1</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 3</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 5</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 5-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 6-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 7</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 1 (GR10)-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 1-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 2 (GR6)-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 2 - ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 4</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 7</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 1</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 3</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 3-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 5</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 7</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 8</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 9-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>RECALDE CERDA LORENA KATHERINE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>RIVERA GUEVARA RICHARD PAUL</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>SANAGUANO MORENO DANIEL ALFREDO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>SANTÓRUM GAIBOR MARCO OSWALDO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>SEGURA MORALES MARCO ANTONIO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>SÁNCHEZ AGUAYO MARCO POLO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>SÁNCHEZ GORDÓN SANDRA PATRICIA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>TORRES OLMEDO JENNY GABRIELA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>VALDIVIESO CARAGUAY ÁNGEL LEONARDO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>VILLARROEL RAMOS JORGE PATRICIO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>YACCHIREMA VARGAS DIANA CECILIA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>YÁNEZ QUESADA EDDIE HANS</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 7-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 8 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 8-GR1-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR NIVEL 9 ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR OCASIONAL TC2</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR OCASIONAL TP3</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 2</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 4</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 5-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 6</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 6-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE ADMINISTRATIVAS 8</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 1 (GR9)-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 1-GR2-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 2 - EXTRA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 3</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 5</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE FORMACIÓN BÁSICA 6</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 2</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 3-GR1-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 4</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 6</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 7-ISW</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PROFESOR DE SOCIALES 9-ICC</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>PÉREZ HERNÁNDEZ MARÍA GABRIELA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>RIOFRÍO LUZCANDO DIEGO FERNANDO</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ROA MARÍN HENRY NELSON</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>SANDOBALÍN GUAMÁN JULIO CÉSAR</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>SUNTAXI OÑA GABRIELA LORENA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>TENEMAZA VERA REGINA MARITZOL</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>VELEPUCHA BONETT VÍCTOR VICENTE</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>VINTIMILLA JARAMILLO LUZ MARINA</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>YOO PARK SANG GUUN</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>ZAMBRANO RODRÍGUEZ PATRICIO JAVIER</Teacher>
+	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>16</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>14:00-15:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>17</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>12:00-13:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>19</Activity_Id>
+	<Preferred_Day>Viernes</Preferred_Day>
 	<Preferred_Hour>15:00-16:00</Preferred_Hour>
 	<Permanently_Locked>false</Permanently_Locked>
 	<Active>true</Active>
@@ -2218,8 +3782,35 @@
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>2</Activity_Id>
-	<Preferred_Day>Jueves</Preferred_Day>
+	<Activity_Id>20</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>10:00-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>21</Activity_Id>
+	<Preferred_Day>Lunes</Preferred_Day>
+	<Preferred_Hour>14:00-15:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>22</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>11:00-12:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>23</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
 	<Preferred_Hour>17:00-18:00</Preferred_Hour>
 	<Permanently_Locked>false</Permanently_Locked>
 	<Active>true</Active>
@@ -2227,9 +3818,252 @@
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Activity_Id>3</Activity_Id>
+	<Activity_Id>24</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>11:00-12:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>25</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>07:00-08:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>26</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>17:00-18:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>27</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>18:00-19:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>28</Activity_Id>
+	<Preferred_Day>Lunes</Preferred_Day>
+	<Preferred_Hour>07:00-08:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>29</Activity_Id>
 	<Preferred_Day>Viernes</Preferred_Day>
+	<Preferred_Hour>16:00-17:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>30</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
 	<Preferred_Hour>09:00-10:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>31</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>08:00-09:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>32</Activity_Id>
+	<Preferred_Day>Viernes</Preferred_Day>
+	<Preferred_Hour>12:00-13:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>33</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>16:00-17:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>34</Activity_Id>
+	<Preferred_Day>Lunes</Preferred_Day>
+	<Preferred_Hour>07:00-08:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>35</Activity_Id>
+	<Preferred_Day>Viernes</Preferred_Day>
+	<Preferred_Hour>16:00-17:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>36</Activity_Id>
+	<Preferred_Day>Lunes</Preferred_Day>
+	<Preferred_Hour>18:00-19:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>37</Activity_Id>
+	<Preferred_Day>Jueves</Preferred_Day>
+	<Preferred_Hour>07:00-08:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>38</Activity_Id>
+	<Preferred_Day>Viernes</Preferred_Day>
+	<Preferred_Hour>20:00-21:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>39</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>15:00-16:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>40</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>20:00-21:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>41</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>16:00-17:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>42</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>14:00-15:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>43</Activity_Id>
+	<Preferred_Day>Viernes</Preferred_Day>
+	<Preferred_Hour>08:00-09:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>44</Activity_Id>
+	<Preferred_Day>Lunes</Preferred_Day>
+	<Preferred_Hour>18:00-19:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>45</Activity_Id>
+	<Preferred_Day>Viernes</Preferred_Day>
+	<Preferred_Hour>07:00-08:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>46</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>07:00-08:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>47</Activity_Id>
+	<Preferred_Day>Miércoles</Preferred_Day>
+	<Preferred_Hour>16:00-17:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>48</Activity_Id>
+	<Preferred_Day>Jueves</Preferred_Day>
+	<Preferred_Hour>15:00-16:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>49</Activity_Id>
+	<Preferred_Day>Lunes</Preferred_Day>
+	<Preferred_Hour>14:00-15:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>50</Activity_Id>
+	<Preferred_Day>Jueves</Preferred_Day>
+	<Preferred_Hour>20:00-21:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>51</Activity_Id>
+	<Preferred_Day>Martes</Preferred_Day>
+	<Preferred_Hour>16:00-17:00</Preferred_Hour>
 	<Permanently_Locked>false</Permanently_Locked>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -2242,6 +4076,14 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
+<ConstraintActivityPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>2</Activity_Id>
+	<Room>E20/P4/E004-LI Lasinac</Room>
+	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments> </Comments>
+</ConstraintActivityPreferredRoom>
 </Space_Constraints_List>
 
 </fet>

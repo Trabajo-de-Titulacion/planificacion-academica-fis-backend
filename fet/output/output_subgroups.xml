@@ -89,50 +89,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -235,10 +191,10 @@
      
     </Hour>
     <Hour name="11:00-12:00">
-     
+     <Activity id="2"></Activity><Teacher name="AGUILAR WILBERT"></Teacher><Subject name="SIC744 (ADMINISTRACION DE BASE DE DATOS)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Room name="E20/P4/E004-LI Lasinac"></Room>
     </Hour>
     <Hour name="12:00-13:00">
-     
+     <Activity id="2"></Activity><Teacher name="AGUILAR WILBERT"></Teacher><Subject name="SIC744 (ADMINISTRACION DE BASE DE DATOS)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag><Room name="E20/P4/E004-LI Lasinac"></Room>
     </Hour>
     <Hour name="14:00-15:00">
      
@@ -290,13 +246,13 @@
      
     </Hour>
     <Hour name="15:00-16:00">
-     <Activity id="1"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="ISWR253 (FUNDAMENTOS DE PROGRAMACIÓN)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="16:00-17:00">
-     <Activity id="1"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="ISWR253 (FUNDAMENTOS DE PROGRAMACIÓN)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="17:00-18:00">
-     <Activity id="1"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="ISWR253 (FUNDAMENTOS DE PROGRAMACIÓN)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="18:00-19:00">
      
@@ -312,50 +268,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>
@@ -621,50 +533,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -887,50 +755,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -951,7 +775,7 @@
      
     </Hour>
     <Hour name="14:00-15:00">
-     
+     <Activity id="16"></Activity><Teacher name="YOO PARK SANG GUUN"></Teacher><Subject name="SIC744 (ADMINISTRACION DE BASE DE DATOS)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="15:00-16:00">
      
@@ -1120,51 +944,7 @@
      
     </Hour>
     <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
+     <Activity id="20"></Activity><Teacher name="ANDRADE PAREDES ROBERTO OMAR"></Teacher><Subject name="ISWR442 (ALGORITMOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="11:00-12:00">
      
@@ -1419,50 +1199,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -1480,7 +1216,7 @@
      
     </Hour>
     <Hour name="12:00-13:00">
-     
+     <Activity id="17"></Activity><Teacher name="ANDRADE HINOJOSA WILLIAM HUMBERTO"></Teacher><Subject name="SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="14:00-15:00">
      
@@ -1574,7 +1310,7 @@
      
     </Hour>
     <Hour name="15:00-16:00">
-     
+     <Activity id="19"></Activity><Teacher name="ANDRADE HINOJOSA WILLIAM HUMBERTO"></Teacher><Subject name="MCSR134 (ALGORITMOS Y COMPLEJIDAD)"></Subject><Activity_Tag name="Aura regular"></Activity_Tag>
     </Hour>
     <Hour name="16:00-17:00">
      
@@ -1655,54 +1391,10 @@
      
     </Hour>
     <Hour name="11:00-12:00">
-     
+     <Activity id="22"></Activity><Teacher name="BARRIGA ANDRADE JHONATTAN JAVIER"></Teacher><Subject name="MSIR112 (ANALITICA DE DATOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
+     <Activity id="22"></Activity><Teacher name="BARRIGA ANDRADE JHONATTAN JAVIER"></Teacher><Subject name="MSIR112 (ANALITICA DE DATOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="14:00-15:00">
      
@@ -1883,10 +1575,10 @@
      
     </Hour>
     <Hour name="14:00-15:00">
-     
+     <Activity id="21"></Activity><Teacher name="ASTUDILLO ESPINOZA BORIS ALFONSO"></Teacher><Subject name="MSIR123 (ALMACENAMIENTO DE DATOS MASIVOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="15:00-16:00">
-     
+     <Activity id="21"></Activity><Teacher name="ASTUDILLO ESPINOZA BORIS ALFONSO"></Teacher><Subject name="MSIR123 (ALMACENAMIENTO DE DATOS MASIVOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="16:00-17:00">
      
@@ -1908,50 +1600,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>
@@ -2187,54 +1835,10 @@
      
     </Hour>
     <Hour name="11:00-12:00">
-     
+     <Activity id="24"></Activity><Teacher name="CALLE JIMÉNEZ TANIA ELIZABETH"></Teacher><Subject name="SIC764 (APLICACIONES MOVILES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
+     <Activity id="24"></Activity><Teacher name="CALLE JIMÉNEZ TANIA ELIZABETH"></Teacher><Subject name="SIC764 (APLICACIONES MOVILES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="14:00-15:00">
      
@@ -2468,54 +2072,10 @@
      
     </Hour>
     <Hour name="17:00-18:00">
-     
+     <Activity id="23"></Activity><Teacher name="BENALCÁZAR PALACIOS MARCO ENRIQUE"></Teacher><Subject name="SIC644 (APLICACIONES EN AMBIENTES LIBRES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
+     <Activity id="23"></Activity><Teacher name="BENALCÁZAR PALACIOS MARCO ENRIQUE"></Teacher><Subject name="SIC644 (APLICACIONES EN AMBIENTES LIBRES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
      
@@ -2734,54 +2294,10 @@
      
     </Hour>
     <Hour name="17:00-18:00">
-     
+     <Activity id="26"></Activity><Teacher name="CARRERA IZURIETA IVÁN MARCELO"></Teacher><Subject name="ISWR624 (APLICACIONES WEB)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
+     <Activity id="26"></Activity><Teacher name="CARRERA IZURIETA IVÁN MARCELO"></Teacher><Subject name="ISWR624 (APLICACIONES WEB)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
      
@@ -2973,54 +2489,10 @@
    </Day>
    <Day name="Martes">
     <Hour name="07:00-08:00">
-     
+     <Activity id="25"></Activity><Teacher name="CAMPAÑA ORTEGA EDUARDO MAURICIO"></Teacher><Subject name="ISWR724 (APLICACIONES MÓVILES)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
+     <Activity id="25"></Activity><Teacher name="CAMPAÑA ORTEGA EDUARDO MAURICIO"></Teacher><Subject name="ISWR724 (APLICACIONES MÓVILES)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
      
@@ -3195,10 +2667,10 @@
   <Subgroup name="7-GR2-ICC Automatic Subgroup">
    <Day name="Lunes">
     <Hour name="07:00-08:00">
-     
+     <Activity id="28"></Activity><Teacher name="CARRIÓN TORO MAYRA DEL CISNE"></Teacher><Subject name="ISWR163 (ARQUITECTURA DE COMPUTADORES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="08:00-09:00">
-     
+     <Activity id="28"></Activity><Teacher name="CARRIÓN TORO MAYRA DEL CISNE"></Teacher><Subject name="ISWR163 (ARQUITECTURA DE COMPUTADORES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
      
@@ -3238,50 +2710,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>
@@ -3535,54 +2963,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="27"></Activity><Teacher name="CARRILLO CALDERÓN SANTIAGO ROBERTO"></Teacher><Subject name="MSIR153 (APRENDIZAJE DE MÁQUINA)"></Subject><Activity_Tag name="Aura regular"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
+     <Activity id="27"></Activity><Teacher name="CARRILLO CALDERÓN SANTIAGO ROBERTO"></Teacher><Subject name="MSIR153 (APRENDIZAJE DE MÁQUINA)"></Subject><Activity_Tag name="Aura regular"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -3795,54 +3179,10 @@
      
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="51"></Activity><Teacher name="SANDOBALÍN GUAMÁN JULIO CÉSAR"></Teacher><Subject name="CIYSI (CLUB IOT Y SEGURIDAD INFORMÁTICA)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
+     <Activity id="51"></Activity><Teacher name="SANDOBALÍN GUAMÁN JULIO CÉSAR"></Teacher><Subject name="CIYSI (CLUB IOT Y SEGURIDAD INFORMÁTICA)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
      
@@ -4079,50 +3419,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -4237,10 +3533,10 @@
      
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="29"></Activity><Teacher name="CEVALLOS TERÁN CARLOS XAVIER"></Teacher><Subject name="MSWR213 (ASEGURAMIENTO DE LA CALIDAD Y SEGURIDAD DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
-     
+     <Activity id="29"></Activity><Teacher name="CEVALLOS TERÁN CARLOS XAVIER"></Teacher><Subject name="MSWR213 (ASEGURAMIENTO DE LA CALIDAD Y SEGURIDAD DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
      
@@ -4302,50 +3598,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>
@@ -4471,7 +3723,7 @@
      
     </Hour>
     <Hour name="20:00-21:00">
-     
+     <Activity id="50"></Activity><Teacher name="RIVERA GUEVARA RICHARD PAUL"></Teacher><Subject name="ICCD654 (COMPUTACIÓN DISTRIBUIDA)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="21:00-22:00">
      
@@ -4611,50 +3863,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -4760,10 +3968,10 @@
      
     </Hour>
     <Hour name="12:00-13:00">
-     
+     <Activity id="32"></Activity><Teacher name="CHANCUSIG ESPÍN BERNARDINO"></Teacher><Subject name="CSHD211 (ANÁLISIS SOCIOECONÓMICO Y POLÍTICO DEL ECUADOR)"></Subject><Activity_Tag name="Aura regular"></Activity_Tag>
     </Hour>
     <Hour name="14:00-15:00">
-     
+     <Activity id="32"></Activity><Teacher name="CHANCUSIG ESPÍN BERNARDINO"></Teacher><Subject name="CSHD211 (ANÁLISIS SOCIOECONÓMICO Y POLÍTICO DEL ECUADOR)"></Subject><Activity_Tag name="Aura regular"></Activity_Tag>
     </Hour>
     <Hour name="15:00-16:00">
      
@@ -4877,59 +4085,15 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
     </Hour>
     <Hour name="08:00-09:00">
-     
+     <Activity id="31"></Activity><Teacher name="CHANCUSIG ESPÍN BERNARDINO"></Teacher><Subject name="MATD113 (ALGEBRA LINEAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
-     
+     <Activity id="31"></Activity><Teacher name="CHANCUSIG ESPÍN BERNARDINO"></Teacher><Subject name="MATD113 (ALGEBRA LINEAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="10:00-11:00">
      
@@ -5143,50 +4307,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -5195,10 +4315,10 @@
      
     </Hour>
     <Hour name="09:00-10:00">
-     
+     <Activity id="30"></Activity><Teacher name="CHANCUSIG CHUQUILLA RODRIGO FABIÁN"></Teacher><Subject name="SIC816 (AUDITORIA Y EVALUACION DE SISTEMAS COMPUTACIONALES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="10:00-11:00">
-     
+     <Activity id="30"></Activity><Teacher name="CHANCUSIG CHUQUILLA RODRIGO FABIÁN"></Teacher><Subject name="SIC816 (AUDITORIA Y EVALUACION DE SISTEMAS COMPUTACIONALES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="11:00-12:00">
      
@@ -5353,10 +4473,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="36"></Activity><Teacher name="EGUEZ SARZOSA VICENTE ADRIÁN"></Teacher><Subject name="CSHD500 (ASIGNATURA DE COMUNICACIÓN)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     
+     <Activity id="36"></Activity><Teacher name="EGUEZ SARZOSA VICENTE ADRIÁN"></Teacher><Subject name="CSHD500 (ASIGNATURA DE COMUNICACIÓN)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -5366,50 +4486,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>
@@ -5589,10 +4665,10 @@
   <Subgroup name="2-GR2-ISW Automatic Subgroup">
    <Day name="Lunes">
     <Hour name="07:00-08:00">
-     
+     <Activity id="34"></Activity><Teacher name="DEL HIERRO CADENA PABLO FERNANDO"></Teacher><Subject name="CSHD300 (ASIGNATURA DE ARTES Y HUMANIDADES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="08:00-09:00">
-     
+     <Activity id="34"></Activity><Teacher name="DEL HIERRO CADENA PABLO FERNANDO"></Teacher><Subject name="CSHD300 (ASIGNATURA DE ARTES Y HUMANIDADES)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
      
@@ -5632,50 +4708,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>
@@ -5833,10 +4865,10 @@
      
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="35"></Activity><Teacher name="ECHEVERRÍA CULQUI HENRY MANOLO"></Teacher><Subject name="CSHD500 (ASIGNATURA DE COMUNICACIÓN)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
-     
+     <Activity id="35"></Activity><Teacher name="ECHEVERRÍA CULQUI HENRY MANOLO"></Teacher><Subject name="CSHD500 (ASIGNATURA DE COMUNICACIÓN)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
      
@@ -5941,50 +4973,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -6011,10 +4999,10 @@
      
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="33"></Activity><Teacher name="CÓRDOVA BAYAS MARCOS RAÚL"></Teacher><Subject name="ISWD813 (APLICACIONES WEB AVANZADAS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
-     
+     <Activity id="33"></Activity><Teacher name="CÓRDOVA BAYAS MARCOS RAÚL"></Teacher><Subject name="ISWD813 (APLICACIONES WEB AVANZADAS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
      
@@ -6207,50 +5195,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -6274,10 +5218,10 @@
      
     </Hour>
     <Hour name="15:00-16:00">
-     
+     <Activity id="39"></Activity><Teacher name="FUERTES DÍAZ WALTER MARCELO"></Teacher><Subject name="ISWD762 (AUTOMATIZACIÓN DE PROCESOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="39"></Activity><Teacher name="FUERTES DÍAZ WALTER MARCELO"></Teacher><Subject name="ISWD762 (AUTOMATIZACIÓN DE PROCESOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
      
@@ -6473,50 +5417,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -6643,10 +5543,10 @@
      
     </Hour>
     <Hour name="20:00-21:00">
-     
+     <Activity id="38"></Activity><Teacher name="FLORES NARANJO PAMELA CATHERINE"></Teacher><Subject name="ICCD833 (AUDITORÍA INFORMÁTICA)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="21:00-22:00">
-     
+     <Activity id="38"></Activity><Teacher name="FLORES NARANJO PAMELA CATHERINE"></Teacher><Subject name="ICCD833 (AUDITORÍA INFORMÁTICA)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
    </Day>
   </Subgroup>
@@ -6739,50 +5639,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -6829,10 +5685,10 @@
    </Day>
    <Day name="Jueves">
     <Hour name="07:00-08:00">
-     
+     <Activity id="37"></Activity><Teacher name="FLORES ARMAS DENYS ALBERTO"></Teacher><Subject name="CSHD400 (ASIGNATURA DE ECONOMÍA Y SOCIEDAD)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="08:00-09:00">
-     
+     <Activity id="37"></Activity><Teacher name="FLORES ARMAS DENYS ALBERTO"></Teacher><Subject name="CSHD400 (ASIGNATURA DE ECONOMÍA Y SOCIEDAD)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
      
@@ -6987,54 +5843,10 @@
      
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="41"></Activity><Teacher name="GAVILANES SAGNAY FREDY MARCELO"></Teacher><Subject name="ISWD553 (BASES DE DATOS DISTRIBUIDAS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
+     <Activity id="41"></Activity><Teacher name="GAVILANES SAGNAY FREDY MARCELO"></Teacher><Subject name="ISWD553 (BASES DE DATOS DISTRIBUIDAS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
      
@@ -7271,50 +6083,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -7353,10 +6121,10 @@
      
     </Hour>
     <Hour name="20:00-21:00">
-     
+     <Activity id="40"></Activity><Teacher name="GALINDO LOZADA JULIÁN ANDRÉS"></Teacher><Subject name="ISWR464 (BASE DE DATOS DISTRIBUIDAS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="21:00-22:00">
-     
+     <Activity id="40"></Activity><Teacher name="GALINDO LOZADA JULIÁN ANDRÉS"></Teacher><Subject name="ISWR464 (BASE DE DATOS DISTRIBUIDAS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
    </Day>
    <Day name="Jueves">
@@ -7537,50 +6305,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -7674,10 +6398,10 @@
      
     </Hour>
     <Hour name="08:00-09:00">
-     
+     <Activity id="43"></Activity><Teacher name="HERNÁNDEZ ÁLVAREZ MYRIAM BEATRIZ"></Teacher><Subject name="ISWD743 (BUSINESS INTELLIGENCE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
-     
+     <Activity id="43"></Activity><Teacher name="HERNÁNDEZ ÁLVAREZ MYRIAM BEATRIZ"></Teacher><Subject name="ISWD743 (BUSINESS INTELLIGENCE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="10:00-11:00">
      
@@ -7803,50 +6527,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -7867,10 +6547,10 @@
      
     </Hour>
     <Hour name="14:00-15:00">
-     
+     <Activity id="42"></Activity><Teacher name="HALLO CARRASCO MARÍA ASUNCIÓN"></Teacher><Subject name="ICOD111 (BASES DE DATOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="15:00-16:00">
-     
+     <Activity id="42"></Activity><Teacher name="HALLO CARRASCO MARÍA ASUNCIÓN"></Teacher><Subject name="ICOD111 (BASES DE DATOS)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="16:00-17:00">
      
@@ -7920,13 +6600,13 @@
      
     </Hour>
     <Hour name="17:00-18:00">
-     <Activity id="2"></Activity><Teacher name="AGUILAR WILBERT"></Teacher><Subject name="ICCD733 (SEGURIDAD INFORMÁTICA)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="18:00-19:00">
-     <Activity id="2"></Activity><Teacher name="AGUILAR WILBERT"></Teacher><Subject name="ICCD733 (SEGURIDAD INFORMÁTICA)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="19:00-20:00">
-     <Activity id="2"></Activity><Teacher name="AGUILAR WILBERT"></Teacher><Subject name="ICCD733 (SEGURIDAD INFORMÁTICA)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -8069,50 +6749,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -8203,10 +6839,10 @@
    </Day>
    <Day name="Viernes">
     <Hour name="07:00-08:00">
-     
+     <Activity id="45"></Activity><Teacher name="INTRIAGO PAZMIÑO MARÍA MONSERRATE"></Teacher><Subject name="MATR224 (CALCULO VECTORIAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="08:00-09:00">
-     
+     <Activity id="45"></Activity><Teacher name="INTRIAGO PAZMIÑO MARÍA MONSERRATE"></Teacher><Subject name="MATR224 (CALCULO VECTORIAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
      
@@ -8279,10 +6915,10 @@
      
     </Hour>
     <Hour name="18:00-19:00">
-     
+     <Activity id="44"></Activity><Teacher name="HERRERA SILVA JUAN ALBERTO"></Teacher><Subject name="MATR224 (CALCULO VECTORIAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="19:00-20:00">
-     
+     <Activity id="44"></Activity><Teacher name="HERRERA SILVA JUAN ALBERTO"></Teacher><Subject name="MATR224 (CALCULO VECTORIAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="20:00-21:00">
      
@@ -8292,50 +6928,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>
@@ -8601,50 +7193,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -8671,10 +7219,10 @@
      
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="47"></Activity><Teacher name="JARAMILLO JARAMILLO CECILIA ELIZABETH"></Teacher><Subject name="MSWR232 (CALIDAD DEL PROCESO DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
-     
+     <Activity id="47"></Activity><Teacher name="JARAMILLO JARAMILLO CECILIA ELIZABETH"></Teacher><Subject name="MSWR232 (CALIDAD DEL PROCESO DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="18:00-19:00">
      
@@ -8825,54 +7373,10 @@
    </Day>
    <Day name="Martes">
     <Hour name="07:00-08:00">
-     
+     <Activity id="46"></Activity><Teacher name="IÑIGUEZ JARRÍN CARLOS EFRAÍN"></Teacher><Subject name="SIC734 (CALIDAD DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
+     <Activity id="46"></Activity><Teacher name="IÑIGUEZ JARRÍN CARLOS EFRAÍN"></Teacher><Subject name="SIC734 (CALIDAD DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="09:00-10:00">
      
@@ -9133,50 +7637,6 @@
      
     </Hour>
    </Day>
-   <Day name="Sábado">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
    <Day name="Miércoles">
     <Hour name="07:00-08:00">
      
@@ -9244,10 +7704,10 @@
      
     </Hour>
     <Hour name="15:00-16:00">
-     
+     <Activity id="48"></Activity><Teacher name="LARCO AMPUDIA ENRIQUE ANDRÉS"></Teacher><Subject name="MSWR222 (CALIDAD DEL PRODUCTO DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="16:00-17:00">
-     
+     <Activity id="48"></Activity><Teacher name="LARCO AMPUDIA ENRIQUE ANDRÉS"></Teacher><Subject name="MSWR222 (CALIDAD DEL PRODUCTO DE SOFTWARE)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="17:00-18:00">
      
@@ -9273,19 +7733,19 @@
      
     </Hour>
     <Hour name="09:00-10:00">
-     <Activity id="3"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="10:00-11:00">
-     <Activity id="3"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="11:00-12:00">
-     <Activity id="3"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="12:00-13:00">
-     <Activity id="3"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="14:00-15:00">
-     <Activity id="3"></Activity><Teacher name="AGUIAR PONTES JOSAFÁ DE JESÚS"></Teacher><Subject name="SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)"></Subject><Activity_Tag name="Laboratorio"></Activity_Tag>
+     
     </Hour>
     <Hour name="15:00-16:00">
      
@@ -9331,10 +7791,10 @@
      
     </Hour>
     <Hour name="14:00-15:00">
-     
+     <Activity id="49"></Activity><Teacher name="LOZA AGUIRRE EDISON FERNANDO"></Teacher><Subject name="SIC800 (CERTIFICACIÓN PROFESIONAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="15:00-16:00">
-     
+     <Activity id="49"></Activity><Teacher name="LOZA AGUIRRE EDISON FERNANDO"></Teacher><Subject name="SIC800 (CERTIFICACIÓN PROFESIONAL)"></Subject><Activity_Tag name="Aula regular"></Activity_Tag>
     </Hour>
     <Hour name="16:00-17:00">
      
@@ -9356,50 +7816,6 @@
     </Hour>
    </Day>
    <Day name="Martes">
-    <Hour name="07:00-08:00">
-     
-    </Hour>
-    <Hour name="08:00-09:00">
-     
-    </Hour>
-    <Hour name="09:00-10:00">
-     
-    </Hour>
-    <Hour name="10:00-11:00">
-     
-    </Hour>
-    <Hour name="11:00-12:00">
-     
-    </Hour>
-    <Hour name="12:00-13:00">
-     
-    </Hour>
-    <Hour name="14:00-15:00">
-     
-    </Hour>
-    <Hour name="15:00-16:00">
-     
-    </Hour>
-    <Hour name="16:00-17:00">
-     
-    </Hour>
-    <Hour name="17:00-18:00">
-     
-    </Hour>
-    <Hour name="18:00-19:00">
-     
-    </Hour>
-    <Hour name="19:00-20:00">
-     
-    </Hour>
-    <Hour name="20:00-21:00">
-     
-    </Hour>
-    <Hour name="21:00-22:00">
-     
-    </Hour>
-   </Day>
-   <Day name="Sábado">
     <Hour name="07:00-08:00">
      
     </Hour>

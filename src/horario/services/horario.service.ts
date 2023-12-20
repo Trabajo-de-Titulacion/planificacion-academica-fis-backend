@@ -305,7 +305,7 @@ export class HorarioService {
         Students: actividad.grupo.nombre,
         Duration: actividad.duracion,
         Total_Duration: actividad.duracion,
-        Id: index + 1,
+        Id: actividad.id,
         Activity_Group_Id: 0,
         Number_Of_Students: actividad.numeroEstudiantes,
         Active: actividad.estado,
@@ -445,19 +445,7 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 </ConstraintBasicCompulsoryTime>
 <ConstraintBreakTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Break_Times>16</Number_of_Break_Times>
-	<Break_Time>
-		<Day>Lunes</Day>
-		<Hour>13:00-14:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Martes</Day>
-		<Hour>13:00-14:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Miércoles</Day>
-		<Hour>13:00-14:00</Hour>
-	</Break_Time>
+	<Number_of_Break_Times>2</Number_of_Break_Times>
 	<Break_Time>
 		<Day>Jueves</Day>
 		<Hour>11:00-12:00</Hour>
@@ -465,50 +453,6 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 	<Break_Time>
 		<Day>Jueves</Day>
 		<Hour>12:00-13:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Jueves</Day>
-		<Hour>13:00-14:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Viernes</Day>
-		<Hour>13:00-14:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>13:00-14:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>14:00-15:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>15:00-16:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>16:00-17:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>17:00-18:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>18:00-19:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>19:00-20:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>20:00-21:00</Hour>
-	</Break_Time>
-	<Break_Time>
-		<Day>Sábado</Day>
-		<Hour>21:00-22:00</Hour>
 	</Break_Time>
 	<Active>true</Active>
 	<Comments></Comments>

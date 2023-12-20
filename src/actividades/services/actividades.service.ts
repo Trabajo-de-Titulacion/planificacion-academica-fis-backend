@@ -51,6 +51,18 @@ export class ActividadesService {
     }
   }
 
+  //Formato fet
+  formatTimeFet(restriccionHora: string){  // time = 09:00-10:00
+
+    const firstPart = restriccionHora.split("-")[0];
+    const secondPart = restriccionHora.split("-")[1];
+
+    const firstHour =  parseInt(firstPart.split(":")[0]) < 10 ? '0'+firstPart : firstPart;
+    const secondHour =  parseInt(secondPart.split(":")[0]) < 10 ? '0'+secondPart : secondPart;
+
+    return firstHour+"-"+secondHour
+  }
+
   async crearActividad(actividad: CrearActividadDto): Promise<ActividadEntity> {
     const { idAsignatura, idDocente, idGrupo, idTipoAula, duracion } =
       actividad;
@@ -328,12 +340,13 @@ export class ActividadesService {
       relations: ['actividad', 'espacioFisico'],
     })
     let restriccionesFiltro = restricciones.map((restriccion) => {
+      const hora_formato = this.formatTimeFet(restriccion.hora);
       return {
         Weight_Percentage: 100,
         Activity_Id: restriccion.actividad.id,
         Preferred_Day: restriccion.dia.charAt(0).toUpperCase() + restriccion.dia.slice(1,).toLowerCase(),
-        Preferred_Hour: restriccion.hora,
-        Permanently_Locked: true,
+        Preferred_Hour: hora_formato,
+        Permanently_Locked: false,
         Active: true,
         Comments: " ",
       }
