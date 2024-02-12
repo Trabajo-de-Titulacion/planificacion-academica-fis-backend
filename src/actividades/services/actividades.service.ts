@@ -169,6 +169,7 @@ export class ActividadesService {
     }
   }
 
+  //METODO PARA OBTENER ACTIVIDAD POR ID
   async obtenerActividadPorId(idActividad: number): Promise<ActividadEntity> {
     const actividad = await this.actividadRespository.findOne({
       where: {
@@ -183,7 +184,7 @@ export class ActividadesService {
     }
   }
 
-  //
+  //METODO PARA ELIMINAR RESTRICCIONES
   async eliminarActividadPorId(idActividad: number) {
     const actividad = await this.actividadRespository.findOne({
       where: {
@@ -199,7 +200,7 @@ export class ActividadesService {
     }
   }
 
-
+  //METODO PARA CREAR RESTRICCIONES
   async crearRestriccion(restriccion: CrearRestriccionDto) {
     const espacioFisico = await this.espacioFisicoService.obtenerEspacioFisicoPorId(restriccion.idEspacioFisico)
     const actividad = await this.actividadRespository.findOne({
@@ -217,6 +218,17 @@ export class ActividadesService {
       relations: ['actividad', 'actividad.docente']
     });
 
+    /*
+    // Verificar cuántos registros existen con los mismos parámetros
+    const cantidadRegistros = await this.restriccionActividadRespository.count({
+      where: {
+        hora: restriccion.hora,
+        dia: restriccion.dia,
+        espacioFisico: espacioFisico
+      }
+    });
+    */
+   
     const horasNoDisponiblesDocente = await this.horasNoDisponiblesService.obtenerHorasDiasNoDisponiblesDelDocente(actividad.docente.id)
 
     horasNoDisponiblesDocente.map((horaNoDisponible) => {
@@ -236,6 +248,14 @@ export class ActividadesService {
         data: { restriccion: exiteRestriccion }
       })
     }
+
+    /*
+    if (cantidadRegistros == 1) {
+      throw new Error('Ya existe una restricción con estos parámetros.');
+    }
+    */
+
+
 
     await this.restriccionActividadRespository.save({
       hora: restriccion.hora,

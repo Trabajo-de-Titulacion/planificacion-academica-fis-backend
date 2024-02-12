@@ -691,6 +691,7 @@
   <Name>AGUIAR PONTES JOSAFÁ DE JESÚS</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
+    <Qualified_Subject>SIC744 (ADMINISTRACION DE BASE DE DATOS)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -745,7 +746,6 @@
   <Name>BARRIGA ANDRADE JHONATTAN JAVIER</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
-    <Qualified_Subject>MSIR112 (ANALITICA DE DATOS)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -753,7 +753,6 @@
   <Name>BENALCÁZAR PALACIOS MARCO ENRIQUE</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
-    <Qualified_Subject>SIC644 (APLICACIONES EN AMBIENTES LIBRES)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -946,7 +945,6 @@
   <Name>LARCO AMPUDIA ENRIQUE ANDRÉS</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
-    <Qualified_Subject>MSWR222 (CALIDAD DEL PRODUCTO DE SOFTWARE)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -954,7 +952,6 @@
   <Name>LOZA AGUIRRE EDISON FERNANDO</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
-    <Qualified_Subject>SIC800 (CERTIFICACIÓN PROFESIONAL)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -1467,6 +1464,7 @@
   <Name>YACCHIREMA VARGAS DIANA CECILIA</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
+    <Qualified_Subject>ICCD823 (CLOUD COMPUTING)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -1670,7 +1668,6 @@
   <Name>SANDOBALÍN GUAMÁN JULIO CÉSAR</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
-    <Qualified_Subject>CIYSI (CLUB IOT Y SEGURIDAD INFORMÁTICA)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -2090,32 +2087,6 @@
   <Comments></Comments>
 </Activity>
 <Activity>
-  <Teacher>BARRIGA ANDRADE JHONATTAN JAVIER</Teacher>
-  <Subject>MSIR112 (ANALITICA DE DATOS)</Subject>
-  <Activity_Tag>Aula regular</Activity_Tag>
-  <Students>4-GR2-ICC</Students>
-  <Duration>2</Duration>
-  <Total_Duration>2</Total_Duration>
-  <Id>22</Id>
-  <Activity_Group_Id>0</Activity_Group_Id>
-  <Number_Of_Students>30</Number_Of_Students>
-  <Active>true</Active>
-  <Comments></Comments>
-</Activity>
-<Activity>
-  <Teacher>BENALCÁZAR PALACIOS MARCO ENRIQUE</Teacher>
-  <Subject>SIC644 (APLICACIONES EN AMBIENTES LIBRES)</Subject>
-  <Activity_Tag>Aula regular</Activity_Tag>
-  <Students>5-GR1-ICC</Students>
-  <Duration>2</Duration>
-  <Total_Duration>2</Total_Duration>
-  <Id>23</Id>
-  <Activity_Group_Id>0</Activity_Group_Id>
-  <Number_Of_Students>30</Number_Of_Students>
-  <Active>true</Active>
-  <Comments></Comments>
-</Activity>
-<Activity>
   <Teacher>CALLE JIMÉNEZ TANIA ELIZABETH</Teacher>
   <Subject>SIC764 (APLICACIONES MOVILES)</Subject>
   <Activity_Tag>Aula regular</Activity_Tag>
@@ -2428,32 +2399,6 @@
   <Comments></Comments>
 </Activity>
 <Activity>
-  <Teacher>LARCO AMPUDIA ENRIQUE ANDRÉS</Teacher>
-  <Subject>MSWR222 (CALIDAD DEL PRODUCTO DE SOFTWARE)</Subject>
-  <Activity_Tag>Aula regular</Activity_Tag>
-  <Students>8-GR1-ISW</Students>
-  <Duration>2</Duration>
-  <Total_Duration>2</Total_Duration>
-  <Id>48</Id>
-  <Activity_Group_Id>0</Activity_Group_Id>
-  <Number_Of_Students>30</Number_Of_Students>
-  <Active>true</Active>
-  <Comments></Comments>
-</Activity>
-<Activity>
-  <Teacher>LOZA AGUIRRE EDISON FERNANDO</Teacher>
-  <Subject>SIC800 (CERTIFICACIÓN PROFESIONAL)</Subject>
-  <Activity_Tag>Aula regular</Activity_Tag>
-  <Students>9-GR1-ISW</Students>
-  <Duration>2</Duration>
-  <Total_Duration>2</Total_Duration>
-  <Id>49</Id>
-  <Activity_Group_Id>0</Activity_Group_Id>
-  <Number_Of_Students>30</Number_Of_Students>
-  <Active>true</Active>
-  <Comments></Comments>
-</Activity>
-<Activity>
   <Teacher>RIVERA GUEVARA RICHARD PAUL</Teacher>
   <Subject>ICCD654 (COMPUTACIÓN DISTRIBUIDA)</Subject>
   <Activity_Tag>Aula regular</Activity_Tag>
@@ -2467,13 +2412,26 @@
   <Comments></Comments>
 </Activity>
 <Activity>
-  <Teacher>SANDOBALÍN GUAMÁN JULIO CÉSAR</Teacher>
-  <Subject>CIYSI (CLUB IOT Y SEGURIDAD INFORMÁTICA)</Subject>
+  <Teacher>AGUIAR PONTES JOSAFÁ DE JESÚS</Teacher>
+  <Subject>SIC744 (ADMINISTRACION DE BASE DE DATOS)</Subject>
   <Activity_Tag>Aula regular</Activity_Tag>
-  <Students>8-GR2-ICC</Students>
+  <Students>1-GR1-ICC</Students>
   <Duration>2</Duration>
   <Total_Duration>2</Total_Duration>
-  <Id>51</Id>
+  <Id>53</Id>
+  <Activity_Group_Id>0</Activity_Group_Id>
+  <Number_Of_Students>20</Number_Of_Students>
+  <Active>true</Active>
+  <Comments></Comments>
+</Activity>
+<Activity>
+  <Teacher>YACCHIREMA VARGAS DIANA CECILIA</Teacher>
+  <Subject>ICCD823 (CLOUD COMPUTING)</Subject>
+  <Activity_Tag>Aula regular</Activity_Tag>
+  <Students>1-GR1-ICC</Students>
+  <Duration>1</Duration>
+  <Total_Duration>1</Total_Duration>
+  <Id>56</Id>
   <Activity_Group_Id>0</Activity_Group_Id>
   <Number_Of_Students>30</Number_Of_Students>
   <Active>true</Active>
@@ -2664,9 +2622,45 @@
 
 <ConstraintActivityPreferredStartingTime>
   <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>53</Activity_Id>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>10:00-11:00</Preferred_Hour>
+  <Permanently_Locked>false</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>46</Activity_Id>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>09:00-10:00</Preferred_Hour>
+  <Permanently_Locked>false</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>30</Activity_Id>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>12:00-13:00</Preferred_Hour>
+  <Permanently_Locked>false</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+  <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>2</Activity_Id>
-  <Preferred_Day>Viernes</Preferred_Day>
-  <Preferred_Hour>11:00-12:00</Preferred_Hour>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>10:00-11:00</Preferred_Hour>
+  <Permanently_Locked>false</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>20</Activity_Id>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>09:00-10:00</Preferred_Hour>
   <Permanently_Locked>false</Permanently_Locked>
   <Active>true</Active>
   <Comments> </Comments>
@@ -3476,8 +3470,40 @@
 
 <ConstraintActivityPreferredRoom>
   <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>53</Activity_Id>
+  <Room>E20/P5/E010-A</Room>
+  <Permanently_Locked>true</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredRoom>
+<ConstraintActivityPreferredRoom>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>46</Activity_Id>
+  <Room>E20/P5/E001-A</Room>
+  <Permanently_Locked>true</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredRoom>
+<ConstraintActivityPreferredRoom>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>30</Activity_Id>
+  <Room>E20/P5/E010-A</Room>
+  <Permanently_Locked>true</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredRoom>
+<ConstraintActivityPreferredRoom>
+  <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>2</Activity_Id>
-  <Room>E20/P4/E004-LI Lasinac</Room>
+  <Room>E20/P3/E008-L</Room>
+  <Permanently_Locked>true</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredRoom>
+<ConstraintActivityPreferredRoom>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>20</Activity_Id>
+  <Room>E20/P3/E010-Li</Room>
   <Permanently_Locked>true</Permanently_Locked>
   <Active>true</Active>
   <Comments> </Comments>

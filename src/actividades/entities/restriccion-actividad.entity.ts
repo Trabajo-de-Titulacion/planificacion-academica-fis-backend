@@ -17,6 +17,7 @@ import { EspacioFisicoEntity } from 'src/espacios_fisicos/entities/espacio_fisic
 @Entity('restriccion_actividad')
 export class RestriccionActividadEntity {
     //@PrimaryGeneratedColumn('uuid')
+    
   @PrimaryGeneratedColumn()
   id: number;
   
