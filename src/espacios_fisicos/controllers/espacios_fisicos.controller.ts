@@ -14,12 +14,10 @@ import {
 import { EspaciosFisicosService } from '../services/espacios_fisicos.service';
 import { EspacioFisicoDTO } from '../dto';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { configuraciones } from '../../config/swagger-config';
-import { Roles } from '../../auth/decorators/roles.decorator';
-import { RolesEnum } from '../../utils/enum/rol.enum';
 import { isUUID } from 'class-validator';
 import { Public } from 'src/auth/decorators/public.decorator';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags(configuraciones.controladores.espaciosFisicos.tag)
 @Controller(configuraciones.controladores.espaciosFisicos.ruta)
@@ -27,7 +25,7 @@ import { Public } from 'src/auth/decorators/public.decorator';
 export class EspaciosFisicosController {
   constructor(private espaciosFisicosService: EspaciosFisicosService) {}
 
-  /* Read */ 
+  /* Read */
   @Public()
   @ApiOperation({
     summary:
@@ -42,17 +40,15 @@ export class EspaciosFisicosController {
     return await this.espaciosFisicosService.obtenerEspaciosFisicos();
   }
 
-//Controlador para obtener espacio fìsico por tipo de aula
+  //Controlador para obtener espacio fìsico por tipo de aula
   @Public()
-  @ApiOperation({
-
-  })
-  @Get(
-    'obtenerEspaciosFisicoPorTipoDeAula/:idTipoAula'
-  )
-  async obtenerEspaciosFisicoPorTipoDeAula(@Param('idTipoAula') id:string){
-    return await this.espaciosFisicosService.obtenerEspaciosFisicosPorTipoDeAula(id)
-  } 
+  @ApiOperation({})
+  @Get('obtenerEspaciosFisicoPorTipoDeAula/:idTipoAula')
+  async obtenerEspaciosFisicoPorTipoDeAula(@Param('idTipoAula') id: string) {
+    return await this.espaciosFisicosService.obtenerEspaciosFisicosPorTipoDeAula(
+      id,
+    );
+  }
 
   @ApiOperation({
     summary:

@@ -24,16 +24,28 @@ export class UsuarioService {
   }
 
   async obtenerUsuarioPorSuID(id: string): Promise<ObtenerUsuarioDto> {
-    const { ...usuario } = await this.repositorioUsuario.findOne(id);
+    const { ...usuario } = await this.repositorioUsuario.findOne({
+      where: {
+        id,
+      },
+    });
     return usuario;
   }
 
   async obtenerUsuarioCompletoPorSuID(id: string): Promise<UsuarioEntity> {
-    return await this.repositorioUsuario.findOne(id);
+    return await this.repositorioUsuario.findOne({
+      where: {
+        id,
+      },
+    });
   }
 
   async obtenerUsuarioPorSuCorreo(correo: string): Promise<UsuarioEntity> {
-    return await this.repositorioUsuario.findOne({ correo: correo });
+    return await this.repositorioUsuario.findOne({
+      where: {
+        correo,
+      },
+    });
   }
 
   async crearUsuario(usuario: CrearUsuarioDTO): Promise<any> {

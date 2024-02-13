@@ -24,7 +24,11 @@ export class SemestreService {
   }
 
   async obtenerSemestrePorSuID(id: string) {
-    return this.semestreRepository.findOne(id);
+    return this.semestreRepository.findOne({
+      where: {
+        id,
+      },
+    });
   }
 
   async obtenerSemestres() {
@@ -32,16 +36,18 @@ export class SemestreService {
   }
 
   async obtenerSemestreConPlanificacionEnProgreso() {
-    let semestre = await this.semestreRepository.findOne({
+    const semestre = await this.semestreRepository.findOne({
       where: { estado: ESTADO_SEMESTRE.PLANIFICACION_EN_PROGRESO },
       relations: ['jornadas'],
     });
     semestre.jornadas = semestre.jornadas.map((e) => {
-      if (e.dia === DIAS.SABADO || e.dia === DIAS.DOMINGO){
-        e.horaFin = JORNADA_NO_LABORABLE.find((j) => j.dia === e.dia).horaInicio
+      if (e.dia === DIAS.SABADO || e.dia === DIAS.DOMINGO) {
+        e.horaFin = JORNADA_NO_LABORABLE.find(
+          (j) => j.dia === e.dia,
+        ).horaInicio;
       }
-    return e;  
-    }) 
+      return e;
+    });
     return semestre;
   }
 }

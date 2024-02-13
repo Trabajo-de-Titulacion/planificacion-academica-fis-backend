@@ -36,6 +36,10 @@ export class GrupoService {
   }
 
   async obtenerGrupoPorID(id: string) {
-    return await this.grupoRepositorio.findOne({ id: id });
+    return await this.grupoRepositorio.findOne({
+      where: {
+        id: id,
+      },
+    });
   }
 }

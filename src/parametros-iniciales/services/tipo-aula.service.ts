@@ -45,9 +45,8 @@ export class TipoAulaService {
     nombreTipo: string,
     nombreFacultad: string,
   ) {
-    const facultad = await this.servicioFacultad.obtenerFacultadPorSuNombre(
-      nombreFacultad,
-    );
+    const facultad =
+      await this.servicioFacultad.obtenerFacultadPorSuNombre(nombreFacultad);
     return this.tipoAulaRepository.findOne({
       where: {
         tipo: nombreTipo,
@@ -66,7 +65,11 @@ export class TipoAulaService {
   }
 
   async actualizarTipoAula(tipoAula: TipoAulaDto, id: string) {
-    const tipoAulaExistente = await this.tipoAulaRepository.findOne(id);
+    const tipoAulaExistente = await this.tipoAulaRepository.findOne({
+      where: {
+        id,
+      },
+    });
     tipoAulaExistente.facultad =
       await this.servicioFacultad.obtenerFacultadPorSuID(tipoAula.idFacultad);
     tipoAulaExistente.tipo = tipoAula.tipo;

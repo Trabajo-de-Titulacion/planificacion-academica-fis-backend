@@ -5,6 +5,7 @@ databaseData/
 /dist
 /node_modules
 /postgres
+/fet
 
 # Logs
 logs

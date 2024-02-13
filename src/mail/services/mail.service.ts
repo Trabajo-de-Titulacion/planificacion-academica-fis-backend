@@ -18,5 +18,4 @@ export class MailService {
     });
     return valor;
   }
-
 }

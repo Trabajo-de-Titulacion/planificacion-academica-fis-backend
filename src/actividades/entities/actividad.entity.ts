@@ -8,7 +8,6 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
-  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { RestriccionActividadEntity } from './restriccion-actividad.entity';
@@ -54,6 +53,9 @@ export class ActividadEntity {
   })
   grupo: GrupoEntity;
 
-  @OneToMany(()=> RestriccionActividadEntity, (restriccion)=> restriccion.actividad)
-  restricciones: RestriccionActividadEntity[]
+  @OneToMany(
+    () => RestriccionActividadEntity,
+    (restriccion) => restriccion.actividad,
+  )
+  restricciones: RestriccionActividadEntity[];
 }

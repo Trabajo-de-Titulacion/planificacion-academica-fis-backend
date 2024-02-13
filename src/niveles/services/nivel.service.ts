@@ -45,11 +45,19 @@ export class NivelService {
   }
 
   async obtenerNivelPorId(idNivel: string) {
-    return await this.nivelRepository.findOne(idNivel);
+    return await this.nivelRepository.findOne({
+      where: {
+        id: idNivel,
+      },
+    });
   }
 
   async obtenerNivelPorNombre(nombre: string) {
-    return await this.nivelRepository.findOne({ where: nombre });
+    return await this.nivelRepository.findOne({
+      where: {
+        nombre: nombre,
+      },
+    });
   }
 
   async obtenerNivelesPorCarrera(idCarrera: string) {
