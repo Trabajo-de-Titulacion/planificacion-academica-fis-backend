@@ -46,7 +46,7 @@ import { TerminusModule } from '@nestjs/terminus';
       useClass: PostgresConfigService,
       inject: [PostgresConfigService],
     }),
-    AuthModule,
+    //AuthModule,
     UsuariosModule,
     MailModule,
     CarreraModule,

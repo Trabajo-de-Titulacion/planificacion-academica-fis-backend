@@ -22,10 +22,10 @@ import { isUUID } from 'class-validator';
 import { Roles } from '../../auth/decorators/roles.decorator';
 import { RolesEnum } from '../../utils/enum/rol.enum';
 import { VerificarIdDocentePorParametroGuard } from '../guards/verificar_id_docente_por_parametro.guard';
+import { HoraDiaNoDisponibleDTO } from '../dto/hora_dia_noDisponible.dto';
+import { Public } from 'src/auth/decorators/public.decorator';
 
-@ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.horasNoDisponibles.tag)
-@ApiExtraModels(HorasNoDisponiblesDTO)
 @Controller(configuraciones.controladores.horasNoDisponibles.ruta)
 export class HorasNoDisponiblesController {
   constructor(private horasNoDisponiblesService: HorasNoDisponiblesService) {}
@@ -54,6 +54,21 @@ export class HorasNoDisponiblesController {
     );
   }
 
+  //Para horarios no disponibles
+  @Public()
+  @Post("hora_dia_noDisponible")
+  async crearHoraDiaNoDisponible(@Body() data: HoraDiaNoDisponibleDTO){
+    return await this.horasNoDisponiblesService.crearHoraDiaNoDisponible(data) 
+    
+  }
+
+  @Public()
+  @Get("horas_dias_noDisponibles/:idDocente")
+  async obtenerHorasNoDisponiblesPorIdDocente(@Param("idDocente") idDocente: string){
+      return await this.horasNoDisponiblesService.obtenerHorasDiasNoDisponiblesDelDocente(idDocente)
+  }
+
+
   @ApiOperation({
     summary:
       configuraciones.controladores.horasNoDisponibles.operaciones
@@ -63,7 +78,7 @@ export class HorasNoDisponiblesController {
     configuraciones.controladores.horasNoDisponibles.operaciones
       .obtenerHorasNoDisponiblesSolicitadasPorDocenteId.ruta,
   )
-  @Roles(RolesEnum.DOCENTE, RolesEnum.JEFE_DE_DEPARTAMENTO)
+  @Public()
   async obtenerHorasNoDisponiblesSolicitadasPorDocenteId(
     @Param('id') id: string,
   ) {
@@ -78,27 +93,13 @@ export class HorasNoDisponiblesController {
   @ApiOperation({
     summary:
       configuraciones.controladores.horasNoDisponibles.operaciones
-        .obtenerSolicitudesDelSemestreEnProgreso.descripcion,
-  })
-  @Get(
-    configuraciones.controladores.horasNoDisponibles.operaciones
-      .obtenerSolicitudesDelSemestreEnProgreso.ruta,
-  )
-  @Roles(RolesEnum.JEFE_DE_DEPARTAMENTO)
-  async obtenerSolicitudesDelSemestreEnProgreso() {
-    return this.horasNoDisponiblesService.obtenerSolicitudesDelSemestreEnProgreso();
-  }
-
-  @ApiOperation({
-    summary:
-      configuraciones.controladores.horasNoDisponibles.operaciones
         .aprobarSolicitudHorasNoDisponiblesPorDocenteId.descripcion,
   })
   @Get(
     configuraciones.controladores.horasNoDisponibles.operaciones
       .aprobarSolicitudHorasNoDisponiblesPorDocenteId.ruta,
   )
-  @Roles(RolesEnum.JEFE_DE_DEPARTAMENTO)
+  @Public()
   async aprobarSolicitudHorasNoDisponiblesPorDocenteId(
     @Param('id') id: string,
   ) {
@@ -131,39 +132,13 @@ export class HorasNoDisponiblesController {
     );
   }
 
+  @Public()
+  @Get("test-fet")
   @ApiOperation({
-    summary:
-      configuraciones.controladores.horasNoDisponibles.operaciones
-        .eliminarHorasNoDisponiblesPorDocenteId.descripcion,
+    summary: 'Probar etiquetas generadas de FET sobre horarios no disponibles del docente'
   })
-  @Delete(
-    configuraciones.controladores.horasNoDisponibles.operaciones
-      .eliminarHorasNoDisponiblesPorDocenteId.ruta,
-  )
-  @Roles(RolesEnum.DOCENTE)
-  @UseGuards(VerificarIdDocentePorParametroGuard)
-  async eliminarSolicitudHorasNoDisponiblesPorDocenteId(
-    @Param('id') id: string,
-  ) {
-    if (id && !isUUID(id)) {
-      throw new HttpException('ID de docente inválido', HttpStatus.BAD_REQUEST);
-    }
-    return await this.horasNoDisponiblesService.eliminarSolicitudHorasNoDisponiblesPorDocenteId(
-      id,
-    );
+  async testFet(){
+    return await this.horasNoDisponiblesService.getEtiquetasHorarios();
   }
 
-  @ApiOperation({
-    summary:
-      configuraciones.controladores.horasNoDisponibles.operaciones
-        .obtenerTodasLasHorasNoDisponiblesAprobadas.descripcion,
-  })
-  @Get(
-    configuraciones.controladores.horasNoDisponibles.operaciones
-      .obtenerTodasLasHorasNoDisponiblesAprobadas.ruta,
-  )
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
-  async obtenerTodasLasHorasNoDisponiblesAprobadas() {
-    return await this.horasNoDisponiblesService.obtenerTodasLasHorasNoDisponiblesAprobadas();
-  }
 }

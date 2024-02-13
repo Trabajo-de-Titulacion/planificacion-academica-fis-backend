@@ -197,6 +197,7 @@ export class HorarioService {
   }
 
   async generarHorario(email: string) {
+    console.log('generear horario')
     const usuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(email);
     // Jornadas
     const semestreEnCurso =
@@ -304,7 +305,7 @@ export class HorarioService {
         Students: actividad.grupo.nombre,
         Duration: actividad.duracion,
         Total_Duration: actividad.duracion,
-        Id: index + 1,
+        Id: actividad.id,
         Activity_Group_Id: 0,
         Number_Of_Students: actividad.numeroEstudiantes,
         Active: actividad.estado,
@@ -336,7 +337,22 @@ export class HorarioService {
       };
     });
 
-    // Builders
+    //Restricciones de tiempo
+    const restriccionesInfo = await this.actividadesService.obtenerConstraintActivityPreferredStartingTime();
+    console.log('restriccionesInfo',restriccionesInfo)
+
+    //Restricciones de espacio 
+    const restriccionesEspacio = await this.actividadesService.obtenerConstraintActivityPreferredRoom();
+    
+    //Restricciones de horarios no disponibles
+    const restriccionesHorariosNoDisponibles = await this.horasNoDisponiblesService.getEtiquetasHorarios();
+
+    // Builders 
+    const builderHorasNoDisponibles = new XMLBuilder({
+      arrayNodeName: 'ConstraintTeacherNotAvailableTimes',
+      format: true,
+    });
+
     const builderDias = new XMLBuilder({
       arrayNodeName: 'Day',
       format: true,
@@ -382,6 +398,20 @@ export class HorarioService {
       format: true,
     });
 
+    //Builder restrcciones
+    const builderRestricciones = new XMLBuilder({
+      arrayNodeName:'ConstraintActivityPreferredStartingTime',
+      format: true,
+    });
+    console.log(builderRestricciones.build(restriccionesInfo))
+
+    const builderRestriccionesEspacio = new XMLBuilder({
+      arrayNodeName:'ConstraintActivityPreferredRoom',
+      format: true,
+    })
+
+
+
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 \n<fet version="6.1.5">
 \n<Institution_Name>${nombreUniversidad}</Institution_Name>
@@ -415,14 +445,23 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 </ConstraintBasicCompulsoryTime>
 <ConstraintBreakTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Break_Times>1</Number_of_Break_Times>
+	<Number_of_Break_Times>2</Number_of_Break_Times>
 	<Break_Time>
 		<Day>Jueves</Day>
 		<Hour>11:00-12:00</Hour>
 	</Break_Time>
+	<Break_Time>
+		<Day>Jueves</Day>
+		<Hour>12:00-13:00</Hour>
+	</Break_Time>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBreakTimes>
+
+${builderRestricciones.build(restriccionesInfo)}
+
+${builderHorasNoDisponibles.build(restriccionesHorariosNoDisponibles)}
+
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -431,6 +470,9 @@ ${builderEspacios.build(espaciosInfo)}</Rooms_List>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
+
+${builderRestriccionesEspacio.build(restriccionesEspacio)}
+
 </Space_Constraints_List>
 
 

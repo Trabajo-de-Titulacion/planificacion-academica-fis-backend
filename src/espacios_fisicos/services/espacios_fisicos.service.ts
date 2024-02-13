@@ -123,6 +123,13 @@ export class EspaciosFisicosService {
     });
   }
 
+  /*NB*/
+  async obtenerEspaciosFisicosPorTipoDeAula(idTipoAula:string):Promise<EspacioFisicoEntity[]>{
+    return await this.espaciosFisicosRepository.find({
+      where: {tipo:{id:idTipoAula}},
+    })
+  } 
+
   /* Update */
   async actualizarEspacioFisicoPorId(
     id: string,
