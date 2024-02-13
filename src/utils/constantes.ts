@@ -136,7 +136,7 @@ export const nombreFacultad = 'Facultad de Ingeniería de Sistemas';
 
 export const JORNADA_NO_LABORABLE = [{
     dia: DIAS.SABADO,
-    horaInicio: "16:00",
+    horaInicio: "14:00",
     horaFin: "24:00",
 }, 
 {
