@@ -28,6 +28,9 @@ export class DocenteEntity {
   @OneToMany(() => ActividadEntity, (actividades) => actividades.docente)
   actividades?: ActividadEntity[];
 
-  @OneToMany(() => HoraNoDisponibleEntity, (horasNoDisponibles) => horasNoDisponibles.docente)
+  @OneToMany(
+    () => HoraNoDisponibleEntity,
+    (horasNoDisponibles) => horasNoDisponibles.docente,
+  )
   horasNoDisponibles?: HoraNoDisponibleEntity[];
 }

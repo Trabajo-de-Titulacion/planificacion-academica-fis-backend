@@ -5,7 +5,6 @@ import { AppController } from './app.controller';
 import { DocenteModule } from './docente/docente.module';
 import { MailModule } from './mail/mail.module';
 import { CarreraModule } from './carrera/carrera.module';
-import { AuthModule } from './auth/auth.module';
 import configuracion from './config/configuracion';
 import { PostgresConfigService } from './config/service/postgres-config.service';
 import { UsuariosModule } from './usuarios/usuarios.module';

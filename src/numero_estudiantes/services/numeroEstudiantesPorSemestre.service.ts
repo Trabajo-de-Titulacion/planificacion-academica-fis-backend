@@ -102,9 +102,8 @@ export class NumeroEstudiantesPorSemestreService {
       // Si no existe, crea
       else {
         if (entidad.numeroEstudiantes > 0) {
-          const creado = await this.numeroEstudiantesPorSemestreRepository.save(
-            entidad,
-          );
+          const creado =
+            await this.numeroEstudiantesPorSemestreRepository.save(entidad);
           registrosCreados.push(creado);
         }
       }
@@ -117,9 +116,8 @@ export class NumeroEstudiantesPorSemestreService {
   }
 
   async obtenerNumeroEstudiantesPorSemestreId(idSemestre: string) {
-    const semestre = await this.semestreService.obtenerSemestrePorSuID(
-      idSemestre,
-    );
+    const semestre =
+      await this.semestreService.obtenerSemestrePorSuID(idSemestre);
     if (!semestre) {
       throw new HttpException(
         'No se encontró el semestre indicado.',

@@ -1,7 +1,6 @@
 import {
   Body,
   Controller,
-  Delete,
   Get,
   HttpException,
   HttpStatus,
@@ -11,12 +10,7 @@ import {
 } from '@nestjs/common';
 import { HorasNoDisponiblesService } from '../services/horas_no_disponibles.service';
 import { HorasNoDisponiblesDTO } from '../dto';
-import {
-  ApiBearerAuth,
-  ApiExtraModels,
-  ApiOperation,
-  ApiTags,
-} from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { configuraciones } from '../../config/swagger-config';
 import { isUUID } from 'class-validator';
 import { Roles } from '../../auth/decorators/roles.decorator';
@@ -56,18 +50,20 @@ export class HorasNoDisponiblesController {
 
   //Para horarios no disponibles
   @Public()
-  @Post("hora_dia_noDisponible")
-  async crearHoraDiaNoDisponible(@Body() data: HoraDiaNoDisponibleDTO){
-    return await this.horasNoDisponiblesService.crearHoraDiaNoDisponible(data) 
-    
+  @Post('hora_dia_noDisponible')
+  async crearHoraDiaNoDisponible(@Body() data: HoraDiaNoDisponibleDTO) {
+    return await this.horasNoDisponiblesService.crearHoraDiaNoDisponible(data);
   }
 
   @Public()
-  @Get("horas_dias_noDisponibles/:idDocente")
-  async obtenerHorasNoDisponiblesPorIdDocente(@Param("idDocente") idDocente: string){
-      return await this.horasNoDisponiblesService.obtenerHorasDiasNoDisponiblesDelDocente(idDocente)
+  @Get('horas_dias_noDisponibles/:idDocente')
+  async obtenerHorasNoDisponiblesPorIdDocente(
+    @Param('idDocente') idDocente: string,
+  ) {
+    return await this.horasNoDisponiblesService.obtenerHorasDiasNoDisponiblesDelDocente(
+      idDocente,
+    );
   }
-
 
   @ApiOperation({
     summary:
@@ -133,12 +129,12 @@ export class HorasNoDisponiblesController {
   }
 
   @Public()
-  @Get("test-fet")
+  @Get('test-fet')
   @ApiOperation({
-    summary: 'Probar etiquetas generadas de FET sobre horarios no disponibles del docente'
+    summary:
+      'Probar etiquetas generadas de FET sobre horarios no disponibles del docente',
   })
-  async testFet(){
+  async testFet() {
     return await this.horasNoDisponiblesService.getEtiquetasHorarios();
   }
-
 }

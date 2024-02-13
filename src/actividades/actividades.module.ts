@@ -22,7 +22,7 @@ import { HorasNoDisponiblesModule } from 'src/horas_no_disponibles/horas_no_disp
     ParametrosInicialesModule,
     NivelesModule,
     EspaciosFisicosModule,
-    HorasNoDisponiblesModule
+    HorasNoDisponiblesModule,
   ],
   controllers: [ActividadesController],
   providers: [ActividadesService],

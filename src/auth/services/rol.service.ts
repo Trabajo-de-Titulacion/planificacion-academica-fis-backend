@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { RolDto } from '../dtos/rol.dto';
 import { RolEntity } from '../entities/rol.entity';
+import ROLES from 'src/utils/types/rol.type';
 
 @Injectable()
 export class RolService {
@@ -22,7 +23,11 @@ export class RolService {
     idRol: string,
     rolModificado: RolDto,
   ): Promise<UpdateResult | NotFoundException> {
-    const rol = await this.repositorioRol.findOne(idRol);
+    const rol = await this.repositorioRol.findOne({
+      where: {
+        id: idRol,
+      },
+    });
     if (rol) {
       return await this.repositorioRol.update(idRol, rolModificado);
     } else {
@@ -31,11 +36,19 @@ export class RolService {
   }
 
   async obtenerRolPorSuID(idRol: string) {
-    return this.repositorioRol.findOne(idRol);
+    return this.repositorioRol.findOne({
+      where: {
+        id: idRol,
+      },
+    });
   }
 
   async eliminarRol(idRol: string): Promise<DeleteResult | NotFoundException> {
-    const rol = await this.repositorioRol.findOne(idRol);
+    const rol = await this.repositorioRol.findOne({
+      where: {
+        id: idRol,
+      },
+    });
     if (rol) {
       return await this.repositorioRol.delete(idRol);
     } else {
@@ -44,11 +57,14 @@ export class RolService {
   }
 
   async obtenerRolPorNombre(
-    nombreRol: string,
+    nombreRol: ROLES,
   ): Promise<RolEntity | NotFoundException> {
     const rol = await this.repositorioRol.findOne({
-      where: { nombre: nombreRol },
+      where: {
+        nombre: nombreRol,
+      },
     });
+
     if (rol) {
       return rol;
     } else {

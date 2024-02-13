@@ -26,7 +26,9 @@ export class EspacioFisicoEntity {
   @Column()
   aforo: number;
 
-  @OneToMany(()=> RestriccionActividadEntity, (restriccionActividad)=>restriccionActividad.espacioFisico)
-  restricciones ?: RestriccionActividadEntity[]
-
+  @OneToMany(
+    () => RestriccionActividadEntity,
+    (restriccionActividad) => restriccionActividad.espacioFisico,
+  )
+  restricciones?: RestriccionActividadEntity[];
 }

@@ -85,9 +85,8 @@ export class EspaciosFisicosService {
     // Crear registros
     let registrosCreados: EspacioFisicoEntity[] = [];
     if (registrosNuevos.length > 0) {
-      registrosCreados = await this.espaciosFisicosRepository.save(
-        registrosNuevos,
-      );
+      registrosCreados =
+        await this.espaciosFisicosRepository.save(registrosNuevos);
     }
 
     const mensajeRepetidos =
@@ -124,11 +123,13 @@ export class EspaciosFisicosService {
   }
 
   /*NB*/
-  async obtenerEspaciosFisicosPorTipoDeAula(idTipoAula:string):Promise<EspacioFisicoEntity[]>{
+  async obtenerEspaciosFisicosPorTipoDeAula(
+    idTipoAula: string,
+  ): Promise<EspacioFisicoEntity[]> {
     return await this.espaciosFisicosRepository.find({
-      where: {tipo:{id:idTipoAula}},
-    })
-  } 
+      where: { tipo: { id: idTipoAula } },
+    });
+  }
 
   /* Update */
   async actualizarEspacioFisicoPorId(

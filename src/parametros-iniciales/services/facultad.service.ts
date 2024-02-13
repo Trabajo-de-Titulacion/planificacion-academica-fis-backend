@@ -16,7 +16,11 @@ export class FacultadService {
   }
 
   async obtenerFacultadPorSuID(id: string) {
-    return this.facultadRepository.findOne(id);
+    return this.facultadRepository.findOne({
+      where: {
+        id,
+      },
+    });
   }
 
   async obtenerFacultadPorSuNombre(nombre: string) {

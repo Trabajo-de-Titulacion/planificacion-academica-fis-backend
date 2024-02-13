@@ -3,7 +3,6 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
-  Logger,
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -16,13 +15,8 @@ import { HoraNoDisponibleEntity } from '../entities/hora_no_disponible.entity';
 import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { MailService } from '../../../src/mail/services/mail.service';
-import ESTADO_SOLICITUD_HORA_NO_DISPONIBLE from '../types/estadoSolicitudHoraNoDisponible.type';
 import { HoraDiaNoDisponibleDTO } from 'src/horas_no_disponibles/dto/hora_dia_noDisponible.dto';
 import { DocenteEntity } from 'src/docente/entities/docente.entity';
-import { log } from 'console';
-import { logger } from 'handlebars';
-import e from 'express';
-import dayjs from 'dayjs';
 
 @Injectable()
 export class HorasNoDisponiblesService {
@@ -100,14 +94,14 @@ export class HorasNoDisponiblesService {
         });
         // Se asocian las nuevas horas a la solicitud ya creada
         //registrosCorrectos.forEach(
-          //(hora) => (hora.solicitud = solicitudActual),
+        //(hora) => (hora.solicitud = solicitudActual),
         //);
         // Se actualiza la fecha de modificación de la solicitud
         //await this.solicitudHorasNoDisponiblesRepository.update(
-          //solicitudActual,
-          //{
-            //ultimaModificacion: new Date(),
-          //},
+        //solicitudActual,
+        //{
+        //ultimaModificacion: new Date(),
+        //},
         //);
         // Se guardan los nuevos registros de horas
         await this.horasNoDisponiblesRepository.save(registrosCorrectos);
@@ -146,10 +140,6 @@ export class HorasNoDisponiblesService {
       );
     }
 
-    // Buscar solicitud del semestre en progreso
-    const semestreEnProgreso =
-      await this.semestreService.obtenerSemestreConPlanificacionEnProgreso();
-
     return null;
   }
 
@@ -161,7 +151,7 @@ export class HorasNoDisponiblesService {
     }
 
     return await this.horasNoDisponiblesRepository.find({
-      where: { solicitud: solicitudActual },
+      where: {},
       relations: ['dia', 'solicitud'],
     });
   }
@@ -192,7 +182,7 @@ export class HorasNoDisponiblesService {
       );
     }
 
-    return new Promise((resolve, reject) => {
+    return new Promise(() => {
       solicitudDocente.docente = docente;
       // Enviar notificación al docente sobre la aprobación de sus horas solicitadas
     });
@@ -224,7 +214,7 @@ export class HorasNoDisponiblesService {
       );
     }
 
-    return new Promise((resolve, reject) => {
+    return new Promise(() => {
       solicitudDocente.docente = docente;
       // Enviar notificación al docente sobre el rechazo de sus horas solicitadas
     });
@@ -277,109 +267,122 @@ export class HorasNoDisponiblesService {
   }
 
   //Para crar hora dia NO disponible
-  async crearHoraDiaNoDisponible(data: HoraDiaNoDisponibleDTO){
+  async crearHoraDiaNoDisponible(data: HoraDiaNoDisponibleDTO) {
     await this.horasNoDisponiblesRepository.delete({
-      docente:{id:data.docente_id},
-      jornada:{id:data.jornada_id},
-      hora_inicio: data.hora_inicio
-    })
-    console.log("Se han recibido los datos")
-    const docente = await this.docentesService.obtenerDocentePorID(data.docente_id)
-    const jornada = await this.jornadasLaboralesService.obtenerJornadaPorId(data.jornada_id)
+      docente: { id: data.docente_id },
+      jornada: { id: data.jornada_id },
+      hora_inicio: data.hora_inicio,
+    });
+    console.log('Se han recibido los datos');
+    const docente = await this.docentesService.obtenerDocentePorID(
+      data.docente_id,
+    );
+    const jornada = await this.jornadasLaboralesService.obtenerJornadaPorId(
+      data.jornada_id,
+    );
 
-    const horaNoDisponibleExiste = await this.horasNoDisponiblesRepository.findOne({
-      where: {
-        docente: docente as DocenteEntity,
-        jornada: jornada,
-        hora_inicio: data.hora_inicio
-      }
-    })
-    if(horaNoDisponibleExiste){
+    const horaNoDisponibleExiste =
+      await this.horasNoDisponiblesRepository.findOne({
+        where: {
+          docente: docente as DocenteEntity,
+          jornada: jornada,
+          hora_inicio: data.hora_inicio,
+        },
+      });
+    if (horaNoDisponibleExiste) {
       throw new BadRequestException({
-        code: "HORA_DIA_YA_EXISTE",
-        message: "La hora y dia no disponible ya se encuentra registrada en el sistema"
-      })
+        code: 'HORA_DIA_YA_EXISTE',
+        message:
+          'La hora y dia no disponible ya se encuentra registrada en el sistema',
+      });
     }
 
     await this.horasNoDisponiblesRepository.save({
-     docente: docente as DocenteEntity,
-     jornada: jornada,
-     hora_inicio: data.hora_inicio
-    }) 
+      docente: docente as DocenteEntity,
+      jornada: jornada,
+      hora_inicio: data.hora_inicio,
+    });
   }
 
-  async calcultarTotalDeHorasNoDisponiblesDelDocente(idDocente: string){
-    const horasNoDisponiblesDelDocente = await this.obtenerHorasDiasNoDisponiblesDelDocente(idDocente);
+  async calcultarTotalDeHorasNoDisponiblesDelDocente(idDocente: string) {
+    const horasNoDisponiblesDelDocente =
+      await this.obtenerHorasDiasNoDisponiblesDelDocente(idDocente);
     return horasNoDisponiblesDelDocente.length;
   }
 
   //Para obtener horas dias No disponbiles por id docente
-  async obtenerHorasDiasNoDisponiblesDelDocente(idDocente: string){
-    const docente = await this.docentesService.obtenerDocentePorID(idDocente)
-    const horasNoDisponbilesDelDocente = await this.horasNoDisponiblesRepository.find({
-      where: {
-        docente: docente as DocenteEntity,
-      },
-      relations: ["jornada"]
-    })
-    const horasNoDisponiblesFiltro = horasNoDisponbilesDelDocente.map(e => {
+  async obtenerHorasDiasNoDisponiblesDelDocente(idDocente: string) {
+    const docente = await this.docentesService.obtenerDocentePorID(idDocente);
+    const horasNoDisponbilesDelDocente =
+      await this.horasNoDisponiblesRepository.find({
+        where: {
+          docente: docente as DocenteEntity,
+        },
+        relations: ['jornada'],
+      });
+    const horasNoDisponiblesFiltro = horasNoDisponbilesDelDocente.map((e) => {
       return {
         idHoraNoDisponible: e.id,
         idJornada: e.jornada.id,
         dia: e.jornada.dia,
-        hora_inicio: e.hora_inicio
-      }
-    })
-    return horasNoDisponiblesFiltro
+        hora_inicio: e.hora_inicio,
+      };
+    });
+    return horasNoDisponiblesFiltro;
   }
-  
+
   //Metodo para archivo FET
 
-  async getEtiquetasHorarios(){
-    
-    const horasNoDisponibles = await this.horasNoDisponiblesRepository.find({
-      relations: [
-        "jornada",
-        "docente"
-      ]
-    })
+  async getEtiquetasHorarios() {
     const docentes = await this.docentesService.obtenerDocentes();
 
     let output = [];
-    let output_promises = docentes.map(async docente => {
-    const weight_percentage = 100;  
-    const totalHoras = await this.calcultarTotalDeHorasNoDisponiblesDelDocente(docente.id);
-    const horasNoDisponiblesDocente = await this.obtenerHorasDiasNoDisponiblesDelDocente(docente.id);
-    const horasFiltro = horasNoDisponiblesDocente.map( horaNoDisponibleDocente => {
-      const day = (horaNoDisponibleDocente.dia && typeof horaNoDisponibleDocente.dia === 'string') ? horaNoDisponibleDocente.dia.charAt(0) + horaNoDisponibleDocente.dia.slice(1).toLowerCase(): '';
-      
-      const startHour = horaNoDisponibleDocente.hora_inicio < 10
-      ? '0' + horaNoDisponibleDocente.hora_inicio : horaNoDisponibleDocente.hora_inicio;
+    const output_promises = docentes.map(async (docente) => {
+      const weight_percentage = 100;
+      const totalHoras =
+        await this.calcultarTotalDeHorasNoDisponiblesDelDocente(docente.id);
+      const horasNoDisponiblesDocente =
+        await this.obtenerHorasDiasNoDisponiblesDelDocente(docente.id);
+      const horasFiltro = horasNoDisponiblesDocente.map(
+        (horaNoDisponibleDocente) => {
+          const day =
+            horaNoDisponibleDocente.dia &&
+            typeof horaNoDisponibleDocente.dia === 'string'
+              ? horaNoDisponibleDocente.dia.charAt(0) +
+                horaNoDisponibleDocente.dia.slice(1).toLowerCase()
+              : '';
 
-      const endHour = horaNoDisponibleDocente.hora_inicio + 1 < 10
-      ? '0' + (horaNoDisponibleDocente.hora_inicio + 1) : horaNoDisponibleDocente.hora_inicio + 1;
+          const startHour =
+            horaNoDisponibleDocente.hora_inicio < 10
+              ? '0' + horaNoDisponibleDocente.hora_inicio
+              : horaNoDisponibleDocente.hora_inicio;
 
+          const endHour =
+            horaNoDisponibleDocente.hora_inicio + 1 < 10
+              ? '0' + (horaNoDisponibleDocente.hora_inicio + 1)
+              : horaNoDisponibleDocente.hora_inicio + 1;
+
+          return {
+            Day: day,
+            Hour: `${startHour}:00-${endHour}:00`,
+          };
+
+          //return {
+          //day: horaNoDisponibleDocente.dia,
+          //hour: `${horaNoDisponibleDocente.hora_inicio < 10 ? '0' + horaNoDisponibleDocente.hora_inicio : horaNoDisponibleDocente.hora_inicio}:00-${horaNoDisponibleDocente.hora_inicio+1 < 10 ? '0'+horaNoDisponibleDocente.hora_inicio+1 : horaNoDisponibleDocente.hora_inicio+1}:00`,
+          //}
+        },
+      );
       return {
-        "Day": day,
-        "Hour": `${startHour}:00-${endHour}:00`,
-      }
-
-      //return {
-        //day: horaNoDisponibleDocente.dia,
-        //hour: `${horaNoDisponibleDocente.hora_inicio < 10 ? '0' + horaNoDisponibleDocente.hora_inicio : horaNoDisponibleDocente.hora_inicio}:00-${horaNoDisponibleDocente.hora_inicio+1 < 10 ? '0'+horaNoDisponibleDocente.hora_inicio+1 : horaNoDisponibleDocente.hora_inicio+1}:00`,
-      //}
-    }
-    ) 
-       return {
-          "Weight_Percentage": weight_percentage,
-          "Teacher": docente.nombreCompleto,
-          "Number_of_Not_Available_Times": totalHoras,
-          "Not_Available_Time": horasFiltro,
-       }
-    })
-    return Promise.all(output_promises).then(resultados => {
+        Weight_Percentage: weight_percentage,
+        Teacher: docente.nombreCompleto,
+        Number_of_Not_Available_Times: totalHoras,
+        Not_Available_Time: horasFiltro,
+      };
+    });
+    return Promise.all(output_promises).then((resultados) => {
       output = resultados;
       return output;
-    })
+    });
   }
 }
