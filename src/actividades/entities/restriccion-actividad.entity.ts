@@ -1,14 +1,8 @@
-import { AsignaturaEntity } from '../../asignatura/entities/asignatura.entity';
-import { DocenteEntity } from '../../../src/docente/entities/docente.entity';
-import { GrupoEntity } from '../../../src/niveles/entities/grupo.entity';
-import { TipoAulaEntity } from '../../../src/parametros-iniciales/entities/tipo-aula.entity';
 import {
   Column,
   Entity,
   JoinColumn,
   ManyToOne,
-  OneToMany,
-  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { ActividadEntity } from './actividad.entity';
@@ -16,16 +10,16 @@ import { EspacioFisicoEntity } from 'src/espacios_fisicos/entities/espacio_fisic
 
 @Entity('restriccion_actividad')
 export class RestriccionActividadEntity {
-    //@PrimaryGeneratedColumn('uuid')
-    
+  //@PrimaryGeneratedColumn('uuid')
+
   @PrimaryGeneratedColumn()
   id: number;
-  
-  @ManyToOne(()=> ActividadEntity,(actividad)=> actividad.restricciones)
+
+  @ManyToOne(() => ActividadEntity, (actividad) => actividad.restricciones)
   @JoinColumn({
     name: 'idActividad',
   })
-  actividad:ActividadEntity;
+  actividad: ActividadEntity;
 
   @Column()
   dia: string;
@@ -33,11 +27,9 @@ export class RestriccionActividadEntity {
   @Column()
   hora: string;
 
-  @ManyToOne(()=> EspacioFisicoEntity, (espacio)=> espacio.restricciones)
+  @ManyToOne(() => EspacioFisicoEntity, (espacio) => espacio.restricciones)
   @JoinColumn({
-    name:'idEspacioFisico'
+    name: 'idEspacioFisico',
   })
   espacioFisico: EspacioFisicoEntity;
-  
-
 }

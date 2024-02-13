@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JornadaLaboralDto } from '../dtos/jornada-laboral.dto';
 import { JornadaLaboralService } from '../services/jornada-laboral.service';
 import { Public } from 'src/auth/decorators/public.decorator';
@@ -10,7 +10,6 @@ import { Public } from 'src/auth/decorators/public.decorator';
 export class JornadaLaboralController {
   constructor(private servicioJornadaLaboral: JornadaLaboralService) {}
 
-  
   @Post('/crearJornadaLaboral')
   @ApiOperation({
     summary:
@@ -27,7 +26,7 @@ export class JornadaLaboralController {
     return await this.servicioJornadaLaboral.obtenerIntervalos(idJornada);
   }
 
-   /* Read */ 
+  /* Read */
   @Public()
   @Get('/obtenerJornadasLaborales')
   obtenerJornadasLaborales() {

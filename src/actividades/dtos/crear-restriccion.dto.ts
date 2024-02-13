@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CrearRestriccionDto {
-
   @ApiProperty()
   @IsNumber()
   @IsNotEmpty()
@@ -23,4 +22,3 @@ export class CrearRestriccionDto {
   @IsNotEmpty()
   hora: string;
 }
-

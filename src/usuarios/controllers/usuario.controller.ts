@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
-import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { configuraciones } from '../../../src/config/swagger-config';
 import { CrearUsuarioDTO, ObtenerUsuarioDto } from '../dtos/usuario.dto';
 import { UsuarioService } from '../../../src/usuarios/services/usuario.service';

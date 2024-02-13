@@ -8,7 +8,6 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-
 @Entity('horaNoDisponible')
 export class HoraNoDisponibleEntity {
   @PrimaryGeneratedColumn('uuid')
@@ -23,8 +22,7 @@ export class HoraNoDisponibleEntity {
   @Column()
   hora_inicio: number;
 
-  @ManyToOne( () => DocenteEntity, (docente) => docente.horasNoDisponibles)
-  @JoinColumn({ name: 'docente_id'})
+  @ManyToOne(() => DocenteEntity, (docente) => docente.horasNoDisponibles)
+  @JoinColumn({ name: 'docente_id' })
   docente: DocenteEntity;
-  
 }

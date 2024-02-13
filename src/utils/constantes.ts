@@ -1,4 +1,4 @@
-import DIAS from "src/parametros-iniciales/types/dia.type";
+import DIAS from 'src/parametros-iniciales/types/dia.type';
 
 export const nombreUniversidad = 'Escuela Politécnica Nacional';
 export const nombreFacultad = 'Facultad de Ingeniería de Sistemas';
@@ -134,15 +134,15 @@ export const nombreFacultad = 'Facultad de Ingeniería de Sistemas';
 }
 ] */
 
-export const JORNADA_NO_LABORABLE = [{
+export const JORNADA_NO_LABORABLE = [
+  {
     dia: DIAS.SABADO,
-    horaInicio: "16:00",
-    horaFin: "24:00",
-}, 
-{
+    horaInicio: '14:00',
+    horaFin: '24:00',
+  },
+  {
     dia: DIAS.DOMINGO,
-    horaInicio: "07:00",
-    horaFin: "24:00",
-}
-]
-
+    horaInicio: '07:00',
+    horaFin: '24:00',
+  },
+];

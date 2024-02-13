@@ -6,7 +6,6 @@ import { JornadaLaboralEntity } from '../entities/jornada-laboral.entity';
 import ESTADO_SEMESTRE from '../types/estado-semestre.type';
 import { SemestreService } from './semestre.service';
 import { JORNADA_NO_LABORABLE } from 'src/utils/constantes';
-import { Length } from 'class-validator';
 
 @Injectable()
 export class JornadaLaboralService {
@@ -30,13 +29,17 @@ export class JornadaLaboralService {
   }
 
   async obtenerJornadasLaborales() {
-    let jornadas = await this.repositorioJornadaLaboral.find({ relations: ['semestre'] });
+    let jornadas = await this.repositorioJornadaLaboral.find({
+      relations: ['semestre'],
+    });
     jornadas = jornadas.filter((e) => {
-      return JORNADA_NO_LABORABLE.find((j) => (e.dia != j.dia) &&  
-        (e.horaInicio != j.horaInicio) && 
-        (e.horaFin != j.horaFin)
-      )
-    }) 
+      return JORNADA_NO_LABORABLE.find(
+        (j) =>
+          e.dia != j.dia &&
+          e.horaInicio != j.horaInicio &&
+          e.horaFin != j.horaFin,
+      );
+    });
     return jornadas;
   }
 
@@ -45,21 +48,31 @@ export class JornadaLaboralService {
       where: { semestre: { id: idSemestre } },
     });
     jornadas = jornadas.filter((e) => {
-      return JORNADA_NO_LABORABLE.find((j) => (e.dia != j.dia) &&  
-        (e.horaInicio != j.horaInicio) && 
-        (e.horaFin != j.horaFin)
-      )
-    }) 
+      return JORNADA_NO_LABORABLE.find(
+        (j) =>
+          e.dia != j.dia &&
+          e.horaInicio != j.horaInicio &&
+          e.horaFin != j.horaFin,
+      );
+    });
     return jornadas;
   }
 
   async obtenerJornadaPorId(id: string) {
-    const jornada = await this.repositorioJornadaLaboral.findOne(id);
-    return jornada
+    const jornada = await this.repositorioJornadaLaboral.findOne({
+      where: {
+        id,
+      },
+    });
+    return jornada;
   }
 
   async obtenerIntervalos(idJornada: string) {
-    const jornada = await this.repositorioJornadaLaboral.findOne(idJornada);
+    const jornada = await this.repositorioJornadaLaboral.findOne({
+      where: {
+        id: idJornada,
+      },
+    });
     return this.obtenerIntervalosDeUnaJornada(jornada);
   }
 
@@ -107,15 +120,9 @@ export class JornadaLaboralService {
     }
   }
 
-  /**/ 
-  async obtenerDiasDeUnaJornada(jornada: JornadaLaboralEntity){
-
-  }
-
   async eliminarJornadaLaboralPorSemestre(idSemestre: string) {
-    const semestre = await this.servicioSemestre.obtenerSemestrePorSuID(
-      idSemestre,
-    );
+    const semestre =
+      await this.servicioSemestre.obtenerSemestrePorSuID(idSemestre);
     if (semestre.estado === ESTADO_SEMESTRE.PLANIFICACION_EN_PROGRESO) {
       this.repositorioJornadaLaboral.delete({ semestre: { id: idSemestre } });
     } else {

@@ -140,7 +140,11 @@ export class HorarioService {
   async obtenerHorarioGrupo(grupo: string, idHorario: string) {
     Logger.log('obtenerHorarioGrupo');
     //Buscar horario
-    const horario = await this.repositorioHorario.findOne({ id: idHorario });
+    const horario = await this.repositorioHorario.findOne({
+      where: {
+        id: idHorario,
+      },
+    });
 
     // Arreglo de respuesta
     const horarioFiltrado = [];
@@ -197,7 +201,7 @@ export class HorarioService {
   }
 
   async generarHorario(email: string) {
-    console.log('generear horario')
+    console.log('generear horario');
     const usuario = await this.usuarioService.obtenerUsuarioPorSuCorreo(email);
     // Jornadas
     const semestreEnCurso =
@@ -297,7 +301,7 @@ export class HorarioService {
 
     // Actividades
     const actividades = await this.actividadesService.obtenerActividades();
-    const actividadesInfoCompleta = actividades.map((actividad, index) => {
+    const actividadesInfoCompleta = actividades.map((actividad) => {
       return {
         Teacher: actividad.docente.nombreCompleto,
         Subject: `${actividad.asignatura.nombre} (${actividad.asignatura.codigo})`,
@@ -338,16 +342,19 @@ export class HorarioService {
     });
 
     //Restricciones de tiempo
-    const restriccionesInfo = await this.actividadesService.obtenerConstraintActivityPreferredStartingTime();
-    console.log('restriccionesInfo',restriccionesInfo)
+    const restriccionesInfo =
+      await this.actividadesService.obtenerConstraintActivityPreferredStartingTime();
+    console.log('restriccionesInfo', restriccionesInfo);
 
-    //Restricciones de espacio 
-    const restriccionesEspacio = await this.actividadesService.obtenerConstraintActivityPreferredRoom();
-    
+    //Restricciones de espacio
+    const restriccionesEspacio =
+      await this.actividadesService.obtenerConstraintActivityPreferredRoom();
+
     //Restricciones de horarios no disponibles
-    const restriccionesHorariosNoDisponibles = await this.horasNoDisponiblesService.getEtiquetasHorarios();
+    const restriccionesHorariosNoDisponibles =
+      await this.horasNoDisponiblesService.getEtiquetasHorarios();
 
-    // Builders 
+    // Builders
     const builderHorasNoDisponibles = new XMLBuilder({
       arrayNodeName: 'ConstraintTeacherNotAvailableTimes',
       format: true,
@@ -400,17 +407,15 @@ export class HorarioService {
 
     //Builder restrcciones
     const builderRestricciones = new XMLBuilder({
-      arrayNodeName:'ConstraintActivityPreferredStartingTime',
+      arrayNodeName: 'ConstraintActivityPreferredStartingTime',
       format: true,
     });
-    console.log(builderRestricciones.build(restriccionesInfo))
+    console.log(builderRestricciones.build(restriccionesInfo));
 
     const builderRestriccionesEspacio = new XMLBuilder({
-      arrayNodeName:'ConstraintActivityPreferredRoom',
+      arrayNodeName: 'ConstraintActivityPreferredRoom',
       format: true,
-    })
-
-
+    });
 
     const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 \n<fet version="6.1.5">
@@ -483,71 +488,64 @@ ${builderRestriccionesEspacio.build(restriccionesEspacio)}
       Logger.log(`Archivo creado ${usuario.id}`, 'FET');
 
       // run the `ls` command using exec
-      exec(
-        'cp ./fet/output.fet $HOME/Documents/spa/output.fet',
-        (err, output) => {
-          // once the command has completed, the callback function is called
-          if (err) {
-            // log and return if we encounter an error
-            console.error('could not execute command: ', err);
-            return;
-          }
+      exec('cp ./fet/output.fet $HOME/Documents/spa/output.fet', (err) => {
+        // once the command has completed, the callback function is called
+        if (err) {
+          // log and return if we encounter an error
+          console.error('could not execute command: ', err);
+          return;
+        }
 
-          exec(
-            'fet-cl --inputfile=output.fet',
-            {
-              cwd: `/home/nobh/Documents/spa`,
-            },
-            (err, output) => {
-              // once the command has completed, the callback function is called
-              if (err) {
-                // log and return if we encounter an error
-                console.error('could not execute command: ', err);
-                return;
-              }
+        exec(
+          'fet-cl --inputfile=output.fet',
+          {
+            cwd: `/home/nobh/Documents/spa`,
+          },
+          (err) => {
+            // once the command has completed, the callback function is called
+            if (err) {
+              // log and return if we encounter an error
+              console.error('could not execute command: ', err);
+              return;
+            }
 
-              exec(
-                'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
-                {
-                  cwd: `/home/nobh/Documents/spa/timetables`,
-                },
-                (err, output) => {
-                  // once the command has completed, the callback function is called
-                  if (err) {
-                    // log and return if we encounter an error
-                    console.error('could not execute command: ', err);
-                    return;
-                  }
+            exec(
+              'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
+              {
+                cwd: `/home/nobh/Documents/spa/timetables`,
+              },
+              (err) => {
+                // once the command has completed, the callback function is called
+                if (err) {
+                  // log and return if we encounter an error
+                  console.error('could not execute command: ', err);
+                  return;
+                }
 
-                  const data = fs.readFileSync(
-                    './fet/output/output_subgroups.xml',
-                    { encoding: 'utf8', flag: 'r' },
-                  );
+                const data = fs.readFileSync(
+                  './fet/output/output_subgroups.xml',
+                  { encoding: 'utf8', flag: 'r' },
+                );
 
-                  const jsonData = xml2js(data, {
-                    compact: true,
-                    nameKey: '-name',
-                    alwaysArray: false,
-                    ignoreDoctype: true,
-                    alwaysChildren: false,
-                    attributesKey: '-name',
-                    attributeValueFn(
-                      attributeValue,
-                      attributeName,
-                      parentElement,
-                    ) {
-                      return attributeValue;
-                    },
-                  });
+                const jsonData = xml2js(data, {
+                  compact: true,
+                  nameKey: '-name',
+                  alwaysArray: false,
+                  ignoreDoctype: true,
+                  alwaysChildren: false,
+                  attributesKey: '-name',
+                  attributeValueFn(attributeValue) {
+                    return attributeValue;
+                  },
+                });
 
-                  ///////////////// FORMAAAAAAAT
+                ///////////////// FORMAAAAAAAT
 
-                  const format = {};
-                  let formatSubgrups = [];
+                const format = {};
+                let formatSubgrups = [];
 
-                  formatSubgrups = jsonData['Students_Timetable'][
-                    'Subgroup'
-                  ].map((sub) => {
+                formatSubgrups = jsonData['Students_Timetable']['Subgroup'].map(
+                  (sub) => {
                     const subgroup = {
                       '-name': sub['-name'].name,
                       Day: sub['Day'].map((d) => {
@@ -584,39 +582,31 @@ ${builderRestriccionesEspacio.build(restriccionesEspacio)}
                     };
                     return subgroup;
                     //                    formatSubgrups.push
-                  });
+                  },
+                );
 
-                  // Primer nodo
-                  format['Students_Timetable'] = {
-                    Subgroup: formatSubgrups,
-                  };
+                // Primer nodo
+                format['Students_Timetable'] = {
+                  Subgroup: formatSubgrups,
+                };
 
-                  console.log('format', format);
+                console.log('format', format);
 
-                  /////////////////// FORMAT
+                /////////////////// FORMAT
 
-                  const jsonDataFormat = JSON.stringify(format);
-                  const subs = jsonData['Students_Timetable']['Subgroup'].map(
-                    (grupo) => {
-                      return {
-                        '-name': grupo['name'],
-                        Day: grupo['Day'],
-                      };
-                    },
-                  );
+                const jsonDataFormat = JSON.stringify(format);
 
-                  this.repositorioHorario.save({
-                    descripcion: 'Horario por subgrupos',
-                    fechaCreacion: new Date(),
-                    horarioJson: jsonDataFormat,
-                    usuario: usuario,
-                  });
-                },
-              );
-            },
-          );
-        },
-      );
+                this.repositorioHorario.save({
+                  descripcion: 'Horario por subgrupos',
+                  fechaCreacion: new Date(),
+                  horarioJson: jsonDataFormat,
+                  usuario: usuario,
+                });
+              },
+            );
+          },
+        );
+      });
     });
     return {
       xmlContent,
@@ -629,73 +619,66 @@ ${builderRestriccionesEspacio.build(restriccionesEspacio)}
       Logger.log(`Archivo creado ${usuario.id}`, 'FET');
 
       // run the `ls` command using exec
-      exec(
-        'cp ./fet/output.fet $HOME/Documents/spa/output.fet',
-        (err, output) => {
-          // once the command has completed, the callback function is called
-          if (err) {
-            // log and return if we encounter an error
-            console.error('could not execute command: ', err);
-            return;
-          }
+      exec('cp ./fet/output.fet $HOME/Documents/spa/output.fet', (err) => {
+        // once the command has completed, the callback function is called
+        if (err) {
+          // log and return if we encounter an error
+          console.error('could not execute command: ', err);
+          return;
+        }
 
-          exec(
-            'fet-cl --inputfile=output.fet',
-            {
-              cwd: `/home/nobh/Documents/spa`,
-            },
-            (err, output) => {
-              // once the command has completed, the callback function is called
-              if (err) {
-                // log and return if we encounter an error
-                console.error('could not execute command: ', err);
-                return;
-              }
+        exec(
+          'fet-cl --inputfile=output.fet',
+          {
+            cwd: `/home/nobh/Documents/spa`,
+          },
+          (err) => {
+            // once the command has completed, the callback function is called
+            if (err) {
+              // log and return if we encounter an error
+              console.error('could not execute command: ', err);
+              return;
+            }
 
-              exec(
-                'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
-                {
-                  cwd: `/home/nobh/Documents/spa/timetables`,
-                },
-                async (err, output) => {
-                  // once the command has completed, the callback function is called
-                  if (err) {
-                    // log and return if we encounter an error
-                    console.error('could not execute command: ', err);
-                    return;
-                  }
+            exec(
+              'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
+              {
+                cwd: `/home/nobh/Documents/spa/timetables`,
+              },
+              async (err) => {
+                // once the command has completed, the callback function is called
+                if (err) {
+                  // log and return if we encounter an error
+                  console.error('could not execute command: ', err);
+                  return;
+                }
 
-                  const data = fs.readFileSync(
-                    './fet/output/output_subgroups.xml',
-                    { encoding: 'utf8', flag: 'r' },
-                  );
+                const data = fs.readFileSync(
+                  './fet/output/output_subgroups.xml',
+                  { encoding: 'utf8', flag: 'r' },
+                );
 
-                  const jsonData = xml2js(data, {
-                    compact: true,
-                    nameKey: '-name',
-                    alwaysArray: false,
-                    ignoreDoctype: true,
-                    alwaysChildren: false,
-                    attributesKey: '-name',
-                    attributeValueFn(
-                      attributeValue,
-                      attributeName,
-                      parentElement,
-                    ) {
-                      return attributeValue;
-                    },
-                  });
+                const jsonData = xml2js(data, {
+                  compact: true,
+                  nameKey: '-name',
+                  alwaysArray: false,
+                  ignoreDoctype: true,
+                  alwaysChildren: false,
+                  attributesKey: '-name',
+                  attributeValueFn(attributeValue) {
+                    return attributeValue;
+                  },
+                });
 
-                  ///////////////// FORMAAAAAAAT
+                ///////////////// FORMAAAAAAAT
 
-                  const format = {};
-                  let formatSubgrups = [];
+                const format = {};
+                let formatSubgrups = [];
 
-                  console.log('jsonData ===> ', jsonData);
+                console.log('jsonData ===> ', jsonData);
 
-                  formatSubgrups = jsonData['Students_Timetable'][
-                    'Subgroup'
-                  ].map((sub) => {
+                formatSubgrups = jsonData['Students_Timetable']['Subgroup'].map(
+                  (sub) => {
                     const subgroup = {
                       '-name': sub['-name'].name,
                       Day: sub['Day'].map((d) => {
@@ -752,39 +735,31 @@ ${builderRestriccionesEspacio.build(restriccionesEspacio)}
                     };
                     return subgroup;
                     //                    formatSubgrups.push
-                  });
+                  },
+                );
 
-                  // Primer nodo
-                  format['Students_Timetable'] = {
-                    Subgroup: formatSubgrups,
-                  };
+                // Primer nodo
+                format['Students_Timetable'] = {
+                  Subgroup: formatSubgrups,
+                };
 
-                  console.log('format', format);
+                console.log('format', format);
 
-                  /////////////////// FORMAT
+                /////////////////// FORMAT
 
-                  const jsonDataFormat = JSON.stringify(format);
-                  const subs = jsonData['Students_Timetable']['Subgroup'].map(
-                    (grupo) => {
-                      return {
-                        '-name': grupo['name'],
-                        Day: grupo['Day'],
-                      };
-                    },
-                  );
+                const jsonDataFormat = JSON.stringify(format);
 
-                  await this.repositorioHorario.save({
-                    descripcion: 'Horario por subgrupos',
-                    fechaCreacion: new Date(),
-                    horarioJson: jsonDataFormat,
-                    usuario: usuario,
-                  });
-                },
-              );
-            },
-          );
-        },
-      );
+                await this.repositorioHorario.save({
+                  descripcion: 'Horario por subgrupos',
+                  fechaCreacion: new Date(),
+                  horarioJson: jsonDataFormat,
+                  usuario: usuario,
+                });
+              },
+            );
+          },
+        );
+      });
     });
   }
 
@@ -793,54 +768,51 @@ ${builderRestriccionesEspacio.build(restriccionesEspacio)}
       Logger.log(`Archivo creado`, 'FET');
 
       // run the `ls` command using exec
-      exec(
-        'cp ./fet/output.fet $HOME/Documents/spa/output.fet',
-        (err, output) => {
-          // once the command has completed, the callback function is called
-          if (err) {
-            // log and return if we encounter an error
-            console.error('could not execute command: ', err);
-            return;
-          }
+      exec('cp ./fet/output.fet $HOME/Documents/spa/output.fet', (err) => {
+        // once the command has completed, the callback function is called
+        if (err) {
+          // log and return if we encounter an error
+          console.error('could not execute command: ', err);
+          return;
+        }
 
-          exec(
-            'fet-cl --inputfile=output.fet',
-            {
-              cwd: `/home/nobh/Documents/spa`,
-            },
-            (err, output) => {
-              // once the command has completed, the callback function is called
-              if (err) {
-                // log and return if we encounter an error
-                console.error('could not execute command: ', err);
-                return;
-              }
+        exec(
+          'fet-cl --inputfile=output.fet',
+          {
+            cwd: `/home/nobh/Documents/spa`,
+          },
+          (err) => {
+            // once the command has completed, the callback function is called
+            if (err) {
+              // log and return if we encounter an error
+              console.error('could not execute command: ', err);
+              return;
+            }
 
-              exec(
-                'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
-                {
-                  cwd: `/home/nobh/Documents/spa/timetables`,
-                },
-                async (err, output) => {
-                  // once the command has completed, the callback function is called
-                  if (err) {
-                    // log and return if we encounter an error
-                    console.error('could not execute command: ', err);
-                    return;
-                  }
+            exec(
+              'cp -r ./output $HOME/Documents/spa/planificacion-academica-fis-backend/fet',
+              {
+                cwd: `/home/nobh/Documents/spa/timetables`,
+              },
+              async (err) => {
+                // once the command has completed, the callback function is called
+                if (err) {
+                  // log and return if we encounter an error
+                  console.error('could not execute command: ', err);
+                  return;
+                }
 
-                  const data = fs.readFileSync(
-                    './fet/output/output_subgroups.xml',
-                    { encoding: 'utf8', flag: 'r' },
-                  );
+                const data = fs.readFileSync(
+                  './fet/output/output_subgroups.xml',
+                  { encoding: 'utf8', flag: 'r' },
+                );
 
-                  return data;
-                },
-              );
-            },
-          );
-        },
-      );
+                return data;
+              },
+            );
+          },
+        );
+      });
     });
   }
 }
