@@ -7,15 +7,12 @@
 <Comments>Facultad de Ingeniería de Sistemas</Comments>
 
 <Days_List>
-<Number_of_Days>6</Number_of_Days>
+<Number_of_Days>5</Number_of_Days>
 <Day>
   <Name>Lunes</Name>
 </Day>
 <Day>
   <Name>Martes</Name>
-</Day>
-<Day>
-  <Name>Sábado</Name>
 </Day>
 <Day>
   <Name>Miércoles</Name>
@@ -739,7 +736,6 @@
   <Name>BARONA LÓPEZ LORENA ISABEL</Name>
   <Target_Number_of_Hours>10</Target_Number_of_Hours>
   <Qualified_Subjects>
-    <Qualified_Subject>SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)</Qualified_Subject>
   </Qualified_Subjects>
   <Comments></Comments>
 </Teacher>
@@ -2021,19 +2017,6 @@
   <Active>true</Active>
   <Comments></Comments>
 </Activity>
-<Activity>
-  <Teacher>BARONA LÓPEZ LORENA ISABEL</Teacher>
-  <Subject>SIC714 (ADMINISTRACION DE SISTEMAS OPERATIVOS Y REDES)</Subject>
-  <Activity_Tag>Aula regular</Activity_Tag>
-  <Students>1-GR1-ICC</Students>
-  <Duration>2</Duration>
-  <Total_Duration>2</Total_Duration>
-  <Id>4</Id>
-  <Activity_Group_Id>0</Activity_Group_Id>
-  <Number_Of_Students>30</Number_Of_Students>
-  <Active>true</Active>
-  <Comments></Comments>
-</Activity>
 </Activities_List>
 
 <Buildings_List>
@@ -2187,13 +2170,6 @@
   <Virtual>false</Virtual>
   <Comments>Aula regular</Comments>
 </Room>
-<Room>
-  <Name>Beta</Name>
-  <Building>E26 EARME</Building>
-  <Capacity>40</Capacity>
-  <Virtual>false</Virtual>
-  <Comments>Aula regular</Comments>
-</Room>
 </Rooms_List>
 
 <Time_Constraints_List>
@@ -2276,33 +2252,6 @@
 <ConstraintActivityPreferredStartingTime>
   <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>2</Activity_Id>
-  <Preferred_Day>Lunes</Preferred_Day>
-  <Preferred_Hour>9:00-10:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>4</Activity_Id>
-  <Preferred_Day>Martes</Preferred_Day>
-  <Preferred_Hour>10:00-11:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>1</Activity_Id>
-  <Preferred_Day>Miércoles</Preferred_Day>
-  <Preferred_Hour>9:00-10:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>3</Activity_Id>
   <Preferred_Day>Miércoles</Preferred_Day>
   <Preferred_Hour>7:00-8:00</Preferred_Hour>
   <Permanently_Locked>true</Permanently_Locked>
@@ -2312,7 +2261,16 @@
 <ConstraintActivityPreferredStartingTime>
   <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>2</Activity_Id>
-  <Preferred_Day>Martes</Preferred_Day>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>8:00-9:00</Preferred_Hour>
+  <Permanently_Locked>true</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>2</Activity_Id>
+  <Preferred_Day>Viernes</Preferred_Day>
   <Preferred_Hour>9:00-10:00</Preferred_Hour>
   <Permanently_Locked>true</Permanently_Locked>
   <Active>true</Active>
@@ -2321,53 +2279,8 @@
 <ConstraintActivityPreferredStartingTime>
   <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>2</Activity_Id>
-  <Preferred_Day>Miércoles</Preferred_Day>
-  <Preferred_Hour>8:00-9:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>1</Activity_Id>
-  <Preferred_Day>Martes</Preferred_Day>
-  <Preferred_Hour>19:00-20:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>3</Activity_Id>
-  <Preferred_Day>Jueves</Preferred_Day>
-  <Preferred_Hour>21:00-22:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>4</Activity_Id>
-  <Preferred_Day>Viernes</Preferred_Day>
-  <Preferred_Hour>11:00-12:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>1</Activity_Id>
-  <Preferred_Day>Miércoles</Preferred_Day>
-  <Preferred_Hour>10:00-11:00</Preferred_Hour>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredStartingTime>
-<ConstraintActivityPreferredStartingTime>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>1</Activity_Id>
   <Preferred_Day>Lunes</Preferred_Day>
-  <Preferred_Hour>10:00-11:00</Preferred_Hour>
+  <Preferred_Hour>7:00-8:00</Preferred_Hour>
   <Permanently_Locked>true</Permanently_Locked>
   <Active>true</Active>
   <Comments> </Comments>
@@ -2375,7 +2288,16 @@
 <ConstraintActivityPreferredStartingTime>
   <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>1</Activity_Id>
-  <Preferred_Day>Martes</Preferred_Day>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>7:00-8:00</Preferred_Hour>
+  <Permanently_Locked>true</Permanently_Locked>
+  <Active>true</Active>
+  <Comments> </Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Activity_Id>1</Activity_Id>
+  <Preferred_Day>Miércoles</Preferred_Day>
   <Preferred_Hour>8:00-9:00</Preferred_Hour>
   <Permanently_Locked>true</Permanently_Locked>
   <Active>true</Active>
@@ -2384,12 +2306,960 @@
 <ConstraintActivityPreferredStartingTime>
   <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>1</Activity_Id>
-  <Preferred_Day>Martes</Preferred_Day>
-  <Preferred_Hour>12:00-13:00</Preferred_Hour>
+  <Preferred_Day>Miércoles</Preferred_Day>
+  <Preferred_Hour>8:00-9:00</Preferred_Hour>
   <Permanently_Locked>true</Permanently_Locked>
   <Active>true</Active>
   <Comments> </Comments>
 </ConstraintActivityPreferredStartingTime>
+
+
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>AGUIAR PONTES JOSAFÁ DE JESÚS</Teacher>
+  <Number_of_Not_Available_Times>25</Number_of_Not_Available_Times>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>07:00-08:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>07:00-08:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Sábado</Day>
+    <Hour>07:00-08:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Sábado</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Martes</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>11:00-12:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>11:00-12:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>12:00-13:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>12:00-13:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>14:00-15:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>15:00-16:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>11:00-12:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>12:00-13:00</Hour>
+  </Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>AGUILAR WILBERT</Teacher>
+  <Number_of_Not_Available_Times>14</Number_of_Not_Available_Times>
+  <Not_Available_Time>
+    <Day>Martes</Day>
+    <Hour>07:00-08:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>07:00-08:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Martes</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Sábado</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Sábado</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>11:00-12:00</Hour>
+  </Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ANCHUNDIA VALENCIA CARLOS EDUARDO</Teacher>
+  <Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>07:00-08:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>10:00-11:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>11:00-12:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>12:00-13:00</Hour>
+  </Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ANDRADE HINOJOSA WILLIAM HUMBERTO</Teacher>
+  <Number_of_Not_Available_Times>1</Number_of_Not_Available_Times>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>15:00-16:00</Hour>
+  </Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ANDRADE PAREDES ROBERTO OMAR</Teacher>
+  <Number_of_Not_Available_Times>12</Number_of_Not_Available_Times>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>07:00-08:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Lunes</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Martes</Day>
+    <Hour>08:00-09:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Martes</Day>
+    <Hour>09:00-10:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>16:00-17:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>16:00-17:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Sábado</Day>
+    <Hour>16:00-17:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Martes</Day>
+    <Hour>17:00-18:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Miércoles</Day>
+    <Hour>17:00-18:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Jueves</Day>
+    <Hour>17:00-18:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Viernes</Day>
+    <Hour>17:00-18:00</Hour>
+  </Not_Available_Time>
+  <Not_Available_Time>
+    <Day>Sábado</Day>
+    <Hour>17:00-18:00</Hour>
+  </Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ASTUDILLO ESPINOZA BORIS ALFONSO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>BARONA LÓPEZ LORENA ISABEL</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>BARRIGA ANDRADE JHONATTAN JAVIER</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>BENALCÁZAR PALACIOS MARCO ENRIQUE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CALLE JIMÉNEZ TANIA ELIZABETH</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CAMPAÑA ORTEGA EDUARDO MAURICIO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CARRERA IZURIETA IVÁN MARCELO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CARRILLO CALDERÓN SANTIAGO ROBERTO</Teacher>
+  <Number_of_Not_Available_Times>1</Number_of_Not_Available_Times>
+  <Not_Available_Time>
+    <Day>Sábado</Day>
+    <Hour>21:00-22:00</Hour>
+  </Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CARRIÓN TORO MAYRA DEL CISNE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CEVALLOS TERÁN CARLOS XAVIER</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CHANCUSIG CHUQUILLA RODRIGO FABIÁN</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CHANCUSIG ESPÍN BERNARDINO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>CÓRDOVA BAYAS MARCOS RAÚL</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>DEL HIERRO CADENA PABLO FERNANDO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ECHEVERRÍA CULQUI HENRY MANOLO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>EGUEZ SARZOSA VICENTE ADRIÁN</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>FLORES ARMAS DENYS ALBERTO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>FLORES NARANJO PAMELA CATHERINE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>FUERTES DÍAZ WALTER MARCELO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>GALINDO LOZADA JULIÁN ANDRÉS</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>GAVILANES SAGNAY FREDY MARCELO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>HALLO CARRASCO MARÍA ASUNCIÓN</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>HERNÁNDEZ ÁLVAREZ MYRIAM BEATRIZ</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>HERRERA SILVA JUAN ALBERTO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>INTRIAGO PAZMIÑO MARÍA MONSERRATE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>IÑIGUEZ JARRÍN CARLOS EFRAÍN</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>JARAMILLO JARAMILLO CECILIA ELIZABETH</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>LARCO AMPUDIA ENRIQUE ANDRÉS</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>LOZA AGUIRRE EDISON FERNANDO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>LUCIO NARANJO JOSÉ FRANCISCO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>MAFLA GALLEGOS LUIS ENRIQUE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>MALDONADO RUIZ DANIEL ALEJANDRO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>MARTÍNEZ MOSQUERA SILVIA DIANA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>MOLINA BUSTAMANTE MARCO EDUARDO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>MONTENEGRO ARMAS CARLOS ESTALESMIT</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>MOSQUERA ESPINOSA EVELYN MARCELA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>NAVARRETE RUEDA ROSA DEL CARMEN</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ORDOÑEZ CALERO HERNÁN DAVID</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PACCHA ANGAMARCA PATRICIO MICHEL</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PAZ ARIAS HENRY PATRICIO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PEÑAFIEL AGUILAR MYRIAM GUADALUPE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PINEDA ARIAS ISRAEL GUSTAVO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR INVITADO MCS</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR INVITADO MSW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 1 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 1-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 1-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 1-GR3-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 2 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 2-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 2-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 2-GR3-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 3 GR1-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 3 GR2-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 3-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 3-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 3-GR3-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 4 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 4-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 4-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 5 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 5-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 5-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 6 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 6-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 6-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 7 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 7-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 8 ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 8-GR2-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 9 ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR OCASIONAL TP2</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 1</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 3</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 5</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 5-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 6-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 7</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 1 (GR10)-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 1-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 2 (GR6)-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 2 - ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 4</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 7</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 1</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 3</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 3-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 5</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 7</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 8</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 9-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>RECALDE CERDA LORENA KATHERINE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>RIVERA GUEVARA RICHARD PAUL</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>SANAGUANO MORENO DANIEL ALFREDO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>SANTÓRUM GAIBOR MARCO OSWALDO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>SEGURA MORALES MARCO ANTONIO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>SÁNCHEZ AGUAYO MARCO POLO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>SÁNCHEZ GORDÓN SANDRA PATRICIA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>TORRES OLMEDO JENNY GABRIELA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>VALDIVIESO CARAGUAY ÁNGEL LEONARDO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>VILLARROEL RAMOS JORGE PATRICIO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>YACCHIREMA VARGAS DIANA CECILIA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>YÁNEZ QUESADA EDDIE HANS</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 7-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 8 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 8-GR1-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR NIVEL 9 ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR OCASIONAL TC2</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR OCASIONAL TP3</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 2</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 4</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 5-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 6</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 6-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE ADMINISTRATIVAS 8</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 1 (GR9)-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 1-GR2-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 2 - EXTRA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 3</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 5</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE FORMACIÓN BÁSICA 6</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 2</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 3-GR1-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 4</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 6</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 7-ISW</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PROFESOR DE SOCIALES 9-ICC</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>PÉREZ HERNÁNDEZ MARÍA GABRIELA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>RIOFRÍO LUZCANDO DIEGO FERNANDO</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ROA MARÍN HENRY NELSON</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>SANDOBALÍN GUAMÁN JULIO CÉSAR</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>SUNTAXI OÑA GABRIELA LORENA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>TENEMAZA VERA REGINA MARITZOL</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>VELEPUCHA BONETT VÍCTOR VICENTE</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>VINTIMILLA JARAMILLO LUZ MARINA</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>YOO PARK SANG GUUN</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+  <Weight_Percentage>100</Weight_Percentage>
+  <Teacher>ZAMBRANO RODRÍGUEZ PATRICIO JAVIER</Teacher>
+  <Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+</ConstraintTeacherNotAvailableTimes>
 
 
 </Time_Constraints_List>
@@ -2411,32 +3281,8 @@
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
   <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>4</Activity_Id>
-  <Room>E20/P5/E001-A</Room>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>1</Activity_Id>
-  <Room>E20/P4/E001-L</Room>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>3</Activity_Id>
-  <Room>E20/P4/E004-LI Lasinac</Room>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-  <Weight_Percentage>100</Weight_Percentage>
   <Activity_Id>2</Activity_Id>
-  <Room>E20/P3/E005-L</Room>
+  <Room>E20/P3/E004-L</Room>
   <Permanently_Locked>true</Permanently_Locked>
   <Active>true</Active>
   <Comments> </Comments>
@@ -2451,32 +3297,8 @@
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
   <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>1</Activity_Id>
-  <Room>E20/P4/E001-L</Room>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>3</Activity_Id>
-  <Room>E20/P3/E008-L</Room>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>4</Activity_Id>
-  <Room>E20/P3/E009-L AIO-Dell</Room>
-  <Permanently_Locked>true</Permanently_Locked>
-  <Active>true</Active>
-  <Comments> </Comments>
-</ConstraintActivityPreferredRoom>
-<ConstraintActivityPreferredRoom>
-  <Weight_Percentage>100</Weight_Percentage>
-  <Activity_Id>1</Activity_Id>
-  <Room>E20/P3/E005-L</Room>
+  <Activity_Id>2</Activity_Id>
+  <Room>E20/P3/E004-L</Room>
   <Permanently_Locked>true</Permanently_Locked>
   <Active>true</Active>
   <Comments> </Comments>
