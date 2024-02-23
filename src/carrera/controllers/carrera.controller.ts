@@ -30,7 +30,7 @@ export class CarreraController {
         .descripcion,
   })
   @Post(configuraciones.controladores.carrera.operaciones.crearUnaCarrera.ruta)
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   crearUnaCarrera(@Body() carreraDto: CarreraDto) {
     // Formatear y convertir en mayúsculas
     carreraDto.codigo = carreraDto.codigo.toUpperCase();
@@ -52,7 +52,7 @@ export class CarreraController {
     configuraciones.controladores.carrera.operaciones.actualizarCarreraPorID
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   actualizarCarreraPorID(
     @Param('id') idCarrera: string,
     @Body() carreraDto: CarreraDto,
@@ -76,7 +76,7 @@ export class CarreraController {
   @Delete(
     configuraciones.controladores.carrera.operaciones.eliminarCarreraPorID.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   eliminarCarreraPorID(@Param('id') idCarrera: string) {
     return this.carreraService.eliminarCarreraPorID(idCarrera);
   }
@@ -94,7 +94,7 @@ export class CarreraController {
     configuraciones.controladores.carrera.operaciones.obtenerCarreraPorCodigo
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerCarreraPorCodigo(@Param('codigo') codigoCarrera: string) {
     return this.carreraService.obtenerCarreraPorCodigo(codigoCarrera);
   }
@@ -111,7 +111,7 @@ export class CarreraController {
   @Get(
     configuraciones.controladores.carrera.operaciones.obtenerCarreraPorID.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerCarreraPorID(@Param('id') idCarrera: string) {
     return this.carreraService.obtenerCarreraPorID(idCarrera);
   }
@@ -126,7 +126,7 @@ export class CarreraController {
         .descripcion,
   })
   @Get(configuraciones.controladores.carrera.operaciones.obtenerCarreras.ruta)
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerCarreras() {
     return this.carreraService.obtenerCarreras();
   }

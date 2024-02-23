@@ -6,6 +6,6 @@ export class RolDto {
   @IsString()
   @IsNotEmpty()
   @ApiProperty()
-  @Matches(/(DOCENTE)|(COORDINADOR)|(SUBDECANO)|(GESTOR DE ESPACIOS)/)
+  @Matches(/(DOCENTE)|(COORDINADOR)|(ASISTENTE_ACADEMICO)|(SUBDECANO)|(GESTOR DE ESPACIOS)/)
   public readonly nombre: ROLES;
 }

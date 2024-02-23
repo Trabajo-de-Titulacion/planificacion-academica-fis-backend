@@ -32,7 +32,7 @@ export class NumeroEstudiantesPorSemestreController {
     configuraciones.controladores.numeroEstudiantesPorSemestre.operaciones
       .registrarNumeroEstudiantesPorSemestre.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   async registrarNumeroEstudiantesPorSemestre(
     @Body()
     arregloNumeroEstudiantesPorSemestre: NumeroEstudiantesPorSemestreDTO[],
@@ -51,7 +51,7 @@ export class NumeroEstudiantesPorSemestreController {
     configuraciones.controladores.numeroEstudiantesPorSemestre.operaciones
       .obtenerNumeroEstudiantesPorSemestreId.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   async obtenerNumeroEstudiantesPorSemestreId(@Param('id') idSemestre: string) {
     if (idSemestre && !isUUID(idSemestre)) {
       throw new HttpException(

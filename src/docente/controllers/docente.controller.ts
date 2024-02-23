@@ -37,7 +37,7 @@ export class DocenteController {
         .descripcion,
   })
   @Post(configuraciones.controladores.docente.operaciones.crearUnDocente.ruta)
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   crearDocente(@Body() docenteDto: DocenteDto) {
     //Formatear y generar los datos
     docenteDto.nombreCompleto = docenteDto.nombreCompleto.toUpperCase().trim();
@@ -60,7 +60,7 @@ export class DocenteController {
     configuraciones.controladores.docente.operaciones.crearVariosDocentes.ruta,
   )
   @UseInterceptors(FileInterceptor('archivoDocentes'))
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   crearVariosDocentes(@UploadedFile() file: Express.Multer.File) {
     // Leer el archivo y generar los arreglos de datos
     const arreglos = this.leerArchivoDocentes(file);
@@ -82,7 +82,7 @@ export class DocenteController {
   @Get(
     configuraciones.controladores.docente.operaciones.obtenerDocentePorID.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.JEFE_DE_DEPARTAMENTO)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerDocentePorID(@Param('id') id: string) {
     if (id && !isUUID(id)) {
       throw new HttpException(
@@ -106,7 +106,7 @@ export class DocenteController {
     configuraciones.controladores.docente.operaciones
       .obtenerDocentePorCorreoElectronico.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.DOCENTE)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerDocentePorCorreoElectronico(
     @Param('correo') correoElectronicoDocente: string,
   ) {
@@ -128,7 +128,7 @@ export class DocenteController {
     configuraciones.controladores.docente.operaciones.actualizarDocentePorID
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   actualizarDocentePorID(
     @Param('id') idDocente: string,
     @Body() docenteDto: DocenteDto,
@@ -156,7 +156,7 @@ export class DocenteController {
   @Delete(
     configuraciones.controladores.docente.operaciones.eliminarDocentePorID.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   eliminarDocentePorID(@Param('id') idDocente: string) {
     if (idDocente && !isUUID(idDocente)) {
       throw new HttpException(
@@ -177,7 +177,7 @@ export class DocenteController {
         .descripcion,
   })
   @Get(configuraciones.controladores.docente.operaciones.obtenerDocentes.ruta)
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerDocentes() {
     return this.docenteService.obtenerDocentes();
   }

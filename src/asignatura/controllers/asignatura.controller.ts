@@ -36,7 +36,7 @@ export class AsignaturaController {
     configuraciones.controladores.asignatura.operaciones.crearUnaAsignatura
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   crearUnaAsignatura(@Body() asignaturaDto: AsignaturaDto) {
     // Formatear y generar los datos
     asignaturaDto.codigo = asignaturaDto.codigo.toUpperCase().trim();
@@ -58,7 +58,7 @@ export class AsignaturaController {
       .ruta,
   )
   @UseInterceptors(FileInterceptor('archivoAsignaturas'))
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   crearVariasAsignaturas(@UploadedFile() file: Express.Multer.File) {
     // Leer el archivo y generar los arreglos de datos
     const arreglo = this.leerArchivoAsignatura(file);
@@ -78,7 +78,7 @@ export class AsignaturaController {
     configuraciones.controladores.asignatura.operaciones
       .actualizarAsignaturaPorID.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   actualizarAsignaturasPorID(
     @Param('id') idAsignatura: string,
     @Body() asignaturaDto: AsignaturaDto,
@@ -105,7 +105,7 @@ export class AsignaturaController {
     configuraciones.controladores.asignatura.operaciones.eliminarAsignaturaPorID
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   eliminarAsignaturaPorID(@Param('id') idAsignatura: string) {
     return this.asignaturaService.eliminarAsignaturaPorID(idAsignatura);
   }
@@ -123,7 +123,7 @@ export class AsignaturaController {
     configuraciones.controladores.asignatura.operaciones
       .obtenerAsignaturaPorCodigo.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerAsignaturaPorCodigo(@Param('codigo') codigoAsignatura: string) {
     return this.asignaturaService.obtenerAsignaturaPorCodigo(codigoAsignatura);
   }
@@ -141,7 +141,7 @@ export class AsignaturaController {
     configuraciones.controladores.asignatura.operaciones.obtenerAsignaturaPorID
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerAsignaturaPorID(@Param('id') idAsignatura: string) {
     return this.asignaturaService.obtenerAsignaturaPorID(idAsignatura);
   }
@@ -159,7 +159,7 @@ export class AsignaturaController {
     configuraciones.controladores.asignatura.operaciones.obtenerAsignaturas
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   obtenerAsignatura() {
     return this.asignaturaService.obtenerAsignatura();
   }
