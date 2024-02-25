@@ -50,6 +50,7 @@ export class ActividadesController {
     @Body() actividadDto: ActualizarActividadDto,
   ) {
     console.log('actualizar actividad', idActividad, actividadDto);
+    
     return await this.actividadesService.actualizarActividadPorId(
       idActividad,
       actividadDto,
