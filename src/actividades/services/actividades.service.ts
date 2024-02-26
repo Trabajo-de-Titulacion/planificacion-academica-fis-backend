@@ -137,24 +137,24 @@ export class ActividadesService {
     const grupo = await this.grupoService.obtenerGrupoPorID(actividadDto.idGrupo);
 
     const nuevaActividad: ActividadEntity = {
-      ...actividadExistente, 
-      docente: docente as DocenteEntity, 
-      tipoAula: tipoAula, 
+      ...actividadExistente,
+      docente: docente as DocenteEntity,
+      tipoAula: tipoAula,
       grupo: grupo,
-      duracion: actividadDto.duracion, 
-      asignatura: asignatura as AsignaturaEntity, 
+      duracion: actividadDto.duracion,
+      asignatura: asignatura as AsignaturaEntity,
     };
 
     await this.actividadRespository.update(idActividad, nuevaActividad);
-  
+
     return nuevaActividad;
-    
+
   }
 
   async obtenerActividades() {
     Logger.log('Se han listado las actividades', 'ACTIVIDADES');
     return await this.actividadRespository.find({
-      relations: ['asignatura', 'docente', 'grupo', 'tipoAula'],
+      relations: ['asignatura', 'docente', 'grupo', 'tipoAula', 'restricciones'],
     });
   }
 
@@ -197,14 +197,25 @@ export class ActividadesService {
       where: {
         id: idActividad,
       },
+      relations: ['restricciones'],
     });
-    if (actividad) {
-      await this.actividadRespository.delete(idActividad);
-      console.log('Restriccion eliminada');
-      return actividad;
-    } else {
+
+    if (!actividad) {
       throw new Error('No existe la actividad');
     }
+
+    if(actividad.restricciones && actividad.restricciones.length>0){
+      await Promise.all(
+        actividad.restricciones.map(async (restriccion) => {
+          await this.restriccionActividadRespository.delete(restriccion.id);
+        }),
+      );
+    }
+
+    await this.actividadRespository.delete(idActividad);
+    console.log('Restriccion eliminada');
+    return actividad;
+
   }
 
   //METODO PARA CREAR RESTRICCIONES
