@@ -19,6 +19,7 @@ import { GenerarHorarioDto } from '../dto/generar-horario.dto';
 import { HorarioDto } from '../dto/horario.dto';
 import { HorarioService } from '../services/horario.service';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { Public } from 'src/auth/decorators/public.decorator';
 
 @ApiBearerAuth('defaultBearerAuth')
 @ApiTags(configuraciones.controladores.horario.tag)
@@ -41,6 +42,7 @@ export class HorarioController {
   /* ======================================= OBTENER HORARIO DOCENTE ===================================== */
   /* ===================================================================================================== */
 
+  @Public()
   @ApiOperation({
     summary:
       configuraciones.controladores.horario.operaciones.obtenerHorarioDocente
@@ -73,19 +75,44 @@ export class HorarioController {
     configuraciones.controladores.horario.operaciones.obtenerHorarioGrupo.ruta,
   )
   @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO,  RolesEnum.SUBDECANO)
-  obtenerHorarioGrupo(
+  async obtenerHorarioGrupo(
     @Param('grupo') grupo: string,
     @Param('idHorario') idHorario: string,
   ) {
     // Formatear y convertir en mayúsculas
     grupo = grupo.toUpperCase();
-    return this.horarioService.obtenerHorarioGrupo(grupo, idHorario);
+    return await this.horarioService.obtenerHorarioGrupo(grupo, idHorario);
+  }
+
+  /* ===================================================================================================== */
+  /* ======================================= OBTENER HORARIO AULA ===================================== */
+  /* ===================================================================================================== */
+
+  @Public()
+  @ApiOperation({
+    summary:
+      configuraciones.controladores.horario.operaciones.obtenerHorarioAula
+        .descripcion,
+  })
+  @Get(
+    configuraciones.controladores.horario.operaciones.obtenerHorarioAula
+      .ruta,
+  )
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
+  obtenerHorarioAula(
+    @Param('nombreAula') nombreAula: string,
+    @Param('idHorario') idHorario: string,
+  ) {
+    // Formatear y convertir en mayúsculas
+    nombreAula = nombreAula.toUpperCase();
+    return this.horarioService.obtenerHorarioAula(nombreAula, idHorario);
   }
 
   /* ========================================================================================================= */
   /* ======================================= OBTENER TODOS LOS HORARIOS  ===================================== */
   /* ========================================================================================================= */
 
+  @Public()
   @ApiOperation({
     summary:
       configuraciones.controladores.horario.operaciones.obtenerHorarios

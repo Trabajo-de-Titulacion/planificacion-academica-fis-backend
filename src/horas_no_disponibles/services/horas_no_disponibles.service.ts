@@ -17,6 +17,7 @@ import { plainToInstance } from 'class-transformer';
 import { MailService } from '../../../src/mail/services/mail.service';
 import { HoraDiaNoDisponibleDTO } from 'src/horas_no_disponibles/dto/hora_dia_noDisponible.dto';
 import { DocenteEntity } from 'src/docente/entities/docente.entity';
+import { JornadaLaboralEntity } from 'src/parametros-iniciales/entities/jornada-laboral.entity';
 
 @Injectable()
 export class HorasNoDisponiblesService {
@@ -268,18 +269,29 @@ export class HorasNoDisponiblesService {
 
   //Para crar hora dia NO disponible
   async crearHoraDiaNoDisponible(data: HoraDiaNoDisponibleDTO) {
-    await this.horasNoDisponiblesRepository.delete({
-      docente: { id: data.docente_id },
-      jornada: { id: data.jornada_id },
-      hora_inicio: data.hora_inicio,
-    });
+    console.log("DATA",data)
+    
     console.log('Se han recibido los datos');
     const docente = await this.docentesService.obtenerDocentePorID(
       data.docente_id,
     );
+
     const jornada = await this.jornadasLaboralesService.obtenerJornadaPorId(
       data.jornada_id,
     );
+
+    const dataHoraInicio = this.convertirNumeroAFecha(data.hora_inicio);
+
+    console.log("Comparacion: ", jornada.horaInicio, dataHoraInicio);
+
+    /*const operation = await this.horasNoDisponiblesRepository.delete({
+      
+        docente: docente as DocenteEntity,
+        jornada: jornada,
+        hora_inicio: data.hora_inicio,
+      
+    });
+    console.log("OPeration: ", operation);*/
 
     const horaNoDisponibleExiste =
       await this.horasNoDisponiblesRepository.findOne({
@@ -290,11 +302,13 @@ export class HorasNoDisponiblesService {
         },
       });
     if (horaNoDisponibleExiste) {
-      throw new BadRequestException({
+      /*throw new BadRequestException({
         code: 'HORA_DIA_YA_EXISTE',
         message:
           'La hora y dia no disponible ya se encuentra registrada en el sistema',
-      });
+      });*/
+      await this.horasNoDisponiblesRepository.remove(horaNoDisponibleExiste);
+      console.log("Hora no disponible eliminada con éxito.");
     }
 
     await this.horasNoDisponiblesRepository.save({
@@ -385,4 +399,10 @@ export class HorasNoDisponiblesService {
       return output;
     });
   }
+
+  convertirNumeroAFecha(numero:number): string {
+    const horas = numero.toString().padStart(2, '0');
+    return `${horas}:00`;
+  }
+
 }

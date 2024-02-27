@@ -40,7 +40,6 @@ export class HorarioService {
     private facultadesService: FacultadService,
     private espaciosFisicosService: EspaciosFisicosService,
   ) {}
-  //TODO: COLOCAR LA DESCRIPCION
   async crearHorario(horario: HorarioDto) {
     const usuario = await this.usuarioService.obtenerUsuarioCompletoPorSuID(
       horario.idUsuario,
@@ -109,15 +108,18 @@ export class HorarioService {
               if (horas[k].Room) {
                 horarioFiltrado[index] = {
                   asignatura: horas[k].Subject['-name'].toUpperCase(),
+                  aula: horas[k].Room['-name'].toUpperCase(),
+                  grupo: subgrupos[i]['-name'].toUpperCase(),
                   tipoAula: horas[k].Activity_Tag['-name'],
                   dia: dias[j]['-name'].toUpperCase(),
                   horario: horas[k]['-name'].replace(/ /g, ''),
-                  aula: horas[k].Room['-name'].toUpperCase(),
                 };
                 index++;
               } else {
                 horarioFiltrado[index] = {
                   asignatura: horas[k].Subject['-name'].toUpperCase(),
+                  aula: horas[k].Room['-name'].toUpperCase(),
+                  grupo: subgrupos[i]['-name'].toUpperCase(),
                   tipoAula: horas[k].Activity_Tag['-name'],
                   dia: dias[j]['-name'].toUpperCase(),
                   horario: horas[k]['-name'].replace(/ /g, ''),
@@ -180,6 +182,7 @@ export class HorarioService {
                 horarioFiltrado[index] = {
                   docente: horas[k].Teacher['-name'].toUpperCase(),
                   asignatura: horas[k].Subject['-name'].toUpperCase(),
+                  aula: horas[k].Room['-name'].toUpperCase(),
                   tipoAula: horas[k].Activity_Tag['-name'],
                   dia: dias[j]['-name'].toUpperCase(),
                   horario: horas[k]['-name'].replace(/ /g, ''),
@@ -191,6 +194,67 @@ export class HorarioService {
         }
       }
     }
+
+    return horarioFiltrado;
+  }
+
+  /* ===================================================================================================== */
+  /* ======================================= OBTENER HORARIO AULA ===================================== */
+  /* ===================================================================================================== */
+
+  async obtenerHorarioAula(nombreAula: string, idHorario: string) {
+    Logger.log('obtenerHorarioAula');
+    //Buscar horario
+    const horario = await this.obtenerHorarioPorID(idHorario);
+    // Arreglo de respuesta
+    const horarioFiltrado = [];
+    let index = 0;
+    // Transformador de texto a JSON
+    const arreglo = JSON.parse(horario.horarioJson.toString());
+    const subgrupos = arreglo.Students_Timetable.Subgroup;
+
+    // Revisión por cada grupo
+    for (let i = 0; i < subgrupos.length; i++) {
+      const dias = subgrupos[i].Day;
+      // Revisión por cada día
+      for (let j = 0; j < dias.length; j++) {
+        const horas = dias[j].Hour;
+        // Revisión por cada hora
+        for (let k = 0; k < horas.length; k++) {
+          // Comprueba que exista horario en la hora iterada
+          if (horas[k].Room) {
+            // Si el aula se llama igual al enviado
+            if (horas[k].Room['-name'].toUpperCase() === nombreAula) {
+              // Si se vinculó un espacio físico se añade este
+              if (horas[k].Room) {
+                horarioFiltrado[index] = {
+                  docente: horas[k].Teacher['-name'].toUpperCase(),
+                  asignatura: horas[k].Subject['-name'].toUpperCase(),
+                  grupo: subgrupos[i]['-name'].toUpperCase(),
+                  tipoAula: horas[k].Activity_Tag['-name'],
+                  dia: dias[j]['-name'].toUpperCase(),
+                  horario: horas[k]['-name'].replace(/ /g, ''),
+                };
+                index++;
+              } else {
+                horarioFiltrado[index] = {
+                  docente: horas[k].Teacher['-name'].toUpperCase(),
+                  asignatura: horas[k].Subject['-name'].toUpperCase(),
+                  grupo: subgrupos[i]['-name'].toUpperCase(),
+                  tipoAula: horas[k].Activity_Tag['-name'],
+                  dia: dias[j]['-name'].toUpperCase(),
+                  horario: horas[k]['-name'].replace(/ /g, ''),
+                };
+                index++;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    console.log("horarioFiltrado -->",horarioFiltrado)
 
     return horarioFiltrado;
   }
