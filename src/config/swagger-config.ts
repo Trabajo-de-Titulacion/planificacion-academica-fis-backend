@@ -244,6 +244,11 @@ const configuracionesAPI = {
           descripcion:
             'Método para obtener el horario de un semestre, paralelo y grupo específico.',
         },
+        obtenerHorarioAula: {
+          ruta: '/obtenerHorarioAula/:nombreAula/:idHorario',
+          descripcion:
+            'Método para obtener el horario de un aula específica.',
+        },
         obtenerHorarios: {
           ruta: '/obtenerHorarios',
           descripcion:
