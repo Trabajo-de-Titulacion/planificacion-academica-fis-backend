@@ -4,6 +4,8 @@ databaseData/
 # compiled output
 /dist
 /node_modules
+/postgres
+/fet
 
 # Logs
 logs
@@ -16,6 +18,9 @@ lerna-debug.log*
 
 # OS
 .DS_Store
+usr
+
+.yarn-lock
 
 # Tests
 /coverage

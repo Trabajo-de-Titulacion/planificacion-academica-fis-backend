@@ -9,10 +9,15 @@ import { FacultadService } from '../../src/parametros-iniciales/services/faculta
 import { FacultadEntity } from '../../src/parametros-iniciales/entities/facultad.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([EspacioFisicoEntity, TipoAulaEntity, FacultadEntity])],
+  imports: [
+    TypeOrmModule.forFeature([
+      EspacioFisicoEntity,
+      TipoAulaEntity,
+      FacultadEntity,
+    ]),
+  ],
   controllers: [EspaciosFisicosController],
   providers: [EspaciosFisicosService, TipoAulaService, FacultadService],
+  exports: [EspaciosFisicosService],
 })
-export class EspaciosFisicosModule {
-  
-}
+export class EspaciosFisicosModule {}

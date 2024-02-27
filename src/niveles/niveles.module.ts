@@ -11,10 +11,10 @@ import { NivelService } from './services/nivel.service';
 @Module({
   imports: [
     TypeOrmModule.forFeature([GrupoEntity, NivelEntity]),
-    CarreraModule
+    CarreraModule,
   ],
   controllers: [NivelController, GrupoController],
   providers: [NivelService, GrupoService],
-  exports: [TypeOrmModule]
+  exports: [TypeOrmModule, GrupoService, NivelService],
 })
-export class NivelesModule { }
+export class NivelesModule {}

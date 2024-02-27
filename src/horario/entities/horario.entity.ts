@@ -1,21 +1,27 @@
-import { UsuarioEntity } from "../../../src/usuarios/entities/usuario.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { UsuarioEntity } from '../../../src/usuarios/entities/usuario.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
-@Entity("horario")
+@Entity('horario')
 export class HorarioEntity {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column({ type: "varchar" })
-    fechaCreacion: Date
+  @Column({ type: 'varchar' })
+  fechaCreacion: Date;
 
-    @Column({ type: "text" })
-    horarioJson: string
+  @Column({ type: 'text' })
+  horarioJson: string;
 
-    @Column({ type: "text" })
-    descripcion: string
+  @Column({ type: 'text' })
+  descripcion: string;
 
-    @ManyToOne(() => UsuarioEntity, usuario => usuario.horarios)
-    @JoinColumn({ name: "idUsuario" })
-    usuario: UsuarioEntity
+  @ManyToOne(() => UsuarioEntity, (usuario) => usuario.horarios)
+  @JoinColumn({ name: 'idUsuario' })
+  usuario: UsuarioEntity;
 }
