@@ -33,7 +33,7 @@ export class HorarioController {
         .descripcion,
   })
   @Post(configuraciones.controladores.horario.operaciones.crearHorario.ruta)
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO, RolesEnum.SUBDECANO)
   async crearHorario(@Body() horario: HorarioDto) {
     await this.horarioService.crearHorario(horario);
   }
@@ -52,7 +52,7 @@ export class HorarioController {
     configuraciones.controladores.horario.operaciones.obtenerHorarioDocente
       .ruta,
   )
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO, RolesEnum.SUBDECANO)
   obtenerHorarioDocente(
     @Param('nombreDocente') nombreDocente: string,
     @Param('idHorario') idHorario: string,
@@ -74,7 +74,7 @@ export class HorarioController {
   @Get(
     configuraciones.controladores.horario.operaciones.obtenerHorarioGrupo.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO,  RolesEnum.SUBDECANO)
   async obtenerHorarioGrupo(
     @Param('grupo') grupo: string,
     @Param('idHorario') idHorario: string,
@@ -119,7 +119,7 @@ export class HorarioController {
         .descripcion,
   })
   @Get(configuraciones.controladores.horario.operaciones.obtenerHorarios.ruta)
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO, RolesEnum.SUBDECANO)
   obtenerHorarios() {
     return this.horarioService.obtenerHorarios();
   }
@@ -136,7 +136,7 @@ export class HorarioController {
   @Get(
     configuraciones.controladores.horario.operaciones.obtenerHorarioPorID.ruta,
   )
-  @Roles(RolesEnum.COORDINADOR, RolesEnum.SUBDECANO)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO, RolesEnum.SUBDECANO)
   obtenerHorarioPorID(@Param('id') idHorario: string) {
     if (idHorario && !isUUID(idHorario)) {
       throw new HttpException('ID de horario inválido', HttpStatus.BAD_REQUEST);
@@ -151,7 +151,7 @@ export class HorarioController {
 
   @Post('cargarFET')
   @UseInterceptors(FileInterceptor('archivoFet'))
-  @Roles(RolesEnum.COORDINADOR)
+  @Roles(RolesEnum.COORDINADOR, RolesEnum.ASISTENTE_ACADEMICO)
   async cargarFET(@UploadedFile() file: Express.Multer.File) {
     // Guardar información
     const informacion = file.buffer.toString();

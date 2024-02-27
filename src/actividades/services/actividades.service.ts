@@ -40,7 +40,7 @@ export class ActividadesService {
     @InjectRepository(RestriccionActividadEntity)
     private restriccionActividadRespository: Repository<RestriccionActividadEntity>,
     private horasNoDisponiblesService: HorasNoDisponiblesService,
-  ) {}
+  ) { }
 
   validarDuracionActividad(actividad: ActividadEntity) {
     if (actividad.duracion <= this.limiteActividadDuracion) {
@@ -124,44 +124,37 @@ export class ActividadesService {
     idActividad: number,
     actividadDto: ActualizarActividadDto,
   ): Promise<ActividadEntity> {
-    const actividad = await this.obtenerActividadPorId(idActividad);
-    console.log('actividad: ', actividad);
-    if (actividad) {
-      const asignatura = await this.asignaturaService.obtenerAsignaturaPorID(
-        actividadDto.idAsignatura,
-      );
-      const docente = await this.docenteService.obtenerDocentePorID(
-        actividadDto.idDocente,
-      );
-      const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(
-        actividadDto.idTipoAula,
-      );
-      const grupo = await this.grupoService.obtenerGrupoPorID(
-        actividadDto.idGrupo,
-      );
+    const actividadExistente = await this.obtenerActividadPorId(idActividad);
+    console.log('actividad: ', actividadExistente);
 
-      console.log('asignatura**', asignatura);
-      let nuevaActividad: ActividadEntity;
-      nuevaActividad.docente = docente as DocenteEntity;
-      nuevaActividad.tipoAula = tipoAula;
-      nuevaActividad.grupo = grupo;
-      nuevaActividad.duracion = actividadDto.duracion;
-      nuevaActividad.asignatura = asignatura as AsignaturaEntity;
-
-      await this.actividadRespository.update(idActividad, nuevaActividad);
-
-      return nuevaActividad;
-    } else {
-      throw new NotFoundException(
-        `No existe la actividad con Id ${idActividad}`,
-      );
+    if (!actividadExistente) {
+      throw new NotFoundException(`No existe la actividad con ID: ${idActividad}`);
     }
+
+    const asignatura = await this.asignaturaService.obtenerAsignaturaPorID(actividadDto.idAsignatura);
+    const docente = await this.docenteService.obtenerDocentePorID(actividadDto.idDocente);
+    const tipoAula = await this.tipoAulaService.obtenerTipoAulaPorId(actividadDto.idTipoAula);
+    const grupo = await this.grupoService.obtenerGrupoPorID(actividadDto.idGrupo);
+
+    const nuevaActividad: ActividadEntity = {
+      ...actividadExistente,
+      docente: docente as DocenteEntity,
+      tipoAula: tipoAula,
+      grupo: grupo,
+      duracion: actividadDto.duracion,
+      asignatura: asignatura as AsignaturaEntity,
+    };
+
+    await this.actividadRespository.update(idActividad, nuevaActividad);
+
+    return nuevaActividad;
+
   }
 
   async obtenerActividades() {
     Logger.log('Se han listado las actividades', 'ACTIVIDADES');
     return await this.actividadRespository.find({
-      relations: ['asignatura', 'docente', 'grupo', 'tipoAula'],
+      relations: ['asignatura', 'docente', 'grupo', 'tipoAula', 'restricciones'],
     });
   }
 
@@ -204,14 +197,25 @@ export class ActividadesService {
       where: {
         id: idActividad,
       },
+      relations: ['restricciones'],
     });
-    if (actividad) {
-      await this.actividadRespository.delete(idActividad);
-      console.log('Restriccion eliminada');
-      return actividad;
-    } else {
+
+    if (!actividad) {
       throw new Error('No existe la actividad');
     }
+
+    if(actividad.restricciones && actividad.restricciones.length>0){
+      await Promise.all(
+        actividad.restricciones.map(async (restriccion) => {
+          await this.restriccionActividadRespository.delete(restriccion.id);
+        }),
+      );
+    }
+
+    await this.actividadRespository.delete(idActividad);
+    console.log('Restriccion eliminada');
+    return actividad;
+
   }
 
   //METODO PARA CREAR RESTRICCIONES
